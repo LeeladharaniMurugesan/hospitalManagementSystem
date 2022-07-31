@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface BedDetailRepository extends CrudRepository<BedDetailRepository, Integer> {
-	BedDetailRepository findById(int id);
+import com.chainsys.hospitalmanagementsys.pojo.BedDetail;
 
-	BedDetailRepository save(BedDetailRepository sd);
+public interface BedDetailRepository extends CrudRepository<BedDetail, Integer> {
+	BedDetail findById(int id);
+
+	BedDetail save(BedDetail bd);
 
 	void deleteById(int id);
 
-	List<BedDetailRepository> findAll();
+	List<BedDetail> findAll();
 }

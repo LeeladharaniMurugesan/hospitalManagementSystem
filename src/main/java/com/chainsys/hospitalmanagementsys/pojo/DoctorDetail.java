@@ -5,20 +5,14 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name=" doctor_details")
+@Table(name="DOCTOR_DETAILS")
 public class DoctorDetail {
 	@Id
-	private int s_id ;
+	private int staff_id;
 	private String speciality ;
 	private String role_type;
 	private int normal_fees ;
-	private int staff_id;
-	public int getS_id() {
-		return s_id;
-	}
-	public void setS_id(int s_id) {
-		this.s_id = s_id;
-	}
+	
 	public String getSpeciality() {
 		return speciality;
 	}

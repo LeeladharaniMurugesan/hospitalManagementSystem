@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface BookingCancellationDetailRepository extends CrudRepository<BookingCancellationDetailRepository, Integer> {
-	BookingCancellationDetailRepository findById(int id);
+import com.chainsys.hospitalmanagementsys.pojo.BookingCancellationDetail;
 
-	BookingCancellationDetailRepository save(BookingCancellationDetailRepository sd);
+public interface BookingCancellationDetailRepository extends CrudRepository<BookingCancellationDetail, Integer> {
+	BookingCancellationDetail findById(int id);
+
+	BookingCancellationDetail save(BookingCancellationDetail bc);
 
 	void deleteById(int id);
 
-	List<BookingCancellationDetailRepository> findAll();
+	List<BookingCancellationDetail> findAll();
 }

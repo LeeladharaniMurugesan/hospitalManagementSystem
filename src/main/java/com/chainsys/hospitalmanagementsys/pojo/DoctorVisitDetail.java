@@ -6,15 +6,16 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name="doctor_visitdetails")
+@Table(name="DOCTOR_VISITDETAILS")
 public class DoctorVisitDetail {
 	@Id
 	private int s_no ;
+	private int staff_id ;
 	private Date visited_date ;
 	private String from_time ;
 	private String to_time ;
 	private String dailyfees;
-	private int staff_id ;
+	
 	public int getS_no() {
 		return s_no;
 	}

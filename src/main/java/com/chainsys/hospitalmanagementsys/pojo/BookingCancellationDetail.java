@@ -11,11 +11,12 @@ public class BookingCancellationDetail {
 	@Id
 	private int bc_id ;
 	private String bc_type ;
+	private int resource_id;
 	private Date booking_date ;
 	private Date fromdate ;
 	private Date todate ;
 	private int staff_id;
-	private int resource_id;
+	
 	public int getBc_id() {
 		return bc_id;
 	}

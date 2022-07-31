@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-public interface AmbulanceDetailRepository extends CrudRepository<AmbulanceDetailRepository, Integer> {
-	AmbulanceDetailRepository findById(int id);
+import com.chainsys.hospitalmanagementsys.pojo.AmbulanceDetail;
 
-	AmbulanceDetailRepository save(AmbulanceDetailRepository sd);
+public interface AmbulanceDetailRepository extends CrudRepository<AmbulanceDetail, Integer> {
+	AmbulanceDetail findById(int id);
+
+	AmbulanceDetail save(AmbulanceDetail ad);
 
 	void deleteById(int id);
 
-	List<AmbulanceDetailRepository> findAll();
+	List<AmbulanceDetail> findAll();
 }
