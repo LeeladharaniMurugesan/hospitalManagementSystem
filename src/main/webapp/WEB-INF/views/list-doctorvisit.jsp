@@ -12,23 +12,23 @@
 		<table>
 			<thead>
 				<tr>
-					<th>S_no</th>
-					<th>Staff_id</th>
-					<th>Visited_date</th>
-					<th>From_time</th>
-					<th>To_time</th>
-					<th>Dailyfees</th>
+					<th>SNo</th>
+					<th>StaffId</th>
+					<th>VisitedDate</th>
+					<th>FromTime</th>
+					<th>ToTime</th>
+					<th>DailyFees</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="docv" items="${alldocvisit}">
 					<tr>
-						<td>${docv.s_no}</td>
-						<td>${docv.staff_id}</td>
-						<td>${docv.visited_date}</td>
-						<td>${docv.from_time}</td>
-						<td>${docv.to_time}</td>
-						<td>${docv.dailyfees}</td>
+						<td>${docv.sNo}</td>
+						<td>${docv.staffId}</td>
+						<td>${docv.visitedDate}</td>
+						<td>${docv.fromTime}</td>
+						<td>${docv.toTime}</td>
+						<td>${docv.dailyFees}</td>
 				</c:forEach>
 			</tbody>
 		</table>

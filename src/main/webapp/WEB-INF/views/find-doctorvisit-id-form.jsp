@@ -13,33 +13,33 @@
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getdocvisit">
 			<div>
-					<label for="s_no">S_no</label>
+					<label for="sNo">SNo</label>
 					<div>
-						<form:input path="s_no" readonly="true"/>
+						<form:input path="sNo" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="staff_id">Staff Id</label>
+					<label for="staffId">Staff Id</label>
 					<div>
-						<form:input path="staff_id" readonly="true"/>
+						<form:input path="staffId" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="visited_date">Visited Date</label>
+					<label for="visitedDate">Visited Date</label>
 					<div>
-						<form:input path="visited_date" readonly="true" />
+						<form:input path="visitedDate" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="from_time">From Time</label>
+					<label for="fromTime">From Time</label>
 					<div>
-						<form:input path="from_time" readonly="true"/>
+						<form:input path="fromTime" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="dailyfees">Daily Fees</label>
+					<label for="dailyFees">Daily Fees</label>
 					<div>
-						<form:input path="dailyfees" readonly="true"/>
+						<form:input path="dailyFees" readonly="true"/>
 					</div>
 				</div>
 			</form:form>

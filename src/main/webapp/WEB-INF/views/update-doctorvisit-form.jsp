@@ -10,41 +10,41 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="updatedv" method="post" modelAttribute="updatedocvisit">
+			<form:form action="updatedoctorvisit" method="post" modelAttribute="updatedocvisit">
 				<div>
-					<label for="s_no">S no</label>
+					<label for="sNo">S no</label>
 					<div>
-						<form:input path="s_no" />
+						<form:input path="sNo" />
 					</div>
 				</div>
 				<div>
-					<label for="staff_id">Staff id</label>
+					<label for="staffId">Staff id</label>
 					<div>
-						<form:input path="staff_id" />
+						<form:input path="staffId" />
 					</div>
 				</div>
 				<div>
-					<label for="visited_date">Visited_date</label>
+					<label for="visitedDate">Visited Date</label>
 					<div>
-						<form:input path="visited_date" />
+						<form:input path="visitedDate" />
 					</div>
 				</div>
 				<div>
-					<label for="from_time ">From Time</label>
+					<label for="fromTime ">From Time</label>
 					<div>
-						<form:input path="from_time " />
+						<form:input path="fromTime " />
 					</div>
 				</div>
 				<div>
-					<label for="to_time ">To Time</label>
+					<label for="toTime ">To Time</label>
 					<div>
-						<form:input path="to_time " />
+						<form:input path="toTime " />
 					</div>
 				</div>
 				<div>
-					<label for="dailyfees">Daily fees</label>
+					<label for="dailyFees">Daily fees</label>
 					<div>
-						<form:input path="dailyfees" />
+						<form:input path="dailyFees" />
 					</div>
 				</div>
 				<div>
