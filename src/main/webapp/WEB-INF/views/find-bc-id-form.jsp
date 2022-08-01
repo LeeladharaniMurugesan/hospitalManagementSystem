@@ -11,47 +11,48 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="" method="post" modelAttribute="getbc">
+			<form:form action="" method="post" modelAttribute="getbcdetail">
 					<div>
-					<label for="bc_id">Booking and Cancellation Id</label>
+					<label for="bcId">Booking/Cancellation Id</label>
 					<div>
-						<form:input path="bc_id" readonly="true"/>
+						<form:input path="bcId" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="bc_type">BC Type </label>
+					<label for="bookingDate">BookingDate </label>
 					<div>
-						<form:input path="bc_type" readonly="true"/>
+						<form:input path="bookingDate" readonly="true"/>
+					</div>
+				</div>
+				
+				<div>
+					<label for="fromDate">From Date</label>
+					<div>
+						<form:input path="fromDate" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="resource_id">Resource</label>
+					<label for="toDate">To Date</label>
 					<div>
-						<form:input path="resource_id" readonly="true"/>
+						<form:input path="toDate" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="booking_date">Booking Date</label>
+					<label for="resourceType">ResourceType</label>
 					<div>
-						<form:input path="booking_date" readonly="true"/>
+						<form:input path="resourceType" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="fromdate">From Date</label>
+					<label for="resourceId">ResourceId</label>
 					<div>
-						<form:input path="fromdate" readonly="true"/>
+						<form:input path="resourceId" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="todate">To Date</label>
+					<label for="staffId">Staff Id</label>
 					<div>
-						<form:input path="todate" readonly="true"/>
-					</div>
-				</div>
-				<div>
-					<label for="staff_id">Staff id</label>
-					<div>
-						<form:input path="staff_id" readonly="true"/>
+						<form:input path="staffId" readonly="true"/>
 					</div>
 				</div>
 			</form:form>

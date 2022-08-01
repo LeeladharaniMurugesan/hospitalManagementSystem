@@ -12,23 +12,23 @@ import com.chainsys.hospitalmanagementsys.repository.DoctorVisitDetailRepository
 public class DoctorVisitDetailService {
 	@Autowired
 
-	DoctorVisitDetailRepository rpstr;
+	DoctorVisitDetailRepository doctorvisit;
 
 	public List<DoctorVisitDetail> getAllDoctorVisitDetails() {
-		List<DoctorVisitDetail> dvd = rpstr.findAll();
+		List<DoctorVisitDetail> dvd = doctorvisit.findAll();
 		return dvd;
 	}
 
 	public DoctorVisitDetail save(DoctorVisitDetail dvd) {
-		return rpstr.save(dvd);
+		return doctorvisit.save(dvd);
 	}
 
 	public DoctorVisitDetail findById(int id) {
-		return rpstr.findById(id);
+		return doctorvisit.findById(id);
 	}
 
 	public void deleteById(int id) {
-		rpstr.deleteById(id);
+		doctorvisit.deleteById(id);
 	}
 }
 

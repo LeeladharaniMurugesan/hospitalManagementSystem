@@ -31,31 +31,31 @@ public class AmbulanceDetailController {
 	@GetMapping("/getambulance")
 	public String getAmbulance(@RequestParam("id") int id, Model model) {
 		AmbulanceDetail ad = ambservice.findById(id);
-		model.addAttribute("getdoc", ad);
+		model.addAttribute("getambulance", ad);
 		return "find-ambulance-id-form";
 	}
 
-	@GetMapping("/addform")
-	public String showAddForm(Model model) {
+	@GetMapping("/addambulanceform")
+	public String showAddAmbulanceForm(Model model) {
 		AmbulanceDetail ad = new AmbulanceDetail();
-		model.addAttribute("addambulance", ad);
+		model.addAttribute("addAmbulance", ad);
 		return "add-ambulance-form";
 	}
 
-	@PostMapping("/add")
-	public String addNewAmbulance(@ModelAttribute("addambulance") AmbulanceDetail ad) {
+	@PostMapping("/addambulance")
+	public String addNewAmbulance(@ModelAttribute("addAmbulance") AmbulanceDetail ad) {
 		ambservice.save(ad);
 		return "redirect:/ambulance/list";
 	}
 
-	@GetMapping("/deletedoc")
-	public String deleteAmbulance(@RequestParam("register_id") int id) {
+	@GetMapping("/deleteambulance")
+	public String deleteAmbulance(@RequestParam("registerId") int id) {
 		ambservice.deleteById(id);
 		return "redirect:/ambulance/list";
 	}
 
-	@GetMapping("/updateform")
-	public String showUpdateForm(@RequestParam("register_id") int id, Model model) {
+	@GetMapping("/updateambulanceform")
+	public String showUpdateForm(@RequestParam("registerId") int id, Model model) {
 		AmbulanceDetail ad = ambservice.findById(id);
 		model.addAttribute("updateamb", ad);
 		return "update-ambulance-form";

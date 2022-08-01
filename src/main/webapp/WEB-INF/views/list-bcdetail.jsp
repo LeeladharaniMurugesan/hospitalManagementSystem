@@ -12,25 +12,25 @@
 		<table>
 			<thead>
 				<tr>
-					<th>bc_id</th>
-					<th>bc_type</th>
-					<th>resource_id</th>
+					<th>BcId</th>
 					<th>booking_date</th>
-					<th>fromdate</th>
-					<th>todate</th>
-					<th>staff_id</th>
+					<th>FromDate</th>
+					<th>ToDate</th>
+					<th>ResourceType</th>
+					<th>Resource Id</th>
+					<th>StaffId</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="bc" items="${allbc}">
 					<tr>
-						<td>${bc.bc_id}</td>
-						<td>${bc.bc_type}</td>
-						<td>${bc.resource_id}</td>
-						<td>${bc.booking_date}</td>
-						<td>${bc.fromdate}</td>
-						<td>${bc.todate}</td>
-						<td>${bc.staff_id}</td>
+						<td>${bcId}</td>
+						<td>${bc.bookingDate}</td>
+						<td>${bc.fromDate}</td>
+						<td>${bc.toDate}</td>
+						<td>${bc.resourceType}</td>
+						<td>${bc.resourceId}</td>
+						<td>${bc.staffId}</td>
 				</c:forEach>
 			</tbody>
 		</table>

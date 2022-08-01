@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,33 +12,33 @@
 		<div id="form">
 			<form:form action="updatebeds" method="post" modelAttribute="updatebed">
 					<div>
-					<label for="bed_id">Bed id</label>
+					<label for="bedId">Bed Id</label>
 					<div>
-						<form:input path="bed_id" />
+						<form:input path="bedId" />
 					</div>
 				</div>
 				<div>
-					<label for="bed_type">Bed Type </label>
+					<label for="bedType">Bed Type </label>
 					<div>
-						<form:input path="bed_type" />
+						<form:input path="bedType" />
 					</div>
 				</div>
 				<div>
-					<label for="bed_status">Bed Status</label>
+					<label for="bedStatus">Bed Status</label>
 					<div>
-						<form:input path="bed_status" />
+						<form:input path="bedStatus" />
 					</div>
 				</div>
 				<div>
-					<label for="bed_size">Bed Size</label>
+					<label for="bedSize">Bed Size</label>
 					<div>
-						<form:input path="bed_size" />
+						<form:input path="bedSize" />
 					</div>
 				</div>
 				<div>
-					<label for="room_id">Room id</label>
+					<label for="roomId">Room Id</label>
 					<div>
-						<form:input path="room_id" />
+						<form:input path="roomId" />
 					</div>
 				</div>
 				<div>

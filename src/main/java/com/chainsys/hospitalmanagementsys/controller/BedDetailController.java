@@ -25,7 +25,7 @@ public class BedDetailController {
 	public String getAllBedDetails(Model model) {
 		List<BedDetail> bd = bedservice.getAllBedDetails();
 		model.addAttribute("allbed", bd);
-		return "list-ambulance";
+		return "list-bed";
 	}
 
 	@GetMapping("/getbeds")
@@ -35,27 +35,27 @@ public class BedDetailController {
 		return "find-bed-id-form";
 	}
 
-	@GetMapping("/addform")
-	public String showAddForm(Model model) {
+	@GetMapping("/addbedform")
+	public String showAddBedForm(Model model) {
 		BedDetail bd = new BedDetail();
-		model.addAttribute("addbed", bd);
+		model.addAttribute("addBed", bd);
 		return "add-bed-form";
 	}
 
-	@PostMapping("/add")
-	public String addNewBed(@ModelAttribute("addbed") BedDetail bd) {
+	@PostMapping("/addbed")
+	public String addNewBed(@ModelAttribute("addBed") BedDetail bd) {
 		bedservice.save(bd);
 		return "redirect:/bed/list";
 	}
 
 	@GetMapping("/deletebed")
-	public String deleteAmbulance(@RequestParam("bed_id") int id) {
+	public String deleteBed(@RequestParam("bedId") int id) {
 		bedservice.deleteById(id);
 		return "redirect:/bed/list";
 	}
 
-	@GetMapping("/updateform")
-	public String showUpdateForm(@RequestParam("bed_id") int id, Model model) {
+	@GetMapping("/updatebedform")
+	public String showUpdateBedForm(@RequestParam("bedId") int id, Model model) {
 		BedDetail bd = bedservice.findById(id);
 		model.addAttribute("updatebed", bd);
 		return "update-bed-form";

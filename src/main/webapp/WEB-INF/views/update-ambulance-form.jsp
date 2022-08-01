@@ -14,21 +14,21 @@
 			<form:form action="updateambulance" method="post"
 				modelAttribute="updateamb">
 				<div>
-					<label for="register_id">Register id</label>
+					<label for="registerId">Register Id</label>
 					<div>
-						<form:input path="register_id" />
+						<form:input path="registerId" />
 					</div>
 				</div>
 				<div>
-					<label for="purchase_date">Purchase_date </label>
+					<label for="purchaseDate">Purchase Date </label>
 					<div>
-						<form:input path="purchase_date" />
+						<form:input path="purchaseDate" />
 					</div>
 				</div>
 				<div>
-					<label for="ambulance_model">Ambulance_model</label>
+					<label for="ambulanceModel">AmbulanceModel</label>
 					<div>
-						<form:input path="ambulance_model" />
+						<form:input path="ambulanceModel" />
 					</div>
 				</div>
 				<div>
@@ -38,9 +38,9 @@
 					</div>
 				</div>
 				<div>
-					<label for="staff_id">Staff id</label>
+					<label for="staffId">Staff Id</label>
 					<div>
-						<form:input path="staff_id" />
+						<form:input path="staffId" />
 					</div>
 				</div>
 				<div>

@@ -35,27 +35,27 @@ public class BookingCancellationDetailController {
 		return "find-bc-id-form";
 	}
 
-	@GetMapping("/addform")
-	public String showAddForm(Model model) {
+	@GetMapping("/addbcform")
+	public String showAddBookCancellationForm(Model model) {
 		BookingCancellationDetail bc = new BookingCancellationDetail();
-		model.addAttribute("addbc", bc);
+		model.addAttribute("addBc", bc);
 		return "add-bc-form";
 	}
 
-	@PostMapping("/add")
-	public String addNewBookingCancellation(@ModelAttribute("addbc") BookingCancellationDetail bc) {
+	@PostMapping("/addbc")
+	public String addNewBookingCancellation(@ModelAttribute("addBc") BookingCancellationDetail bc) {
 		bcservice.save(bc);
 		return "redirect:/bcdetail/list";
 	}
 
 	@GetMapping("/deletebc")
-	public String deleteAmbulance(@RequestParam("bc_id") int id) {
+	public String deleteBookCancellation(@RequestParam("bcId") int id) {
 		bcservice.deleteById(id);
 		return "redirect:/bcdetail/list";
 	}
 
-	@GetMapping("/updateform")
-	public String showUpdateForm(@RequestParam("bc_id") int id, Model model) {
+	@GetMapping("/updatebcform")
+	public String showUpdateBookCancellationForm(@RequestParam("bcId") int id, Model model) {
 		BookingCancellationDetail bc = bcservice.findById(id);
 		model.addAttribute("updatebc", bc);
 		return "update-bc-form";

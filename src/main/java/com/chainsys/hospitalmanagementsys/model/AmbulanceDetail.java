@@ -2,35 +2,41 @@ package com.chainsys.hospitalmanagementsys.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name="staff_details")
+@Table(name="AMBULANCE")
 public class AmbulanceDetail {
 	@Id
-	private int register_id ;
-	private Date purchase_date;
-	private String ambulance_model;
+	@Column(name="register_id")
+	private int registerId ;
+	@Column(name="purchase_date")
+	private Date purchaseDate;
+	@Column(name="ambulance_model")
+	private String ambulanceModel;
+	@Column(name="status")
 	private String status ;
-	private int staff_id ;
-	public int getRegister_id() {
-		return register_id;
+	@Column(name="staff_id")
+	private int staffId ;
+	public int getRegisterId() {
+		return registerId;
 	}
-	public void setRegister_id(int register_id) {
-		this.register_id = register_id;
+	public void setRegisterId(int registerId) {
+		this.registerId = registerId;
 	}
-	public Date getPurchase_date() {
-		return purchase_date;
+	public Date getPurchaseDate() {
+		return purchaseDate;
 	}
-	public void setPurchase_date(Date purchase_date) {
-		this.purchase_date = purchase_date;
+	public void setPurchaseDate(Date purchaseDate) {
+		this.purchaseDate = purchaseDate;
 	}
-	public String getAmbulance_model() {
-		return ambulance_model;
+	public String getAmbulanceModel() {
+		return ambulanceModel;
 	}
-	public void setAmbulance_model(String ambulance_model) {
-		this.ambulance_model = ambulance_model;
+	public void setAmbulanceModel(String ambulanceModel) {
+		this.ambulanceModel = ambulanceModel;
 	}
 	public String getStatus() {
 		return status;
@@ -38,10 +44,10 @@ public class AmbulanceDetail {
 	public void setStatus(String status) {
 		this.status = status;
 	}
-	public int getStaff_id() {
-		return staff_id;
+	public int getStaffId() {
+		return staffId;
 	}
-	public void setStaff_id(int staff_id) {
-		this.staff_id = staff_id;
+	public void setStaffId(int staffId) {
+		this.staffId = staffId;
 	}
 }

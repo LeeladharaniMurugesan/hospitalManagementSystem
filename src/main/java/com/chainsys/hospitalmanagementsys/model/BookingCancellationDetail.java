@@ -2,61 +2,71 @@ package com.chainsys.hospitalmanagementsys.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 @Entity
-@Table(name=" bookingCancellation_details")
+@Table(name="BOOKINGCANCELLATION_DETAILS")
 public class BookingCancellationDetail {
 	@Id
-	private int bc_id ;
-	private String bc_type ;
-	private int resource_id;
-	private Date booking_date ;
-	private Date fromdate ;
-	private Date todate ;
-	private int staff_id;
+	@Column(name="bc_id")
+	private int bcId ;
+	@Column(name="booking_date")
+	private Date bookingDate ;
+	@Column(name="fromdate")
+	private Date fromDate;
+	@Column(name="todate")
+	private Date toDate ;
+	@Column(name="resource_type")
+	private String resourceType;
+	@Column(name="resource_id")
+	private int resourceId;
+	@Column(name="staff_id")
+	private int staffId;
+	public int getBcId() {
+		return bcId;
+	}
+	public void setBcId(int bcId) {
+		this.bcId = bcId;
+	}
+	public Date getBookingDate() {
+		return bookingDate;
+	}
+	public void setBookingDate(Date bookingDate) {
+		this.bookingDate = bookingDate;
+	}
+	public Date getFromDate() {
+		return fromDate;
+	}
+	public void setFromDate(Date fromDate) {
+		this.fromDate = fromDate;
+	}
+	public Date getToDate() {
+		return toDate;
+	}
+	public void setToDate(Date toDate) {
+		this.toDate = toDate;
+	}
+	public String getResourceType() {
+		return resourceType;
+	}
+	public void setResourceType(String resourceType) {
+		this.resourceType = resourceType;
+	}
+	public int getResourceId() {
+		return resourceId;
+	}
+	public void setResourceId(int resourceId) {
+		this.resourceId = resourceId;
+	}
+	public int getStaffId() {
+		return staffId;
+	}
+	public void setStaffId(int staffId) {
+		this.staffId = staffId;
+	}
 	
-	public int getBc_id() {
-		return bc_id;
-	}
-	public void setBc_id(int bc_id) {
-		this.bc_id = bc_id;
-	}
-	public String getBc_type() {
-		return bc_type;
-	}
-	public void setBc_type(String bc_type) {
-		this.bc_type = bc_type;
-	}
-	public Date getBooking_date() {
-		return booking_date;
-	}
-	public void setBooking_date(Date booking_date) {
-		this.booking_date = booking_date;
-	}
-	public Date getFromdate() {
-		return fromdate;
-	}
-	public void setFromdate(Date fromdate) {
-		this.fromdate = fromdate;
-	}
-	public Date getTodate() {
-		return todate;
-	}
-	public void setTodate(Date todate) {
-		this.todate = todate;
-	}
-	public int getStaff_id() {
-		return staff_id;
-	}
-	public void setStaff_id(int staff_id) {
-		this.staff_id = staff_id;
-	}
-	public int getResource_id() {
-		return resource_id;
-	}
-	public void setResource_id(int resource_id) {
-		this.resource_id = resource_id;
-	}
+	
+	
 }

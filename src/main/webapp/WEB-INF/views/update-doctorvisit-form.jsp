@@ -30,15 +30,15 @@
 					</div>
 				</div>
 				<div>
-					<label for="fromTime ">From Time</label>
+					<label for="fromTime">From Time</label>
 					<div>
-						<form:input path="fromTime " />
+						<form:input path="fromTime" />
 					</div>
 				</div>
 				<div>
-					<label for="toTime ">To Time</label>
+					<label for="toTime">To Time</label>
 					<div>
-						<form:input path="toTime " />
+						<form:input path="toTime" />
 					</div>
 				</div>
 				<div>

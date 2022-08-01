@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,52 +10,52 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="add" method="post" modelAttribute="addbc">
+			<form:form action="addbc" method="post" modelAttribute="addBc">
 				<div>
-					<label for="bc_id">Booking and Cancellation Id</label>
+					<label for="bcId">Booking/Cancellation Id</label>
 					<div>
-						<form:input path="bc_id" />
+						<form:input path="bcId" />
 					</div>
 				</div>
 				<div>
-					<label for="bc_type">BC Type </label>
+					<label for="bookingDate">BookingDate </label>
 					<div>
-						<form:input path="bc_type" />
-					</div>
-				</div>
-				<div>
-					<label for="resource_id">Resource</label>
-					<div>
-						<form:input path="resource_id" />
-					</div>
-				</div>
-				<div>
-					<label for="booking_date">Booking Date</label>
-					<div>
-						<form:input path="booking_date" />
-					</div>
-				</div>
-				<div>
-					<label for="fromdate">From Date</label>
-					<div>
-						<form:input path="fromdate" />
-					</div>
-				</div>
-				<div>
-					<label for="todate">To Date</label>
-					<div>
-						<form:input path="todate" />
-					</div>
-				</div>
-				<div>
-					<label for="staff_id">Staff id</label>
-					<div>
-						<form:input path="staff_id" />
+						<form:input path="bookingDate" />
 					</div>
 				</div>
 				
 				<div>
-					<form:button>Add Booking and Cancellation</form:button>
+					<label for="fromDate">From Date</label>
+					<div>
+						<form:input path="fromDate" />
+					</div>
+				</div>
+				<div>
+					<label for="toDate">To Date</label>
+					<div>
+						<form:input path="toDate" />
+					</div>
+				</div>
+				<div>
+					<label for="resourceType">ResourceType</label>
+					<div>
+						<form:input path="resourceType" />
+					</div>
+				</div>
+				<div>
+					<label for="resourceId">ResourceId</label>
+					<div>
+						<form:input path="resourceId" />
+					</div>
+				</div>
+				<div>
+					<label for="staffId">Staff Id</label>
+					<div>
+						<form:input path="staffId" />
+					</div>
+				</div>
+				<div>
+					<form:button>Add Booking/Cancellation</form:button>
 				</div>
 			</form:form>
 		</div>

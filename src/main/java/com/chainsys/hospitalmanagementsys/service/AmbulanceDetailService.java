@@ -12,23 +12,23 @@ import com.chainsys.hospitalmanagementsys.repository.AmbulanceDetailRepository;
 public class AmbulanceDetailService {
 	@Autowired
 
-	AmbulanceDetailRepository rp;
+	AmbulanceDetailRepository ambulancedetail;
 
 	public List<AmbulanceDetail> getAllAmbulanceDetails() {
-		List<AmbulanceDetail> ad = rp.findAll();
+		List<AmbulanceDetail> ad = ambulancedetail.findAll();
 		return ad;
 	}
 
 	public AmbulanceDetail save(AmbulanceDetail ad) {
-		return rp.save(ad);
+		return ambulancedetail.save(ad);
 	}
 
 	public AmbulanceDetail findById(int id) {
-		return rp.findById(id);
+		return ambulancedetail.findById(id);
 	}
 
 	public void deleteById(int id) {
-		rp.deleteById(id);
+		ambulancedetail.deleteById(id);
 	}
 }
 

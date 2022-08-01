@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,21 +12,21 @@
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getambulance">
 					<div>
-					<label for="register_id">Register id</label>
+					<label for="registerId">RegisterId</label>
 					<div>
-						<form:input path="register_id" readonly="true"/>
+						<form:input path="registerId" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="purchase_date">Purchase_date </label>
+					<label for="purchaseDate">PurchaseDate </label>
 					<div>
-						<form:input path="purchase_date" readonly="true"/>
+						<form:input path="purchaseDate" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="ambulance_model">Ambulance_model</label>
+					<label for="ambulanceModel">AmbulanceModel</label>
 					<div>
-						<form:input path="ambulance_model" readonly="true"/>
+						<form:input path="ambulanceModel" readonly="true"/>
 					</div>
 				</div>
 				<div>
@@ -37,9 +36,9 @@
 					</div>
 				</div>
 				<div>
-					<label for="staff_id">Staff id</label>
+					<label for="staffId">Staff id</label>
 					<div>
-						<form:input path="staff_id" readonly="true"/>
+						<form:input path="staffId" readonly="true"/>
 					</div>
 				</div>
 			</form:form>

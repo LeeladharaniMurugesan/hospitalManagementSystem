@@ -12,21 +12,21 @@
 		<table>
 			<thead>
 				<tr>
-					<th>register_id</th>
-					<th>purchase_date</th>
-					<th>ambulance_model</th>
+					<th>registerId</th>
+					<th>purchaseDate</th>
+					<th>ambulanceModel</th>
 					<th>status</th>
-					<th>staff_id</th>
+					<th>staffId</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="amb" items="${allambulance}">
 					<tr>
-						<td>${amb.register_id}</td>
-						<td>${amb.purchase_date}</td>
-						<td>${amb.ambulance_model}</td>
+						<td>${amb.registerId}</td>
+						<td>${amb.purchaseDate}</td>
+						<td>${amb.ambulanceModel}</td>
 						<td>${amb.status}</td>
-						<td>${amb.staff_id}</td>
+						<td>${amb.staffId}</td>
 				</c:forEach>
 			</tbody>
 		</table>

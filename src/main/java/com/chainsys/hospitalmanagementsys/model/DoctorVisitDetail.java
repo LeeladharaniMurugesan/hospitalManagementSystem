@@ -22,6 +22,7 @@ public class DoctorVisitDetail {
 	private String toTime ;
 	@Column(name="dailyfees")
 	private String dailyFees;
+	
 	public int getsNo() {
 		return sNo;
 	}
@@ -59,5 +60,5 @@ public class DoctorVisitDetail {
 		this.dailyFees = dailyFees;
 	}
 	
-}	
 	
+}

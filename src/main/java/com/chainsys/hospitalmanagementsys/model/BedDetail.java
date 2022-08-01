@@ -1,46 +1,52 @@
 package com.chainsys.hospitalmanagementsys.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="bed_details")
+@Table(name="BED_DETAILS")
 public class BedDetail {
 	@Id
-	private int bed_id ;
-	private String bed_type ;
-	private String bed_status ;
-	private String bed_size ;
-	private int room_id;
-	public int getBed_id() {
-		return bed_id;
+	@Column(name="bed_id")
+	private int bedId ;
+	@Column(name="bed_type")
+	private String bedType ;
+	@Column(name="bed_status")
+	private String bedStatus ;
+	@Column(name="bed_size")
+	private String bedSize ;
+	@Column(name="room_id")
+	private int roomId;
+	public int getBedId() {
+		return bedId;
 	}
-	public void setBed_id(int bed_id) {
-		this.bed_id = bed_id;
+	public void setBedId(int bedId) {
+		this.bedId = bedId;
 	}
-	public String getBed_type() {
-		return bed_type;
+	public String getBedType() {
+		return bedType;
 	}
-	public void setBed_type(String bed_type) {
-		this.bed_type = bed_type;
+	public void setBedType(String bedType) {
+		this.bedType = bedType;
 	}
-	public String getBed_status() {
-		return bed_status;
+	public String getBedStatus() {
+		return bedStatus;
 	}
-	public void setBed_status(String bed_status) {
-		this.bed_status = bed_status;
+	public void setBedStatus(String bedStatus) {
+		this.bedStatus = bedStatus;
 	}
-	public String getBed_size() {
-		return bed_size;
+	public String getBedSize() {
+		return bedSize;
 	}
-	public void setBed_size(String bed_size) {
-		this.bed_size = bed_size;
+	public void setBedSize(String bedSize) {
+		this.bedSize = bedSize;
 	}
-	public int getRoom_id() {
-		return room_id;
+	public int getRoomId() {
+		return roomId;
 	}
-	public void setRoom_id(int room_id) {
-		this.room_id = room_id;
+	public void setRoomId(int roomId) {
+		this.roomId = roomId;
 	}
 }
