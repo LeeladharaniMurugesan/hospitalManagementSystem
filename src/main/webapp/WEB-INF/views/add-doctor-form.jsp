@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,11 +11,11 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="add" method="post" modelAttribute="adddoctor">
+			<form:form action="adddoctor" method="post" modelAttribute="adddoc">
 				<div>
-					<label for="staff_id">Staff id</label>
+					<label for="staffId">Staff Id</label>
 					<div>
-						<form:input path="staff_id" />
+						<form:input path="staffId" />
 					</div>
 				</div>
 				<div>
@@ -25,15 +25,15 @@
 					</div>
 				</div>
 				<div>
-					<label for="role_type">Role Type</label>
+					<label for="roleType">Role Type</label>
 					<div>
-						<form:input path="role_type" />
+						<form:input path="roleType" />
 					</div>
 				</div>
 				<div>
-					<label for="normal_fees">Normal Fees</label>
+					<label for="normalFees">Normal Fees</label>
 					<div>
-						<form:input path="normal_fees" />
+						<form:input path="normalFees" />
 					</div>
 				</div>
 				<div>

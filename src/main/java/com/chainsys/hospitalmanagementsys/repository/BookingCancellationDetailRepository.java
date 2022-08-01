@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.hospitalmanagementsys.pojo.BookingCancellationDetail;
+import com.chainsys.hospitalmanagementsys.model.BookingCancellationDetail;
 
 public interface BookingCancellationDetailRepository extends CrudRepository<BookingCancellationDetail, Integer> {
 	BookingCancellationDetail findById(int id);

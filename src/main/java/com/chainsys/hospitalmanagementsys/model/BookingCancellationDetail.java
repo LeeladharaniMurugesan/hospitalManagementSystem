@@ -1,4 +1,4 @@
-package com.chainsys.hospitalmanagementsys.pojo;
+package com.chainsys.hospitalmanagementsys.model;
 
 import java.util.Date;
 

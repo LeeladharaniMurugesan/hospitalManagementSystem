@@ -5,7 +5,7 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.hospitalmanagementsys.pojo.BedDetail;
+import com.chainsys.hospitalmanagementsys.model.BedDetail;
 import com.chainsys.hospitalmanagementsys.repository.BedDetailRepository;
 
 @Service

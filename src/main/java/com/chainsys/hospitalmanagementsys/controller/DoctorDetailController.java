@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.hospitalmanagementsys.pojo.DoctorDetail;
+import com.chainsys.hospitalmanagementsys.model.DoctorDetail;
 import com.chainsys.hospitalmanagementsys.service.DoctorDetailService;
 
 @Controller
@@ -35,27 +35,27 @@ public class DoctorDetailController {
 		return "find-doctor-id-form";
 	}
 
-	@GetMapping("/addform")
-	public String showAddForm(Model model) {
+	@GetMapping("/adddoctorform")
+	public String showAddDoctorForm(Model model) {
 		DoctorDetail dd = new DoctorDetail();
-		model.addAttribute("adddoctor", dd);
+		model.addAttribute("adddoc", dd);
 		return "add-doctor-form";
 	}
 
-	@PostMapping("/add")
-	public String addNewDoctor(@ModelAttribute("adddoctor") DoctorDetail dd) {
+	@PostMapping("/adddoctor")
+	public String addNewDoctor(@ModelAttribute("adddoc") DoctorDetail dd) {
 		docservice.save(dd);
 		return "redirect:/doctor/list";
 	}
 
-	@GetMapping("/deletedoc")
-	public String deleteDoctor(@RequestParam("staff_id") int id) {
+	@GetMapping("/deletedoctor")
+	public String deleteDoctor(@RequestParam("staffId") int id) {
 		docservice.deleteById(id);
 		return "redirect:/doctor/list";
 	}
 
-	@GetMapping("/updateform")
-	public String showUpdateForm(@RequestParam("staff_id") int id, Model model) {
+	@GetMapping("/updatedoctorform")
+	public String showUpdateDoctorForm(@RequestParam("staffId") int id, Model model) {
 		DoctorDetail dd = docservice.findById(id);
 		model.addAttribute("updatedoc", dd);
 		return "update-doctor-form";

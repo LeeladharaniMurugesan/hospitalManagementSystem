@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.hospitalmanagementsys.pojo.RoomDetail;
+import com.chainsys.hospitalmanagementsys.model.RoomDetail;
 
 public interface RoomDetailRepository extends CrudRepository<RoomDetail, Integer> {
 	RoomDetail findById(int id);

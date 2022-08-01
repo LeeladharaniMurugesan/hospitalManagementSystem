@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.hospitalmanagementsys.pojo.StaffDetail;
+import com.chainsys.hospitalmanagementsys.model.StaffDetail;
 
 
 public interface StaffDetailRepository extends CrudRepository<StaffDetail, Integer> {

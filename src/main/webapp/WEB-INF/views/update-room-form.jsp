@@ -11,35 +11,35 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="updaterooms" method="post" modelAttribute="updateroom">
+			<form:form action="updateroom" method="post" modelAttribute="updateRoom">
 				<div>
-					<label for="room_id">Room id</label>
+					<label for="roomId">Room Id</label>
 					<div>
-						<form:input path="room_id" />
+						<form:input path="roomId" />
 					</div>
 				</div>
 				<div>
-					<label for="room_type">Room Type</label>
+					<label for="roomType">Room Type</label>
 					<div>
-						<form:input path="room_type" />
+						<form:input path="roomType" />
 					</div>
 				</div>
 				<div>
-					<label for="room_location">Room Location</label>
+					<label for="roomLocation">Room Location</label>
 					<div>
-						<form:input path="room_location" />
+						<form:input path="roomLocation" />
 					</div>
 				</div>
 				<div>
-					<label for="numof_beds">Number of Beds</label>
+					<label for="numOfBeds">Number of Beds</label>
 					<div>
-						<form:input path="numof_beds" />
+						<form:input path="numOfBeds" />
 					</div>
 				</div>
 				<div>
-					<label for="room_status">Room Status</label>
+					<label for="roomStatus">Room Status</label>
 					<div>
-						<form:input path="room_status" />
+						<form:input path="roomStatus" />
 					</div>
 				</div>
 				<div>

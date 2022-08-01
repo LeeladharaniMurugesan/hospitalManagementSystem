@@ -4,7 +4,7 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.hospitalmanagementsys.pojo.AmbulanceDetail;
+import com.chainsys.hospitalmanagementsys.model.AmbulanceDetail;
 
 public interface AmbulanceDetailRepository extends CrudRepository<AmbulanceDetail, Integer> {
 	AmbulanceDetail findById(int id);

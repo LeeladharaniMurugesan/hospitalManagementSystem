@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,35 +10,35 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="" method="post" modelAttribute="getroom">
+			<form:form action="" method="post" modelAttribute="getRoom">
 				<div>
-					<label for="room_id">Room Id</label>
+					<label for="roomId">Room Id</label>
 					<div>
-						<form:input path="room_id" readonly="true"/>
+						<form:input path="roomId" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="room_type">Room Type</label>
+					<label for="roomType">Room Type</label>
 					<div>
-						<form:input path="room_type" readonly="true" />
+						<form:input path="roomType" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="room_location">Room Location</label>
+					<label for="roomLocation">Room Location</label>
 					<div>
-						<form:input path="room_location" readonly="true"/>
+						<form:input path="roomLocation" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="numof_beds">Number of Beds</label>
+					<label for="numOfBeds">Number of Beds</label>
 					<div>
-						<form:input path="numof_beds" readonly="true"/>
+						<form:input path="numOfBeds" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="room_status">Room Status</label>
+					<label for="roomStatus">Room Status</label>
 					<div>
-						<form:input path="room_status" readonly="true"/>
+						<form:input path="roomStatus" readonly="true"/>
 					</div>
 				</div>
 			</form:form>

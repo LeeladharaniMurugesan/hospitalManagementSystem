@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,17 +10,17 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="" method="post" modelAttribute="getstaff">
+			<form:form action="" method="post" modelAttribute="getStaff">
 				<div>
-					<label for="staff_id">Staff id</label>
+					<label for="staffId">Staff Id</label>
 					<div>
-						<form:input path="staff_id" readonly="true"/>
+						<form:input path="staffId" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="staff_name">Staff Name</label>
+					<label for="staffName">Staff Name</label>
 					<div>
-						<form:input path="staff_name" readonly="true" />
+						<form:input path="staffName" readonly="true" />
 					</div>
 				</div>
 				<div>
@@ -37,21 +36,15 @@
 					</div>
 				</div>
 				<div>
-					<label for="phone_no">phoneno</label>
+					<label for="phoneNo">PhoneNo</label>
 					<div>
-						<form:input path="phone_no" readonly="true"/>
+						<form:input path="phoneNo" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="email_id">Email_id</label>
+					<label for="emailId">EmailId</label>
 					<div>
-						<form:input path="email_id" readonly="true"/>
-					</div>
-				</div>
-				<div>
-					<label for="designation">Designation</label>
-					<div>
-						<form:input path="designation" readonly="true" />
+						<form:input path="emailId" readonly="true"/>
 					</div>
 				</div>
 				<div>
@@ -60,6 +53,13 @@
 						<form:input path="password" readonly="true" />
 					</div>
 				</div>
+				<div>
+					<label for="designation">Designation</label>
+					<div>
+						<form:input path="designation" readonly="true" />
+					</div>
+				</div>
+				
 			</form:form>
 		</div>
 	</div>

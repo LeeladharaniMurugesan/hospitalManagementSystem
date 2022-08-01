@@ -12,21 +12,21 @@
 		<table>
 			<thead>
 				<tr>
-					<th>Room_id</th>
-					<th>Room_type</th>
-					<th>Room_location</th>
-					<th>Numof_beds</th>
-					<th>Room_status</th>
+					<th>Room Id</th>
+					<th>Room Type</th>
+					<th>Room Location</th>
+					<th>NumberOf Beds</th>
+					<th>Room Status</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="room" items="${allroom}">
 					<tr>
-						<td>${room.room_id}</td>
-						<td>${room.room_type}</td>
-						<td>${room.room_location}</td>
-						<td>${room.numof_beds}</td>
-						<td>${room.room_status}</td>
+						<td>${room.roomId}</td>
+						<td>${room.roomType}</td>
+						<td>${room.roomLocation}</td>
+						<td>${room.numOfBeds}</td>
+						<td>${room.roomStatus}</td>
 				</c:forEach>
 			</tbody>
 		</table>

@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.hospitalmanagementsys.pojo.OperationTheatreDetail;
+import com.chainsys.hospitalmanagementsys.model.OperationTheatreDetail;
 import com.chainsys.hospitalmanagementsys.service.OperationTheatreDetailService;
 
 @Controller
@@ -23,45 +23,45 @@ public class OperationTheatreDetailController {
 
 	public String getAllOperationTheatreDetails(Model model) {
 		List<OperationTheatreDetail> ot = optservice.getAllOperationTheatreDetails();
-		model.addAttribute("allotd", ot);
+		model.addAttribute("alloperationTheatre", ot);
 		return "list-operationTheatre";
 	}
 
-	@GetMapping("/getOtd")
+	@GetMapping("/getoperationtheatre")
 	public String getOperationTheatre(@RequestParam("id") int id, Model model) {
 		OperationTheatreDetail ot = optservice.findById(id);
-		model.addAttribute("getotd", ot);
+		model.addAttribute("getOperationTheatre", ot);
 		return "find-otd-id-form";
 	}
 
-	@GetMapping("/addform")
-	public String showAddForm(Model model) {
+	@GetMapping("/addoperationtheatreform")
+	public String showAddOperationTheatreForm(Model model) {
 		OperationTheatreDetail ot = new OperationTheatreDetail();
-		model.addAttribute("addotd", ot);
+		model.addAttribute("addOperationTheatre", ot);
 		return "add-otd-form";
 	}
 
-	@PostMapping("/add")
-	public String addNewOperationTheatre(@ModelAttribute("addotd") OperationTheatreDetail ot) {
+	@PostMapping("/addoperationtheatre")
+	public String addNewOperationTheatre(@ModelAttribute("addOperationTheatre") OperationTheatreDetail ot) {
 		optservice.save(ot);
 		return "redirect:/operationTheatre/list";
 	}
 
-	@GetMapping("/deleteOtd")
-	public String deleteOperationTheatre(@RequestParam("theatre_id") int id) {
+	@GetMapping("/deleteoperationtheatre")
+	public String deleteOperationTheatre(@RequestParam("theatreId") int id) {
 		optservice.deleteById(id);
 		return "redirect:/operationTheatre/list";
 	}
 
-	@GetMapping("/updateform")
-	public String showUpdateForm(@RequestParam("theatre_id") int id, Model model) {
+	@GetMapping("/updateoperationtheatreform")
+	public String showUpdateOperationTheatreForm(@RequestParam("theatreId") int id, Model model) {
 		OperationTheatreDetail ot = optservice.findById(id);
-		model.addAttribute("updateotd", ot);
+		model.addAttribute("updateOperationTheatre", ot);
 		return "update-otd-form";
 	}
 
-	@PostMapping("updateopt")
-	public String updateOperationTheatre(@ModelAttribute("updateotd") OperationTheatreDetail ot) {
+	@PostMapping("updateopeartiontheatre")
+	public String updateOperationTheatre(@ModelAttribute("updateOperationTheatre") OperationTheatreDetail ot) {
 		optservice.save(ot);
 		return "redirect:/operationTheatre/list";
 	}

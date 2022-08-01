@@ -12,19 +12,19 @@
 		<table>
 			<thead>
 				<tr>
-					<th>staff_id</th>
-					<th>speciality</th>
-					<th>role_type</th>
-					<th>normal_fees</th>
+					<th>Staff Id</th>
+					<th>Speciality</th>
+					<th>Role Type</th>
+					<th>Normal Fees</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="doc" items="${alldoctor}">
 					<tr>
-						<td>${doc.staff_id}</td>
+						<td>${doc.staffId}</td>
 						<td>${doc.speciality}</td>
-						<td>${doc.role_type}</td>
-						<td>${doc.normal_fees}</td>
+						<td>${doc.roleType}</td>
+						<td>${doc.normalFees}</td>
 				</c:forEach>
 			</tbody>
 		</table>

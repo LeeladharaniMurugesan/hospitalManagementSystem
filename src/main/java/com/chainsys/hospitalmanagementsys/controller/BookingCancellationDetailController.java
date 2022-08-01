@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.hospitalmanagementsys.pojo.BookingCancellationDetail;
+import com.chainsys.hospitalmanagementsys.model.BookingCancellationDetail;
 import com.chainsys.hospitalmanagementsys.service.BookingCancellationDetailService;
 
 @Controller

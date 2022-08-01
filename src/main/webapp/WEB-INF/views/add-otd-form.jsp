@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,29 +10,29 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="add" method="post" modelAttribute="addotd">
+			<form:form action="addoperationtheatre" method="post" modelAttribute="addOperationTheatre">
 				<div>
-					<label for="theatre_id">Theatre id</label>
+					<label for="theatreId">Theatre Id</label>
 					<div>
-						<form:input path="theatre_id" />
+						<form:input path="theatreId" />
 					</div>
 				</div>
 				<div>
-					<label for="theatre_type">Theatre Type</label>
+					<label for="theatreType">Theatre Type</label>
 					<div>
-						<form:input path="theatre_type" />
+						<form:input path="theatreType" />
 					</div>
 				</div>
 				<div>
-					<label for="theatre_location">Theatre Location</label>
+					<label for="theatreLocation">Theatre Location</label>
 					<div>
-						<form:input path="theatre_location" />
+						<form:input path="theatreLocation" />
 					</div>
 				</div>
 				<div>
-					<label for="theatre_status">Theatre Status</label>
+					<label for="theatreStatus">Theatre Status</label>
 					<div>
-						<form:input path="theatre_status" />
+						<form:input path="theatreStatus" />
 					</div>
 				</div>
 				<div>

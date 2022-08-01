@@ -12,19 +12,19 @@
 		<table>
 			<thead>
 				<tr>
-					<th>Theatre_id</th>
-					<th>Theatre_Type</th>
-					<th>Theatre_location</th>
-					<th>Theatre_status</th>
+					<th>TheatreId</th>
+					<th>TheatreType</th>
+					<th>TheatreLocation</th>
+					<th>TheatreStatus</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="opd" items="${allotd}">
+				<c:forEach var="opd" items="${alloperationTheatre}">
 					<tr>
-						<td>${opd.theatre_id}</td>
-						<td>${opd.theatre_type}</td>
-						<td>${opd.theatre_location}</td>
-						<td>${opd.theatre_status}</td>
+						<td>${opd.theatreId}</td>
+						<td>${opd.theatreType}</td>
+						<td>${opd.theatreLocation}</td>
+						<td>${opd.theatreStatus}</td>
 				</c:forEach>
 			</tbody>
 		</table>

@@ -5,28 +5,28 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.chainsys.hospitalmanagementsys.pojo.RoomDetail;
+import com.chainsys.hospitalmanagementsys.model.RoomDetail;
 import com.chainsys.hospitalmanagementsys.repository.RoomDetailRepository;
 
 @Service
 public class RoomDetailService {
 	@Autowired
-	RoomDetailRepository rep;
+	RoomDetailRepository roomdetail;
 
 	public List<RoomDetail> getAllRoomDetails() {
-		List<RoomDetail> rt = rep.findAll();
-		return rt;
+		List<RoomDetail> rd = roomdetail.findAll();
+		return rd;
 	}
 
-	public RoomDetail save(RoomDetail rt) {
-		return rep.save(rt);
+	public RoomDetail save(RoomDetail rd) {
+		return roomdetail.save(rd);
 	}
 
 	public RoomDetail findById(int id) {
-		return rep.findById(id);
+		return roomdetail.findById(id);
 	}
 
 	public void deleteById(int id) {
-		rep.deleteById(id);
+		roomdetail.deleteById(id);
 	}
 }

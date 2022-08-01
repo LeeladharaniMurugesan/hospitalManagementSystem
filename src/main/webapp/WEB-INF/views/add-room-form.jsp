@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -11,35 +10,35 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="add" method="post" modelAttribute="addroom">
+			<form:form action="addroom" method="post" modelAttribute="addRoom">
 				<div>
-					<label for="room_id">Room id</label>
+					<label for="roomId">Room Id</label>
 					<div>
-						<form:input path="room_id" />
+						<form:input path="roomId" />
 					</div>
 				</div>
 				<div>
-					<label for="room_type">Room Type</label>
+					<label for="roomType">Room Type</label>
 					<div>
-						<form:input path="room_type" />
+						<form:input path="roomType" />
 					</div>
 				</div>
 				<div>
-					<label for="room_location">Room Location</label>
+					<label for="roomLocation">Room Location</label>
 					<div>
-						<form:input path="room_location" />
+						<form:input path="roomLocation" />
 					</div>
 				</div>
 				<div>
-					<label for="numof_beds">Number of beds</label>
+					<label for="numOfBeds">Number of beds</label>
 					<div>
-						<form:input path="numof_beds" />
+						<form:input path="numOfBeds" />
 					</div>
 				</div>
 				<div>
-					<label for="room_status">Room Status</label>
+					<label for="roomStatus">Room Status</label>
 					<div>
-						<form:input path="room_status" />
+						<form:input path="roomStatus" />
 					</div>
 				</div>
 				<div>
