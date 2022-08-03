@@ -23,28 +23,28 @@ public class DoctorDetailController {
 	@GetMapping("/list")
 
 	public String getAllDoctorDetails(Model model) {
-		List<DoctorDetail> dd = docservice.getAllDoctorDetails();
-		model.addAttribute("alldoctor", dd);
+		List<DoctorDetail> doctordetail = docservice.getAllDoctorDetails();
+		model.addAttribute("alldoctor", doctordetail);
 		return "list-doctor";
 	}
 
 	@GetMapping("/getdoctor")
 	public String getDoctor(@RequestParam("id") int id, Model model) {
-		DoctorDetail dd = docservice.findById(id);
-		model.addAttribute("getdoc", dd);
+		DoctorDetail doctordetail = docservice.findById(id);
+		model.addAttribute("getdoc", doctordetail);
 		return "find-doctor-id-form";
 	}
 
-	@GetMapping("/adddoctorform")
-	public String showAddDoctorForm(Model model) {
-		DoctorDetail dd = new DoctorDetail();
-		model.addAttribute("adddoc", dd);
-		return "add-doctor-form";
+	@GetMapping("/adoctordetaildoctorform")
+	public String showAdoctordetailDoctorForm(Model model) {
+		DoctorDetail doctordetail = new DoctorDetail();
+		model.addAttribute("adoctordetaildoc", doctordetail);
+		return "adoctordetail-doctor-form";
 	}
 
-	@PostMapping("/adddoctor")
-	public String addNewDoctor(@ModelAttribute("adddoc") DoctorDetail dd) {
-		docservice.save(dd);
+	@PostMapping("/adoctordetaildoctor")
+	public String adoctordetailNewDoctor(@ModelAttribute("adoctordetaildoc") DoctorDetail doctordetail) {
+		docservice.save(doctordetail);
 		return "redirect:/doctor/list";
 	}
 
@@ -56,14 +56,14 @@ public class DoctorDetailController {
 
 	@GetMapping("/updatedoctorform")
 	public String showUpdateDoctorForm(@RequestParam("staffId") int id, Model model) {
-		DoctorDetail dd = docservice.findById(id);
-		model.addAttribute("updatedoc", dd);
+		DoctorDetail doctordetail = docservice.findById(id);
+		model.addAttribute("updatedoc", doctordetail);
 		return "update-doctor-form";
 	}
 
 	@PostMapping("updatedoctor")
-	public String updateDoctor(@ModelAttribute("updatedoc") DoctorDetail dd) {
-		docservice.save(dd);
+	public String updateDoctor(@ModelAttribute("updatedoc") DoctorDetail doctordetail) {
+		docservice.save(doctordetail);
 		return "redirect:/doctor/list";
 	}
 }

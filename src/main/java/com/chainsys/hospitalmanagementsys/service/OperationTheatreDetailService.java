@@ -12,22 +12,22 @@ import com.chainsys.hospitalmanagementsys.repository.OperationTheatreDetailRepos
 public class OperationTheatreDetailService {
 	@Autowired
 
-	OperationTheatreDetailRepository operationtheatre;
+	OperationTheatreDetailRepository operationTheatreRepository;
 
 	public List<OperationTheatreDetail> getAllOperationTheatreDetails() {
-		List<OperationTheatreDetail> opt = operationtheatre.findAll();
-		return opt;
+		List<OperationTheatreDetail> operationtheatre =operationTheatreRepository.findAll();
+		return operationtheatre;
 	}
 
-	public OperationTheatreDetail save(OperationTheatreDetail ot) {
-		return operationtheatre.save(ot);
+	public OperationTheatreDetail save(OperationTheatreDetail operationtheatre) {
+		return operationTheatreRepository.save(operationtheatre);
 	}
 
 	public OperationTheatreDetail findById(int id) {
-		return operationtheatre.findById(id);
+		return operationTheatreRepository.findById(id);
 	}
 
 	public void deleteById(int id) {
-		operationtheatre.deleteById(id);
+		operationTheatreRepository.deleteById(id);
 	}
 }

@@ -12,23 +12,23 @@ import com.chainsys.hospitalmanagementsys.repository.BookingCancellationDetailRe
 public class BookingCancellationDetailService {
 	@Autowired
 
-	BookingCancellationDetailRepository bookingcancellation;
+	BookingCancellationDetailRepository bookingCancellationRepository;
 
 	public List<BookingCancellationDetail> getAllBookingCancellationDetails() {
-		List<BookingCancellationDetail> bcd = bookingcancellation.findAll();
-		return bcd;
+		List<BookingCancellationDetail> bookcancel = bookingCancellationRepository.findAll();
+		return bookcancel;
 	}
 
-	public BookingCancellationDetail save(BookingCancellationDetail ad) {
-		return bookingcancellation.save(ad);
+	public BookingCancellationDetail save(BookingCancellationDetail bookcancel) {
+		return bookingCancellationRepository.save(bookcancel);
 	}
 
 	public BookingCancellationDetail findById(int id) {
-		return bookingcancellation.findById(id);
+		return bookingCancellationRepository.findById(id);
 	}
 
 	public void deleteById(int id) {
-		bookingcancellation.deleteById(id);
+		bookingCancellationRepository.deleteById(id);
 	}
 }
 

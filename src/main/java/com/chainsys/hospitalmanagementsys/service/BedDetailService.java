@@ -12,23 +12,23 @@ import com.chainsys.hospitalmanagementsys.repository.BedDetailRepository;
 public class BedDetailService {
 	@Autowired
 
-	BedDetailRepository beddetail;
+	BedDetailRepository bedDetailRepository;
 
 	public List<BedDetail> getAllBedDetails() {
-		List<BedDetail> bd = beddetail.findAll();
-		return bd;
+		List<BedDetail> beddetail = bedDetailRepository.findAll();
+		return beddetail;
 	}
 
-	public BedDetail save(BedDetail bd) {
-		return beddetail.save(bd);
+	public BedDetail save(BedDetail beddetail) {
+		return bedDetailRepository.save(beddetail);
 	}
 
 	public BedDetail findById(int id) {
-		return beddetail.findById(id);
+		return bedDetailRepository.findById(id);
 	}
 
 	public void deleteById(int id) {
-		beddetail.deleteById(id);
+		bedDetailRepository.deleteById(id);
 	}
 }
 

@@ -2,7 +2,10 @@ package com.chainsys.hospitalmanagementsys.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,6 +20,16 @@ public class DoctorDetail {
 	private String roleType;
 	@Column(name="normal_fees")
 	private int normalFees ;
+	
+	@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="staff_id" , nullable=false,insertable=false,updatable=false)
+    private StaffDetail staffdetail;
+    public StaffDetail getStaffdetail() {
+		return staffdetail;
+	}
+	public void setStaffdetail(StaffDetail staffdetail) {
+		this.staffdetail = staffdetail;
+	}
 	public int getStaffId() {
 		return staffId;
 	}

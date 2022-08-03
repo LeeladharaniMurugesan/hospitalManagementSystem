@@ -10,7 +10,7 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="addbed" method="post" modelAttribute="addBed">
+			<form:form action="addbed" method="post" modelAttribute="addbeds">
 				<div>
 					<label for="bedId">Bed Id</label>
 					<div>

@@ -10,7 +10,7 @@
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="addbc" method="post" modelAttribute="addBc">
+			<form:form action="addbc" method="post" modelAttribute="addbookcancel">
 				<div>
 					<label for="bcId">Booking/Cancellation Id</label>
 					<div>

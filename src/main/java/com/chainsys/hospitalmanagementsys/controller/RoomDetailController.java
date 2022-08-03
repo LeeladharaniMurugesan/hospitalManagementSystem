@@ -19,45 +19,45 @@ import com.chainsys.hospitalmanagementsys.service.RoomDetailService;
 @RequestMapping("/room")
 public class RoomDetailController {
 	@Autowired
-	RoomDetailService rdservice;
+	RoomDetailService roomdetailservice;
 	@GetMapping("/list")
 	public String getAllRoomDetail(Model model) {
-		List<RoomDetail> rd =rdservice.getAllRoomDetails();
-		model.addAttribute("allroom",rd);
+		List<RoomDetail> roomdetail =roomdetailservice.getAllRoomDetails();
+		model.addAttribute("allroom",roomdetail);
 		return "list-room";
 	}
 	@GetMapping("/getroom")
 	public String getRoom(@RequestParam("id") int id,Model model) {
-		RoomDetail rd =rdservice.findById(id);
-		model.addAttribute("getRoom",rd);
+		RoomDetail roomdetail =roomdetailservice.findById(id);
+		model.addAttribute("getrooms",roomdetail);
 		return "find-room-id-form";
 	}
 	@GetMapping("/addroomform")
 	public String showAddForm(Model model) {
-		RoomDetail rd =new RoomDetail();
-		model.addAttribute("addRoom",rd);
+		RoomDetail roomdetail =new RoomDetail();
+		model.addAttribute("addrooms",roomdetail);
 		return "add-room-form";
 	}
 	@PostMapping("/addroom")
-	public String addNewRoom(@ModelAttribute("addRoom") RoomDetail rd) {
-		rdservice.save(rd);
+	public String addNewRoom(@ModelAttribute("addrooms") RoomDetail roomdetail) {
+		roomdetailservice.save(roomdetail);
 		return "redirect:/room/list";
 	}
 	@GetMapping("/deleteroom")
 	public String deleteRoom(@RequestParam("roomId") int id) {
-		rdservice.deleteById(id);
+		roomdetailservice.deleteById(id);
 		return "redirect:/room/list";
 	}
 	@GetMapping("/updateroomform")
 	public String showUpdateRoomForm(@RequestParam("roomId") int id, Model model) {
-		RoomDetail rd = rdservice.findById(id);
-		model.addAttribute("updateRoom", rd);
+		RoomDetail roomdetail = roomdetailservice.findById(id);
+		model.addAttribute("updaterooms", roomdetail);
 		return "update-room-form";
 	}
 
 	@PostMapping("updateroom")
-	public String updateRoom(@ModelAttribute("updateRoom") RoomDetail rd) {
-		rdservice.save(rd);
+	public String updateRoom(@ModelAttribute("updaterooms") RoomDetail roomdetail) {
+		roomdetailservice.save(roomdetail);
 		return "redirect:/room/list";
 	}
 

@@ -10,7 +10,7 @@ import com.chainsys.hospitalmanagementsys.model.StaffDetail;
 public interface StaffDetailRepository extends CrudRepository<StaffDetail, Integer> {
 	StaffDetail findById(int id);
 
-	StaffDetail save(StaffDetail sd);
+	StaffDetail save(StaffDetail staffDetail);
 
 	void deleteById(int id);
 

@@ -18,52 +18,52 @@ import com.chainsys.hospitalmanagementsys.service.AmbulanceDetailService;
 @RequestMapping("/ambulance")
 public class AmbulanceDetailController {
 	@Autowired
-	AmbulanceDetailService ambservice;
+	AmbulanceDetailService ambServiceRepository;
 
 	@GetMapping("/list")
 
 	public String getAllAmbulanceDetails(Model model) {
-		List<AmbulanceDetail> ad = ambservice.getAllAmbulanceDetails();
-		model.addAttribute("allambulance", ad);
+		List<AmbulanceDetail> ambulancedetail =ambServiceRepository.getAllAmbulanceDetails();
+		model.addAttribute("allambulance", ambulancedetail);
 		return "list-ambulance";
 	}
 
 	@GetMapping("/getambulance")
 	public String getAmbulance(@RequestParam("id") int id, Model model) {
-		AmbulanceDetail ad = ambservice.findById(id);
-		model.addAttribute("getambulance", ad);
+		AmbulanceDetail ambulancedetail = ambServiceRepository.findById(id);
+		model.addAttribute("getambulance", ambulancedetail);
 		return "find-ambulance-id-form";
 	}
 
 	@GetMapping("/addambulanceform")
 	public String showAddAmbulanceForm(Model model) {
-		AmbulanceDetail ad = new AmbulanceDetail();
-		model.addAttribute("addAmbulance", ad);
+		AmbulanceDetail ambulancedetail = new AmbulanceDetail();
+		model.addAttribute("addambulance", ambulancedetail);
 		return "add-ambulance-form";
 	}
 
-	@PostMapping("/addambulance")
-	public String addNewAmbulance(@ModelAttribute("addAmbulance") AmbulanceDetail ad) {
-		ambservice.save(ad);
+	@PostMapping("/addambulances")
+	public String addNewAmbulance(@ModelAttribute("addambulance") AmbulanceDetail ambulancedetail) {
+		ambServiceRepository.save(ambulancedetail);
 		return "redirect:/ambulance/list";
 	}
 
 	@GetMapping("/deleteambulance")
 	public String deleteAmbulance(@RequestParam("registerId") int id) {
-		ambservice.deleteById(id);
+		ambServiceRepository.deleteById(id);
 		return "redirect:/ambulance/list";
 	}
 
 	@GetMapping("/updateambulanceform")
 	public String showUpdateForm(@RequestParam("registerId") int id, Model model) {
-		AmbulanceDetail ad = ambservice.findById(id);
-		model.addAttribute("updateamb", ad);
+		AmbulanceDetail ambulancedetail = ambServiceRepository.findById(id);
+		model.addAttribute("updateamb", ambulancedetail);
 		return "update-ambulance-form";
 	}
 
 	@PostMapping("updateambulance")
-	public String updateAmbulance(@ModelAttribute("updateamb") AmbulanceDetail ad) {
-		ambservice.save(ad);
+	public String updateAmbulance(@ModelAttribute("updateamb") AmbulanceDetail ambulancedetail) {
+		ambServiceRepository.save(ambulancedetail);
 		return "redirect:/ambulance/list";
 	}
 }

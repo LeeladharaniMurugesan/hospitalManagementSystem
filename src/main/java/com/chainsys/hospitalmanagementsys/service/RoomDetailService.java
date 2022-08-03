@@ -11,22 +11,22 @@ import com.chainsys.hospitalmanagementsys.repository.RoomDetailRepository;
 @Service
 public class RoomDetailService {
 	@Autowired
-	RoomDetailRepository roomdetail;
+	RoomDetailRepository roomDetailRepository;
 
 	public List<RoomDetail> getAllRoomDetails() {
-		List<RoomDetail> rd = roomdetail.findAll();
-		return rd;
+		List<RoomDetail> roomdetail = roomDetailRepository.findAll();
+		return roomdetail;
 	}
 
-	public RoomDetail save(RoomDetail rd) {
-		return roomdetail.save(rd);
+	public RoomDetail save(RoomDetail roomdetail) {
+		return roomDetailRepository.save(roomdetail);
 	}
 
 	public RoomDetail findById(int id) {
-		return roomdetail.findById(id);
+		return roomDetailRepository.findById(id);
 	}
 
 	public void deleteById(int id) {
-		roomdetail.deleteById(id);
+		roomDetailRepository.deleteById(id);
 	}
 }

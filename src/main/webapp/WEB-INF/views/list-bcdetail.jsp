@@ -22,7 +22,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="bc" items="${allbc}">
+				<c:forEach var="bc" items="${allbookcancel}">
 					<tr>
 						<td>${bcId}</td>
 						<td>${bc.bookingDate}</td>

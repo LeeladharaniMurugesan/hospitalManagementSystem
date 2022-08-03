@@ -9,7 +9,7 @@ import com.chainsys.hospitalmanagementsys.model.BookingCancellationDetail;
 public interface BookingCancellationDetailRepository extends CrudRepository<BookingCancellationDetail, Integer> {
 	BookingCancellationDetail findById(int id);
 
-	BookingCancellationDetail save(BookingCancellationDetail bc);
+	BookingCancellationDetail save(BookingCancellationDetail bookcancel);
 
 	void deleteById(int id);
 

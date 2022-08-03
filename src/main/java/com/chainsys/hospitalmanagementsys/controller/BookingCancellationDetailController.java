@@ -18,52 +18,52 @@ import com.chainsys.hospitalmanagementsys.service.BookingCancellationDetailServi
 @RequestMapping("/bcdetail")
 public class BookingCancellationDetailController {
 	@Autowired
-	BookingCancellationDetailService bcservice;
+	BookingCancellationDetailService bookCancelService;
 
 	@GetMapping("/list")
 
 	public String getAllBookingCancellationDetails(Model model) {
-		List<BookingCancellationDetail> bc = bcservice.getAllBookingCancellationDetails();
-		model.addAttribute("allbc", bc);
+		List<BookingCancellationDetail> bookcancel = bookCancelService.getAllBookingCancellationDetails();
+		model.addAttribute("allbookcancel", bookcancel);
 		return "list-bcdetail";
 	}
 
 	@GetMapping("/getbc")
 	public String getBookingCancellation(@RequestParam("id") int id, Model model) {
-		BookingCancellationDetail bc = bcservice.findById(id);
-		model.addAttribute("getbcdetail", bc);
+		BookingCancellationDetail bookcancel = bookCancelService.findById(id);
+		model.addAttribute("getbookcanceldetail", bookcancel);
 		return "find-bc-id-form";
 	}
 
 	@GetMapping("/addbcform")
 	public String showAddBookCancellationForm(Model model) {
-		BookingCancellationDetail bc = new BookingCancellationDetail();
-		model.addAttribute("addBc", bc);
+		BookingCancellationDetail bookcancel = new BookingCancellationDetail();
+		model.addAttribute("addbookcancel",bookcancel);
 		return "add-bc-form";
 	}
 
 	@PostMapping("/addbc")
-	public String addNewBookingCancellation(@ModelAttribute("addBc") BookingCancellationDetail bc) {
-		bcservice.save(bc);
+	public String addNewBookingCancellation(@ModelAttribute("addbookcancel") BookingCancellationDetail bookcancel) {
+		bookCancelService.save(bookcancel);
 		return "redirect:/bcdetail/list";
 	}
 
 	@GetMapping("/deletebc")
 	public String deleteBookCancellation(@RequestParam("bcId") int id) {
-		bcservice.deleteById(id);
+		bookCancelService.deleteById(id);
 		return "redirect:/bcdetail/list";
 	}
 
 	@GetMapping("/updatebcform")
 	public String showUpdateBookCancellationForm(@RequestParam("bcId") int id, Model model) {
-		BookingCancellationDetail bc = bcservice.findById(id);
-		model.addAttribute("updatebc", bc);
+		BookingCancellationDetail bookcancel = bookCancelService.findById(id);
+		model.addAttribute("updatebookcancel", bookcancel);
 		return "update-bc-form";
 	}
 
 	@PostMapping("updatebcdetail")
-	public String updateBookingCancellationDetail(@ModelAttribute("updatebc") BookingCancellationDetail bc) {
-		bcservice.save(bc);
+	public String updateBookingCancellationDetail(@ModelAttribute("updatebookcancel") BookingCancellationDetail bookcancel) {
+		bookCancelService.save(bookcancel);
 		return "redirect:/bcdetail/list";
 	}
 }

@@ -11,7 +11,7 @@
 	<div id="root">
 		<div id="form">
 			<form:form action="updatebcdetail" method="post"
-				modelAttribute="updatebc">
+				modelAttribute="updatebookcancel">
 				<div>
 					<label for="bcId">Booking/Cancellation Id</label>
 					<div>

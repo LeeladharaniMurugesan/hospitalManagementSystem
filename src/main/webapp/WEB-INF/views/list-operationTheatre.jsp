@@ -19,7 +19,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="opd" items="${alloperationTheatre}">
+				<c:forEach var="opd" items="${alloperationtheatre}">
 					<tr>
 						<td>${opd.theatreId}</td>
 						<td>${opd.theatreType}</td>

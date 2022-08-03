@@ -9,7 +9,7 @@ import com.chainsys.hospitalmanagementsys.model.BedDetail;
 public interface BedDetailRepository extends CrudRepository<BedDetail, Integer> {
 	BedDetail findById(int id);
 
-	BedDetail save(BedDetail bd);
+	BedDetail save(BedDetail beddetail);
 
 	void deleteById(int id);
 

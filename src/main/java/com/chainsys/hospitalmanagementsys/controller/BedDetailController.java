@@ -18,52 +18,52 @@ import com.chainsys.hospitalmanagementsys.service.BedDetailService;
 @RequestMapping("/bed")
 public class BedDetailController {
 	@Autowired
-	BedDetailService bedservice;
+	BedDetailService bedServiceRepository;
 
 	@GetMapping("/list")
 
 	public String getAllBedDetails(Model model) {
-		List<BedDetail> bd = bedservice.getAllBedDetails();
-		model.addAttribute("allbed", bd);
+		List<BedDetail> beddetail =bedServiceRepository.getAllBedDetails();
+		model.addAttribute("allbed", beddetail);
 		return "list-bed";
 	}
 
 	@GetMapping("/getbeds")
 	public String getBed(@RequestParam("id") int id, Model model) {
-		BedDetail bd = bedservice.findById(id);
-		model.addAttribute("getbed", bd);
+		BedDetail beddetail = bedServiceRepository.findById(id);
+		model.addAttribute("getbed",beddetail);
 		return "find-bed-id-form";
 	}
 
 	@GetMapping("/addbedform")
 	public String showAddBedForm(Model model) {
-		BedDetail bd = new BedDetail();
-		model.addAttribute("addBed", bd);
+		BedDetail beddetail = new BedDetail();
+		model.addAttribute("addbeds", beddetail);
 		return "add-bed-form";
 	}
 
 	@PostMapping("/addbed")
-	public String addNewBed(@ModelAttribute("addBed") BedDetail bd) {
-		bedservice.save(bd);
+	public String addNewBed(@ModelAttribute("addbeds") BedDetail beddetail) {
+		bedServiceRepository.save(beddetail);
 		return "redirect:/bed/list";
 	}
 
 	@GetMapping("/deletebed")
 	public String deleteBed(@RequestParam("bedId") int id) {
-		bedservice.deleteById(id);
+		bedServiceRepository.deleteById(id);
 		return "redirect:/bed/list";
 	}
 
 	@GetMapping("/updatebedform")
 	public String showUpdateBedForm(@RequestParam("bedId") int id, Model model) {
-		BedDetail bd = bedservice.findById(id);
-		model.addAttribute("updatebed", bd);
+		BedDetail beddetail = bedServiceRepository.findById(id);
+		model.addAttribute("updatebed", beddetail);
 		return "update-bed-form";
 	}
 
 	@PostMapping("updatebeds")
-	public String updateAmbulance(@ModelAttribute("updatebed") BedDetail bd) {
-		bedservice.save(bd);
+	public String updateAmbulance(@ModelAttribute("updatebed") BedDetail beddetail) {
+		bedServiceRepository.save(beddetail);
 		return "redirect:/bed/list";
 	}
 }

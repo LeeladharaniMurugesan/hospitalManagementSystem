@@ -9,7 +9,7 @@ import com.chainsys.hospitalmanagementsys.model.RoomDetail;
 public interface RoomDetailRepository extends CrudRepository<RoomDetail, Integer> {
 	RoomDetail findById(int id);
 
-	RoomDetail save(RoomDetail rd);
+	RoomDetail save(RoomDetail roomdetail);
 
 	void deleteById(int id);
 

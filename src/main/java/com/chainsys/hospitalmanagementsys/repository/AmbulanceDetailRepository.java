@@ -9,7 +9,7 @@ import com.chainsys.hospitalmanagementsys.model.AmbulanceDetail;
 public interface AmbulanceDetailRepository extends CrudRepository<AmbulanceDetail, Integer> {
 	AmbulanceDetail findById(int id);
 
-	AmbulanceDetail save(AmbulanceDetail ad);
+	AmbulanceDetail save(AmbulanceDetail ambulancedetail);
 
 	void deleteById(int id);
 
