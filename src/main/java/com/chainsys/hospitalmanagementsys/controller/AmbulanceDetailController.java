@@ -18,19 +18,19 @@ import com.chainsys.hospitalmanagementsys.service.AmbulanceDetailService;
 @RequestMapping("/ambulance")
 public class AmbulanceDetailController {
 	@Autowired
-	AmbulanceDetailService ambServiceRepository;
+	AmbulanceDetailService ambService;
 
 	@GetMapping("/list")
 
 	public String getAllAmbulanceDetails(Model model) {
-		List<AmbulanceDetail> ambulancedetail =ambServiceRepository.getAllAmbulanceDetails();
+		List<AmbulanceDetail> ambulancedetail =ambService.getAllAmbulanceDetails();
 		model.addAttribute("allambulance", ambulancedetail);
 		return "list-ambulance";
 	}
 
 	@GetMapping("/getambulance")
 	public String getAmbulance(@RequestParam("id") int id, Model model) {
-		AmbulanceDetail ambulancedetail = ambServiceRepository.findById(id);
+		AmbulanceDetail ambulancedetail = ambService.findById(id);
 		model.addAttribute("getambulance", ambulancedetail);
 		return "find-ambulance-id-form";
 	}
@@ -44,26 +44,26 @@ public class AmbulanceDetailController {
 
 	@PostMapping("/addambulances")
 	public String addNewAmbulance(@ModelAttribute("addambulance") AmbulanceDetail ambulancedetail) {
-		ambServiceRepository.save(ambulancedetail);
+		ambService.save(ambulancedetail);
 		return "redirect:/ambulance/list";
 	}
 
 	@GetMapping("/deleteambulance")
 	public String deleteAmbulance(@RequestParam("registerId") int id) {
-		ambServiceRepository.deleteById(id);
+		ambService.deleteById(id);
 		return "redirect:/ambulance/list";
 	}
 
 	@GetMapping("/updateambulanceform")
 	public String showUpdateForm(@RequestParam("registerId") int id, Model model) {
-		AmbulanceDetail ambulancedetail = ambServiceRepository.findById(id);
+		AmbulanceDetail ambulancedetail = ambService.findById(id);
 		model.addAttribute("updateamb", ambulancedetail);
 		return "update-ambulance-form";
 	}
 
 	@PostMapping("updateambulance")
 	public String updateAmbulance(@ModelAttribute("updateamb") AmbulanceDetail ambulancedetail) {
-		ambServiceRepository.save(ambulancedetail);
+		ambService.save(ambulancedetail);
 		return "redirect:/ambulance/list";
 	}
 }

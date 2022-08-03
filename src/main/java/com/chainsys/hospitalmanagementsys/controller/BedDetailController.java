@@ -18,19 +18,19 @@ import com.chainsys.hospitalmanagementsys.service.BedDetailService;
 @RequestMapping("/bed")
 public class BedDetailController {
 	@Autowired
-	BedDetailService bedServiceRepository;
+	BedDetailService bedService;
 
 	@GetMapping("/list")
 
 	public String getAllBedDetails(Model model) {
-		List<BedDetail> beddetail =bedServiceRepository.getAllBedDetails();
+		List<BedDetail> beddetail =bedService.getAllBedDetails();
 		model.addAttribute("allbed", beddetail);
 		return "list-bed";
 	}
 
 	@GetMapping("/getbeds")
 	public String getBed(@RequestParam("id") int id, Model model) {
-		BedDetail beddetail = bedServiceRepository.findById(id);
+		BedDetail beddetail = bedService.findById(id);
 		model.addAttribute("getbed",beddetail);
 		return "find-bed-id-form";
 	}
@@ -44,26 +44,26 @@ public class BedDetailController {
 
 	@PostMapping("/addbed")
 	public String addNewBed(@ModelAttribute("addbeds") BedDetail beddetail) {
-		bedServiceRepository.save(beddetail);
+		bedService.save(beddetail);
 		return "redirect:/bed/list";
 	}
 
 	@GetMapping("/deletebed")
 	public String deleteBed(@RequestParam("bedId") int id) {
-		bedServiceRepository.deleteById(id);
+		bedService.deleteById(id);
 		return "redirect:/bed/list";
 	}
 
 	@GetMapping("/updatebedform")
 	public String showUpdateBedForm(@RequestParam("bedId") int id, Model model) {
-		BedDetail beddetail = bedServiceRepository.findById(id);
+		BedDetail beddetail = bedService.findById(id);
 		model.addAttribute("updatebed", beddetail);
 		return "update-bed-form";
 	}
 
 	@PostMapping("updatebeds")
 	public String updateAmbulance(@ModelAttribute("updatebed") BedDetail beddetail) {
-		bedServiceRepository.save(beddetail);
+		bedService.save(beddetail);
 		return "redirect:/bed/list";
 	}
 }
