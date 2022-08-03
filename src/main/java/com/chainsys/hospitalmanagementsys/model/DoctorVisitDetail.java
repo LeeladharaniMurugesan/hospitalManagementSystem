@@ -4,7 +4,10 @@ import java.util.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 @Entity
 @Table(name="DOCTOR_VISITDETAILS")
@@ -22,7 +25,16 @@ public class DoctorVisitDetail {
 	private String toTime ;
 	@Column(name="dailyfees")
 	private String dailyFees;
-	
+	@ManyToOne(fetch=FetchType.LAZY)
+    @JoinColumn(name="staff_id" , nullable=false,insertable=false,updatable=false)
+    private StaffDetail staffdetails;
+   
+	public StaffDetail getStaffdetails() {
+		return staffdetails;
+	}
+	public void setStaffdetails(StaffDetail staffdetails) {
+		this.staffdetails = staffdetails;
+	}
 	public int getsNo() {
 		return sNo;
 	}

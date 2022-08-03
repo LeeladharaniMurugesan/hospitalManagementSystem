@@ -39,6 +39,17 @@ public class StaffDetail {
 	public void setDoctor(List<DoctorDetail> doctor) {
 		this.doctor = doctor;
 	}
+	@OneToMany(mappedBy="staffdetails",fetch= FetchType.LAZY )
+    private List<DoctorVisitDetail> doctorvisit;
+	
+
+	public List<DoctorVisitDetail> getDoctorvisit() {
+		return doctorvisit;
+	}
+
+	public void setDoctorvisit(List<DoctorVisitDetail> doctorvisit) {
+		this.doctorvisit = doctorvisit;
+	}
 
 	public int getStaffId() {
 		return staffId;

@@ -40,7 +40,11 @@
 				<div>
 					<label for="resourceType">ResourceType</label>
 					<div>
-						<form:input path="resourceType" />
+						<form:select path="resourceType">
+                            <form:option value="Theatre">Theatre</form:option>
+                            <form:option value="Ambulance">Ambulance</form:option>
+                            <form:option value="Bed">Bed</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<div>

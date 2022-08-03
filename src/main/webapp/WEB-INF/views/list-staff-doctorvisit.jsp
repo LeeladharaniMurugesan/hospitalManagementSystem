@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
-<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Staff Doctor Detail</title>
+<title>Staff DoctorVisit Detail</title>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="addstaff" method="post" modelAttribute="getstaff">
+			<form:form action="" method="post" modelAttribute="getstaffdoc">
 				<div>
 					<label for="staffId">Staff Id</label>
 					<div>
@@ -63,23 +63,27 @@
 			</form:form>
 		</div>
 	</div>
-	<div id="table root">
+	<div id="doctorlist">
 		<table border=2>
 			<thead>
 				<tr>
-					<th>Staff Id</th>
-					<th>Speciality</th>
-					<th>Role Type</th>
-					<th>Normal Fees</th>
+					<th>SNo</th>
+					<th>StaffId</th>
+					<th>VisitedDate</th>
+					<th>FromTime</th>
+					<th>ToTime</th>
+					<th>DailyFees</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="doc" items="${doclist}">
+				<c:forEach var="docv" items="${doctorlist}">
 					<tr>
-						<td>${doc.staffId}</td>
-						<td>${doc.speciality}</td>
-						<td>${doc.roleType}</td>
-						<td>${doc.normalFees}</td>
+						<td>${docv.sNo}</td>
+						<td>${docv.staffId}</td>
+						<td>${docv.visitedDate}</td>
+						<td>${docv.fromTime}</td>
+						<td>${docv.toTime}</td>
+						<td>${docv.dailyFees}</td>
 				</c:forEach>
 			</tbody>
 		</table>

@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.hospitalmanagementsys.dto.StaffDoctorDTO;
+import com.chainsys.hospitalmanagementsys.dto.StaffDoctorVisitDTO;
 import com.chainsys.hospitalmanagementsys.model.StaffDetail;
 import com.chainsys.hospitalmanagementsys.service.StaffDetailService;
 
@@ -74,6 +75,13 @@ public class StaffDetailController {
 		model.addAttribute("getstaff" ,dto.getStaffdetail());
 		model.addAttribute("doclist",dto.getDoclist());
 		return "list-staff-doctor";
+	}
+	@GetMapping("/getstaffdocvisit")
+	public String getDoctorVisit(@RequestParam("id") int id,Model model) {
+		StaffDoctorVisitDTO docdto =staffdetailservice.getStaffDoctorVisitDetail(id);
+		model.addAttribute("getstaffdoc" ,docdto.getStaffdetails());
+		model.addAttribute("doctorlist",docdto.getDocvisitlist());
+		return "list-staff-doctorvisit";
 	}
 	
 }
