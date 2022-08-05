@@ -31,14 +31,14 @@ public class OperationTheatreDetailController {
 	public String getOperationTheatre(@RequestParam("id") int id, Model model) {
 		OperationTheatreDetail operationtheatre = operationtheatreservice.findById(id);
 		model.addAttribute("getoperationtheatres", operationtheatre);
-		return "find-operationtheatred-id-form";
+		return "find-otd-id-form";
 	}
 
 	@GetMapping("/addoperationtheatreform")
 	public String showAddOperationTheatreForm(Model model) {
 		OperationTheatreDetail operationtheatre = new OperationTheatreDetail();
 		model.addAttribute("addoperationtheatre", operationtheatre);
-		return "add-operationtheatred-form";
+		return "add-otd-form";
 	}
 
 	@PostMapping("/addoperationtheatre")
@@ -56,12 +56,12 @@ public class OperationTheatreDetailController {
 	@GetMapping("/updateoperationtheatreform")
 	public String showUpdateOperationTheatreForm(@RequestParam("theatreId") int id, Model model) {
 		OperationTheatreDetail operationtheatre = operationtheatreservice.findById(id);
-		model.addAttribute("updateoperationtheatre", operationtheatre);
-		return "update-operationtheatred-form";
+		model.addAttribute("updateoperationtheatres", operationtheatre);
+		return "update-otd-form";
 	}
 
 	@PostMapping("updateopeartiontheatre")
-	public String updateOperationTheatre(@ModelAttribute("updateoperationtheatre") OperationTheatreDetail operationtheatre) {
+	public String updateOperationTheatre(@ModelAttribute("updateoperationtheatres") OperationTheatreDetail operationtheatre) {
 		operationtheatreservice.save(operationtheatre);
 		return "redirect:/operationTheatre/list";
 	}

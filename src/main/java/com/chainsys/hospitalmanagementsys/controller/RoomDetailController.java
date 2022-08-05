@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.hospitalmanagementsys.dto.RoomBedDTO;
+import com.chainsys.hospitalmanagementsys.dto.StaffDoctorDTO;
 import com.chainsys.hospitalmanagementsys.model.RoomDetail;
 import com.chainsys.hospitalmanagementsys.service.RoomDetailService;
 
@@ -55,10 +57,17 @@ public class RoomDetailController {
 		return "update-room-form";
 	}
 
-	@PostMapping("updateroom")
+	@PostMapping("/updateroom")
 	public String updateRoom(@ModelAttribute("updaterooms") RoomDetail roomdetail) {
 		roomdetailservice.save(roomdetail);
 		return "redirect:/room/list";
+	}
+	@GetMapping("/getroombed")
+	public String getRoomBed(@RequestParam("id") int id,Model model) {
+		RoomBedDTO dto =roomdetailservice.getRoomDetails(id);
+		model.addAttribute("getroom",dto.getRoomDetails());
+		model.addAttribute("bedlist",dto.getBedDetails());
+		return"list-room-bed";
 	}
 
 }

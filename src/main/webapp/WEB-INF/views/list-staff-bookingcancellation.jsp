@@ -1,16 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Staff Doctor Detail</title>
+<title>Staff Booking Cancellation Detail</title>
 </head>
 <body>
 	<div id="root">
 		<div id="form">
-			<form:form action="" method="post" modelAttribute="getstaff">
+			<form:form action="" method="post" modelAttribute="getbookingcancellation">
 				<div>
 					<label for="staffId">Staff Id</label>
 					<div>
@@ -62,35 +63,32 @@
 			</form:form>
 		</div>
 	</div>
-	<div id="root">
-		<div id="form">
-			<form:form action="" method="post" modelAttribute="doclist">
-				<div>
-					<label for="staffId">Staff Id</label>
-					<div>
-						<form:input path="staffId" />
-					</div>
-				</div>
-				<div>
-					<label for="speciality">Speciality </label>
-					<div>
-						<form:input path="speciality" />
-					</div>
-				</div>
-				<div>
-					<label for="roleType">Role Type</label>
-					<div>
-						<form:input path="roleType" />
-					</div>
-				</div>
-				<div>
-					<label for="normalFees">Normal Fees</label>
-					<div>
-						<form:input path="normalFees" />
-					</div>
-				</div>
-			</form:form>
-		</div>
+	<div id="bookcancellist">
+		<table border=2>
+			<thead>
+				<tr>
+					<th>BcId</th>
+					<th>booking_date</th>
+					<th>FromDate</th>
+					<th>ToDate</th>
+					<th>ResourceType</th>
+					<th>Resource Id</th>
+					<th>StaffId</th>
+				</tr>
+			</thead>
+			<tbody>
+				<c:forEach var="bc" items="${bookcancellist}">
+					<tr>
+						<td>${bc.bcId}</td>
+						<td>${bc.bookingDate}</td>
+						<td>${bc.fromDate}</td>
+						<td>${bc.toDate}</td>
+						<td>${bc.resourceType}</td>
+						<td>${bc.resourceId}</td>
+						<td>${bc.staffId}</td>
+				</c:forEach>
+			</tbody>
+		</table>
 	</div>
 </body>
 </html>

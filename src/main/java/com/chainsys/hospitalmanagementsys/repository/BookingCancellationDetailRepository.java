@@ -14,4 +14,6 @@ public interface BookingCancellationDetailRepository extends CrudRepository<Book
 	void deleteById(int id);
 
 	List<BookingCancellationDetail> findAll();
+	
+	List<BookingCancellationDetail> findByStaffId(int id);
 }

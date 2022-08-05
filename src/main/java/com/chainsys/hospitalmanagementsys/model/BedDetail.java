@@ -3,6 +3,8 @@ package com.chainsys.hospitalmanagementsys.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +21,16 @@ public class BedDetail {
 	private String bedSize ;
 	@Column(name="room_id")
 	private int roomId;
+	@ManyToOne
+    @JoinColumn(name="room_id",nullable = false, insertable = false,updatable = false)
+     
+    private RoomDetail roomdetails; 
+	public RoomDetail getRoomdetails() {
+		return roomdetails;
+	}
+	public void setRoomdetails(RoomDetail roomdetails) {
+		this.roomdetails = roomdetails;
+	}
 	public int getBedId() {
 		return bedId;
 	}

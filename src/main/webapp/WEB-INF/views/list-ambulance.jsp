@@ -9,7 +9,11 @@
 </head>
 <body>
 	<div id="table root">
-		<table>
+		<table border="2" width="100%" cellpadding="2">
+            <colgroup>
+                <col span="10" style="background-color:yellow">
+                <col span="4" style="background-color:crimson">
+            </colgroup>
 			<thead>
 				<tr>
 					<th>registerId</th>
@@ -17,6 +21,8 @@
 					<th>ambulanceModel</th>
 					<th>status</th>
 					<th>staffId</th>
+					<th>Edit</th>
+					<th>Delete</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -27,9 +33,16 @@
 						<td>${amb.ambulanceModel}</td>
 						<td>${amb.status}</td>
 						<td>${amb.staffId}</td>
+							<td><a
+               	href="updateambulanceform?registerId=${amb.registerId}">Edit</a></td>
+                        <td><a
+                            href="deleteambulance?registerId=${amb.registerId}">Delete</a></td>
 				</c:forEach>
 			</tbody>
 		</table>
+		 <div align="center">
+        <a href="addambulanceform"><button>Add New Ambulance</button></a>
+    </div>
 	</div>
 </body>
 </html>

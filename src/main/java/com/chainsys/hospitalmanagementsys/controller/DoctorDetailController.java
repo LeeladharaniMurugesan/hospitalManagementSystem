@@ -35,15 +35,15 @@ public class DoctorDetailController {
 		return "find-doctor-id-form";
 	}
 
-	@GetMapping("/adoctordetaildoctorform")
+	@GetMapping("/adddoctorform")
 	public String showAdoctordetailDoctorForm(Model model) {
 		DoctorDetail doctordetail = new DoctorDetail();
-		model.addAttribute("adoctordetaildoc", doctordetail);
-		return "adoctordetail-doctor-form";
+		model.addAttribute("adddoc", doctordetail);
+		return "add-doctor-form";
 	}
 
-	@PostMapping("/adoctordetaildoctor")
-	public String adoctordetailNewDoctor(@ModelAttribute("adoctordetaildoc") DoctorDetail doctordetail) {
+	@PostMapping("/adddoctor")
+	public String adoctordetailNewDoctor(@ModelAttribute("adddoc") DoctorDetail doctordetail) {
 		docservice.save(doctordetail);
 		return "redirect:/doctor/list";
 	}

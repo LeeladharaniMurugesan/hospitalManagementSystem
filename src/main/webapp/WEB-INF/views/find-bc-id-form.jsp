@@ -39,13 +39,7 @@
 				</div>
 				<div>
 					<label for="resourceType">ResourceType</label>
-					<div>
-						<form:select path="resourceType">
-                            <form:option value="Theatre">Theatre</form:option>
-                            <form:option value="Ambulance">Ambulance</form:option>
-                            <form:option value="Bed">Bed</form:option>
-                        </form:select readonly="true"/>
-					</div>
+					<form:input path="resourceType" readonly="true"/>
 				</div>
 				<div>
 					<label for="resourceId">ResourceId</label>

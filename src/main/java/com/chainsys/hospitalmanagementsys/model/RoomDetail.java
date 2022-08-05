@@ -1,8 +1,12 @@
 package com.chainsys.hospitalmanagementsys.model;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -19,6 +23,15 @@ public class RoomDetail {
 	private int numOfBeds;
 	@Column(name="room_status")
 	private String roomStatus;
+	@OneToMany(mappedBy="roomdetails",fetch=FetchType.LAZY)
+    private List<BedDetail> beddetails;
+	
+	public List<BedDetail> getBeddetails() {
+		return beddetails;
+	}
+	public void setBeddetails(List<BedDetail> beddetails) {
+		this.beddetails = beddetails;
+	}
 	public int getRoomId() {
 		return roomId;
 	}

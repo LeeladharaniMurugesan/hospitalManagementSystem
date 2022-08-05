@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.hospitalmanagementsys.dto.StaffAmbulanceDTO;
+import com.chainsys.hospitalmanagementsys.dto.StaffBookingCancellationDTO;
 import com.chainsys.hospitalmanagementsys.dto.StaffDoctorDTO;
 import com.chainsys.hospitalmanagementsys.dto.StaffDoctorVisitDTO;
 import com.chainsys.hospitalmanagementsys.model.StaffDetail;
@@ -60,7 +62,7 @@ public class StaffDetailController {
 	@GetMapping("/updatestaffform")
 	public String showUpdateForm(@RequestParam("staffId") int id, Model model) {
 		StaffDetail staffservice = staffdetailservice.findById(id);
-		model.addAttribute("updateStaff", staffservice);
+		model.addAttribute("updatestaffs", staffservice);
 		return "update-staff-form";
 	}
 
@@ -83,5 +85,37 @@ public class StaffDetailController {
 		model.addAttribute("doctorlist",docdto.getDocvisitlist());
 		return "list-staff-doctorvisit";
 	}
+	@GetMapping("/getambulancedetail")
+	public String getAmbulanceDetail(@RequestParam("id") int id,Model model) {
+		StaffAmbulanceDTO ambulancedto =staffdetailservice.getAmbulanceVisitDetail(id);
+		model.addAttribute("getambulance" ,ambulancedto.getStaffambulancedetails());
+		model.addAttribute("ambulancelist",ambulancedto.getAmbulancedetail());
+		return "list-staff-ambulancelist";
+	}
+	@GetMapping("/getbookingcancellationdetail")
+	public String getBookingCancellationDetail(@RequestParam("id") int id,Model model) {
+		StaffBookingCancellationDTO bookingcancellationdto =staffdetailservice.getBookingCancellationDetail(id);
+		model.addAttribute("getbookingcancellation",bookingcancellationdto.getStaffbookingcancellationdetails());
+		model.addAttribute("bookcancellist",bookingcancellationdto.getBookingcancellationdetail());
+		return "list-staff-bookingcancellation";
+	}
+	@GetMapping("/stafflogin")
+    public String adminaccessform(Model model) {
+        StaffDetail staffs = new StaffDetail();
+        model.addAttribute("staff",staffs);
+        return "staff-login-form";
+    }                   
+
+    @PostMapping("/checkstafflogin")
+    public String checkingAccess(@ModelAttribute("staff") StaffDetail staff) {
+        StaffDetail staffDetail = staffdetailservice.StaffByEmailAndPassword(staff.getEmailId(),staff.getPassword());
+        if (staffDetail!= null){
+
+            return "redirect:/staffdetail/list";
+        } else
+            return "invalid-staff-error";
+
+    }
+
 	
 }

@@ -1,6 +1,7 @@
 package com.chainsys.hospitalmanagementsys.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -23,11 +24,11 @@ public class AmbulanceDetailService {
 		return ambulanceDetailRepository.save(ambulancedetail);
 	}
 
-	public AmbulanceDetail findById(int id) {
+	public Optional<AmbulanceDetail> findById(String id) {
 		return ambulanceDetailRepository.findById(id);
 	}
 
-	public void deleteById(int id) {
+	public void deleteById(String id) {
 		ambulanceDetailRepository.deleteById(id);
 	}
 }

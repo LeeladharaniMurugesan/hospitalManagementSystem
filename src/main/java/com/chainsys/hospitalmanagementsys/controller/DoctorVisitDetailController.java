@@ -60,7 +60,7 @@ public class DoctorVisitDetailController {
 		return "update-doctorvisit-form";
 	}
 
-	@PostMapping("updatedoctorvisit")
+	@PostMapping("/updatedoctorvisit")
 	public String updateDoctorVisit(@ModelAttribute("updatedocvisit") DoctorVisitDetail doctorvisit) {
 		doctorvisitservice.save(doctorvisit);
 		return "redirect:/doctorvisit/list";

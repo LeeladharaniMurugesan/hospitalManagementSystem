@@ -8,10 +8,12 @@ import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Transient;
 
 @Entity
-@Table(name ="STAFF_DETAILS")
+@Table(name = "STAFF_DETAILS")
 public class StaffDetail {
 	@Id
 	@Column(name = "staff_id")
@@ -26,22 +28,24 @@ public class StaffDetail {
 	private long phoneNo;
 	@Column(name = "email_id ")
 	private String emailId;
+	@org.springframework.data.annotation.Transient
 	@Column(name = "password")
 	private String password;
 	@Column(name = "designation")
 	private String designation;
-	@OneToMany(mappedBy="staffdetail",fetch= FetchType.LAZY )
-    private List<DoctorDetail> doctor;
-	public List<DoctorDetail> getDoctor() {
+	@OneToOne(mappedBy ="staffdetail", fetch = FetchType.LAZY)
+	private DoctorDetail doctor;
+
+	public DoctorDetail getDoctor() {
 		return doctor;
 	}
 
-	public void setDoctor(List<DoctorDetail> doctor) {
+	public void setDoctor(DoctorDetail doctor) {
 		this.doctor = doctor;
 	}
-	@OneToMany(mappedBy="staffdetails",fetch= FetchType.LAZY )
-    private List<DoctorVisitDetail> doctorvisit;
-	
+
+	@OneToMany(mappedBy = "staffdetails", fetch = FetchType.LAZY)
+	private List<DoctorVisitDetail> doctorvisit;
 
 	public List<DoctorVisitDetail> getDoctorvisit() {
 		return doctorvisit;
@@ -49,6 +53,28 @@ public class StaffDetail {
 
 	public void setDoctorvisit(List<DoctorVisitDetail> doctorvisit) {
 		this.doctorvisit = doctorvisit;
+	}
+
+	@OneToMany(mappedBy = "staffambulancedetails", fetch = FetchType.LAZY)
+	private List<AmbulanceDetail> ambulancedetail;
+
+	public List<AmbulanceDetail> getAmbulancedetail() {
+		return ambulancedetail;
+	}
+
+	public void setAmbulancedetail(List<AmbulanceDetail> ambulancedetail) {
+		this.ambulancedetail = ambulancedetail;
+	}
+
+	@OneToMany(mappedBy = "staffbookingcancellationdetails", fetch = FetchType.LAZY)
+	private List<BookingCancellationDetail> bookingcancellationdetail;
+
+	public List<BookingCancellationDetail> getBookingcancellationdetail() {
+		return bookingcancellationdetail;
+	}
+
+	public void setBookingcancellationdetail(List<BookingCancellationDetail> bookingcancellationdetail) {
+		this.bookingcancellationdetail = bookingcancellationdetail;
 	}
 
 	public int getStaffId() {

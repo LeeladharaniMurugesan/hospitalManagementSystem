@@ -6,6 +6,7 @@ import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -21,7 +22,7 @@ public class DoctorDetail {
 	@Column(name="normal_fees")
 	private int normalFees ;
 	
-	@ManyToOne(fetch=FetchType.LAZY)
+	@OneToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="staff_id" , nullable=false,insertable=false,updatable=false)
     private StaffDetail staffdetail;
     public StaffDetail getStaffdetail() {

@@ -9,7 +9,11 @@
 </head>
 <body>
 	<div id="table root">
-		<table>
+		<table border="2" width="100%" cellpadding="2">
+			<colgroup>
+				<col span="10" style="background-color:navy gray">
+				<col span="4" style="background-color: crimson">
+			</colgroup>
 			<thead>
 				<tr>
 					<th>BcId</th>
@@ -19,21 +23,29 @@
 					<th>ResourceType</th>
 					<th>Resource Id</th>
 					<th>StaffId</th>
+					<th>Edit</th>
+					<th>Delete</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="bc" items="${allbookcancel}">
 					<tr>
-						<td>${bcId}</td>
+						<td>${bc.bcId}</td>
 						<td>${bc.bookingDate}</td>
 						<td>${bc.fromDate}</td>
 						<td>${bc.toDate}</td>
 						<td>${bc.resourceType}</td>
 						<td>${bc.resourceId}</td>
 						<td>${bc.staffId}</td>
+						<td><a href="updatebcform?bcId=${bc.bcId}">Edit</a></td>
+						<td><a href="deletebc?bcId=${bc.bcId}">Delete</a></td>
 				</c:forEach>
 			</tbody>
 		</table>
+		<div align="center">
+			<a href="addbcform"><button>Add New BookingCancellation
+					detail</button></a>
+		</div>
 	</div>
 </body>
 </html>

@@ -37,7 +37,7 @@
 					</div>
 				</div>
 				<div>
-					<form:button>Add Doctor</form:button>
+					<form:button>Add New Doctor</form:button>
 				</div>
 			</form:form>
 		</div>

@@ -15,4 +15,7 @@ public interface StaffDetailRepository extends CrudRepository<StaffDetail, Integ
 	void deleteById(int id);
 
 	List<StaffDetail> findAll();
+	
+	StaffDetail findByEmailIdAndPassword(String email, String password);
+
 }

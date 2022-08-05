@@ -15,5 +15,5 @@ public interface DoctorDetailRepository extends CrudRepository<DoctorDetail, Int
 
 	List<DoctorDetail> findAll();
 	
-	List<DoctorDetail> findByStaffId(int id);
+	DoctorDetail findByStaffId(int id);
 }

@@ -14,4 +14,6 @@ public interface BedDetailRepository extends CrudRepository<BedDetail, Integer> 
 	void deleteById(int id);
 
 	List<BedDetail> findAll();
+	
+	List<BedDetail> findByRoomId(int id);
 }
