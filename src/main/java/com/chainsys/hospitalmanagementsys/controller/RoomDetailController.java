@@ -45,7 +45,7 @@ public class RoomDetailController {
 		roomdetailservice.save(roomdetail);
 		return "redirect:/room/list";
 	}
-	@GetMapping("/deleteroom")
+	@GetMapping("/deleteroomform")
 	public String deleteRoom(@RequestParam("roomId") int id) {
 		roomdetailservice.deleteById(id);
 		return "redirect:/room/list";
