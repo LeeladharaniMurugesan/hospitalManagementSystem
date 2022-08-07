@@ -9,22 +9,35 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+
+import org.hibernate.validator.constraints.Range;
 @Entity
 @Table(name="DOCTOR_VISITDETAILS")
 public class DoctorVisitDetail {
 	@Id
 	@Column(name="s_no")
+	@Min(value = 1, message = "Enter a Valid Id")
+	@Max(value = 100, message = "Enter a Valid Id")
 	private int sNo ;
 	@Column(name="staff_id")
+	@Min(value = 100, message = "Enter a Valid Id")
+	@Max(value = 199, message = "Enter a Valid Id")
 	private int staffId ;
 	@Column(name="visited_date")
+	@NotNull(message="Correct date format is required ")
 	private Date visitedDate ;
 	@Column(name="from_time")
+	@NotNull(message="Time should is required ")
 	private String fromTime ;
 	@Column(name="to_time")
+	@NotNull(message="Time should is required ")
 	private String toTime ;
 	@Column(name="dailyfees")
-	private String dailyFees;
+	@Range(min = (int) 100.0)
+	private int dailyFees;
 	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="staff_id" , nullable=false,insertable=false,updatable=false)
     private StaffDetail staffdetails;
@@ -65,10 +78,10 @@ public class DoctorVisitDetail {
 	public void setToTime(String toTime) {
 		this.toTime = toTime;
 	}
-	public String getDailyFees() {
+	public int getDailyFees() {
 		return dailyFees;
 	}
-	public void setDailyFees(String dailyFees) {
+	public void setDailyFees(int dailyFees) {
 		this.dailyFees = dailyFees;
 	}
 	

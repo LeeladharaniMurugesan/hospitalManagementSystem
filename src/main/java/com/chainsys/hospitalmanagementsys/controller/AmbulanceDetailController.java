@@ -3,6 +3,8 @@ package com.chainsys.hospitalmanagementsys.controller;
 import java.util.List;
 import java.util.Optional;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,7 +32,7 @@ public class AmbulanceDetailController {
 	}
 
 	@GetMapping("/getambulance")
-	public String getAmbulance(@RequestParam("id") String id, Model model) {
+	public String getAmbulance(@Valid@RequestParam("id") String id, Model model) {
 		Optional<AmbulanceDetail> ambulancedetail = ambService.findById(id);
 		model.addAttribute("getambulance", ambulancedetail);
 		return "find-ambulance-id-form";
@@ -50,13 +52,13 @@ public class AmbulanceDetailController {
 	}
 
 	@GetMapping("/deleteambulance")
-	public String deleteAmbulance(@RequestParam("registerId") String id) {
+	public String deleteAmbulance(@Valid@RequestParam("registerId") String id) {
 		ambService.deleteById(id);
 		return "redirect:/ambulance/list";
 	}
 
 	@GetMapping("/updateambulanceform")
-	public String showUpdateForm(@RequestParam("registerId") String id, Model model) {
+	public String showUpdateForm(@Valid@RequestParam("registerId") String id, Model model) {
 		Optional<AmbulanceDetail> ambulancedetail = ambService.findById(id);
 		model.addAttribute("updateamb", ambulancedetail);
 		return "update-ambulance-form";

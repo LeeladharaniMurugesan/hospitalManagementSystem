@@ -2,6 +2,8 @@ package com.chainsys.hospitalmanagementsys.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,7 +31,7 @@ public class BookingCancellationDetailController {
 	}
 
 	@GetMapping("/getbc")
-	public String getBookingCancellation(@RequestParam("id") int id, Model model) {
+	public String getBookingCancellation(@Valid@RequestParam("id") int id, Model model) {
 		BookingCancellationDetail bookcancel = bookCancelService.findById(id);
 		model.addAttribute("getbookcanceldetail", bookcancel);
 		return "find-bc-id-form";
@@ -49,13 +51,13 @@ public class BookingCancellationDetailController {
 	}
 
 	@GetMapping("/deletebc")
-	public String deleteBookCancellation(@RequestParam("bcId") int id) {
+	public String deleteBookCancellation(@Valid@RequestParam("bcId") int id) {
 		bookCancelService.deleteById(id);
 		return "redirect:/bcdetail/list";
 	}
 
 	@GetMapping("/updatebcform")
-	public String showUpdateBookCancellationForm(@RequestParam("bcId") int id, Model model) {
+	public String showUpdateBookCancellationForm(@Valid@RequestParam("bcId") int id, Model model) {
 		BookingCancellationDetail bookcancel = bookCancelService.findById(id);
 		model.addAttribute("updatebookcancel", bookcancel);
 		return "update-bc-form";

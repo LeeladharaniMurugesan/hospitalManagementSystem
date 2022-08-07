@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Staff Page</title>
 </head>
 <body>
 <div><h1>Staff Details</h1></div>
@@ -68,7 +68,5 @@
 <div><a href="/bcdetail/deletebc?bcId=">Delete</a></div>
 <div><a href="/bcdetail/getbc?id=">FindBybcId</a></div>
 <div><a href="/staffdetails/getbookingcancellationdetail?id=">FindByStaffBookingCancellationId</a></div>
-</body>
-</html>
 </body>
 </html>

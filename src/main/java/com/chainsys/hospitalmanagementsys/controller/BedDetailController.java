@@ -2,6 +2,8 @@ package com.chainsys.hospitalmanagementsys.controller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,7 +31,7 @@ public class BedDetailController {
 	}
 
 	@GetMapping("/getbeds")
-	public String getBed(@RequestParam("id") int id, Model model) {
+	public String getBed(@Valid@RequestParam("id") int id, Model model) {
 		BedDetail beddetail = bedService.findById(id);
 		model.addAttribute("getbed",beddetail);
 		return "find-bed-id-form";
@@ -49,13 +51,13 @@ public class BedDetailController {
 	}
 
 	@GetMapping("/deletebed")
-	public String deleteBed(@RequestParam("bedId") int id) {
+	public String deleteBed(@Valid@RequestParam("bedId") int id) {
 		bedService.deleteById(id);
 		return "redirect:/bed/list";
 	}
 
 	@GetMapping("/updatebedform")
-	public String showUpdateBedForm(@RequestParam("bedId") int id, Model model) {
+	public String showUpdateBedForm(@Valid@RequestParam("bedId") int id, Model model) {
 		BedDetail beddetail = bedService.findById(id);
 		model.addAttribute("updatebed", beddetail);
 		return "update-bed-form";

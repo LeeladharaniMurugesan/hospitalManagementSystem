@@ -10,28 +10,41 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
-import javax.persistence.Transient;
+import javax.validation.constraints.Digits;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "STAFF_DETAILS")
 public class StaffDetail {
 	@Id
 	@Column(name = "staff_id")
+	@Min(value = 100,message="Enter a valid Id between 100 to 199")
+	@Max(value = 199,message="Enter a valid Id between 100 to 199")
 	private int staffId;
 	@Column(name = "staff_name")
+	@NotNull(message="Username is required")
 	private String staffName;
 	@Column(name = "dob")
+	@NotNull(message="Correct date format is required ")
 	private Date dob;
 	@Column(name = "gender")
+	@NotNull(message="Gender is required")
 	private String gender;
 	@Column(name = "phone_no")
+	@Digits(integer = 10, fraction = 0)
 	private long phoneNo;
 	@Column(name = "email_id ")
+	@Email(regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
 	private String emailId;
 	@org.springframework.data.annotation.Transient
 	@Column(name = "password")
+	@NotNull(message = "Password must contains atleast 8 digits")
 	private String password;
 	@Column(name = "designation")
+	@NotNull(message = "Designation must be required")
 	private String designation;
 	@OneToOne(mappedBy ="staffdetail", fetch = FetchType.LAZY)
 	private DoctorDetail doctor;
