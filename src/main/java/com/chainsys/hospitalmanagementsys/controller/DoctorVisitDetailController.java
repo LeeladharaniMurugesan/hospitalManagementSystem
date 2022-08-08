@@ -6,6 +6,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -44,8 +45,11 @@ public class DoctorVisitDetailController {
 	}
 
 	@PostMapping("/adddocvisitdetail")
-	public String addNewDoctorVisit(@ModelAttribute("adddocvisit") DoctorVisitDetail dvd) {
-		doctorvisitservice.save(dvd);
+	public String addNewDoctorVisit(@Valid @ModelAttribute("adddocvisit") DoctorVisitDetail doctorvisit,Errors errors) {
+		if(errors.hasErrors()) {
+			return "add-doctorvisit-form";
+		}
+		doctorvisitservice.save(doctorvisit);
 		return "redirect:/doctorvisit/list";
 	}
 
@@ -63,7 +67,10 @@ public class DoctorVisitDetailController {
 	}
 
 	@PostMapping("/updatedoctorvisit")
-	public String updateDoctorVisit(@ModelAttribute("updatedocvisit") DoctorVisitDetail doctorvisit) {
+	public String updateDoctorVisit(@Valid @ModelAttribute("updatedocvisit") DoctorVisitDetail doctorvisit,Errors errors) {
+		if(errors.hasErrors()) {
+			return "update-doctorvisit-form";
+		}
 		doctorvisitservice.save(doctorvisit);
 		return "redirect:/doctorvisit/list";
 	}

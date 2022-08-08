@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,7 +36,7 @@ public class StaffDetailController {
 	}
 
 	@GetMapping("/getstaff")
-	public String getStaff(@Valid@RequestParam("id") int id, Model model) {
+	public String getStaff(@RequestParam("id") int id, Model model) {
 		StaffDetail staffservice = staffdetailservice.findById(id);
 		model.addAttribute("getstaffs", staffservice);
 		return "find-staff-id-form";
@@ -49,9 +50,14 @@ public class StaffDetailController {
 	}
 
 	@PostMapping("/addstaff")
-	public String addNewStaff(@ModelAttribute("addstaffs") StaffDetail staffservice) {
-		staffdetailservice.save(staffservice);
-		return "redirect:/staffdetail/list";
+	public String addNewStaff(@Valid @ModelAttribute("addstaffs") StaffDetail staffservice,Errors errors)
+	{
+	if(errors.hasErrors()) {
+		return "add-staff-form";
+	}
+	staffdetailservice.save(staffservice);
+	return "redirect:/staffdetail/list";
+		
 	}
 
 	@GetMapping("/deletestaff")
@@ -61,14 +67,17 @@ public class StaffDetailController {
 	}
 
 	@GetMapping("/updatestaffform")
-	public String showUpdateForm(@Valid@RequestParam("staffId") int id, Model model) {
+	public String showUpdateForm(@RequestParam("staffId") int id, Model model) {
 		StaffDetail staffservice = staffdetailservice.findById(id);
 		model.addAttribute("updatestaffs", staffservice);
 		return "update-staff-form";
 	}
 
 	@PostMapping("updatestaff")
-	public String updateStaff(@ModelAttribute("updatestaffs") StaffDetail staffservice) {
+	public String updateStaff(@ModelAttribute("updatestaffs") StaffDetail staffservice,Errors errors) {
+	if(errors.hasErrors()) {
+		return "update-staff-form";
+	}
 		staffdetailservice.save(staffservice);
 		return "redirect:/staffdetail/list";
 	}

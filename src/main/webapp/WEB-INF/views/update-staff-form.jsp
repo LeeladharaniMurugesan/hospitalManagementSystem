@@ -46,6 +46,10 @@ margin-top: 20px;
     border: 2px solid blue;
     border-radius: 5px;
 }
+.text-danger {
+    color: #e80c4d;
+    font-size: 0.9em;
+}
 }
 </style>
 </head>
@@ -59,48 +63,56 @@ margin-top: 20px;
 						<form:input path="staffId" class="text-box"/>
 					</div>
 				</div>
+				
 				<div>
 					<label for="staffName" class="label-size">Staff Name</label>
 					<div>
 						<form:input path="staffName" class="text-box"/>
 					</div>
 				</div>
+				<form:errors path="staffName" class="text-danger" />
 				<div>
 					<label for="dob" class="label-size">Dob</label>
 					<div>
 						<form:input path="dob" class="text-box"/>
 					</div>
 				</div>
+				<form:errors path="dob" class="text-danger" />
 				<div>
 					<label for="gender" class="label-size">Gender</label>
 					<div>
 						<form:input path="gender" class="text-box"/>
 					</div>
 				</div>
+				<form:errors path="gender" class="text-danger" />
 				<div>
 					<label for="phoneNo" class="label-size">PhoneNo</label>
 					<div>
 						<form:input path="phoneNo" class="text-box" />
 					</div>
 				</div>
+				<form:errors path="phoneNo" class="text-danger" />
 				<div>
 					<label for="emailId" class="label-size">EmailId</label>
 					<div>
 						<form:input path="emailId" class="text-box"/>
 					</div>
 				</div>
+				<form:errors path="emailId" class="text-danger" />
 				<div>
 					<label for="password" class="label-size">Password</label>
 					<div>
 						<form:input type="password" path="password" class="text-box"/>
 					</div>
 				</div>
+				<form:errors path="password" class="text-danger" />
 				<div>
 					<label for="designation" class="label-size">Designation</label>
 					<div>
 						<form:input path="designation" class="text-box" />
 					</div>
 				</div>
+				<form:errors path="designation" class="text-danger" />
 				<div>
 					<form:button class="button">Update Staff</form:button>
 				</div>

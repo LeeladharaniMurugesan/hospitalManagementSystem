@@ -11,7 +11,11 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Range;
 @Entity
@@ -19,21 +23,23 @@ import org.hibernate.validator.constraints.Range;
 public class DoctorVisitDetail {
 	@Id
 	@Column(name="s_no")
-	@Min(value = 1, message = "Enter a Valid Id")
-	@Max(value = 100, message = "Enter a Valid Id")
 	private int sNo ;
 	@Column(name="staff_id")
 	@Min(value = 100, message = "Enter a Valid Id")
 	@Max(value = 199, message = "Enter a Valid Id")
 	private int staffId ;
+	@NotNull(message="Date should not be null")
 	@Column(name="visited_date")
-	@NotNull(message="Correct date format is required ")
 	private Date visitedDate ;
 	@Column(name="from_time")
-	@NotNull(message="Time should is required ")
+	@Size(max = 20, min = 3, message = "*From Time length should be 3 to 20")
+	@NotBlank(message = "*From Time is required")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Time ")
 	private String fromTime ;
 	@Column(name="to_time")
-	@NotNull(message="Time should is required ")
+	@Size(max = 20, min = 3, message = "*From Time length should be 3 to 20")
+	@NotBlank(message = "*From Time is required")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Time ")
 	private String toTime ;
 	@Column(name="dailyfees")
 	@Range(min = (int) 100.0)

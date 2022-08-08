@@ -7,6 +7,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add DoctorVisit</title>
+<style type="text/css">
+.text-danger {
+    color: #e80c4d;
+    font-size: 0.9em;
+}
+</style>
 </head>
 <body>
 	<div id="root">
@@ -30,18 +36,21 @@
 						<form:input path="visitedDate" />
 					</div>
 				</div>
+				<form:errors path="visitedDate" class="text-danger" />
 				<div>
 					<label for="fromTime">From Time</label>
 					<div>
 						<form:input path="fromTime" />
 					</div>
 				</div>
+				<form:errors path="fromTime" class="text-danger" />
 				<div>
 					<label for="toTime">To Time</label>
 					<div>
 						<form:input path="toTime" />
 					</div>
 				</div>
+				<form:errors path="toTime" class="text-danger" />
 				<div>
 					<label for="dailyFees">DailyFees</label>
 					<div>

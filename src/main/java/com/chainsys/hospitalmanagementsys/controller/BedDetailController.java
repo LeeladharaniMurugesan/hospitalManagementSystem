@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -45,7 +46,10 @@ public class BedDetailController {
 	}
 
 	@PostMapping("/addbed")
-	public String addNewBed(@ModelAttribute("addbeds") BedDetail beddetail) {
+	public String addNewBed(@Valid @ModelAttribute("addbeds") BedDetail beddetail,Errors errors) {
+		if(errors.hasErrors()) {
+			return "add-bed-form";
+		}
 		bedService.save(beddetail);
 		return "redirect:/bed/list";
 	}
@@ -64,7 +68,11 @@ public class BedDetailController {
 	}
 
 	@PostMapping("updatebeds")
-	public String updateAmbulance(@ModelAttribute("updatebed") BedDetail beddetail) {
+	public String updateAmbulance(@ModelAttribute("updatebed") BedDetail beddetail,Errors errors)
+	{
+		if(errors.hasErrors()) {
+			return "update-bed-form";
+		}
 		bedService.save(beddetail);
 		return "redirect:/bed/list";
 	}

@@ -7,6 +7,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,7 +15,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.hospitalmanagementsys.dto.RoomBedDTO;
-import com.chainsys.hospitalmanagementsys.dto.StaffDoctorDTO;
 import com.chainsys.hospitalmanagementsys.model.RoomDetail;
 import com.chainsys.hospitalmanagementsys.service.RoomDetailService;
 
@@ -43,7 +43,10 @@ public class RoomDetailController {
 		return "add-room-form";
 	}
 	@PostMapping("/addroom")
-	public String addNewRoom(@ModelAttribute("addrooms") RoomDetail roomdetail) {
+	public String addNewRoom(@Valid @ModelAttribute("addrooms") RoomDetail roomdetail,Errors errors) {
+			if(errors.hasErrors()) {
+				return "add-room-form";
+		}
 		roomdetailservice.save(roomdetail);
 		return "redirect:/room/list";
 	}
@@ -60,7 +63,10 @@ public class RoomDetailController {
 	}
 
 	@PostMapping("/updateroom")
-	public String updateRoom(@ModelAttribute("updaterooms") RoomDetail roomdetail) {
+	public String updateRoom(@ModelAttribute("updaterooms") RoomDetail roomdetail,Errors errors) {
+		if(errors.hasErrors()) {
+			return "update-room-form";
+	}
 		roomdetailservice.save(roomdetail);
 		return "redirect:/room/list";
 	}

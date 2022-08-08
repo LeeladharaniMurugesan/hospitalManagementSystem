@@ -4,26 +4,30 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="OPERATIONTHEATRE_DETAILS")
 public class OperationTheatreDetail {
 	@Id
 	@Column(name="theatre_id")
-	@Min(value = 1, message = "Enter a Valid Id")
-	@Max(value = 100, message = "Enter a Valid Id")
 	private int theatreId; 
 	@Column(name="theatre_type")
-	@NotNull(message="Theatretype is required")
+	@Size(max = 20, min = 3, message = "*TheatreType length should be 3 to 20")
+	@NotBlank(message = "*TheatreType is required")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Theatre Type ")
 	private String theatreType ;
 	@Column(name="theatre_location")
-	@NotNull(message="Theatrelocation is required")
+	@Size(max = 20, min = 3, message = "*TheatreLocation length should be 3 to 20")
+	@NotBlank(message = "*TheatreLocation is required")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Theatre Location ")
 	private String theatreLocation;
 	@Column(name="theatre_status")
-	@NotNull(message="Theatrestatus is required")
+	@Size(max = 20, min = 3, message = "*TheatreStatus length should be 3 to 20")
+	@NotBlank(message = "*TheatreStatus is required")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Theatre Status")
 	private String theatreStatus;
 	public int getTheatreId() {
 		return theatreId;

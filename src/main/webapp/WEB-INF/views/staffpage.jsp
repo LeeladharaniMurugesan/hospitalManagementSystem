@@ -53,23 +53,6 @@ td {
 		<a href="/staffdetail/list"><button class="login-form button"
 				style="margin-left: 12px;">List</button></a>
 	</div>
-	<div>
-		<a href="/staffdetail/addstaffform"><button
-				class="login-form button" style="margin-left: 12px;">Add</button></a>
-	</div>
-	<div>
-		<a href="/staffdetail/updatestaffform?staffId="><button
-				class="login-form button" style="margin-left: 12px;">Update</button></a>
-	</div>
-	<div>
-		<a href="/staffdetail/deletestaff?staffId="><button
-				class="login-form button" style="margin-left: 12px;">Delete</button></a>
-	</div>
-	<div>
-		<a href="/staffdetail/getstaff?id="><button
-				class="login-form button" style="margin-left: 12px;">FindByStaffId</button></a>
-	</div>
-
 	<div></div>
 	<div class="main_heading">
 		<h1>ROOM DETAILS</h1>
@@ -78,22 +61,6 @@ td {
 		<a href="/room/list"><button class="login-form button"
 				style="margin-left: 12px;">List</button></a>
 	</div>
-	<div>
-		<a href="/room/addroomform"><button class="login-form button"
-				style="margin-left: 12px;">Add</button></a>
-	</div>
-	<div>
-		<a href="/room/updateroomform?roomId="><button
-				class="login-form button" style="margin-left: 12px;">Update</button></a>
-	</div>
-	<div>
-		<a href="/room/deleteroomform?roomId="><button
-				class="login-form button" style="margin-left: 12px;">Delete</button></a>
-	</div>
-	<div>
-		<a href="/room/getroom?roomId="><button class="login-form button"
-				style="margin-left: 12px;">FindByRoomId</button></a>
-	</div>
 	<div></div>
 	<div class="main_heading">
 		<h1>OPERATIONTHEATRE DETAILS</h1>
@@ -101,22 +68,6 @@ td {
 	<div>
 		<a href="/operationTheatre/list"><button class="login-form button"
 				style="margin-left: 12px;">List</button></a>
-	</div>
-	<div>
-		<a href="/operationTheatre/addoperationtheatreform"><button
-				class="login-form button" style="margin-left: 12px;">Add</button></a>
-	</div>
-	<div>
-		<a href="/operationTheatre/updateoperationtheatreform?theatreId="><button
-				class="login-form button" style="margin-left: 12px;">Update</button></a>
-	</div>
-	<div>
-		<a href="/operationTheatre/deleteoperationtheatre?theatreId="><button
-				class="login-form button" style="margin-left: 12px;">Delete</button></a>
-	</div>
-	<div>
-		<a href="/operationTheatre/getoperationtheatre?id="><button
-				class="login-form button" style="margin-left: 12px;">FindByTheatreId</button></a>
 	</div>
 	<div></div>
 	<div class="main_heading">

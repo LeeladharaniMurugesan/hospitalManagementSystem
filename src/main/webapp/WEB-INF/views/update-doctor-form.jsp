@@ -6,6 +6,12 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Doctor</title>
+<style type="text/css">
+.text-danger {
+    color: #e80c4d;
+    font-size: 0.9em;
+}
+</style>
 </head>
 <body>
 	<div id="root">
@@ -23,18 +29,21 @@
 						<form:input path="speciality" />
 					</div>
 				</div>
+				<form:errors path="speciality" class="text-danger" />
 				<div>
 					<label for="roleType">Role Type</label>
 					<div>
 						<form:input path="roleType" />
 					</div>
 				</div>
+				<form:errors path="roleType" class="text-danger" />
 				<div>
 					<label for="normalFees">Normal fees</label>
 					<div>
 						<form:input path="normalFees" />
 					</div>
 				</div>
+				<form:errors path="normalFees" class="text-danger" />
 				<div>
 					<form:button>Update Doctor</form:button>
 				</div>

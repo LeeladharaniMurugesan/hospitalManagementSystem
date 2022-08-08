@@ -9,7 +9,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
+
 import org.hibernate.validator.constraints.Range;
 
 @Entity
@@ -21,10 +25,14 @@ public class DoctorDetail {
 	@Max(value = 199, message = "Enter a Valid Id")
 	private int staffId;
 	@Column(name="speciality")
-	@NotNull(message="Speciality must be required")
+	@Size(max = 20, min = 3, message = "*Speciality  should be 3 to 20")
+	@NotBlank(message = "*Speciality is required")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Speciality ")
 	private String speciality ;
 	@Column(name="role_type")
-	@NotNull(message="RoleType must be required")
+	@Size(max = 20, min = 3, message = "*RoleType length should be 3 to 20")
+	@NotBlank(message = "*RoleType is required")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid RoleType ")
 	private String roleType;
 	@Column(name="normal_fees")
 	@Range(min = (int) 100.0)

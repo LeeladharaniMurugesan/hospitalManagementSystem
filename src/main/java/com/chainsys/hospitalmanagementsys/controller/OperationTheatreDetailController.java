@@ -6,6 +6,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -44,7 +45,10 @@ public class OperationTheatreDetailController {
 	}
 
 	@PostMapping("/addoperationtheatre")
-	public String addNewOperationTheatre(@ModelAttribute("addoperationtheatre") OperationTheatreDetail operationtheatre) {
+	public String addNewOperationTheatre(@Valid @ModelAttribute("addoperationtheatre") OperationTheatreDetail operationtheatre,Errors errors) {
+		if(errors.hasErrors()) {
+			return "add-otd-form";
+		}
 		operationtheatreservice.save(operationtheatre);
 		return "redirect:/operationTheatre/list";
 	}
@@ -63,7 +67,10 @@ public class OperationTheatreDetailController {
 	}
 
 	@PostMapping("updateopeartiontheatre")
-	public String updateOperationTheatre(@ModelAttribute("updateoperationtheatres") OperationTheatreDetail operationtheatre) {
+	public String updateOperationTheatre(@ModelAttribute("updateoperationtheatres") OperationTheatreDetail operationtheatre,Errors errors) {
+		if(errors.hasErrors()) {
+			return "update-otd-form";
+		}
 		operationtheatreservice.save(operationtheatre);
 		return "redirect:/operationTheatre/list";
 	}

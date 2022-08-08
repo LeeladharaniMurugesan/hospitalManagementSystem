@@ -10,27 +10,37 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="ROOM_DETAILS")
 public class RoomDetail {
 	@Id
 	@Column(name="room_id")
-	@Min(value = 1, message = "Enter a Valid Id")
-	@Max(value = 100, message = "Enter a Valid Id")
 	private int roomId ;
 	@Column(name="room_type")
-	@NotNull(message = "RoomType must be required")
+	@Size(max = 20, min = 3, message = "*RoomType length should be 3 to 20")
+	@NotBlank(message = "*RoomType is required")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Room Type ")
 	private String roomType ;
 	@Column(name="room_location")
+	@Size(max = 20, min = 3, message = "*RoomLocation length should be 3 to 20")
+	@NotBlank(message = "*RoomLocation is required")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Room Location ")
 	@NotNull(message = "RoomLocation must be required")
 	private String roomLocation ;
 	@Column(name="numof_beds")
 	@Min(value = 1, message = "Enter a Valid number of beds")
 	@Max(value = 100, message = "Enter a Valid number of beds")
+	@NotNull(message = "Number of beds must be required")
 	private int numOfBeds;
 	@Column(name="room_status")
+	@Size(max = 20, min = 3, message = "*RoomStatus length should be 3 to 20")
+	@NotBlank(message = "*RoomLocation is required")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Room Status ")
 	@NotNull(message = "RoomStatus must be required")
 	private String roomStatus;
 	@OneToMany(mappedBy="roomdetails",fetch=FetchType.LAZY)

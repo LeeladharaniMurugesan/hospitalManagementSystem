@@ -8,7 +8,10 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="BED_DETAILS")
@@ -19,13 +22,19 @@ public class BedDetail {
 	@Max(value = 100, message = "Enter a Valid Id")
 	private int bedId ;
 	@Column(name="bed_type")
-	@NotNull(message="BedType must be required")
+	@Size(max = 20, min = 3, message = "*BedType should be 3 to 20")
+	@NotBlank(message = "*BedType is required")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid BedType ")
 	private String bedType ;
 	@Column(name="bed_status")
-	@NotNull(message="BedStatus must be required")
+	@Size(max = 20, min = 3, message = "*Bedstatus  should be 3 to 20")
+	@NotBlank(message = "*BedStatus is required")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Bedstatus ")
 	private String bedStatus ;
 	@Column(name="bed_size")
-	@NotNull(message="BedSize must be required")
+	@Size(max = 20, min = 3, message = "*Bedsize should be 3 to 20")
+	@NotBlank(message = "*BedSize is required")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Bedsize ")
 	private String bedSize ;
 	@Column(name="room_id")
 	@Min(value = 1, message = "Enter a Valid Id")

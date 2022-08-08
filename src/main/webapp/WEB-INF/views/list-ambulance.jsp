@@ -21,8 +21,6 @@
 					<th>ambulanceModel</th>
 					<th>status</th>
 					<th>staffId</th>
-					<th>Edit</th>
-					<th>Delete</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -33,10 +31,6 @@
 						<td>${amb.ambulanceModel}</td>
 						<td>${amb.status}</td>
 						<td>${amb.staffId}</td>
-							<td><a
-               	href="updateambulanceform?registerId=${amb.registerId}">Edit</a></td>
-                        <td><a
-                            href="deleteambulance?registerId=${amb.registerId}">Delete</a></td>
 				</c:forEach>
 			</tbody>
 		</table>

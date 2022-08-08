@@ -1,6 +1,6 @@
 package com.chainsys.hospitalmanagementsys.model;
 
-import java.util.Date;
+import java.sql.Date;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -12,41 +12,42 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotNull;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "STAFF_DETAILS")
 public class StaffDetail {
 	@Id
 	@Column(name = "staff_id")
-	@Min(value = 100,message="Enter a valid Id between 100 to 199")
-	@Max(value = 199,message="Enter a valid Id between 100 to 199")
 	private int staffId;
 	@Column(name = "staff_name")
-	@NotNull(message="Username is required")
+	@Size(max = 20, min = 3, message = "*StaffName length should be 3 to 20")
+	@NotBlank(message = "*StaffName is required")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid name ")
 	private String staffName;
 	@Column(name = "dob")
-	@NotNull(message="Correct date format is required ")
+	// @NotBlank(message="Correct date format is required ")
 	private Date dob;
 	@Column(name = "gender")
-	@NotNull(message="Gender is required")
+	@NotEmpty(message = "Gender is required")
 	private String gender;
 	@Column(name = "phone_no")
-	@Digits(integer = 10, fraction = 0)
+	@Digits(message = "*Invalid Mobile Number", integer = 10, fraction = 0)
 	private long phoneNo;
 	@Column(name = "email_id ")
-	@Email(regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
+	@Email(message = "*Invalid Email", regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
 	private String emailId;
-	@org.springframework.data.annotation.Transient
 	@Column(name = "password")
-	@NotNull(message = "Password must contains atleast 8 digits")
 	private String password;
 	@Column(name = "designation")
-	@NotNull(message = "Designation must be required")
+	@Size(max = 20, min = 5, message = "*Designation length should be 5 to 20")
+	@NotBlank(message = "*Designation is required")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid designation ")
 	private String designation;
-	@OneToOne(mappedBy ="staffdetail", fetch = FetchType.LAZY)
+	@OneToOne(mappedBy = "staffdetail", fetch = FetchType.LAZY)
 	private DoctorDetail doctor;
 
 	public DoctorDetail getDoctor() {

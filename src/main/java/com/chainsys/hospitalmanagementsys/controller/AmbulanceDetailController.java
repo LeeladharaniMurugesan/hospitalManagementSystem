@@ -8,6 +8,7 @@ import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -46,7 +47,10 @@ public class AmbulanceDetailController {
 	}
 
 	@PostMapping("/addambulances")
-	public String addNewAmbulance(@ModelAttribute("addambulance") AmbulanceDetail ambulancedetail) {
+	public String addNewAmbulance(@Valid @ModelAttribute("addambulance") AmbulanceDetail ambulancedetail,Errors errors) {
+		if(errors.hasErrors()) {
+			return "add-ambulance-form";
+		}
 		ambService.save(ambulancedetail);
 		return "redirect:/ambulance/list";
 	}
@@ -65,7 +69,10 @@ public class AmbulanceDetailController {
 	}
 
 	@PostMapping("updateambulance")
-	public String updateAmbulance(@ModelAttribute("updateamb") AmbulanceDetail ambulancedetail) {
+	public String updateAmbulance(@ModelAttribute("updateamb") AmbulanceDetail ambulancedetail,Errors errors) {
+		if(errors.hasErrors()) {
+			return "update-ambulance-form";
+		}
 		ambService.save(ambulancedetail);
 		return "redirect:/ambulance/list";
 	}

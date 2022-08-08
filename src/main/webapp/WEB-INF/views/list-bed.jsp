@@ -21,8 +21,6 @@
 					<th>BedStatus</th>
 					<th>BedSize</th>
 					<th>RoomId</th>
-					<th>Edit</th>
-					<th>Delete</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -33,16 +31,9 @@
 						<td>${bed.bedStatus}</td>
 						<td>${bed.bedSize}</td>
 						<td>${bed.roomId}</td>
-					<td><a
-               	href="updatebedform?bedId=${bed.bedId}">Edit</a></td>
-                        <td><a
-                            href="deletebed?bedId=${bed.bedId}">Delete</a></td>
 				</c:forEach>
 			</tbody>
 		</table>
-		 <div align="center">
-        <a href="addbedform"><button>Add New Operation Theatre</button></a>
-    </div>
 	</div>
 </body>
 </html>

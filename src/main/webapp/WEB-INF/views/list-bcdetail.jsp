@@ -23,8 +23,6 @@
 					<th>ResourceType</th>
 					<th>Resource Id</th>
 					<th>StaffId</th>
-					<th>Edit</th>
-					<th>Delete</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -37,15 +35,9 @@
 						<td>${bc.resourceType}</td>
 						<td>${bc.resourceId}</td>
 						<td>${bc.staffId}</td>
-						<td><a href="updatebcform?bcId=${bc.bcId}">Edit</a></td>
-						<td><a href="deletebc?bcId=${bc.bcId}">Delete</a></td>
 				</c:forEach>
 			</tbody>
 		</table>
-		<div align="center">
-			<a href="addbcform"><button>Add New BookingCancellation
-					detail</button></a>
-		</div>
 	</div>
 </body>
 </html>
