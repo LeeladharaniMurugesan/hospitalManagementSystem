@@ -45,7 +45,7 @@ public class DoctorVisitDetailController {
 	}
 
 	@PostMapping("/adddocvisitdetail")
-	public String addNewDoctorVisit(@Valid @ModelAttribute("adddocvisit") DoctorVisitDetail doctorvisit,Errors errors) {
+	public String addNewDoctorVisit( @ModelAttribute("adddocvisit") DoctorVisitDetail doctorvisit,Errors errors) {
 		if(errors.hasErrors()) {
 			return "add-doctorvisit-form";
 		}

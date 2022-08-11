@@ -30,6 +30,7 @@ tr:hover {
 </style>
 </head>
 <body>
+	<button onclick="document.location='/home/staffuse'" style="float: right;">Home</button>
 	<center><h1> STAFFS LIST</h1></center>
 	<div id="table root">
 		<table border="2" width="100%" cellpadding="2">
@@ -70,7 +71,7 @@ tr:hover {
 		</table>
 	</div>
 	<div align="center">
-		<a href="addstaffform" ><button class="button">Add New Doctor</button></a>
+		<a href="addstaffform" ><button class="button">Add New Staff</button></a>
 	</div>
 </body>
 </html>

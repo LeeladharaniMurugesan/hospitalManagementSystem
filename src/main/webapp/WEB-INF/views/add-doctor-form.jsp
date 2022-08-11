@@ -24,7 +24,6 @@
 						<form:input path="staffId" />
 					</div>
 				</div>
-				<form:errors path="bedId" class="text-danger" />
 				<div>
 					<label for="speciality">Speciality </label>
 					<div>

@@ -51,56 +51,56 @@ td {
 
 .text-danger {
 	color: red;
-    font-size: 0.9em;
+	font-size: 0.9em;
 }
 </style>
 <body>
-	<h1><center>ADD ROOM<center></h1>
+	<h1>
+		<center>ADD ROOM</center>
+	</h1>
 	<center>
-	<div id="root">
-	
-		<div id="form">
-			<form:form action="addroom" method="post" modelAttribute="addrooms">
-				<div>
-					<label for="roomId" class="label-size">Room Id</label>
+		<div id="root">
+
+			<div id="form">
+				<form:form action="addroom" method="post" modelAttribute="addrooms">
 					<div>
-						<form:input path="roomId" class="text-box" />
+						<label for="roomType" class="label-size">Room Type</label>
+						<div>
+							<form:input path="roomType" class="text-box"
+								placeholder="RoomType" />
+						</div>
 					</div>
-				</div>
-				<div>
-					<label for="roomType" class="label-size">Room Type</label>
+					<form:errors path="roomType" class="text-danger" />
 					<div>
-						<form:input path="roomType" class="text-box" />
+						<label for="roomLocation" class="label-size">Room Location</label>
+						<div>
+							<form:input path="roomLocation" class="text-box"
+								placeholder="RoomLocation" />
+						</div>
 					</div>
-				</div>
-				<form:errors path="roomType" class="text-danger" />
-				<div>
-					<label for="roomLocation" class="label-size">Room Location</label>
+					<form:errors path="roomLocation" class="text-danger" />
 					<div>
-						<form:input path="roomLocation" class="text-box" />
+						<label for="numOfBeds" class="label-size">Number of beds</label>
+						<div>
+							<form:input path="numOfBeds" class="text-box"
+								placeholder="NumOfBeds" />
+						</div>
 					</div>
-				</div>
-				<form:errors path="roomLocation" class="text-danger" />
-				<div>
-					<label for="numOfBeds" class="label-size">Number of beds</label>
+					<form:errors path="numOfBeds" class="text-danger" />
 					<div>
-						<form:input path="numOfBeds" class="text-box" />
+						<label for="roomStatus" class="label-size">Room Status</label>
+						<div>
+							<form:input path="roomStatus" class="text-box"
+								placeholder="RoomStatus" />
+						</div>
 					</div>
-				</div>
-				<form:errors path="numOfBeds" class="text-danger" />
-				<div>
-					<label for="roomStatus" class="label-size">Room Status</label>
+					<form:errors path="roomStatus" class="text-danger" />
 					<div>
-						<form:input path="roomStatus" class="text-box" />
+						<form:button class="button">Add Room</form:button>
 					</div>
-				</div>
-				<form:errors path="roomStatus" class="text-danger" />
-				<div>
-					<form:button class="button">Add Room</form:button>
-				</div>
-			</form:form>
+				</form:form>
+			</div>
 		</div>
-	</div>
 	<center>
 </body>
 </html>

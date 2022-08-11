@@ -56,7 +56,7 @@ td {
 </style>
 </head>
 <body>
-
+	<button onclick="document.location='/home/staffuse'" style="float: right;">Home</button>
 	<h1>
 		<center>WELCOME STAFFS!!!</center>
 	</h1>
@@ -67,12 +67,6 @@ td {
 				<form:form action="addstaff" method="post"
 					modelAttribute="addstaffs">
 					<div>
-						<label for="staffId" class="label-size">Staff Id</label>
-						<div>
-							<form:input path="staffId" class="text-box" placeholder="StaffId" />
-						</div>
-					</div>
-					<div>
 						<label for="staffName" class="label-size">Staff Name</label>
 						<div>
 							<form:input path="staffName" class="text-box" placeholder="StaffName"/>
@@ -82,27 +76,30 @@ td {
 					<div>
 						<label for="dob" class="label-size">Dob</label>
 						<div>
-							<form:input type="Date" path="dob" class="text-box" placeholder="Dob" />
+							<form:input type="Date" path="dob" class="text-box" placeholder="10-08-2022" />
 						</div>
 					</div>
 					<div>
 						<label for="gender" class="label-size">Gender</label>
 						<div>
-							<form:input path="gender" class="text-box" placeholder="Gender"/>
+						<form:select path="gender" class="text-box" placeholder="Gender">
+                            <form:option value="Male">Male</form:option>
+                            <form:option value="Female">Female</form:option>
+                        </form:select>
 						</div>
 					</div>
 					<form:errors path="gender" class="text-danger" />
 					<div>
 						<label for="phoneNo" class="label-size">PhoneNo</label>
 						<div>
-							<form:input path="phoneNo" class="text-box" placeholder="PhoneNo" />
+							<form:input path="phoneNo" class="text-box" placeholder="98421 35211" />
 						</div>
 					</div>
 					<form:errors path="phoneNo" class="text-danger" />
 					<div>
 						<label for="emailId" class="label-size">EmailId</label>
 						<div>
-							<form:input path="emailId" class="text-box" placeholder="EmailId" />
+							<form:input path="emailId" class="text-box" placeholder="leela@gmail.com" />
 						</div>
 					</div>
 					<form:errors path="emailId" class="text-danger" />
@@ -112,6 +109,7 @@ td {
 							<form:input type="password" path="password" class="text-box" placeholder="Password"/>
 						</div>
 					</div>
+					<form:errors path="password" class="text-danger" />
 					<div>
 						<label for="designation" class="label-size">Designation</label>
 						<div>
@@ -120,7 +118,7 @@ td {
 					</div>
 					<form:errors path="designation" class="text-danger" />
 					<div>
-						<form:button class="button">Add New Staff</form:button>
+						<form:button class="button">Add New Doctor</form:button>
 					</div>
 					<center>
 				</form:form>

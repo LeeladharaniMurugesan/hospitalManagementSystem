@@ -20,14 +20,13 @@
 				<div>
 					<label for="registerId">Register Id</label>
 					<div>
-						<form:input path="registerId" />
-					</div>
+						<form:input path="registerId"/>
 				</div>
-				<form:errors path="registerId" class="text-danger" />
+				</div>
 				<div>
 					<label for="purchaseDate">Purchase Date </label>
 					<div>
-						<form:input path="purchaseDate" />
+						<form:input type="Date" path="purchaseDate" />
 					</div>
 				</div>
 				<form:errors path="staffId" class="text-danger" />
@@ -51,7 +50,6 @@
 						<form:input path="staffId" />
 					</div>
 				</div>
-				<form:errors path="staffId" class="text-danger" />
 				<div>
 					<form:button>Add ambulance</form:button>
 				</div>

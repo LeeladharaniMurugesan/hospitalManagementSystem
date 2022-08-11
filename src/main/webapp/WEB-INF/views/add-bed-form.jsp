@@ -18,13 +18,6 @@
 		<div id="form">
 			<form:form action="addbed" method="post" modelAttribute="addbeds">
 				<div>
-					<label for="bedId">Bed Id</label>
-					<div>
-						<form:input path="bedId" />
-					</div>
-				</div>
-				<form:errors path="bedId" class="text-danger" />
-				<div>
 					<label for="bedType">Bed Type </label>
 					<div>
 						<form:input path="bedType" />

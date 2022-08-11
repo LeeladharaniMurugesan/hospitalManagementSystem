@@ -33,7 +33,7 @@ public class AmbulanceDetailController {
 	}
 
 	@GetMapping("/getambulance")
-	public String getAmbulance(@Valid@RequestParam("id") String id, Model model) {
+	public String getAmbulance(@RequestParam("id") String id, Model model) {
 		Optional<AmbulanceDetail> ambulancedetail = ambService.findById(id);
 		model.addAttribute("getambulance", ambulancedetail);
 		return "find-ambulance-id-form";
@@ -69,7 +69,7 @@ public class AmbulanceDetailController {
 	}
 
 	@PostMapping("updateambulance")
-	public String updateAmbulance(@ModelAttribute("updateamb") AmbulanceDetail ambulancedetail,Errors errors) {
+	public String updateAmbulance(@Valid @ModelAttribute("updateamb") AmbulanceDetail ambulancedetail,Errors errors) {
 		if(errors.hasErrors()) {
 			return "update-ambulance-form";
 		}

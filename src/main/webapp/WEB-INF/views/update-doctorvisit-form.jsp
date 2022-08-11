@@ -36,7 +36,7 @@
 						<form:input path="visitedDate" />
 					</div>
 				</div>
-				<form:errors path="visitiedDate" class="text-danger" />
+				<form:errors path="visitedDate" class="text-danger" />
 				<div>
 					<label for="fromTime">From Time</label>
 					<div>

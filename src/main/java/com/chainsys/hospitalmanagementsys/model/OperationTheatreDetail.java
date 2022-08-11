@@ -2,7 +2,10 @@ package com.chainsys.hospitalmanagementsys.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
@@ -12,22 +15,24 @@ import javax.validation.constraints.Size;
 @Table(name="OPERATIONTHEATRE_DETAILS")
 public class OperationTheatreDetail {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "operation_id_ref")
+	@SequenceGenerator(name = "operation_id_ref", sequenceName = "operation_id_ref", allocationSize = 1)
 	@Column(name="theatre_id")
 	private int theatreId; 
 	@Column(name="theatre_type")
 	@Size(max = 20, min = 3, message = "*TheatreType length should be 3 to 20")
-	@NotBlank(message = "*TheatreType is required")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Theatre Type ")
+	@NotBlank(message = "*TheatreType cannot be empty")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid TheatreType ")
 	private String theatreType ;
 	@Column(name="theatre_location")
 	@Size(max = 20, min = 3, message = "*TheatreLocation length should be 3 to 20")
-	@NotBlank(message = "*TheatreLocation is required")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Theatre Location ")
+	@NotBlank(message = "*TheatreLocation cannot be empty")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid TheatreLocation ")
 	private String theatreLocation;
 	@Column(name="theatre_status")
 	@Size(max = 20, min = 3, message = "*TheatreStatus length should be 3 to 20")
-	@NotBlank(message = "*TheatreStatus is required")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Theatre Status")
+	@NotBlank(message = "*TheatreStatus cannot be empty")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Theatretatus")
 	private String theatreStatus;
 	public int getTheatreId() {
 		return theatreId;

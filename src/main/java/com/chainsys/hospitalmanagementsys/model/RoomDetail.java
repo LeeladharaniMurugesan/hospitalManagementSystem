@@ -5,8 +5,11 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -19,18 +22,20 @@ import javax.validation.constraints.Size;
 @Table(name="ROOM_DETAILS")
 public class RoomDetail {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "room_id_ref")
+	@SequenceGenerator(name = "room_id_ref", sequenceName = "room_id_ref", allocationSize = 1)
 	@Column(name="room_id")
 	private int roomId ;
 	@Column(name="room_type")
 	@Size(max = 20, min = 3, message = "*RoomType length should be 3 to 20")
-	@NotBlank(message = "*RoomType is required")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Room Type ")
+	@NotBlank(message = "*RoomType cannot be empty")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid RoomType ")
 	private String roomType ;
 	@Column(name="room_location")
 	@Size(max = 20, min = 3, message = "*RoomLocation length should be 3 to 20")
 	@NotBlank(message = "*RoomLocation is required")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Room Location ")
 	@NotNull(message = "RoomLocation must be required")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid name ")
 	private String roomLocation ;
 	@Column(name="numof_beds")
 	@Min(value = 1, message = "Enter a Valid number of beds")

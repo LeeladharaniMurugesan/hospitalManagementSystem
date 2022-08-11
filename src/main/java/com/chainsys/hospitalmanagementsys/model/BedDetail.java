@@ -2,14 +2,13 @@ package com.chainsys.hospitalmanagementsys.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -17,28 +16,22 @@ import javax.validation.constraints.Size;
 @Table(name="BED_DETAILS")
 public class BedDetail {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "beddetails_id_ref")
+	@SequenceGenerator(name = "beddetails_id_ref", sequenceName = "beddetails_id_ref", allocationSize = 1)
 	@Column(name="bed_id")
-	@Min(value = 1, message = "Enter a Valid Id")
-	@Max(value = 100, message = "Enter a Valid Id")
 	private int bedId ;
 	@Column(name="bed_type")
-	@Size(max = 20, min = 3, message = "*BedType should be 3 to 20")
-	@NotBlank(message = "*BedType is required")
+	@Size(max = 20, min = 3, message = "*Bedstatus  should be 3 to 20")
 	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid BedType ")
 	private String bedType ;
 	@Column(name="bed_status")
 	@Size(max = 20, min = 3, message = "*Bedstatus  should be 3 to 20")
-	@NotBlank(message = "*BedStatus is required")
 	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Bedstatus ")
 	private String bedStatus ;
 	@Column(name="bed_size")
 	@Size(max = 20, min = 3, message = "*Bedsize should be 3 to 20")
-	@NotBlank(message = "*BedSize is required")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Bedsize ")
 	private String bedSize ;
 	@Column(name="room_id")
-	@Min(value = 1, message = "Enter a Valid Id")
-	@Max(value = 100, message = "Enter a Valid Id")
 	private int roomId;
 	@ManyToOne
     @JoinColumn(name="room_id",nullable = false, insertable = false,updatable = false)

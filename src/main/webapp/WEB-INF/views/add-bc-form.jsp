@@ -18,30 +18,23 @@
 		<div id="form">
 			<form:form action="addbc" method="post" modelAttribute="addbookcancel">
 				<div>
-					<label for="bcId">Booking/Cancellation Id</label>
-					<div>
-						<form:input path="bcId" />
-					</div>
-				</div>
-				<form:errors path="bcId" class="text-danger" />
-				<div>
 					<label for="bookingDate">BookingDate </label>
 					<div>
-						<form:input path="bookingDate" />
+						<form:input  type="Date" path="bookingDate" />
 					</div>
 				</div>
 				<form:errors path="bookingDate" class="text-danger" />
 				<div>
 					<label for="fromDate">From Date</label>
 					<div>
-						<form:input path="fromDate" />
+						<form:input type="Date" path="fromDate" />
 					</div>
 				</div>
 				<form:errors path="fromDate" class="text-danger" />
 				<div>
 					<label for="toDate">To Date</label>
 					<div>
-						<form:input path="toDate" />
+						<form:input type="Date" path="toDate" />
 					</div>
 				</div>
 				<form:errors path="toDate" class="text-danger" />

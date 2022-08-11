@@ -19,12 +19,6 @@
 		<div id="form">
 			<form:form action="adddocvisitdetail" method="post" modelAttribute="adddocvisit">
 				<div>
-					<label for="sNo">SNo</label>
-					<div>
-						<form:input path="sNo" />
-					</div>
-				</div>
-				<div>
 					<label for="staffId">StaffId </label>
 					<div>
 						<form:input path="staffId" />
@@ -33,21 +27,21 @@
 				<div>
 					<label for="visitedDate">Visited Date</label>
 					<div>
-						<form:input path="visitedDate" />
+						<form:input type="Date" path="visitedDate" />
 					</div>
 				</div>
 				<form:errors path="visitedDate" class="text-danger" />
 				<div>
 					<label for="fromTime">From Time</label>
 					<div>
-						<form:input path="fromTime" />
+						<form:input path="fromTime"/>
 					</div>
 				</div>
 				<form:errors path="fromTime" class="text-danger" />
 				<div>
 					<label for="toTime">To Time</label>
 					<div>
-						<form:input path="toTime" />
+						<form:input path="toTime"/>
 					</div>
 				</div>
 				<form:errors path="toTime" class="text-danger" />

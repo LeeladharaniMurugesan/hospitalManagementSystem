@@ -78,18 +78,6 @@ td {
 				style="margin-left: 12px;">List</button></a>
 	</div>
 	<div>
-		<a href="/doctor/adddoctorform"><button class="login-form button"
-				style="margin-left: 12px;">Add</button></a>
-	</div>
-	<div>
-		<a href="/doctor/updatedoctorform?staffId="><button
-				class="login-form button" style="margin-left: 12px;">Update</button></a>
-	</div>
-	<div>
-		<a href="/doctor/deletedoctor?staffId="><button
-				class="login-form button" style="margin-left: 12px;">Delete</button></a>
-	</div>
-	<div>
 		<a href="/doctor/getdoctor?id="><button class="login-form button"
 				style="margin-left: 12px;">FindByDoctorId</button></a>
 	</div>
@@ -106,23 +94,11 @@ td {
 				style="margin-left: 12px;">List</button></a>
 	</div>
 	<div>
-		<a href="/doctorvisit/adddocvisitform"><button
-				class="login-form button" style="margin-left: 12px;">Add</button></a>
-	</div>
-	<div>
-		<a href="/doctorvisit/updatedocvisitform?sNo="><button
-				class="login-form button" style="margin-left: 12px;">Update</button></a>
-	</div>
-	<div>
-		<a href="/doctorvisit/deletedocvisit?sNo="><button
-				class="login-form button" style="margin-left: 12px;">Delete</button></a>
-	</div>
-	<div>
 		<a href="/doctorvisit/getdocvisit?id="><button
 				class="login-form button" style="margin-left: 12px;">FindByDocVisitId</button></a>
 	</div>
 	<div>
-		<a href="/staffdetails/getstaffdocvisit?id="><button
+		<a href="/staffdetail/getstaffdocvisit?id="><button
 				class="login-form button" style="margin-left: 12px;">GetStaffDocVisitbyId</button></a>
 	</div>
 	<div></div>
@@ -134,23 +110,11 @@ td {
 				style="margin-left: 12px;">List</button></a>
 	</div>
 	<div>
-		<a href="/ambulance/addambulanceform"><button
-				class="login-form button" style="margin-left: 12px;">Add</button></a>
-	</div>
-	<div>
-		<a href="/ambulance/updateambulanceform?registerId="><button
-				class="login-form button" style="margin-left: 12px;">Update</button></a>
-	</div>
-	<div>
-		<a href="/ambulance/deleteambulance?registerId=="><button
-				class="login-form button" style="margin-left: 12px;">Delete</button></a>
-	</div>
-	<div>
 		<a href="/ambulance/getambulance?id="><button
 				class="login-form button" style="margin-left: 12px;">FindByAmbulanceId</button></a>
 	</div>
 	<div>
-		<a href="/staffdetails/getambulancedetail?id="><button
+		<a href="/staffdetail/getambulancedetail?id="><button
 				class="login-form button" style="margin-left: 12px;">GetStaffAmbulancebyId</button></a>
 	</div>
 	<div></div>
@@ -160,18 +124,6 @@ td {
 	<div>
 		<a href="/bed/list"><button class="login-form button"
 				style="margin-left: 12px;">List</button></a>
-	</div>
-	<div>
-		<a href="/bed/addbedform"><button class="login-form button"
-				style="margin-left: 12px;">Add</button></a>
-	</div>
-	<div>
-		<a href="/bed/updatebedform?bedId="><button
-				class="login-form button" style="margin-left: 12px;">Update</button></a>
-	</div>
-	<div>
-		<a href="/bed/deletebed?bedId="><button class="login-form button"
-				style="margin-left: 12px;">Delete</button></a>
 	</div>
 	<div>
 		<a href="/bed/getbeds?id="><button class="login-form button"
@@ -188,18 +140,6 @@ td {
 	<div>
 		<a href="/bcdetail/list"><button class="login-form button"
 				style="margin-left: 12px;">List</button></a>
-	</div>
-	<div>
-		<a href="/bcdetail/addbcform"><button class="login-form button"
-				style="margin-left: 12px;">Add</button></a>
-	</div>
-	<div>
-		<a href="/bcdetail/updatebcform?bcId="><button
-				class="login-form button" style="margin-left: 12px;">Update</button></a>
-	</div>
-	<div>
-		<a href="/bcdetail/deletebc?bcId="><button
-				class="login-form button" style="margin-left: 12px;">Delete</button></a>
 	</div>
 	<div>
 		<a href="/bcdetail/getbc?id="><button class="login-form button"

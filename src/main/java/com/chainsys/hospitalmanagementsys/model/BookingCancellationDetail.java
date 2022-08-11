@@ -1,47 +1,40 @@
 package com.chainsys.hospitalmanagementsys.model;
 
-import java.util.Date;
+
+import java.sql.Date;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 @Entity
 @Table(name="BOOKINGCANCELLATION_DETAILS")
 public class BookingCancellationDetail {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "bookcancel_id_ref")
+	@SequenceGenerator(name = "bookcancel_id_ref", sequenceName = "bookcancel_id_ref", allocationSize = 1)
 	@Column(name="bc_id")
-	@Min(value = 1101, message = "Enter a Valid Id")
-	@Max(value = 1200, message = "Enter a Valid Id")
 	private int bcId ;
 	@Column(name="booking_date")
-	@NotNull(message="Correct date format is required ")
 	private Date bookingDate ;
 	@Column(name="fromdate")
-	@NotNull(message="Correct date format is required ")
 	private Date fromDate;
 	@Column(name="todate")
-	@NotNull(message="Correct date format is required ")
 	private Date toDate ;
 	@Column(name="resource_type")
 	private String resourceType;
-	@Size(max = 20, min = 3, message = "*resourcetype  should be 3 to 20")
-	@NotBlank(message = "*resourcetype is required")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid resourcetype ")
-	@NotNull(message="ResourceId should is required ")
+	@Column(name="resource_id")
 	private String resourceId;
 	@Column(name="staff_id")
-	@Min(value = 100, message = "Enter a Valid Id")
-	@Max(value = 199, message = "Enter a Valid Id")
 	private int staffId;
 	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="staff_id" , nullable=false,insertable=false,updatable=false)

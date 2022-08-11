@@ -105,4 +105,4 @@ public class StaffDetailService {
 	public StaffDetail StaffByEmailAndPassword(String email, String password) {
         return staffDetailRepository.findByEmailIdAndPassword(email, password);
     }
-	}
+}

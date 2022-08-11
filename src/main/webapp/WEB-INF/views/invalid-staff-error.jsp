@@ -9,6 +9,6 @@
 <body>
  <h2>Invalid Staff </h2>
  <div> Check your Email id and password</div>
- <a href="/staffdetail/stafflogin"> Return to Customer login</a>
+ <a href="/staffdetail/stafflogin"> Return to Staff login</a>
 </body>
 </html>

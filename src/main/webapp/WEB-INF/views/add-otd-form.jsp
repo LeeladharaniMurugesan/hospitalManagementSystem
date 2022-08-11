@@ -41,7 +41,7 @@ td {
 
 .button {
 	margin-top: 10px;
-	width: 130px;
+	width: 160px;
 	height: 38px;
 	font-size: 15px;
 	background-color: deepskyblue;
@@ -65,35 +65,28 @@ td {
 		<div id="form">
 			<form:form action="addoperationtheatre" method="post" modelAttribute="addoperationtheatre">
 				<div>
-					<label for="theatreId" class="label-size">Theatre Id</label>
-					<div>
-						<form:input path="theatreId" class="text-box"/>
-					</div>
-				</div>
-				<form:errors path="theatreId" class="text-danger" />
-				<div>
 					<label for="theatreType" class="label-size">Theatre Type</label>
 					<div>
-						<form:input path="theatreType" class="text-box" />
+						<form:input path="theatreType" class="text-box" placeholder="theatreType"/>
 					</div>
 				</div>
 				<form:errors path="theatreType" class="text-danger" />
 				<div>
 					<label for="theatreLocation" class="label-size">Theatre Location</label>
 					<div>
-						<form:input path="theatreLocation" class="text-box" />
+						<form:input path="theatreLocation" class="text-box" placeholder="theatreLocation"/>
 					</div>
 				</div>
 				<form:errors path="theatreLocation" class="text-danger" />
 				<div>
 					<label for="theatreStatus" class="label-size">Theatre Status</label>
 					<div>
-						<form:input path="theatreStatus" class="text-box" />
+						<form:input path="theatreStatus" class="text-box" placeholder="theatreStatus" />
 					</div>
 				</div>
 				<form:errors path="theatreStatus" class="text-danger" />
 				<div>
-					<form:button>Add OpeartionTheatre</form:button>
+					<form:button class="button">Add OpeartionTheatre</form:button>
 				</div>
 			</form:form>
 		</div>

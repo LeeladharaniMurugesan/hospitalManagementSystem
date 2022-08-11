@@ -66,7 +66,7 @@ tr:hover {
 			</tbody>
 		</table>
 		</div>
-		 <div align="center"style="margin-top: 25px;">
+		 <div align="center">
         <a href="addoperationtheatreform"><button class="button">Add New Operation Theatre</button></a>
     </div>
 	</div>

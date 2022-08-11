@@ -6,14 +6,16 @@ import java.util.List;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -21,31 +23,34 @@ import javax.validation.constraints.Size;
 @Table(name = "STAFF_DETAILS")
 public class StaffDetail {
 	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO, generator = "staff_id_ref")
+	@SequenceGenerator(name = "staff_id_ref", sequenceName = "staff_id_ref", allocationSize = 1)
 	@Column(name = "staff_id")
 	private int staffId;
 	@Column(name = "staff_name")
 	@Size(max = 20, min = 3, message = "*StaffName length should be 3 to 20")
-	@NotBlank(message = "*StaffName is required")
+	@NotBlank(message = "*StaffName cannot be empty")
 	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid name ")
 	private String staffName;
 	@Column(name = "dob")
-	// @NotBlank(message="Correct date format is required ")
 	private Date dob;
 	@Column(name = "gender")
-	@NotEmpty(message = "Gender is required")
 	private String gender;
 	@Column(name = "phone_no")
 	@Digits(message = "*Invalid Mobile Number", integer = 10, fraction = 0)
+
 	private long phoneNo;
 	@Column(name = "email_id ")
 	@Email(message = "*Invalid Email", regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
 	private String emailId;
 	@Column(name = "password")
+	@Size(max = 20, min = 8, message = "*Minimum eight characters ")
+	@NotBlank(message = "*Password can't be Empty")
 	private String password;
 	@Column(name = "designation")
 	@Size(max = 20, min = 5, message = "*Designation length should be 5 to 20")
-	@NotBlank(message = "*Designation is required")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid designation ")
+	@NotBlank(message = "*Designation should not be empty")
+	@Pattern(regexp = "^[A-Za-z]\\w{5,20}$", message = "*Enter valid designation ")
 	private String designation;
 	@OneToOne(mappedBy = "staffdetail", fetch = FetchType.LAZY)
 	private DoctorDetail doctor;
