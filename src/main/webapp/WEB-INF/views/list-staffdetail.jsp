@@ -48,7 +48,6 @@ tr:hover {
 					<th>EmailId</th>
 					<th>Designation</th>
 					<th>Edit</th>
-					<th>Delete</th>
 					<th>View</th>
 				</tr>
 			</thead>
@@ -63,7 +62,6 @@ tr:hover {
 						<td>${staff.emailId}</td>
 						<td>${staff.designation}</td>
 						<td><a href="updatestaffform?staffId=${staff.staffId}">Edit</a></td>
-						<td><a href="deletestaff?staffId=${staff.staffId}">Delete</a></td>
 						<td><a href="getstaff?id=${staff.staffId}">View</a></td>
 					</tr>
 				</c:forEach>

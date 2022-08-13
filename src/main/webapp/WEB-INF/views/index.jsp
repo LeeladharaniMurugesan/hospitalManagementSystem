@@ -1,210 +1,150 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+    pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Index</title>
-<style>
+<title>Hopital Management System</title>
+<style type="text/css">
+* {
+    margin: 0;
+    padding: 0;
+}
+
 body {
-	background-image:
-		url(https://images3.alphacoders.com/101/thumb-1920-1010294.jpg);
-	background-height: 786px;
-	background-width: 1366px;
-	background-attachment: fixed;
-	background-size: cover;
+    background-image:
+        url("https://us.123rf.com/450wm/pitinan/pitinan1711/pitinan171100292/90593810-health-insurance-concept-doctor-in-hospital-with-health-insurance-related-icons-in-modern-graphic-in.jpg?ver=6");
+    height: 550px;
+    width: 1366px;
+    background-position: center top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
 }
 
-table, th, td {table , th, td { border:1pxsolidblack;
-	border-collapse: collapse;
+.menu {
+    width: 400px;
+    float: left;
+    height: 70px;
 }
 
-}
-th {
-	background-color: #04AA6D;
-	color: white;
+ul {
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-td {
-	backgoung-colour: #c4f5dc;
+ul li {
+    list-style: none;
+    margin-left: 62px;
+    margin-top: 27px;
+    font-size: 25px;
+}
+
+ul li a {
+    text-decoration: none;
+    color: #000000;
+    font-family: Arial;
+    font-weight: bold;
+    transition: 0.4s ease-in-out;
+}
+
+ul li a:hover {
+    color: #fff;
+}
+
+.active {
+    background-color: #04AA6D;
+}
+
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+/*   background-color: #9ACD32; */
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: #000000;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+  background-color: black;
+}
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
 }
 </style>
 </head>
 <body>
+    <div class="menu">
+        <ul>
+            <li><a href="#">HOME</a></li>
+            <li><a href="/staffdetail/stafflogin">LOGIN</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li class="dropdown"><a href="javascript:void(0)"
+                class="dropbtn">CONTACT</a>
+                <div class="dropdown-content">
+                    <a href="#">Email us on leeladharanimurugesan@gmail.com</a> <a href="#">Call
+                        us on 8765123121</a>
+                </div></li>
 
-	<div>
-		<h1>Staff Login</h1>
-	</div>
-	<div>
-		<a href="/staffdetail/stafflogin">Staff Login</a>
-	</div>
-	<div></div>
-	<div>
-		<h1>Staff Details</h1>
-	</div>
-	<div>
-		<a href="/staffdetail/list">List</a>
-	</div>
-	<div>
-		<a href="/staffdetail/addstaffform">Add</a>
-	</div>
-	<div>
-		<a href="/staffdetail/updatestaffform?staffId=">Update</a>
-	</div>
-	<div>
-		<a href="/staffdetail/deletestaff?staffId=">Delete</a>
-	</div>
-	<div>
-		<a href="/staffdetail/getstaff?id=">FindByStaffId</a>
-	</div>
+        </ul>
+    </div>
 
-	<div></div>
-	<div>
-		<h1>Room Details</h1>
-	</div>
-	<div>
-		<a href="/room/list">List</a>
-	</div>
-	<div>
-		<a href="/room/addroomform">Add</a>
-	</div>
-	<div>
-		<a href="/room/updateroomform?roomId=">Update</a>
-	</div>
-	<div>
-		<a href="/room/deleteroomform?roomId=">Delete</a>
-	</div>
-	<div>
-		<a href="/room/getroom?roomId=">FindByRoomId</a>
-	</div>
-	<div></div>
-	<div>
-		<h1>OperationTheatre Details</h1>
-	</div>
-	<div>
-		<a href="/operationTheatre/list">List</a>
-	</div>
-	<div>
-		<a href="/operationTheatre/addoperationtheatreform">Add</a>
-	</div>
-	<div>
-		<a href="/operationTheatre/updateoperationtheatreform?theatreId=">Update</a>
-	</div>
-	<div>
-		<a href="/operationTheatre/deleteoperationtheatre?theatreId=">Delete</a>
-	</div>
-	<div>
-		<a href="/operationTheatre/getoperationtheatre?id=">FindByTheatreId</a>
-	</div>
-	<div></div>
-	<div>
-		<h1>Doctor Details</h1>
-	</div>
-	<div>
-		<a href="/doctor/list">List</a>
-	</div>
-	<div>
-		<a href="/doctor/adddoctorform">Add</a>
-	</div>
-	<div>
-		<a href="/doctor/updatedoctorform?staffId=">Update</a>
-	</div>
-	<div>
-		<a href="/doctor/deletedoctor?staffId=">Delete</a>
-	</div>
-	<div>
-		<a href="/doctor/getdoctor?id=">FindbyDoctorId</a>
-	</div>
-	<div>
-		<a href="/staffdetail/getstaffdoctor">FindByStaffDoctorId</a>
-	</div>
-	<div></div>
-	<div>
-		<h1>Doctor Visit Detail</h1>
-	</div>
-	<div>
-		<a href="/doctorvisit/list">List</a>
-	</div>
-	<div>
-		<a href="/doctorvisit/adddocvisitform">Add</a>
-	</div>
-	<div>
-		<a href="/doctorvisit/updatedocvisitform?sNo=">Update</a>
-	</div>
-	<div>
-		<a href="/doctorvisit/deletedocvisit?sNo=">Delete</a>
-	</div>
-	<div>
-		<a href="/doctorvisit/getdocvisit?id=">FindByDocVisitId</a>
-	</div>
-	<div>
-		<a href="/staffdetails//getstaffdocvisit?id=">GetStaffDocVisitbyId</a>
-	</div>
-	<div></div>
-	<div>
-		<h1>Ambulance Detail</h1>
-	</div>
-	<div>
-		<a href="/ambulance/list">List</a>
-	</div>
-	<div>
-		<a href="/ambulance/addambulanceform">Add</a>
-	</div>
-	<div>
-		<a href="/ambulance/updateambulanceform?registerId=">Update</a>
-	</div>
-	<div>
-		<a href="/ambulance/deleteambulance?registerId==">Delete</a>
-	</div>
-	<div>
-		<a href="/ambulance/getambulance?id=">FindByAmbulanceId</a>
-	</div>
-	<div>
-		<a href="/staffdetails/getambulancedetail?id=">GetStaffAmbulancebyId</a>
-	</div>
-	<div></div>
-	<div>
-		<h1>Bed Detail</h1>
-	</div>
-	<div>
-		<a href="/bed/list">List</a>
-	</div>
-	<div>
-		<a href="/bed/addbedform">Add</a>
-	</div>
-	<div>
-		<a href="/bed/updatebedform?bedId=">Update</a>
-	</div>
-	<div>
-		<a href="/bed/deletebed?bedId==">Delete</a>
-	</div>
-	<div>
-		<a href="/bed/getbeds?id=">FindBybedId</a>
-	</div>
-	<div>
-		<a href="/room/getroombed?roomId=">FindByRoomId</a>
-	</div>
-	<div></div>
-	<div>
-		<h1>Booking Cancellation Detail</h1>
-	</div>
-	<div>
-		<a href="/bcdetail/list">List</a>
-	</div>
-	<div>
-		<a href="/bcdetail/addbcform">Add</a>
-	</div>
-	<div>
-		<a href="/bcdetail/updatebcform?bcId=">Update</a>
-	</div>
-	<div>
-		<a href="/bcdetail/deletebc?bcId=">Delete</a>
-	</div>
-	<div>
-		<a href="/bcdetail/getbc?id=">FindBybcId</a>
-	</div>
-	<div>
-		<a href="/staffdetails/getbookingcancellationdetail?id=">FindByStaffBookingCancellationId</a>
-	</div>
 </body>
 </html>

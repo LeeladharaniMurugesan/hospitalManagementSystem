@@ -69,7 +69,9 @@ td {
 					<div>
 						<label for="staffName" class="label-size">Staff Name</label>
 						<div>
-							<form:input path="staffName" class="text-box" placeholder="StaffName"/>
+							<form:input path="staffName" class="text-box" placeholder="staffName"
+							title="StaffName can't be empty or must contain only alphabets"
+							pattern="^[a-zA-Z]+$" required="true"/>
 						</div>
 					</div>
 					<form:errors path="staffName" class="text-danger" />
@@ -92,28 +94,37 @@ td {
 					<div>
 						<label for="phoneNo" class="label-size">PhoneNo</label>
 						<div>
-							<form:input path="phoneNo" class="text-box" placeholder="98421 35211" />
-						</div>
+							<form:input path="phoneNo" class="text-box" placeholder="Phone Number"
+								pattern="[1-9]{1}[0-9]{9}"
+								title="Phone number should have atleast 10 digits"
+								required="true" />
+					</div>
 					</div>
 					<form:errors path="phoneNo" class="text-danger" />
 					<div>
 						<label for="emailId" class="label-size">EmailId</label>
 						<div>
-							<form:input path="emailId" class="text-box" placeholder="leela@gmail.com" />
+							<form:input path="emailId" class="text-box" placeholder="EmailId"
+							pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$"
+							title="Enter valid email ex: example@gmail.com" required="true" />
 						</div>
 					</div>
 					<form:errors path="emailId" class="text-danger" />
 					<div>
 						<label for="password" class="label-size">Password</label>
 						<div>
-							<form:input type="password" path="password" class="text-box" placeholder="Password"/>
+							<form:input  type ="password" path="password" class="text-box" placeholder="Password"
+							pattern="^[A-Za-z0-9._%+-]+$"
+							title="Enter valid Password" required="true" />
 						</div>
 					</div>
 					<form:errors path="password" class="text-danger" />
 					<div>
 						<label for="designation" class="label-size">Designation</label>
 						<div>
-							<form:input path="designation" class="text-box" placeholder="Designation"/>
+							<form:input path="designation" class="text-box" placeholder="designation"
+							title="Designation can't be empty or must contain only alphabets"
+							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
 						</div>
 					</div>
 					<form:errors path="designation" class="text-danger" />

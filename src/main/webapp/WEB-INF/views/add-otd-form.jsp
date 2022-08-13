@@ -67,21 +67,27 @@ td {
 				<div>
 					<label for="theatreType" class="label-size">Theatre Type</label>
 					<div>
-						<form:input path="theatreType" class="text-box" placeholder="theatreType"/>
+						<form:input path="theatreType" class="text-box" placeholder="theatreType"
+							title="TheatreType can't be empty or must contain only alphabets"
+							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="theatreType" class="text-danger" />
 				<div>
 					<label for="theatreLocation" class="label-size">Theatre Location</label>
 					<div>
-						<form:input path="theatreLocation" class="text-box" placeholder="theatreLocation"/>
+						<form:input path="theatreLocation" class="text-box" placeholder="theatreLocation"
+							title="TheatreLocation can't be empty or must contain only alphabets"
+							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="theatreLocation" class="text-danger" />
 				<div>
 					<label for="theatreStatus" class="label-size">Theatre Status</label>
 					<div>
-						<form:input path="theatreStatus" class="text-box" placeholder="theatreStatus" />
+						<form:input path="theatreStatus" class="text-box" placeholder="theatreStatus"
+							title="TheatreStatus can't be empty or must contain only alphabets"
+							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="theatreStatus" class="text-danger" />

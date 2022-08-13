@@ -67,7 +67,9 @@ td {
 						<label for="roomType" class="label-size">Room Type</label>
 						<div>
 							<form:input path="roomType" class="text-box"
-								placeholder="RoomType" />
+								placeholder="roomType"
+								title="RoomType can't be empty or must contain only alphabets"
+								pattern="^[a-zA-Z]+$" required="true" />
 						</div>
 					</div>
 					<form:errors path="roomType" class="text-danger" />
@@ -75,7 +77,9 @@ td {
 						<label for="roomLocation" class="label-size">Room Location</label>
 						<div>
 							<form:input path="roomLocation" class="text-box"
-								placeholder="RoomLocation" />
+								placeholder="roomLocation"
+								title="RoomLocation can't be empty or must contain only alphabets"
+								pattern="^[a-zA-Z]+$" required="true" />
 						</div>
 					</div>
 					<form:errors path="roomLocation" class="text-danger" />
@@ -83,7 +87,8 @@ td {
 						<label for="numOfBeds" class="label-size">Number of beds</label>
 						<div>
 							<form:input path="numOfBeds" class="text-box"
-								placeholder="NumOfBeds" />
+								placeholder="NumOfBeds"
+								title="RoomStatus can't be empty or must contain only alphabets" />
 						</div>
 					</div>
 					<form:errors path="numOfBeds" class="text-danger" />
@@ -91,7 +96,9 @@ td {
 						<label for="roomStatus" class="label-size">Room Status</label>
 						<div>
 							<form:input path="roomStatus" class="text-box"
-								placeholder="RoomStatus" />
+								placeholder="roomtatus"
+								title="RoomStatus can't be empty or must contain only alphabets"
+								pattern="^[a-zA-Z]+$" required="true" />
 						</div>
 					</div>
 					<form:errors path="roomStatus" class="text-danger" />
@@ -101,6 +108,6 @@ td {
 				</form:form>
 			</div>
 		</div>
-	<center>
+		<center>
 </body>
 </html>

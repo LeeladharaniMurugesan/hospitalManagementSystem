@@ -117,13 +117,14 @@ public class StaffDetailController {
     }                   
 
     @PostMapping("/staffpage")
-    public String checkingAccess(@ModelAttribute("staff") StaffDetail staff) {
+    public String checkingAccess(@ModelAttribute("staff") StaffDetail staff,Model model) {
         StaffDetail staffDetail = staffdetailservice.StaffByEmailAndPassword(staff.getEmailId(),staff.getPassword());
         if (staffDetail!= null){
 
             return "redirect:/home/staffuse";
-        } else
-            return "invalid-staff-error";
-
+        } else {
+        	model.addAttribute("result","Invalid EmailId and Password!!!");
+            return "staff-login-form";
+        }
     }
 }

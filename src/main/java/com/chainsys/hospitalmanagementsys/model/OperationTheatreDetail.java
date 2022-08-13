@@ -7,7 +7,6 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -21,17 +20,14 @@ public class OperationTheatreDetail {
 	private int theatreId; 
 	@Column(name="theatre_type")
 	@Size(max = 20, min = 3, message = "*TheatreType length should be 3 to 20")
-	@NotBlank(message = "*TheatreType cannot be empty")
 	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid TheatreType ")
 	private String theatreType ;
 	@Column(name="theatre_location")
 	@Size(max = 20, min = 3, message = "*TheatreLocation length should be 3 to 20")
-	@NotBlank(message = "*TheatreLocation cannot be empty")
 	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid TheatreLocation ")
 	private String theatreLocation;
 	@Column(name="theatre_status")
 	@Size(max = 20, min = 3, message = "*TheatreStatus length should be 3 to 20")
-	@NotBlank(message = "*TheatreStatus cannot be empty")
 	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Theatretatus")
 	private String theatreStatus;
 	public int getTheatreId() {

@@ -46,6 +46,7 @@ td {
 </style>
 </head>
 <body>
+<button onclick="document.location='/staffdetail/stafflogin'" style="float: right;">Logout</button>
 	<div class="main_heading">
 		<h1>STAFF DETAILS</h1>
 	</div>

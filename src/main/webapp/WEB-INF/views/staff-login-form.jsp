@@ -52,6 +52,7 @@ width: 75px;
 
 				</div>
 			</form:form>
+			${result}
 		</div>
 	</div>
 </body>

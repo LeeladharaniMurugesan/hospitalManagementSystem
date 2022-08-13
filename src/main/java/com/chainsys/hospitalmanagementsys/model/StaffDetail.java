@@ -29,8 +29,7 @@ public class StaffDetail {
 	private int staffId;
 	@Column(name = "staff_name")
 	@Size(max = 20, min = 3, message = "*StaffName length should be 3 to 20")
-	@NotBlank(message = "*StaffName cannot be empty")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid name ")
+	@Pattern(regexp = "^[A-Za-z\s]*$", message = "*Enter valid name ")
 	private String staffName;
 	@Column(name = "dob")
 	private Date dob;
@@ -38,19 +37,16 @@ public class StaffDetail {
 	private String gender;
 	@Column(name = "phone_no")
 	@Digits(message = "*Invalid Mobile Number", integer = 10, fraction = 0)
-
 	private long phoneNo;
 	@Column(name = "email_id ")
 	@Email(message = "*Invalid Email", regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
 	private String emailId;
 	@Column(name = "password")
 	@Size(max = 20, min = 8, message = "*Minimum eight characters ")
-	@NotBlank(message = "*Password can't be Empty")
 	private String password;
 	@Column(name = "designation")
-	@Size(max = 20, min = 5, message = "*Designation length should be 5 to 20")
-	@NotBlank(message = "*Designation should not be empty")
-	@Pattern(regexp = "^[A-Za-z]\\w{5,20}$", message = "*Enter valid designation ")
+	@Size(max = 20, min = 3, message = "*Designation length should be 3 to 20")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid designation ")
 	private String designation;
 	@OneToOne(mappedBy = "staffdetail", fetch = FetchType.LAZY)
 	private DoctorDetail doctor;

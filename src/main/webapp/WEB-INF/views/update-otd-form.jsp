@@ -24,28 +24,34 @@
 					</div>
 				</div>
 				<div>
-					<label for="theatreType">Theatre Type</label>
+					<label for="theatreType" class="label-size">Theatre Type</label>
 					<div>
-						<form:input path="theatreType" />
+						<form:input path="theatreType" class="text-box" placeholder="theatreType"
+							title="TheatreType can't be empty or must contain only alphabets"
+							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="theatreType" class="text-danger" />
 				<div>
-					<label for="theatreLocation">Theatre Location</label>
+					<label for="theatreLocation" class="label-size">Theatre Location</label>
 					<div>
-						<form:input path="theatreLocation" />
+						<form:input path="theatreLocation" class="text-box" placeholder="theatreLocation"
+							title="TheatreLocation can't be empty or must contain only alphabets"
+							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="theatreLocation" class="text-danger" />
 				<div>
-					<label for="theatreStatus">Theatre Status</label>
+					<label for="theatreStatus" class="label-size">Theatre Status</label>
 					<div>
-						<form:input path="theatreStatus" />
+						<form:input path="theatreStatus" class="text-box" placeholder="theatreStatus"
+							title="TheatreStatus can't be empty or must contain only alphabets"
+							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="theatreStatus" class="text-danger" />
 				<div>
-					<form:button>Update OpeartionTheatre</form:button>
+					<form:button class="button">Update OpeartionTheatre</form:button>
 				</div>
 			</form:form>
 		</div>
