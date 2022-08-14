@@ -2,47 +2,29 @@
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Staff List</title>
-<style>
-table, th, td {
-	border: 1px solid black;
-	padding: 10px;
-	text-align: left;
-}
-
-th, td {
-	border-color: #96D4D4;
-}
-
-tr:hover {
-	background-color: #D6EEEE;
-}
-
-.button {
-	font-size: 19px;
-    background-color: deepskyblue;
-    border: 1px solid blue;
-    border-radius: 5px;
-}
+<style><%@include file="/WEB-INF/css/style.css"%>
+h1 {text-align: center;}
+div{text-align: center;}
 </style>
 </head>
 <body>
 	<button onclick="document.location='/home/staffuse'" style="float: right;">Home</button>
-	<center><h1> STAFFS LIST</h1></center>
+	<h1> STAFFS LIST</h1>
 	<div id="table root">
 		<table border="2" width="100%" cellpadding="2">
 			<colgroup>
-				<col span="10" style="background-color: plum">
-				<col span="4" style="background-color: crimson">
+				<col span="10" style="background-color: #FFCE44">
+				<col span="4" style="background-color: #B3446C">
 			</colgroup>
 			<thead>
 				<tr>
 					<th>StaffId</th>
 					<th>StaffName</th>
-					<th>Dob</th>
+					<th>DateOfBirth</th>
 					<th>Gender</th>
 					<th>PhoneNo</th>
 					<th>EmailId</th>
@@ -68,7 +50,7 @@ tr:hover {
 			</tbody>
 		</table>
 	</div>
-	<div align="center">
+	<div>
 		<a href="addstaffform" ><button class="button">Add New Staff</button></a>
 	</div>
 </body>

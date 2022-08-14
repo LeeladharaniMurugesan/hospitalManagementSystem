@@ -2,37 +2,57 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Find OperationTheatre</title>
+<style><%@include file="/WEB-INF/css/style.css"%>
+h1 {
+	text-align: center;
+}
+
+div {
+	text-align: center;
+}
+
+body {
+	background-image:
+		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url(https://c1.wallpaperflare.com/preview/198/427/746/blood-pressure-pressure-gauge-medical-the-test.jpg);
+}
+.label-text {
+	font-size: 26px;
+	color: wheat;
+}
+</style>
 </head>
 <body>
+	<h1>VIEW OPERATION THEATRE</h1>
 	<div id="root">
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getoperationtheatres">
 				<div>
-					<label for="theatreId">Theatre Id</label>
+					<label for="theatreId" class="label-size">TheatreId</label>
 					<div>
-						<form:input path="theatreId" readonly="true"/>
+						<form:input path="theatreId" class="text-box" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="theareType">Theatre Type</label>
+					<label for="theareType" class="label-size">TheatreType</label>
 					<div>
-						<form:input path="theatreType" readonly="true" />
+						<form:input path="theatreType" class="text-box" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="theatreLocation">Theatre Location</label>
+					<label for="theatreLocation" class="label-size">TheatreLocation</label>
 					<div>
-						<form:input path="theatreLocation" readonly="true"/>
+						<form:input path="theatreLocation" class="text-box" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="theatreStatus">Theatre Status</label>
+					<label for="theatreStatus" class="label-size">TheatreStatus</label>
 					<div>
-						<form:input path="theatreStatus" readonly="true"/>
+						<form:input path="theatreStatus" class="text-box" readonly="true"/>
 					</div>
 				</div>
 			</form:form>

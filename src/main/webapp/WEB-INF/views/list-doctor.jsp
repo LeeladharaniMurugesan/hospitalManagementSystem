@@ -2,12 +2,18 @@
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Doctor List</title>
+<style><%@include file="/WEB-INF/css/style.css"%>
+h1 {text-align: center;}
+div{text-align: center;}
+</style>
 </head>
 <body>
+	<button onclick="document.location='/home/staffuse'" style="float: right;">Home</button>
+	<h1> DOCTORS LIST</h1>
 		<div id="table root">
 		<table border="2" width="100%" cellpadding="2">
             <colgroup>
@@ -19,9 +25,9 @@
 					<th>Staff Id</th>
 					<th>Speciality</th>
 					<th>Role Type</th>
-					<th>Normal Fees</th>
+					<th>NormalFees</th>
 					<th>Edit</th>
-					<th>Delete</th>
+					<th>View</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -34,15 +40,14 @@
 						<td><a
                	href="updatedoctorform?staffId=${doc.staffId}">Edit</a></td>
                         <td><a
-                            href="deletedoctor?staffId=${doc.staffId}">Delete</a></td>
+                            href="getdoctor?id=${doc.staffId}">View</a></td>
                     </tr>
 				</c:forEach>
 			</tbody>
 		</table>
 		</div>
-	 <div align="center">
-        <a href="adddoctorform"><button>Add New Doctor</button></a>
+	 <div>
+        <a href="adddoctorform"><button class="button">Add New Doctor</button></a>
     </div>
-	</div>
 </body>
 </html>

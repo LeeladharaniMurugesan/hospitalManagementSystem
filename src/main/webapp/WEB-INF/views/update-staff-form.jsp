@@ -2,58 +2,23 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Staff</title>
-<style>
+<style><%@include file="/WEB-INF/css/style.css"%>
+h1 {text-align: center;}
+div{text-align: center;}
 body {
 	background-image:
 		url(https://thumbs.dreamstime.com/z/healthcare-technology-doctor-using-digital-tablet-icon-medical-network-hospital-background-162019727.jpg);
-	background-height: 786px;
-	background-width: 1366px;
-	background-attachment: fixed;
-	background-size: cover;
-}
-
-table, th, td {table , th, td { border:1pxsolidblack;
-	border-collapse: collapse;
-}
-
-}
-th {
-	background-color: #04AA6D;
-	color: white;
-}
-
-td {
-	backgoung-colour: #c4f5dc;
-}
-.label-size{
-font-size:28px;
-}
-
-.text-box{
-height: 28px;
-    width: 237px;
-}
-.button{
-margin-top: 20px;
-    width: 145px;
-    height: 38px;
-    font-size: 15px;
-    background-color: deepskyblue;
-    border: 2px solid blue;
-    border-radius: 5px;
-}
-.text-danger {
-    color: #e80c4d;
-    font-size: 0.9em;
-}
-}
+}	
 </style>
 </head>
 <body>
+	<button onclick="document.location='/home/staffuse'"
+		style="float: right;">Home</button>
+	<h1>WELCOME STAFFS</h1>
 	<div id="root">
 		<div id="form">
 			<form:form action="updatestaff" method="post" modelAttribute="updatestaffs">

@@ -2,37 +2,48 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Find Doctor</title>
+<style><%@include file="/WEB-INF/css/style.css"%>
+h1 {text-align: center;}
+div{text-align: center;}
+body {
+	background-image:
+		url(https://previews.123rf.com/images/giggsy25/giggsy251711/giggsy25171100134/89624948-smart-doctor-with-a-stethoscope-on-blurred-hospital-background-and-medical-icon-in-hexagonal-shaped-.jpg);
+}
+</style>
 </head>
 <body>
+<button onclick="document.location='/home/staffuse'"
+		style="float: right;">Home</button>
+	<h1>FIND DOCTORS</h1>
 	<div id="root">
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getdoc">
 				<div>
-					<label for="staffId">Staff Id</label>
+					<label for="staffId" class="label-size">Staff Id</label>
 					<div>
-						<form:input path="staffId" readonly="true"/>
+						<form:input path="staffId" class="text-box" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="speciality">Speciality</label>
+					<label for="speciality" class="label-size">Speciality</label>
 					<div>
-						<form:input path="speciality" readonly="true" />
+						<form:input path="speciality" class="text-box" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="roleType">Role Type</label>
+					<label for="roleType" class="label-size">Role Type</label>
 					<div>
-						<form:input path="roleType" readonly="true"/>
+						<form:input path="roleType" class="text-box" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="normalFees">Normal Fees</label>
+					<label for="normalFees" class="label-size">Normal Fees</label>
 					<div>
-						<form:input path="normalFees" readonly="true"/>
+						<form:input path="normalFees" class="text-box" readonly="true"/>
 					</div>
 				</div>
 			</form:form>

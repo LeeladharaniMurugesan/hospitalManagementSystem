@@ -9,7 +9,7 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
-
+ 
 @Entity
 @Table(name="OPERATIONTHEATRE_DETAILS")
 public class OperationTheatreDetail {
@@ -28,7 +28,7 @@ public class OperationTheatreDetail {
 	private String theatreLocation;
 	@Column(name="theatre_status")
 	@Size(max = 20, min = 3, message = "*TheatreStatus length should be 3 to 20")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Theatretatus")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Theatre status")
 	private String theatreStatus;
 	public int getTheatreId() {
 		return theatreId;

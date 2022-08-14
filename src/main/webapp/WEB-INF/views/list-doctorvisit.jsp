@@ -2,17 +2,22 @@
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>DoctorVisit List</title>
+<style><%@include file="/WEB-INF/css/style.css"%>
+h1 {text-align: center;}
+div{text-align: center;}
+</style>
 </head>
 <body>
-	<div id="table root">
+	<button onclick="document.location='/home/staffuse'" style="float: right;">Home</button>
+	<h1> VISITING DOCTOR LIST</h1>
 		<div id="table root">
 		<table border="2" width="100%" cellpadding="2">
             <colgroup>
-                <col span="10" style="background-color:red">
+                <col span="10" style="background-color:skyblue">
                 <col span="4" style="background-color: crimson">
             </colgroup>
 			<thead>
@@ -24,7 +29,7 @@
 					<th>ToTime</th>
 					<th>DailyFees</th>
 					<th>Update</th>
-					<th>Delete</th>
+					<th>View</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -39,15 +44,15 @@
 						<td><a
                	href="updatedocvisitform?sNo=${docv.sNo}">Edit</a></td>
                         <td><a
-                            href="deletedocvisit?sNo=${docv.sNo}">Delete</a></td>
+                            href="getdocvisit?id=${docv.sNo}">View</a></td>
                     </tr>
 
 				</c:forEach>
 			</tbody>
 		</table>
 	</div>
-	<div align="center">
-        <a href="adddocvisitform"><button>Add New Doctor</button></a>
+	<div>
+        <a href="adddocvisitform"><button class="button">Add New Doctor</button></a>
     </div>
 </body>
 </html>

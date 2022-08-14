@@ -15,7 +15,6 @@ import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.Digits;
 import javax.validation.constraints.Email;
-import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -36,13 +35,14 @@ public class StaffDetail {
 	@Column(name = "gender")
 	private String gender;
 	@Column(name = "phone_no")
-	@Digits(message = "*Invalid Mobile Number", integer = 10, fraction = 0)
+	@Digits(message = "*Invalid Phone Number", integer = 10, fraction = 0)
 	private long phoneNo;
 	@Column(name = "email_id ")
 	@Email(message = "*Invalid Email", regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
 	private String emailId;
 	@Column(name = "password")
 	@Size(max = 20, min = 8, message = "*Minimum eight characters ")
+	@Pattern(regexp="^[A-Za-z0-9._%+-]+$",message="*Enter Valid Password")
 	private String password;
 	@Column(name = "designation")
 	@Size(max = 20, min = 3, message = "*Designation length should be 3 to 20")

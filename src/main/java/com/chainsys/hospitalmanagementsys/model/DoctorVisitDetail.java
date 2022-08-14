@@ -14,6 +14,7 @@ import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Range;
 
@@ -26,9 +27,11 @@ public class DoctorVisitDetail {
 	@Column(name = "s_no")
 	private int sNo;
 	@Column(name = "staff_id")
+	@NotNull
 	private int staffId;
 	@NotNull(message = "Date should not be null")
 	@Column(name = "visited_date")
+	@Past
 	private Date visitedDate;
 	@Column(name = "from_time")
 	private String fromTime;

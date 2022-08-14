@@ -2,36 +2,23 @@
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>OperationTheatre List</title>
-<style>
-table, th, td {
-	border: 1px solid black;
-	padding: 10px;
-	text-align: left;
+<style><%@include file="/WEB-INF/css/style.css"%>
+h1 {
+	text-align: center;
 }
 
-th, td {
-	border-color: #96D4D4;
-}
-
-tr:hover {
-	background-color: #D6EEEE;
-}
-
-.button {
-	font-size: 19px;
-	background-color: deepskyblue;
-	border: 1px solid blue;
-	border-radius: 5px;
+div {
+	text-align: center;
 }
 </style>
 </head>
 <body>
 <div>
-<center><h1>OPERATION THEATRE LIST</h1> </center>
+<h1>OPERATION THEATRE LIST</h1>
 	<div id="table root">
 		<table border="2" width="100%" cellpadding="2">
             <colgroup>
@@ -45,7 +32,6 @@ tr:hover {
 					<th>TheatreLocation</th>
 					<th>TheatreStatus</th>
 					<th>Edit</th>
-					<th>Delete</th>
 					<th>View</th>
 				</tr>
 			</thead>
@@ -57,17 +43,14 @@ tr:hover {
 						<td>${opd.theatreLocation}</td>
 						<td>${opd.theatreStatus}</td>
 						<td><a
-               	href="updateoperationtheatreform?theatreId=${opd.theatreId}">Edit</a></td>
-                        <td><a
-                            href="deleteoperationtheatre?theatreId=${opd.theatreId}">Delete</a></td>
-                             <td><a
+               	href="updateoperationtheatreform?theatreId=${opd.theatreId}">Edit</a></td>                             <td><a
                             href="getoperationtheatre?id=${opd.theatreId}">View</a></td>
 				</c:forEach>
 			</tbody>
 		</table>
 		</div>
-		 <div align="center">
-        <a href="addoperationtheatreform"><button class="button">Add New Operation Theatre</button></a>
+		 <div style="margin-top: 25px;">
+        <a href="addoperationtheatreform"><button class="button">Add New OT</button></a>
     </div>
 	</div>
 </body>

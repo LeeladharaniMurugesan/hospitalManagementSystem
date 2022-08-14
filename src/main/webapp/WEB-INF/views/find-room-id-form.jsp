@@ -2,62 +2,27 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Find Room</title>
-<style type="text/css">
+<style><%@include file ="/WEB-INF/css/style.css"%>
+h1 {
+	text-align: center;
+}
+
+div {
+	text-align: center;
+}
+
 body {
 	background-image:
-		url(https://media.istockphoto.com/photos/hospital-bed-with-medical-equipment-in-hospital-room-picture-id1216959568?k=20&m=1216959568&s=612x612&w=0&h=qthuPcSe11twnTfiAZ-Rm7Tk2POt3YJ23BrLFHAMboU=);
-	background-height: 786px;
-	background-width: 1366px;
-	background-attachment: fixed;
-	background-size: cover;
-}
-
-table, th, td {table , th, td { border:1pxsolidblack;
-	border-collapse: collapse;
-}
-
-}
-th {
-	background-color: #04AA6D;
-	color: white;
-}
-
-td {
-	backgoung-colour: #c4f5dc;
-}
-
-.label-size {
-	font-size: 28px;
-}
-
-.text-box {
-	height: 28px;
-	width: 237px;
-}
-
-.button {
-	margin-top: 10px;
-	width: 130px;
-	height: 38px;
-	font-size: 15px;
-	background-color: deepskyblue;
-	border: 2px solid blue;
-	border-radius: 5px;
-}
-
-.text-danger {
-	color: red;
-    font-size: 0.9em;
+		url(https://images.unsplash.com/photo-1512678080530-7760d81faba6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80);
 }
 </style>
 </head>
 <body>
-	<h1><center>FIND ROOM DETAILS</center></h1>
-	<center>
+	<h1>FIND ROOM DETAILS</h1>
 	<div id="root">
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getrooms">

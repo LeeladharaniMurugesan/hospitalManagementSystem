@@ -2,97 +2,68 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Add OperationTheatre</title>
-<style type="text/css">
+<style><%@include file="/WEB-INF/css/style.css"%>
+h1 {
+	text-align: center;
+}
+
+div {
+	text-align: center;
+}
+
 body {
 	background-image:
-		url(https://st2.depositphotos.com/2065849/9678/i/950/depositphotos_96789564-stock-photo-medical-drip-in-hospital-corridor.jpg);
-	background-height: 786px;
-	background-width: 1366px;
-	background-attachment: fixed;
-	background-size: cover;
+		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+		url(https://media.istockphoto.com/photos/urgent-surgery-professional-smart-intelligent-surgeons-standing-near-picture-id1306095133?b=1&k=20&m=1306095133&s=170667a&w=0&h=4LQ8xLSEn_cAAOVQvaMIgZypyBL8-FCqAEQQyC7ogBg=);
 }
-
-table, th, td {table , th, td { border:1pxsolidblack;
-	border-collapse: collapse;
-}
-
-}
-th {
-	background-color: #04AA6D;
-	color: white;
-}
-
-td {
-	backgoung-colour: #c4f5dc;
-}
-
-.label-size {
-	font-size: 28px;
-}
-
-.text-box {
-	height: 28px;
-	width: 237px;
-}
-
-.button {
-	margin-top: 10px;
-	width: 160px;
-	height: 38px;
-	font-size: 15px;
-	background-color: deepskyblue;
-	border: 2px solid blue;
-	border-radius: 5px;
-}
-
-.text-danger {
-	color: #e80c4d;
-	font-size: 0.9em;
+.label-text {
+	font-size: 26px;
+	color: wheat;
 }
 </style>
 </head>
 <body>
-<h1>
-		<center>ADD OPERATION THEATRE</center>
-	</h1>
-
-	<center>
+	<h1 class="label-text">ADD OPERATION THEATRE</h1>
 	<div id="root">
 		<div id="form">
-			<form:form action="addoperationtheatre" method="post" modelAttribute="addoperationtheatre">
+			<form:form action="addoperationtheatre" method="post"
+				modelAttribute="addoperationtheatre">
 				<div>
-					<label for="theatreType" class="label-size">Theatre Type</label>
+					<label for="theatreType" class="label-size label-text">TheatreType</label>
 					<div>
-						<form:input path="theatreType" class="text-box" placeholder="theatreType"
+						<form:input path="theatreType" class="text-box"
+							placeholder="theatreType"
 							title="TheatreType can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
+							pattern="^[A-Za-z]\\w{3,20}$" required="true" />
 					</div>
 				</div>
 				<form:errors path="theatreType" class="text-danger" />
 				<div>
-					<label for="theatreLocation" class="label-size">Theatre Location</label>
+					<label for="theatreLocation" class="label-size label-text">TheatreLocation</label>
 					<div>
-						<form:input path="theatreLocation" class="text-box" placeholder="theatreLocation"
+						<form:input path="theatreLocation" class="text-box"
+							placeholder="theatreLocation"
 							title="TheatreLocation can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
+							pattern="^[A-Za-z]\\w{3,20}$" required="true" />
 					</div>
 				</div>
 				<form:errors path="theatreLocation" class="text-danger" />
 				<div>
-					<label for="theatreStatus" class="label-size">Theatre Status</label>
+					<label for="theatreStatus" class="label-size label-text">TheatreStatus</label>
 					<div>
-						<form:input path="theatreStatus" class="text-box" placeholder="theatreStatus"
+						<form:input path="theatreStatus" class="text-box"
+							placeholder="theatreStatus"
 							title="TheatreStatus can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
+							pattern="^[A-Za-z]\\w{3,20}$" required="true" />
 					</div>
 				</div>
 				<form:errors path="theatreStatus" class="text-danger" />
 				<div>
-					<form:button class="button">Add OpeartionTheatre</form:button>
+					<form:button class="button">Add OT</form:button>
 				</div>
 			</form:form>
 		</div>

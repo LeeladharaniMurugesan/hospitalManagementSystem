@@ -13,9 +13,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.Future;
+import javax.validation.constraints.Past;
 @Entity
 @Table(name="BOOKINGCANCELLATION_DETAILS")
 public class BookingCancellationDetail {
@@ -27,9 +26,11 @@ public class BookingCancellationDetail {
 	@Column(name="booking_date")
 	private Date bookingDate ;
 	@Column(name="fromdate")
+	@Past
 	private Date fromDate;
 	@Column(name="todate")
-	private Date toDate ;
+	@Future
+	private Date toDate;
 	@Column(name="resource_type")
 	private String resourceType;
 	@Column(name="resource_id")
