@@ -2,16 +2,26 @@
 	pageEncoding="ISO-8859-1"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html LANG="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Bed List</title>
+<style><%@include file ="/WEB-INF/css/style.css"%>
+h1 {
+	text-align: center;
+}
+
+div {
+	text-align: center;
+}
+</style>
 </head>
 <body>
+	<h1>BEDS LIST</h1>
 	<div id="table root">
 		<table border="2" width="100%" cellpadding="2">
             <colgroup>
-                <col span="10" style="background-color:yellow">
+                <col span="10" style="background-color:	#BDB76B">
                 <col span="4" style="background-color:crimson">
             </colgroup>
 			<thead>
@@ -22,7 +32,7 @@
 					<th>BedSize</th>
 					<th>RoomId</th>
 					<th>Edit</th>
-					<th>Delete</th>
+					<th>View</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -36,14 +46,14 @@
 					<td><a
                	href="updatebedform?bedId=${bed.bedId}">Edit</a></td>
                         <td><a
-                            href="deletebed?bedId=${bed.bedId}">Delete</a></td>
+                            href="getbeds?id=${bed.bedId}">View</a></td>
                     </tr>
 						
 				</c:forEach>
 			</tbody>
 		</table>
-		 <div align="center">
-        <a href="addbedform"><button>Add New Bed</button></a>
+		 <div style="margin-top: 25px;">
+        <a href="addbedform"><button class="button">Add New Bed</button></a>
     </div>
 	</div>
 </body>

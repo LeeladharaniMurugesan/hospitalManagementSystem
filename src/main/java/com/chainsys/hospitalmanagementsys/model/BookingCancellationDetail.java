@@ -13,8 +13,10 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.Future;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Past;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 @Entity
 @Table(name="BOOKINGCANCELLATION_DETAILS")
 public class BookingCancellationDetail {
@@ -24,19 +26,25 @@ public class BookingCancellationDetail {
 	@Column(name="bc_id")
 	private int bcId ;
 	@Column(name="booking_date")
+	@Past
 	private Date bookingDate ;
 	@Column(name="fromdate")
 	@Past
 	private Date fromDate;
 	@Column(name="todate")
-	@Future
 	private Date toDate;
 	@Column(name="resource_type")
 	private String resourceType;
 	@Column(name="resource_id")
+	@NotNull
 	private String resourceId;
 	@Column(name="staff_id")
+	@NotNull
 	private int staffId;
+	@Column(name="status")
+	@Size(max = 20, min = 3, message = "*Status length should be 3 to 20")
+	@Pattern(regexp = "^[A-Za-z\s]*$", message = "*Enter valid status")
+	private String status;
 	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="staff_id" , nullable=false,insertable=false,updatable=false)
     private StaffDetail staffbookingcancellationdetails;
@@ -87,6 +95,12 @@ public class BookingCancellationDetail {
 	}
 	public void setStaffId(int staffId) {
 		this.staffId = staffId;
+	}
+	public String getStatus() {
+		return status;
+	}
+	public void setStatus(String status) {
+		this.status = status;
 	}
 	
 	

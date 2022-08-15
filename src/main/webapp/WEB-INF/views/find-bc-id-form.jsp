@@ -3,54 +3,78 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Find BC details</title>
+<style><%@include file ="/WEB-INF/css/style.css"%>
+h1 {
+	text-align: center;
+}
+
+div {
+	text-align: center;
+}
+
+body {
+	background-image:
+		url(https://img.freepik.com/free-vector/doctors-notebook-medical-composition_1284-16378.jpg);
+}
+</style>
 </head>
 <body>
+	<button onclick="document.location='/home/staffuse'"
+		style="float: right;">Home</button>
+	<h1>FIND BOOKING DETAILS</h1>
 	<div id="root">
 		<div id="form">
-			<form:form action="" method="post" modelAttribute="getbookcanceldetail">
+			<form:form action="" method="post"
+				modelAttribute="getbookcanceldetail">
+				<div>
+					<label for="bcId" class="label-size">BookingId</label>
 					<div>
-					<label for="bcId">Booking/Cancellation Id</label>
-					<div>
-						<form:input path="bcId" readonly="true"/>
+						<form:input path="bcId" class="text-box" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="bookingDate">BookingDate </label>
+					<label for="bookingDate" class="label-size">BookingDate </label>
 					<div>
-						<form:input path="bookingDate" readonly="true"/>
+						<form:input path="bookingDate" class="text-box" readonly="true" />
 					</div>
 				</div>
-				
+
 				<div>
-					<label for="fromDate">From Date</label>
+					<label for="fromDate" class="label-size">From Date</label>
 					<div>
-						<form:input path="fromDate" readonly="true"/>
-					</div>
-				</div>
-				<div>
-					<label for="toDate">To Date</label>
-					<div>
-						<form:input path="toDate" readonly="true"/>
+						<form:input path="fromDate" class="text-box" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="resourceType">ResourceType</label>
-					<form:input path="resourceType" readonly="true"/>
-				</div>
-				<div>
-					<label for="resourceId">ResourceId</label>
+					<label for="toDate" class="label-size">To Date</label>
 					<div>
-						<form:input path="resourceId" readonly="true"/>
+						<form:input path="toDate" class="text-box" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="staffId">Staff Id</label>
+					<label for="resourceType" class="label-size">ResourceType</label>
+					<form:input path="resourceType" class="text-box" readonly="true" />
+				</div>
+				<div>
+					<label for="resourceId" class="label-size">ResourceId</label>
 					<div>
-						<form:input path="staffId" readonly="true"/>
+						<form:input path="resourceId" class="text-box" readonly="true" />
+					</div>
+				</div>
+				<div>
+					<label for="staffId" class="label-size">Staff Id</label>
+					<div>
+						<form:input path="staffId" class="text-box" readonly="true" />
+					</div>
+				</div>
+				<div>
+					<label for="status" class="label-size">Staff Id</label>
+					<div>
+						<form:input path="status" class="text-box" readonly="true" />
 					</div>
 				</div>
 			</form:form>

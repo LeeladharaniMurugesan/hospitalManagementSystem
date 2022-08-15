@@ -2,46 +2,59 @@
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Add BookingCancellation</title>
-<style type="text/css">
-.text-danger {
-    color: #e80c4d;
-    font-size: 0.9em;
+<style><%@include file ="/WEB-INF/css/style.css"%>
+h1 {
+	text-align: center;
+}
+
+div {
+	text-align: center;
+}
+body {
+	background-image:
+		url(https://img.freepik.com/free-vector/doctors-notebook-medical-composition_1284-16378.jpg);
 }
 </style>
 </head>
 <body>
+	<button onclick="document.location='/home/staffuse'"
+		style="float: right;">Home</button>
+	<h1>ADD BOOKING</h1>
 	<div id="root">
 		<div id="form">
 			<form:form action="addbc" method="post" modelAttribute="addbookcancel">
 				<div>
-					<label for="bookingDate">BookingDate </label>
+					<label for="bookingDate" class="label-size">BookingDate </label>
 					<div>
-						<form:input  type="Date" path="bookingDate" />
+						<form:input  type="Date" path="bookingDate" class="text-box" placeholder="15-08-2022"
+						title="BookingDate can't be empty"/>
 					</div>
 				</div>
 				<form:errors path="bookingDate" class="text-danger" />
 				<div>
-					<label for="fromDate">From Date</label>
+					<label for="fromDate" class="label-size">From Date</label>
 					<div>
-						<form:input type="Date" path="fromDate" />
+						<form:input  type="Date" path="fromDate" class="text-box" placeholder="15-08-2022"
+						title="FromDate can't be empty"/>
 					</div>
 				</div>
 				<form:errors path="fromDate" class="text-danger" />
 				<div>
-					<label for="toDate">To Date</label>
+					<label for="toDate" class="label-size">To Date</label>
 					<div>
-						<form:input type="Date" path="toDate" />
+						<form:input  type="Date" path="toDate" class="text-box" placeholder="15-08-2022"
+						title="ToDate can't be empty"/>
 					</div>
 				</div>
 				<form:errors path="toDate" class="text-danger" />
 				<div>
-					<label for="resourceType">ResourceType</label>
+					<label for="resourceType" class="label-size">ResourceType</label>
 					<div>
-						<form:select path="resourceType">
+						<form:select path="resourceType" class="text-box">
                             <form:option value="Theatre">Theatre</form:option>
                             <form:option value="Ambulance">Ambulance</form:option>
                             <form:option value="Bed">Bed</form:option>
@@ -50,21 +63,28 @@
 				</div>
 				<form:errors path="resourceType" class="text-danger" />
 				<div>
-					<label for="resourceId">ResourceId</label>
+					<label for="resourceId" class="label-size">ResourceId</label>
 					<div>
-						<form:input path="resourceId" />
+						<form:input path="resourceId" class="text-box" placeholder="101" />
 					</div>
 				</div>
 				<form:errors path="resourceId" class="text-danger" />
 				<div>
-					<label for="staffId">Staff Id</label>
+					<label for="staffId" class="label-size">Staff Id</label>
 					<div>
-						<form:input path="staffId" />
+						<form:input path="staffId" class="text-box" placeholder="111"/>
 					</div>
 				</div>
 				<form:errors path="staffId" class="text-danger" />
 				<div>
-					<form:button>Add Booking/Cancellation</form:button>
+					<label for="status" class="label-size">Status</label>
+					<div>
+						<form:input path="status" class="text-box" placeholder="Booked"/>
+					</div>
+				</div>
+				<form:errors path="status" class="text-danger" />
+				<div>
+					<form:button class="button">Add Booking</form:button>
 				</div>
 			</form:form>
 		</div>

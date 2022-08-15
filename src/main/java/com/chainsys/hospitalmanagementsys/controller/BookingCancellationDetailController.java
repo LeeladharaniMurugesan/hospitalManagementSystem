@@ -32,7 +32,7 @@ public class BookingCancellationDetailController {
 	}
 
 	@GetMapping("/getbc")
-	public String getBookingCancellation(@Valid@RequestParam("id") int id, Model model) {
+	public String getBookingCancellation(@RequestParam("bcId") int id, Model model) {
 		BookingCancellationDetail bookcancel = bookCancelService.findById(id);
 		model.addAttribute("getbookcanceldetail", bookcancel);
 		return "find-bc-id-form";

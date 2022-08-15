@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Past;
 import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
@@ -22,15 +22,14 @@ public class AmbulanceDetail {
 	@Column(name = "register_id")
 	private String registerId;
 	@Column(name = "purchase_date")
+	@Past
 	private Date purchaseDate;
 	@Column(name = "ambulance_model")
 	@Size(max = 20, min = 3, message = "*Ambulance Model should be 3 to 20")
-	@NotBlank(message = "*Ambulance model is required")
 	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid ambulance model ")
 	private String ambulanceModel;
 	@Column(name = "status")
 	@Size(max = 20, min = 3, message = "*status  should be 3 to 20")
-	@NotBlank(message = "*Status is required")
 	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid status ")
 	private String status;
 	@Column(name = "staff_id")

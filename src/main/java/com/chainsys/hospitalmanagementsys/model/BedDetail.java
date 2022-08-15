@@ -30,6 +30,7 @@ public class BedDetail {
 	private String bedStatus ;
 	@Column(name="bed_size")
 	@Size(max = 20, min = 3, message = "*Bedsize should be 3 to 20")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid BedType ")
 	private String bedSize ;
 	@Column(name="room_id")
 	private int roomId;
