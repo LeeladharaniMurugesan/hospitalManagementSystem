@@ -95,4 +95,10 @@ public class StaffDetailController {
             return "staff-login-form";
         }
     }
+    @GetMapping("/doctorlist")
+    public String getAllDesignation(Model model) {
+    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Doctor");
+    	model.addAttribute("allstaff",taskDesignation);
+    	return "list-staffdetail";
+ }
 }

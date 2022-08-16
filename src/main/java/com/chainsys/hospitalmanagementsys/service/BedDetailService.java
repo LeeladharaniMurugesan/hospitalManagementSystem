@@ -15,8 +15,7 @@ public class BedDetailService {
 	BedDetailRepository bedDetailRepository;
 
 	public List<BedDetail> getAllBedDetails() {
-		List<BedDetail> beddetail = bedDetailRepository.findAll();
-		return beddetail;
+		return bedDetailRepository.findAll();
 	}
 
 	public BedDetail save(BedDetail beddetail) {

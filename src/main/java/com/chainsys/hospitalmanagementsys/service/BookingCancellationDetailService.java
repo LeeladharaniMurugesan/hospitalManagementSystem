@@ -15,8 +15,7 @@ public class BookingCancellationDetailService {
 	BookingCancellationDetailRepository bookingCancellationRepository;
 
 	public List<BookingCancellationDetail> getAllBookingCancellationDetails() {
-		List<BookingCancellationDetail> bookcancel = bookingCancellationRepository.findAll();
-		return bookcancel;
+		return bookingCancellationRepository.findAll();
 	}
 
 	public BookingCancellationDetail save(BookingCancellationDetail bookcancel) {

@@ -16,8 +16,7 @@ public class AmbulanceDetailService {
 	AmbulanceDetailRepository ambulanceDetailRepository;
 
 	public List<AmbulanceDetail> getAllAmbulanceDetails() {
-		List<AmbulanceDetail> ambulancedetail = ambulanceDetailRepository.findAll();
-		return ambulancedetail;
+		return ambulanceDetailRepository.findAll();
 	}
 
 	public AmbulanceDetail save(AmbulanceDetail ambulancedetail) {

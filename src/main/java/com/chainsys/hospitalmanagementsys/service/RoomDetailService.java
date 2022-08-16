@@ -7,12 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.chainsys.hospitalmanagementsys.dto.RoomBedDTO;
-import com.chainsys.hospitalmanagementsys.dto.StaffDoctorDTO;
 import com.chainsys.hospitalmanagementsys.model.BedDetail;
-import com.chainsys.hospitalmanagementsys.model.DoctorDetail;
-import com.chainsys.hospitalmanagementsys.model.DoctorVisitDetail;
 import com.chainsys.hospitalmanagementsys.model.RoomDetail;
-import com.chainsys.hospitalmanagementsys.model.StaffDetail;
 import com.chainsys.hospitalmanagementsys.repository.BedDetailRepository;
 import com.chainsys.hospitalmanagementsys.repository.RoomDetailRepository;
 
@@ -25,8 +21,7 @@ public class RoomDetailService {
 	BedDetailRepository bedDetailRepository;
 
 	public List<RoomDetail> getAllRoomDetails() {
-		List<RoomDetail> roomdetail = roomDetailRepository.findAll();
-		return roomdetail;
+		return roomDetailRepository.findAll();
 	}
 
 	public RoomDetail save(RoomDetail roomdetail) {
@@ -47,7 +42,7 @@ public class RoomDetailService {
         List<BedDetail> beddetails = bedDetailRepository.findByRoomId(id);
 		Iterator<BedDetail> itr =beddetails.iterator();
 		while(itr.hasNext()) {
-			dto.addRoomBedlist((BedDetail)itr.next());
+			dto.addRoomBedlist(itr.next());
 		}
 		return dto;
 		}

@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.chainsys.hospitalmanagementsys.dto.RoomBedDTO;
 import com.chainsys.hospitalmanagementsys.model.RoomDetail;
 import com.chainsys.hospitalmanagementsys.service.RoomDetailService;
 

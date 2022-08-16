@@ -14,11 +14,7 @@ public class IndexController {
 	}
 
 	@GetMapping("/staffuse")
-	public String StaffAcess(Model model) {
+	public String getStaffAcess(Model model) {
 		return "staffpage";
-	}
-	@GetMapping("/staff")
-	public String Staff(Model model) {
-		return "about";
 	}
 }

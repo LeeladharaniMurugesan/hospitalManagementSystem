@@ -15,8 +15,7 @@ public class OperationTheatreDetailService {
 	OperationTheatreDetailRepository operationTheatreRepository;
 
 	public List<OperationTheatreDetail> getAllOperationTheatreDetails() {
-		List<OperationTheatreDetail> operationtheatre =operationTheatreRepository.findAll();
-		return operationtheatre;
+		return operationTheatreRepository.findAll();
 	}
 
 	public OperationTheatreDetail save(OperationTheatreDetail operationtheatre) {

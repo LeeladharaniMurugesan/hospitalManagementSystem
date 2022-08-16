@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.data.repository.CrudRepository;
 
-import com.chainsys.hospitalmanagementsys.model.DoctorDetail;
 import com.chainsys.hospitalmanagementsys.model.DoctorVisitDetail;
 
 public interface DoctorVisitDetailRepository extends CrudRepository<DoctorVisitDetail, Integer> {

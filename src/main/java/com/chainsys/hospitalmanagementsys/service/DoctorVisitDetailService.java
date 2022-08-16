@@ -15,8 +15,7 @@ public class DoctorVisitDetailService {
 	DoctorVisitDetailRepository doctorVisitRepository;
 
 	public List<DoctorVisitDetail> getAllDoctorVisitDetails() {
-		List<DoctorVisitDetail> doctorvisit = doctorVisitRepository.findAll();
-		return doctorvisit;
+		return doctorVisitRepository.findAll();
 	}
 
 	public DoctorVisitDetail save(DoctorVisitDetail doctorvisit) {

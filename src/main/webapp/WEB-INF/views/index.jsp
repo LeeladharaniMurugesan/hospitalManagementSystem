@@ -103,7 +103,7 @@ nav .menu {
 		<div class="menu">
 			           
 			<span class="logo">
-				 HOSPITAL MANAGEMENT SYSTEM            
+				 MMLK MultiSpeciality Hospital            
 			 </span>
 			<div>     
 			<ul>

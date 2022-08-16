@@ -28,7 +28,7 @@ public class StaffDetail {
 	private int staffId;
 	@Column(name = "staff_name")
 	@Size(max = 20, min = 3, message = "*StaffName length should be 3 to 20")
-	@Pattern(regexp = "^[A-Za-z\s]*$", message = "*Enter valid name ")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid name ")
 	private String staffName;
 	@Column(name = "dob")
 	private Date dob;

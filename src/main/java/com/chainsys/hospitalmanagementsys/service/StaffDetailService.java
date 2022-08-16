@@ -29,26 +29,22 @@ public class StaffDetailService {
 	@Autowired
 	DoctorDetailRepository doctorDetailRepository;
 	public List<StaffDetail> getStaffDetails() {
-		List<StaffDetail> staffDetail = staffDetailRepository.findAll();
-		return staffDetail;
+		return staffDetailRepository.findAll();
 	}
 	@Autowired
 	DoctorVisitDetailRepository doctorVisitDetailRepository;
 	public List<StaffDetail> getStaffDetailVisit(){
-		List<StaffDetail> staffDetail =staffDetailRepository.findAll();
-		return staffDetail;
+		return staffDetailRepository.findAll();
 	}
 	@Autowired
 	AmbulanceDetailRepository ambulanceDetailRepository;
 	public List<StaffDetail> getAmbulanceDetail(){
-		List<StaffDetail> staffDetail =staffDetailRepository.findAll();
-		return staffDetail;
+		return staffDetailRepository.findAll();
 	}
 	@Autowired
 	BookingCancellationDetailRepository bookingCancellationRepository;
 	public List<StaffDetail> getStaffbookingcancellationdetails(){
-		List<StaffDetail> staffDetail =staffDetailRepository.findAll();
-		return staffDetail;
+		return staffDetailRepository.findAll();
 	}
 	public StaffDetail save(StaffDetail staffDetail) {
 		return staffDetailRepository.save(staffDetail);
@@ -76,7 +72,7 @@ public class StaffDetailService {
 		List<DoctorVisitDetail> doctordetails = doctorVisitDetailRepository.findByStaffId(id);
 		Iterator<DoctorVisitDetail> itr =doctordetails.iterator();
 		while(itr.hasNext()) {
-			docdto.addDoclist((DoctorVisitDetail)itr.next());
+			docdto.addDoclist(itr.next());
 		}
 		return docdto;
 		}
@@ -87,7 +83,7 @@ public class StaffDetailService {
 		List<AmbulanceDetail> ambulancedetails = ambulanceDetailRepository.findByStaffId(id);
 		Iterator<AmbulanceDetail> itr =ambulancedetails.iterator();
 		while(itr.hasNext()) {
-			ambulancedto.addambulancelist((AmbulanceDetail)itr.next());
+			ambulancedto.addambulancelist(itr.next());
 		}
 		return ambulancedto;
 		}
@@ -98,11 +94,14 @@ public class StaffDetailService {
 		List<BookingCancellationDetail> bookingcancellationdetails = bookingCancellationRepository.findByStaffId(id);
 		Iterator<BookingCancellationDetail> itr =bookingcancellationdetails.iterator();
 		while(itr.hasNext()) {
-			bookingcancellationdto.addBookingCancellationlist((BookingCancellationDetail)itr.next());
+			bookingcancellationdto.addBookingCancellationlist(itr.next());
 		}
 		return bookingcancellationdto;
 		}
-	public StaffDetail StaffByEmailAndPassword(String email, String password) {
+	public StaffDetail staffByEmailAndPassword(String email, String password) {
         return staffDetailRepository.findByEmailIdAndPassword(email, password);
+    }
+	public List<StaffDetail> staffDetailGetByDesignation(String designation){
+        return staffDetailRepository.getIdByDesignation(designation);
     }
 }

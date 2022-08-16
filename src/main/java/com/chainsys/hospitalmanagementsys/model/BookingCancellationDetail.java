@@ -43,7 +43,7 @@ public class BookingCancellationDetail {
 	private int staffId;
 	@Column(name="status")
 	@Size(max = 20, min = 3, message = "*Status length should be 3 to 20")
-	@Pattern(regexp = "^[A-Za-z\s]*$", message = "*Enter valid status")
+	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid status")
 	private String status;
 	@ManyToOne(fetch=FetchType.LAZY)
     @JoinColumn(name="staff_id" , nullable=false,insertable=false,updatable=false)
