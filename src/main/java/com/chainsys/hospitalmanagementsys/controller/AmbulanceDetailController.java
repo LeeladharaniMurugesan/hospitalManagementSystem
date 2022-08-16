@@ -15,14 +15,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.hospitalmanagementsys.dto.StaffAmbulanceDTO;
 import com.chainsys.hospitalmanagementsys.model.AmbulanceDetail;
 import com.chainsys.hospitalmanagementsys.service.AmbulanceDetailService;
+import com.chainsys.hospitalmanagementsys.service.StaffDetailService;
 
 @Controller
 @RequestMapping("/ambulance")
 public class AmbulanceDetailController {
 	@Autowired
 	AmbulanceDetailService ambService;
+	@Autowired
+	StaffDetailService staffdetailservice;
 
 	@GetMapping("/list")
 
@@ -75,5 +79,12 @@ public class AmbulanceDetailController {
 		}
 		ambService.save(ambulancedetail);
 		return "redirect:/ambulance/list";
+	}
+	@GetMapping("/getambulancedetail")
+	public String getAmbulanceDetail(@RequestParam("id") int id,Model model) {
+		StaffAmbulanceDTO ambulancedto =staffdetailservice.getAmbulanceVisitDetail(id);
+		model.addAttribute("getambulance" ,ambulancedto.getStaffambulancedetails());
+		model.addAttribute("ambulancelist",ambulancedto.getAmbulancedetail());
+		return "list-staff-ambulancelist";
 	}
 }

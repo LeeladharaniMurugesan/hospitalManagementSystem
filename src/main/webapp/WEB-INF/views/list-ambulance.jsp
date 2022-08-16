@@ -29,6 +29,7 @@ div{text-align: center;}
 					<th>staffId</th>
 					<th>Edit</th>
 					<th>View</th>
+					<th>AmbulanceDetail</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -39,10 +40,13 @@ div{text-align: center;}
 						<td>${amb.ambulanceModel}</td>
 						<td>${amb.status}</td>
 						<td>${amb.staffId}</td>
+						
 							<td><a
                	href="updateambulanceform?registerId=${amb.registerId}">Edit</a></td>
                         <td><a
                             href="getambulance?id=${amb.registerId}">View</a></td>
+                             <td><a
+                           href="getambulancedetail?id=${amb.staffId}">AmbulanceDetail</a></td>
                     </tr>
 						
 				</c:forEach>

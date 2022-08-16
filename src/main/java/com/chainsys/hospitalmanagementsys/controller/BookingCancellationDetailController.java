@@ -14,15 +14,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.hospitalmanagementsys.dto.StaffBookingCancellationDTO;
 import com.chainsys.hospitalmanagementsys.model.BookingCancellationDetail;
 import com.chainsys.hospitalmanagementsys.service.BookingCancellationDetailService;
+import com.chainsys.hospitalmanagementsys.service.StaffDetailService;
 
 @Controller
 @RequestMapping("/bcdetail")
 public class BookingCancellationDetailController {
 	@Autowired
 	BookingCancellationDetailService bookCancelService;
-
+	@Autowired
+	StaffDetailService staffdetailservice;
 	@GetMapping("/list")
 
 	public String getAllBookingCancellationDetails(Model model) {
@@ -32,7 +35,7 @@ public class BookingCancellationDetailController {
 	}
 
 	@GetMapping("/getbc")
-	public String getBookingCancellation(@RequestParam("bcId") int id, Model model) {
+	public String getBookingCancellation(@RequestParam("id") int id, Model model) {
 		BookingCancellationDetail bookcancel = bookCancelService.findById(id);
 		model.addAttribute("getbookcanceldetail", bookcancel);
 		return "find-bc-id-form";
@@ -74,5 +77,12 @@ public class BookingCancellationDetailController {
 		}
 		bookCancelService.save(bookcancel);
 		return "redirect:/bcdetail/list";
+	}
+	@GetMapping("/getbookingcancellationdetail")
+	public String getBookingCancellationDetail(@RequestParam("id") int id,Model model) {
+		StaffBookingCancellationDTO bookingcancellationdto =staffdetailservice.getBookingCancellationDetail(id);
+		model.addAttribute("getbookingcancellation",bookingcancellationdto.getStaffbookingcancellationdetails());
+		model.addAttribute("bookcancellist",bookingcancellationdto.getBookingcancellationdetail());
+		return "list-staff-bookingcancellation";
 	}
 }

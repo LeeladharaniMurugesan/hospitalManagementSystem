@@ -14,15 +14,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.hospitalmanagementsys.dto.RoomBedDTO;
 import com.chainsys.hospitalmanagementsys.model.BedDetail;
 import com.chainsys.hospitalmanagementsys.service.BedDetailService;
+import com.chainsys.hospitalmanagementsys.service.RoomDetailService;
 
 @Controller
 @RequestMapping("/bed")
 public class BedDetailController {
 	@Autowired
 	BedDetailService bedService;
-
+	@Autowired
+	RoomDetailService roomdetailservice;
 	@GetMapping("/list")
 
 	public String getAllBedDetails(Model model) {
@@ -75,5 +78,12 @@ public class BedDetailController {
 		}
 		bedService.save(beddetail);
 		return "redirect:/bed/list";
+	}
+	@GetMapping("/getroombed")
+	public String getRoomBed(@RequestParam("id") int id,Model model) {
+		RoomBedDTO dto =roomdetailservice.getRoomDetails(id);
+		model.addAttribute("getroom",dto.getRoomDetails());
+		model.addAttribute("bedlist",dto.getBedDetails());
+		return"list-room-bed";
 	}
 }

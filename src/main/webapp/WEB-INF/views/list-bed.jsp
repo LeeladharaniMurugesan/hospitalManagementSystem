@@ -33,6 +33,7 @@ div {
 					<th>RoomId</th>
 					<th>Edit</th>
 					<th>View</th>
+					<th>BedDetails</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -47,6 +48,8 @@ div {
                	href="updatebedform?bedId=${bed.bedId}">Edit</a></td>
                         <td><a
                             href="getbeds?id=${bed.bedId}">View</a></td>
+                          <td><a
+                            href="getroombed?id=${bed.roomId}">BedDetails</a></td>
                     </tr>
 						
 				</c:forEach>

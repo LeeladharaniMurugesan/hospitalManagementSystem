@@ -30,6 +30,7 @@ div{text-align: center;}
 					<th>DailyFees</th>
 					<th>Update</th>
 					<th>View</th>
+					<th>DoctorVisitDetails</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -45,6 +46,8 @@ div{text-align: center;}
                	href="updatedocvisitform?sNo=${docv.sNo}">Edit</a></td>
                         <td><a
                             href="getdocvisit?id=${docv.sNo}">View</a></td>
+                        <td><a
+                            href="getstaffdocvisit?id=${docv.staffId}">DoctorVisitDetails</a></td>
                     </tr>
 
 				</c:forEach>

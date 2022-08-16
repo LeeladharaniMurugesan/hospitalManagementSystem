@@ -70,12 +70,5 @@ public class RoomDetailController {
 		roomdetailservice.save(roomdetail);
 		return "redirect:/room/list";
 	}
-	@GetMapping("/getroombed")
-	public String getRoomBed(@RequestParam("id") int id,Model model) {
-		RoomBedDTO dto =roomdetailservice.getRoomDetails(id);
-		model.addAttribute("getroom",dto.getRoomDetails());
-		model.addAttribute("bedlist",dto.getBedDetails());
-		return"list-room-bed";
-	}
 
 }

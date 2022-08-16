@@ -28,6 +28,7 @@ div{text-align: center;}
 					<th>NormalFees</th>
 					<th>Edit</th>
 					<th>View</th>
+					<th>DoctorDetails</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -41,6 +42,7 @@ div{text-align: center;}
                	href="updatedoctorform?staffId=${doc.staffId}">Edit</a></td>
                         <td><a
                             href="getdoctor?id=${doc.staffId}">View</a></td>
+                        <td><a href="getstaffdoctor?id=${doc.staffId}">DoctorList</a></td>
                     </tr>
 				</c:forEach>
 			</tbody>

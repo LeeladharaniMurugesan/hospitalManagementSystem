@@ -38,6 +38,7 @@ div {
 					<th>Status</th>
 					<th>Edit</th>
 					<th>View</th>
+					<th>BookingDetails</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -54,7 +55,9 @@ div {
 					<td><a
                	href="updatebcform?bcId=${bc.bcId}">Edit</a></td>
                         <td><a
-                            href="getbc?id=${bc.id}">View</a></td>
+                            href="getbc?id=${bc.bcId}">View</a></td>
+                          <td><a
+                            href="getbookingcancellationdetail?id=${bc.staffId}">BookingDetails</a></td>
                     </tr>
 						
 				</c:forEach>

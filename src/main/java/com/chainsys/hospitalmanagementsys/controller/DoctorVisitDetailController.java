@@ -13,15 +13,18 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.chainsys.hospitalmanagementsys.dto.StaffDoctorVisitDTO;
 import com.chainsys.hospitalmanagementsys.model.DoctorVisitDetail;
 import com.chainsys.hospitalmanagementsys.service.DoctorVisitDetailService;
+import com.chainsys.hospitalmanagementsys.service.StaffDetailService;
 
 @Controller
 @RequestMapping("/doctorvisit")
 public class DoctorVisitDetailController {
 	@Autowired
 	DoctorVisitDetailService doctorvisitservice;
-
+	@Autowired
+	StaffDetailService staffdetailservice;
 	@GetMapping("/list")
 
 	public String getAllDoctorVisitDetails(Model model) {
@@ -74,4 +77,12 @@ public class DoctorVisitDetailController {
 		doctorvisitservice.save(doctorvisit);
 		return "redirect:/doctorvisit/list";
 	}
+	@GetMapping("/getstaffdocvisit")
+	public String getDoctorVisits(@RequestParam("id") int id,Model model) {
+		StaffDoctorVisitDTO docdto =staffdetailservice.getStaffDoctorVisitDetail(id);
+		model.addAttribute("getstaffdoc" ,docdto.getStaffdetails());
+		model.addAttribute("doctorlist",docdto.getDocvisitlist());
+		return "list-staff-doctorvisit";
+	}
+	
 }

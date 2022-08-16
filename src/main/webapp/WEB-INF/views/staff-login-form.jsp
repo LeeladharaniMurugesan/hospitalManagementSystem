@@ -3,18 +3,18 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="ISO-8859-1">
 <title>Staff Login Form</title>
 <style>
 body {
 	background-image:
-		url(https://previews.123rf.com/images/chagin/chagin1810/chagin181000080/110951221-young-female-doctor-on-modern-clinic-background-horizontal-image-for-website-design-.jpg);
+		url(https://thumbs.dreamstime.com/b/outdoor-portrait-female-doctor-looking-to-camera-smiling-35801878.jpg);
 	background-height: 786px;
 	background-width: 1366px;
 	background-attachment: fixed;
-	background-size: cover;
+	background-size: 1366px 768px;
 }
 .login-form{
 width: 75px;
