@@ -143,16 +143,17 @@ body {
 </head>
 <body>
     <nav>
+    <button onclick="document.location='/staffdetail/stafflogin'" style="float: right;">Logout</button>
         <div class="menu">
             <ul>
-                <li><a href="/staffdetail/list">StaffDetails</a></li>
-                <li><a href="/room/list">RoomDetails</a></li>
-                <li><a href="/operationTheatre/list">OTDetails</a></li>
-                <li><a href="/doctor/list">DoctorDetails</a></li>
-                <li><a href="/doctorvisit/list">DoctorVisitDetails</a></li>
-                <li><a href="/bed/list">BedDetails</a></li>
-                <li><a href="/ambulance/list">AmbulanceDetails</a></li>
-                <li><a href="/bcdetail/list">BookingDetails</a></li>
+                <li><a href="/staffdetail/list">StaffDetail</a></li>
+                <li><a href="/room/list">RoomDetail</a></li>
+                <li><a href="/operationTheatre/list">OTDetail</a></li>
+                <li><a href="/doctor/list">DoctorDetail</a></li>
+                <li><a href="/doctorvisit/list">VisitDoctorDetail</a></li>
+                <li><a href="/bed/list">BedDetail</a></li>
+                <li><a href="/ambulance/list">AmbulanceDetail</a></li>
+                <li><a href="/bcdetail/list">BookingDetail</a></li>
             </ul>
         </div>
     </nav>

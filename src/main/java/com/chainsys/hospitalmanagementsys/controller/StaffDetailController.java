@@ -52,7 +52,7 @@ public class StaffDetailController {
 		return "add-staff-form";
 	}
 	staffdetailservice.save(staffservice);
-	return "redirect:/staffdetail/list";
+	return "redirect:/staffdetail/stafflogin";
 		
 	}
 

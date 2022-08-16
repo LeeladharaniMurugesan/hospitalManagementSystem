@@ -7,8 +7,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Update Room</title>
-<style><%@include file ="/WEB-INF/css/style.css"%>
-h1 {
+<style><%@include file ="/WEB-INF/css/style.css"%>h1 {
 	text-align: center;
 }
 
@@ -23,6 +22,8 @@ body {
 </style>
 </head>
 <body>
+	<button onclick="document.location='/home/staffuse'"
+		style="float: right;">Home</button>
 	<h1>UPDATE ROOM</h1>
 	<div id="root">
 		<div id="form">

@@ -14,6 +14,11 @@ body {
 	background-image:
 		url(https://previews.123rf.com/images/giggsy25/giggsy251711/giggsy25171100134/89624948-smart-doctor-with-a-stethoscope-on-blurred-hospital-background-and-medical-icon-in-hexagonal-shaped-.jpg);
 }
+.table-size{
+border:2px ;
+width:100%;
+cellpadding:2px;
+ }
 </style>
 </head>
 </head>
@@ -71,9 +76,10 @@ body {
 		</div>
 	<h1>AMBULANCE LIST</h1>
 	<div id="ambulancelist">
-		<table border="2" width="100%" cellpadding="2">
+		<table class="table-size">
+		<caption></caption>
             <colgroup>
-                <col span="10" style="background-color:#ff6666">
+                <col span="10" style="background-color:#E0B0FF">
                 <col span="4" style="background-color:crimson">
             </colgroup>
 			<thead>

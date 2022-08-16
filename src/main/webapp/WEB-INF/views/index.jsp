@@ -35,9 +35,9 @@ nav .menu {
 	padding: 0 20px;
 }
 
-.menu .logo a {
+.menu .logo{
 	text-decoration: none;
-	color: #fff;
+	color: white;
 	font-size: 30px;
 	font-weight: 600;
 	text-align: left;
@@ -73,7 +73,7 @@ nav .menu {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f9f9f9;
+  background-color: red;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
@@ -102,22 +102,31 @@ nav .menu {
 		       
 		<div class="menu">
 			           
-			<div class="logo">
-				                <a>HOSPITAL MANAGEMENT SYSTEM</a>            
-			</div>
-			           
+			<span class="logo">
+				 HOSPITAL MANAGEMENT SYSTEM            
+			 </span>
+			<div>     
 			<ul>
-				<li><a href="#">HOME</a></li>
+				<li class="dropdown"><a href="javascript:void(0)"
+				class="dropbtn">HOME</a>
+				<div class="dropdown-content">
+				<a href="#">Staff Details</a>
+				<a href="#">Room Details</a>
+				<a href="#">OperationTheatre Details</a>
+				<a href="#">Doctor Details</a>
+				<a href="#">VisitingDoctor Details</a>
+				<a href="#">Bed Details</a>
+				<a href="#">Ambulance Details</a>
+				<a href="#">Booking Details</a></div></li>
 				<li><a href="/staffdetail/stafflogin"> STAFF LOGIN</a></li>
-				<li><a href="#about">ABOUT</a></li>
 				<li class="dropdown"><a href="javascript:void(0)"
 					class="dropbtn">CONTACT</a>
 					<div class="dropdown-content">
 						<a href="#">Email us on mmlkhospital@gmail.com</a> <a href="#">Call
 							us on 8248886062</a>
-					</div>
+					</div></li>
 			</ul>
-			       
+			</div>       
 		</div>
 		   
 	</nav>

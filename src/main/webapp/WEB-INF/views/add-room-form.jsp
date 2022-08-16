@@ -74,6 +74,5 @@ body {
 			</form:form>
 		</div>
 	</div>
-	<center>
 </body>
 </html>

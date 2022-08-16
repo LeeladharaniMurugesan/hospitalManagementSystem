@@ -8,6 +8,8 @@
 <meta charset="ISO-8859-1">
 <title>Staff Login Form</title>
 <style>
+h1 {text-align: center;}
+div{text-align: center;}
 body {
 	background-image:
 		url(https://thumbs.dreamstime.com/b/outdoor-portrait-female-doctor-looking-to-camera-smiling-35801878.jpg);
@@ -29,8 +31,9 @@ width: 75px;
 </head>
 
 <body>
+	<button onclick="document.location='/home/index'" style="float: left;">Back</button>
 	<div id="root" style="width: auto;">
-		<div id="form" align="center">
+		<div id="form">
 			<form:form action="staffpage" method="post" modelAttribute="staff">
 				<h1 style="font-size: 68px;">Staff Login</h1>
 

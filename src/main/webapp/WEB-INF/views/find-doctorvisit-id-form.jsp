@@ -16,6 +16,8 @@ body {
 </style>
 </head>
 <body>
+	<button onclick="document.location='/home/staffuse'"
+		style="float: right;">Home</button>
 	<h1>FIND DOCTORS</h1>
 	<div id="root">
 		<div id="form">

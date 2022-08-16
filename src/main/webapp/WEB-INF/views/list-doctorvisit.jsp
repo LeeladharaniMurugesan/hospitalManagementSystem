@@ -9,13 +9,19 @@
 <style><%@include file="/WEB-INF/css/style.css"%>
 h1 {text-align: center;}
 div{text-align: center;}
+.table-size{
+border:2px ;
+width:100%;
+cellpadding:2px;
+ }
 </style>
 </head>
 <body>
 	<button onclick="document.location='/home/staffuse'" style="float: right;">Home</button>
 	<h1> VISITING DOCTOR LIST</h1>
 		<div id="table root">
-		<table border="2" width="100%" cellpadding="2">
+		<table class="table-size">
+		<caption></caption>
             <colgroup>
                 <col span="10" style="background-color:skyblue">
                 <col span="4" style="background-color: crimson">

@@ -14,6 +14,11 @@
 div {
 	text-align: center;
 }
+.table-size{
+border:2px ;
+width:100%;
+cellpadding:2px;
+ }
 body {
 	background-image:
 		url(https://previews.123rf.com/images/giggsy25/giggsy251711/giggsy25171100134/89624948-smart-doctor-with-a-stethoscope-on-blurred-hospital-background-and-medical-icon-in-hexagonal-shaped-.jpg);
@@ -74,7 +79,8 @@ body {
 	</div>
 	<h1>VISITING DOCTORLIST</h1>
 	<div id="table root">
-		<table border="2" width="100%" cellpadding="2">
+		<table class="table-size">
+		<caption></caption>
 			<colgroup>
 				<col span="10" style="background-color: Magenta">
 				<col span="4" style="background-color: crimson">

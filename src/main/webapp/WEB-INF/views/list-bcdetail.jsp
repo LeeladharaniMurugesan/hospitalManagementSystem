@@ -7,6 +7,11 @@
 <meta charset="ISO-8859-1">
 <title>BookingCancellation List</title>
 <style><%@include file ="/WEB-INF/css/style.css"%>
+.table-size{
+border:2px ;
+width:100%;
+cellpadding:2px
+ }
 h1 {
 	text-align: center;
 }
@@ -21,10 +26,10 @@ div {
 		style="float: right;">Home</button>
 	<h1>BOOKING CANCELLATION LIST</h1>
 	<div id="table root">
-		<table border="2" width="100%" cellpadding="2">
+		<table class="table-size">
+		<caption></caption>
 			<colgroup>
-				<col span="10" style="background-color: #C0C0C0">
-				<col span="4" style="background-color: crimson">
+				<col span="11" style="background-color: #C0C0C0">
 			</colgroup>
 			<thead>
 				<tr>

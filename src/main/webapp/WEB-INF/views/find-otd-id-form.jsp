@@ -20,13 +20,11 @@ body {
 		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 		url(https://c1.wallpaperflare.com/preview/198/427/746/blood-pressure-pressure-gauge-medical-the-test.jpg);
 }
-.label-text {
-	font-size: 26px;
-	color: wheat;
-}
 </style>
 </head>
 <body>
+	<button onclick="document.location='/home/staffuse'"
+		style="float: right;">Home</button>
 	<h1>VIEW OPERATION THEATRE</h1>
 	<div id="root">
 		<div id="form">

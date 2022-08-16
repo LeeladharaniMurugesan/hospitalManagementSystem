@@ -10,6 +10,11 @@
 <style><%@include file="/WEB-INF/css/style1.css"%>
 h1 {text-align: center;}
 div{text-align: center;}
+.table-size{
+border:2px ;
+width:100%;
+cellpadding:2px;
+ }
 body {
 	background-image:
 		url(https://previews.123rf.com/images/giggsy25/giggsy251711/giggsy25171100134/89624948-smart-doctor-with-a-stethoscope-on-blurred-hospital-background-and-medical-icon-in-hexagonal-shaped-.jpg);
@@ -70,7 +75,8 @@ body {
 		</div>
 	<h1>BOOKING LIST</h1>
 	<div id="bookcancellist">
-		<table border="2" width="100%" cellpadding="2">
+		<table class="table-size">
+		<caption></caption>
 			<colgroup>
 				<col span="10" style="background-color: #C0C0C0">
 				<col span="4" style="background-color: crimson">

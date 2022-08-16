@@ -15,6 +15,11 @@ h1 {
 div {
 	text-align: center;
 }
+.table-size{
+border:2px ;
+width:100%;
+cellpadding:2px;
+ }
 body {
 	background-image:
 		url(https://images.unsplash.com/photo-1512678080530-7760d81faba6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80);
@@ -62,7 +67,8 @@ body {
 	</div>
 	<div id="bedlist">
 		<h1>BEDS LIST</h1>
-		<table border="2" width="100%" cellpadding="2">
+		<table class="label-size">
+		<caption></caption>
             <colgroup>
                 <col span="10" style="background-color:	#BDB76B">
                 <col span="4" style="background-color:crimson">

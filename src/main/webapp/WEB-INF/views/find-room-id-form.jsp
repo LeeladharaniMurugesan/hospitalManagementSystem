@@ -22,6 +22,8 @@ body {
 </style>
 </head>
 <body>
+	<button onclick="document.location='/home/staffuse'"
+		style="float: right;">Home</button>
 	<h1>FIND ROOM DETAILS</h1>
 	<div id="root">
 		<div id="form">

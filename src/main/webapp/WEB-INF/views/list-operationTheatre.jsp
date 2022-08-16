@@ -14,13 +14,21 @@ h1 {
 div {
 	text-align: center;
 }
+.table-size{
+border:2px ;
+width:100%;
+cellpadding:2px;
+ }
 </style>
 </head>
 <body>
 <div>
 <h1>OPERATION THEATRE LIST</h1>
+	<button onclick="document.location='/home/staffuse'"
+		style="float: right;">Home</button>
 	<div id="table root">
-		<table border="2" width="100%" cellpadding="2">
+		<table class="table-size">
+		<caption></caption>
             <colgroup>
                 <col span="10" style="background-color:pink">
                 <col span="4" style="background-color: crimson">
