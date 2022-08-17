@@ -7,14 +7,6 @@
 <meta charset="ISO-8859-1">
 <title>Update OperationTheatre</title>
 <style><%@include file="/WEB-INF/css/style.css"%>
-h1 {
-	text-align: center;
-}
-
-div {
-	text-align: center;
-}
-
 body {
 	background-image:
 	linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
@@ -25,17 +17,14 @@ body {
 	color: wheat;
 }
 </style>
-<script>
-<%@include file="/WEB-INF/script/staff.js"%>	
-</script>
 </head>
 <body>
 	<button onclick="document.location='/home/staffuse'"
 		style="float: right;">Home</button>
 	<h1 class="label-text">UPDATE OPERATION THEATRE</h1>
 		<div id="form">
-			<form:form name="form" action="updateopeartiontheatre" method="post" modelAttribute="updateoperationtheatres">
-								<div>
+			<form:form action="updateopeartiontheatre" method="post" modelAttribute="updateoperationtheatres">
+					<div>
 					<label for="theatreType" class="label-size label-text">TheatreType</label>
 					<div>
 						<form:input path="theatreType" class="text-box"
@@ -49,9 +38,9 @@ body {
 					<label for="theatreLocation" class="label-size label-text">TheatreLocation</label>
 					<div>
 						<form:input path="theatreLocation" class="text-box"
-							placeholder="theatreLocation" name="theatreLocation"
+							placeholder="theatreLocation"
 							title="TheatreLocation can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true" onblur="theatreLocationCheck();"/>
+							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="theatreLocation" class="text-danger" />
@@ -59,9 +48,9 @@ body {
 					<label for="theatreStatus" class="label-size label-text">TheatreStatus</label>
 					<div>
 						<form:input path="theatreStatus" class="text-box"
-							placeholder="theatreStatus" name="theatreStatus"
+							placeholder="theatreStatus"
 							title="TheatreStatus can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true" onblur="theatreStatusCheck();"/>
+							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="theatreStatus" class="text-danger" />

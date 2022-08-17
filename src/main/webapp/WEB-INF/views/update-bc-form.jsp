@@ -7,14 +7,6 @@
 <meta charset="ISO-8859-1">
 <title>Update BC details</title>
 <style><%@include file ="/WEB-INF/css/style.css"%>
-h1 {
-	text-align: center;
-}
-
-div {
-	text-align: center;
-}
-
 body {
 	background-image:
 		url(https://img.freepik.com/free-vector/doctors-notebook-medical-composition_1284-16378.jpg);

@@ -7,23 +7,18 @@
 <meta charset="ISO-8859-1">
 <title>Update DoctorVisit</title>
 <style><%@include file="/WEB-INF/css/style.css"%>
-h1 {text-align: center;}
-div{text-align: center;}
 body {
 	background-image:
 		url(https://img.lovepik.com/photo/50054/5884.jpg_wh300.jpg);
 }
 </style>
-<script>
-<%@include file="/WEB-INF/script/staff.js"%>
-</script>
 </head>
 <body>
 	<button onclick="document.location='/home/staffuse'" style="float: right;">Home</button>
 	<h1> UPDATE DOCTORVISIT </h1>
 	<div id="root">
 		<div id="form">
-			<form:form name="form" action="updatedoctorvisit" method="post" modelAttribute="updatedocvisit">
+			<form:form action="updatedoctorvisit" method="post" modelAttribute="updatedocvisit">
 				<div>
 					<label for="visitedDate" class="label-size">Visited Date</label>
 					<div>
@@ -48,9 +43,9 @@ body {
 				<div>
 					<label for="dailyFees"class="label-size">DailyFees</label>
 					<div>
-						<form:input path="dailyFees" class="text-box" name="form"
+						<form:input path="dailyFees" class="text-box"
 						title="DailyFees can't be empty or must contains only numbers"
-						pattern="^[0-9]+$" required="true" onblur="dailyFeesCheck();"/>
+						pattern="^[0-9]+$" required="true"/>
 					</div>
 				</div>
 				<div>

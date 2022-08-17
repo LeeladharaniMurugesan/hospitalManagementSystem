@@ -42,3 +42,10 @@ tr:hover {
 	color: red;
 	font-size: 0.9em;
 }
+h1 {
+	text-align: center;
+}
+
+div {
+	text-align: center;
+}

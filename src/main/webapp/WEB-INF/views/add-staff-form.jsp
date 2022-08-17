@@ -20,24 +20,21 @@ body {
 		url(https://st2.depositphotos.com/2065849/9678/i/950/depositphotos_96789564-stock-photo-medical-drip-in-hospital-corridor.jpg);
 }
 </style>
-<script>
-<%@include file="/WEB-INF/script/staff.js"%>	
-</script>
 </head>
 <body>
 	<div id="form">
 		<button onclick="document.location='/home/staffuse'"
 			style="float: right;">Home</button>
 		<h1>WELCOME STAFFS</h1>
-		<form:form name="form" action="addstaff" method="post"
+		<form:form action="addstaff" method="post"
 			modelAttribute="addstaffs">
 			<div>
 				<label for="staffName" class="label-size">Staff Name</label>
 				<div>
 					<form:input path="staffName" class="text-box"
-						placeholder="staffName" name="staffName"
+						placeholder="staffName"
 						title="StaffName can't be empty or must contain only alphabets"
-						pattern="^[a-zA-Z]+$" required="true" onblur="staffNameCheck();" />
+						pattern="^[a-zA-Z]+$" required="true" />
 				</div>
 			</div>
 			<form:errors path="staffName" class="text-danger" />
@@ -63,8 +60,7 @@ body {
 				<div>
 					<form:input path="phoneNo" class="text-box"
 						placeholder="Phone Number" pattern="[1-9]{1}[0-9]{9}"
-						title="Phone number should have atleast 10 digits" required="true"
-						onblur="phoneNoCheck();" />
+						title="Phone number should have atleast 10 digits" required="true"/>
 				</div>
 			</div>
 			<form:errors path="phoneNo" class="text-danger" />
@@ -72,10 +68,8 @@ body {
 				<label for="emailId" class="label-size">EmailId</label>
 				<div>
 					<form:input path="emailId" class="text-box" placeholder="EmailId"
-						name="emailId"
 						pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$"
-						title="Enter valid email ex: example@gmail.com" required="true"
-						onblur="emailIdCheck();" />
+						title="Enter valid email ex: example@gmail.com" required="true"/>
 				</div>
 			</div>
 			<form:errors path="emailId" class="text-danger" />
@@ -83,9 +77,8 @@ body {
 				<label for="password" class="label-size">Password</label>
 				<div>
 					<form:input type="password" path="password" class="text-box"
-						placeholder="Password" name="password" pattern="^[A-Za-z0-9._%+-]+$"
-						title="Enter valid Password" required="true"
-						onblur="passwordCheck();" />
+						placeholder="Password" pattern="^[A-Za-z0-9._%+-]+$"
+						title="Enter valid Password" required="true" />
 				</div>
 			</div>
 			<form:errors path="password" class="text-danger" />

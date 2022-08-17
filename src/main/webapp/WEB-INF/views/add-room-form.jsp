@@ -7,22 +7,12 @@
 <meta charset="ISO-8859-1">
 <title>Add Room</title>
 <style><%@include file ="/WEB-INF/css/style.css"%>
-h1 {
-	text-align: center;
-}
-
-div {
-	text-align: center;
-}
 
 body {
 	background-image:
 		url(https://wallpapercave.com/dwp1x/wp1848641.jpg);
 }
 </style>
-<script>
-<%@include file="/WEB-INF/script/staff.js"%>	
-</script>
 </head>
 <body>
 <button onclick="document.location='/home/staffuse'"
