@@ -67,7 +67,7 @@ body {
 	</div>
 	<div id="bedlist">
 		<h1>BEDS LIST</h1>
-		<table class="label-size">
+		<table class="table-size">
 		<caption></caption>
             <colgroup>
                 <col span="10" style="background-color:	#BDB76B">
@@ -79,7 +79,6 @@ body {
 					<th>BedType</th>
 					<th>BedStatus</th>
 					<th>BedSize</th>
-					<th>RoomId</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -89,7 +88,6 @@ body {
 						<td>${bed.bedType}</td>
 						<td>${bed.bedStatus}</td>
 						<td>${bed.bedSize}</td>
-						<td>${bed.roomId}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

@@ -6,9 +6,7 @@
 <html lang="en">
 <head>
 <style type="text/css">
-@import
-    url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap')
-    ;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 
 * {
     margin: 0;
@@ -18,7 +16,7 @@
 }
 
 ::selection {
-    color: #000;
+    color: white;
     background: #fff;
 }
 
@@ -130,9 +128,34 @@ nav .menu {
     background: white;
     color: black;
 }
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: orange;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    float: none;
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 
 body {
-    background-image: url(https://images.pexels.com/photos/40568/medical-appointment-doctor-healthcare-40568.jpeg?cs=srgb&dl=pexels-pixabay-40568.jpg&fm=jpg);
+    background-image: url(https://img.freepik.com/free-vector/healthcare-background-with-medical-symbols-hexagonal-frame_1017-26363.jpg?w=826&t=st=1660673566~exp=1660674166~hmac=b56d9942a54eed45c1bee9233c99f79ec08a16bac13c6bfc0522ed63d9f61b12);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -144,18 +167,31 @@ body {
 <body>
     <nav>
     <button onclick="document.location='/staffdetail/stafflogin'" style="float: right;">Logout</button>
+       
         <div class="menu">
-            <ul>
-                <li><a href="/staffdetail/list">StaffDetail</a></li>
-                <li><a href="/room/list">RoomDetail</a></li>
-                <li><a href="/operationTheatre/list">OTDetail</a></li>
-                <li><a href="/doctor/list">DoctorDetail</a></li>
-                <li><a href="/doctorvisit/list">VisitDoctorDetail</a></li>
-                <li><a href="/bed/list">BedDetail</a></li>
-                <li><a href="/ambulance/list">AmbulanceDetail</a></li>
-                <li><a href="/bcdetail/list">BookingDetail</a></li>
-            </ul>
-        </div>
+        <ul>
+        	<li class="dropdown"><a href="javascript:void(0)"
+        	class="dropbtn">STAFFS</a>
+        	<div class="dropdown-content">
+        	<a href="/staffdetail/list">Staff</a>
+        	<a href="/staffdetail/doctorlist">Doctor</a>
+        	<a href="/staffdetail/nurselist">Nurse</a>
+        	<a href="/staffdetail/chiefdoctorlist">ChiefDoctor</a>
+        	<a href="/staffdetail/ambulancelist">Ambulance</a>
+        	<a href="/staffdetail/cleanerlist">Cleaner</a>
+        	<a href="/staffdetail/wardboylist">WardBoy</a>
+        	</div>
+        	
+                <li><a href="/room/list">ROOMS</a></li>
+                <li><a href="/operationTheatre/list">OPERATIONTHEATRES</a></li>
+                <li><a href="/doctor/list">DOCTORS</a></li>
+                <li><a href="/doctorvisit/list">VISITINGDOCTORS</a></li>
+                <li><a href="/bed/list">BEDS</a></li>
+                <li><a href="/ambulance/list">AMBULANCES</a></li>
+                <li><a href="/bcdetail/list">BOOKINGS</a></li>
+             </ul>
+             </div>
+          
     </nav>
 
 </body>

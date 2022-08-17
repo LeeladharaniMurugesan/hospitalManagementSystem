@@ -28,11 +28,11 @@ cellpadding:2px;
             </colgroup>
 			<thead>
 				<tr>
-					<th>registerId</th>
-					<th>purchaseDate</th>
-					<th>ambulanceModel</th>
-					<th>status</th>
-					<th>staffId</th>
+					<th>RegisterId</th>
+					<th>PurchaseDate</th>
+					<th>AmbulanceModel</th>
+					<th>Status</th>
+					<th>StaffId</th>
 					<th>Edit</th>
 					<th>View</th>
 					<th>AmbulanceDetail</th>

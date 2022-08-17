@@ -20,6 +20,9 @@ body {
 		url(https://st.depositphotos.com/1594308/1372/i/450/depositphotos_13724305-stock-photo-stethoscope-on-clipboard.jpg);
 }
 </style>
+<script>
+<%@include file="/WEB-INF/script/staff.js"%>
+</script>
 </head>
 <body>
 	<button onclick="document.location='/home/staffuse'"
@@ -27,22 +30,21 @@ body {
 	<h1>ADD DOCTORS</h1>
 	<div id="root">
 		<div id="form">
-			<form:form action="adddoctor" method="post" modelAttribute="adddoc">
+			<form:form name="form" action="adddoctor" method="post" modelAttribute="adddoc">
 				<div>
-					<label for="staffId" class="label-size">Staff Id</label>
+					<label for="staffId" class="label-size">StaffId </label>
 					<div>
-						<form:input path="staffId" class="text-box"
-							placeholder="staffId"
-							title="StaffId can't be empty "/>
+						<form:input path="staffId" class="text-box" placeholder="101"
+						title="StaffId can't be empty" name="staffId" required="true"/>
 					</div>
 				</div>
 				<div>
 					<label for="speciality" class="label-size">Speciality </label>
 					<div>
 						<form:input path="speciality" class="text-box"
-						placeholder="speciality"
-							title="Speciality can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required="true"/>
+						placeholder="speciality" name="speciality"
+						pattern="^[A-Za-z]\\w{3,20}$" required="true" onblur="specialityCheck()"
+							title="Speciality can't be empty or must contain only alphabets"/>
 					</div>
 				</div>
 				<form:errors path="speciality" class="text-danger" />
@@ -50,16 +52,19 @@ body {
 					<label for="roleType" class="label-size">Role Type</label>
 					<div>
 						<form:input path="roleType" class="text-box"
-						placeholder="roleType"
+						placeholder="roleType" name="roleType"
 							title="RoleType can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required="true"/>
+							pattern="^[A-Za-z]\\w{3,20}$" required="true" onblur="roleTypeCheck();"/>
 					</div>
 				</div>
 				<form:errors path="roleType" class="text-danger" />
 				<div>
 					<label for="normalFees" class="label-size">Normal Fees</label>
 					<div>
-						<form:input path="normalFees" class="text-box"/>
+						<form:input path="normalFees" class="text-box"
+						placeholder="normalFees" name="normalFees"
+						title="NormalFees can't be empty or must contains only numbers"
+						pattern="^[0-9]+$" required="true" onblur="normalFeesCheck();"/>
 					</div>
 				</div>
 				<form:errors path="normalFees" class="text-danger" />

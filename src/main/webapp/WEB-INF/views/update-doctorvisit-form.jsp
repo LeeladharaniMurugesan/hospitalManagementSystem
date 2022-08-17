@@ -14,30 +14,20 @@ body {
 		url(https://img.lovepik.com/photo/50054/5884.jpg_wh300.jpg);
 }
 </style>
+<script>
+<%@include file="/WEB-INF/script/staff.js"%>
+</script>
 </head>
 <body>
 	<button onclick="document.location='/home/staffuse'" style="float: right;">Home</button>
 	<h1> UPDATE DOCTORVISIT </h1>
 	<div id="root">
 		<div id="form">
-			<form:form action="updatedoctorvisit" method="post" modelAttribute="updatedocvisit">
-				<div>
-					<label for="sNo" class="label-size">sNo</label>
-					<div>
-						<form:input path="sNo" class="text-box" />
-					</div>
-				</div>
-				<div>
-					<label for="staffId" class="label-size">StaffId </label>
-					<div>
-						<form:input path="staffId" class="text-box" placeholder="101"
-						title="StaffId can't be empty"/>
-					</div>
-				</div>
+			<form:form name="form" action="updatedoctorvisit" method="post" modelAttribute="updatedocvisit">
 				<div>
 					<label for="visitedDate" class="label-size">Visited Date</label>
 					<div>
-						<form:input type="Date" path="visitedDate" class="text-box" placeholder="07-09-2001"/>
+						<form:input type="Date" path="visitedDate" class="text-box" placeholder="07-09-200"/>
 					</div>
 				</div>
 				<form:errors path="visitedDate" class="text-danger" />
@@ -58,8 +48,9 @@ body {
 				<div>
 					<label for="dailyFees"class="label-size">DailyFees</label>
 					<div>
-						<form:input path="dailyFees" class="text-box" 
-						title="DailyFees can't be empty"/>
+						<form:input path="dailyFees" class="text-box" name="form"
+						title="DailyFees can't be empty or must contains only numbers"
+						pattern="^[0-9]+$" required="true" onblur="dailyFeesCheck();"/>
 					</div>
 				</div>
 				<div>

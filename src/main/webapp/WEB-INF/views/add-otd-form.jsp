@@ -25,22 +25,24 @@ body {
 	color: wheat;
 }
 </style>
+<script>
+<%@include file="/WEB-INF/script/staff.js"%>	
+</script>
 </head>
 <body>
 	<button onclick="document.location='/home/staffuse'"
 		style="float: right;">Home</button>
 	<h1 class="label-text">ADD OPERATION THEATRE</h1>
-	<div id="root">
 		<div id="form">
-			<form:form action="addoperationtheatre" method="post"
+			<form:form name="form" action="addoperationtheatre" method="post"
 				modelAttribute="addoperationtheatre">
 				<div>
 					<label for="theatreType" class="label-size label-text">TheatreType</label>
 					<div>
 						<form:input path="theatreType" class="text-box"
-							placeholder="theatreType"
+							placeholder="theatreType" name="theatretype"
 							title="TheatreType can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true" />
+							pattern="^[A-Za-z]\\w{3,20}$" required="true" onblur="theatreTypeCheck();"/>
 					</div>
 				</div>
 				<form:errors path="theatreType" class="text-danger" />
@@ -48,9 +50,9 @@ body {
 					<label for="theatreLocation" class="label-size label-text">TheatreLocation</label>
 					<div>
 						<form:input path="theatreLocation" class="text-box"
-							placeholder="theatreLocation"
+							placeholder="theatreLocation" name="theatreLocation"
 							title="TheatreLocation can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true" />
+							pattern="^[A-Za-z]\\w{3,20}$" required="true" onblur="theatreLocationCheck();"/>
 					</div>
 				</div>
 				<form:errors path="theatreLocation" class="text-danger" />
@@ -58,9 +60,9 @@ body {
 					<label for="theatreStatus" class="label-size label-text">TheatreStatus</label>
 					<div>
 						<form:input path="theatreStatus" class="text-box"
-							placeholder="theatreStatus"
+							placeholder="theatreStatus" name="theatreStatus"
 							title="TheatreStatus can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true" />
+							pattern="^[A-Za-z]\\w{3,20}$" required="true" onblur="theatreStatusCheck();"/>
 					</div>
 				</div>
 				<form:errors path="theatreStatus" class="text-danger" />
@@ -69,6 +71,5 @@ body {
 				</div>
 			</form:form>
 		</div>
-	</div>
 </body>
 </html>

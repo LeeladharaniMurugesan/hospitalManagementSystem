@@ -52,7 +52,7 @@ public class StaffDetailController {
 		return "add-staff-form";
 	}
 	staffdetailservice.save(staffservice);
-	return "redirect:/staffdetail/stafflogin";
+	return "redirect:/staffdetail/list";
 		
 	}
 
@@ -86,7 +86,7 @@ public class StaffDetailController {
 
     @PostMapping("/staffpage")
     public String checkingAccess(@ModelAttribute("staff") StaffDetail staff,Model model) {
-        StaffDetail staffDetail = staffdetailservice.StaffByEmailAndPassword(staff.getEmailId(),staff.getPassword());
+        StaffDetail staffDetail = staffdetailservice.staffByEmailAndPassword(staff.getEmailId(),staff.getPassword());
         if (staffDetail!= null){
 
             return "redirect:/home/staffuse";
@@ -96,9 +96,39 @@ public class StaffDetailController {
         }
     }
     @GetMapping("/doctorlist")
-    public String getAllDesignation(Model model) {
+    public String getDoctorDesignation(Model model) {
     	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Doctor");
     	model.addAttribute("allstaff",taskDesignation);
     	return "list-staffdetail";
  }
+    @GetMapping("/nurselist")
+    public String getNurseDesignation(Model model) {
+    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Nurse");
+    	model.addAttribute("allstaff",taskDesignation);
+    	return "list-staffdetail";
+}
+    @GetMapping("/chiefdoctorlist")
+    public String getChiefDoctorDesignation(Model model) {
+    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("ChiefDoctor");
+    	model.addAttribute("allstaff",taskDesignation);
+    	return "list-staffdetail";
+}
+    @GetMapping("/ambulancedriverlist")
+    public String getAmbulanceDriverDesignation(Model model) {
+    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("AmbulanceDriver");
+    	model.addAttribute("allstaff",taskDesignation);
+    	return "list-staffdetail";
+}
+    @GetMapping("/cleanerlist")
+    public String getCleanerDesignation(Model model) {
+    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Cleaner");
+    	model.addAttribute("allstaff",taskDesignation);
+    	return "list-staffdetail";
+}
+    @GetMapping("/wardboylist")
+    public String getWardBoyDesignation(Model model) {
+    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("WardBoy");
+    	model.addAttribute("allstaff",taskDesignation);
+    	return "list-staffdetail";
+}
 }

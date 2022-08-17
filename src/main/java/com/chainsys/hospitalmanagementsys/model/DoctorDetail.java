@@ -25,8 +25,6 @@ public class DoctorDetail {
 	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Speciality ")
 	private String speciality ;
 	@Column(name="role_type")
-	@Size(max = 20, min = 3, message = "*RoleType length should be 3 to 20")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid RoleType ")
 	private String roleType;
 	@Column(name="normal_fees")
 	@Range(min = (int) 100.0)

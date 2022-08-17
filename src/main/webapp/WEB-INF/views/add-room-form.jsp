@@ -20,22 +20,23 @@ body {
 		url(https://wallpapercave.com/dwp1x/wp1848641.jpg);
 }
 </style>
+<script>
+<%@include file="/WEB-INF/script/staff.js"%>	
+</script>
 </head>
 <body>
 <button onclick="document.location='/home/staffuse'"
 		style="float: right;">Home</button>
 	<h1>ADD ROOM</h1>
-	<div id="root">
-
 		<div id="form">
-			<form:form action="addroom" method="post" modelAttribute="addrooms">
+			<form:form name="form" action="addroom" method="post" modelAttribute="addrooms">
 				<div>
 					<label for="roomType" class="label-size">Room Type</label>
 					<div>
 						<form:input path="roomType" class="text-box"
-							placeholder="roomType"
+							placeholder="roomType" name="roomType"
 							title="RoomType can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required="true" />
+							pattern="^[a-zA-Z]+$" required="true" onblur="roomTypeCheck();" />
 					</div>
 				</div>
 				<form:errors path="roomType" class="text-danger" />
@@ -43,9 +44,9 @@ body {
 					<label for="roomLocation" class="label-size">Room Location</label>
 					<div>
 						<form:input path="roomLocation" class="text-box"
-							placeholder="roomLocation"
+							placeholder="roomLocation" name="roomLocation"
 							title="RoomLocation can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required="true" />
+							pattern="^[a-zA-Z]+$" required="true" onblur="roomLocationCheck();"/>
 					</div>
 				</div>
 				<form:errors path="roomLocation" class="text-danger" />
@@ -54,7 +55,8 @@ body {
 					<div>
 						<form:input path="numOfBeds" class="text-box"
 							placeholder="NumOfBeds"
-							title="RoomStatus can't be empty or must contain only alphabets" />
+							title="Number of Beds should contains only numbers"
+							 pattern="^[0-9]+$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="numOfBeds" class="text-danger" />
@@ -62,9 +64,9 @@ body {
 					<label for="roomStatus" class="label-size">Room Status</label>
 					<div>
 						<form:input path="roomStatus" class="text-box"
-							placeholder="roomtatus"
+							placeholder="roomtatus" name="roomStatus"
 							title="RoomStatus can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required="true" />
+							pattern="^[a-zA-Z]+$" required="true" onblur="roomStatusCheck();" />
 					</div>
 				</div>
 				<form:errors path="roomStatus" class="text-danger" />
@@ -73,6 +75,5 @@ body {
 				</div>
 			</form:form>
 		</div>
-	</div>
 </body>
 </html>

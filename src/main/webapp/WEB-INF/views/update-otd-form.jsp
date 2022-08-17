@@ -25,24 +25,21 @@ body {
 	color: wheat;
 }
 </style>
+<script>
+<%@include file="/WEB-INF/script/staff.js"%>	
+</script>
 </head>
 <body>
 	<button onclick="document.location='/home/staffuse'"
 		style="float: right;">Home</button>
 	<h1 class="label-text">UPDATE OPERATION THEATRE</h1>
-	<div id="root">
 		<div id="form">
-			<form:form action="updateopeartiontheatre" method="post" modelAttribute="updateoperationtheatres">
-				<div>
-					<label for="theatreId" class="label-size label-text">TheatreId</label>
-					<div>
-						<form:input path="theatreId" class="text-box" placeholder="theatreId"/>
-					</div>
-				</div>
-				<div>
+			<form:form name="form" action="updateopeartiontheatre" method="post" modelAttribute="updateoperationtheatres">
+								<div>
 					<label for="theatreType" class="label-size label-text">TheatreType</label>
 					<div>
-						<form:input path="theatreType" class="text-box" placeholder="theatreType"
+						<form:input path="theatreType" class="text-box"
+							placeholder="theatreType"
 							title="TheatreType can't be empty or must contain only alphabets"
 							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
 					</div>
@@ -51,18 +48,20 @@ body {
 				<div>
 					<label for="theatreLocation" class="label-size label-text">TheatreLocation</label>
 					<div>
-						<form:input path="theatreLocation" class="text-box" placeholder="theatreLocation"
+						<form:input path="theatreLocation" class="text-box"
+							placeholder="theatreLocation" name="theatreLocation"
 							title="TheatreLocation can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
+							pattern="^[A-Za-z]\\w{3,20}$" required="true" onblur="theatreLocationCheck();"/>
 					</div>
 				</div>
 				<form:errors path="theatreLocation" class="text-danger" />
 				<div>
 					<label for="theatreStatus" class="label-size label-text">TheatreStatus</label>
 					<div>
-						<form:input path="theatreStatus" class="text-box" placeholder="theatreStatus"
+						<form:input path="theatreStatus" class="text-box"
+							placeholder="theatreStatus" name="theatreStatus"
 							title="TheatreStatus can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
+							pattern="^[A-Za-z]\\w{3,20}$" required="true" onblur="theatreStatusCheck();"/>
 					</div>
 				</div>
 				<form:errors path="theatreStatus" class="text-danger" />
@@ -71,6 +70,5 @@ body {
 				</div>
 			</form:form>
 		</div>
-	</div>
 </body>
 </html>

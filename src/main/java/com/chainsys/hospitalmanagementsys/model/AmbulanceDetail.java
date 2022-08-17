@@ -18,7 +18,6 @@ import javax.validation.constraints.Size;
 @Table(name = "AMBULANCE")
 public class AmbulanceDetail {
 	@Id
-	
 	@Column(name = "register_id")
 	private String registerId;
 	@Column(name = "purchase_date")
