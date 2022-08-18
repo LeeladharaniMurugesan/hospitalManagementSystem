@@ -45,13 +45,14 @@ public class StaffDetailController {
 	}
 
 	@PostMapping("/addstaff")
-	public String addNewStaff(@Valid @ModelAttribute("addstaffs") StaffDetail staffservice,Errors errors)
+	public String addNewStaff(@Valid @ModelAttribute("addstaffs") StaffDetail staffservice,Errors errors,Model model)
 	{
 	if(errors.hasErrors()) {
 		return "add-staff-form";
 	}
 	staffdetailservice.save(staffservice);
-	return "redirect:/staffdetail/list";
+	model.addAttribute("result","Added successfully");
+	return "add-staff-form";
 		
 	}
 
@@ -87,10 +88,10 @@ public class StaffDetailController {
     public String checkingAccess(@ModelAttribute("staff") StaffDetail staff,Model model) {
         StaffDetail staffDetail = staffdetailservice.staffByEmailAndPassword(staff.getEmailId(),staff.getPassword());
         if (staffDetail!= null){
-
+        	
             return "redirect:/home/staffuse";
         } else {
-        	model.addAttribute("result","Invalid EmailId and Password!!!");
+//        	model.addAttribute("result","Invalid EmailId and Password!!!");
             return "staff-login-form";
         }
     }

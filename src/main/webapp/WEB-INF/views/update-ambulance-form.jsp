@@ -20,8 +20,7 @@ body {
 </style>
 </head>
 <body>
-	<button onclick="document.location='/home/staffuse'"
-		style="float: right;">Home</button>
+	<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 	<h1>UPDATE AMBULANCES</h1>
 	<div id="root">
 		<div id="form">
@@ -37,13 +36,13 @@ body {
 					</div>
 				</div>
 				<div>
-					<label for="purchaseDate" class="label-size">Purchase Date </label>
+					<label for="purchaseDate" class="label-size label-text">Purchase Date </label>
 					<div>
 						<form:input type="Date" path="purchaseDate" class="text-box" />
 					</div>
 				</div>
 				<div>
-					<label for="ambulanceModel"class="label-size">Ambulance Model</label>
+					<label for="ambulanceModel"class="label-size label-text"">Ambulance Model</label>
 					<div>
 						<form:input path="ambulanceModel" class="text-box"
 						placeholder="ambulaceModel"
@@ -53,7 +52,7 @@ body {
 				</div>
 				<form:errors path="ambulanceModel" class="text-danger" />
 				<div>
-					<label for="status" class="label-size">Status</label>
+					<label for="status" class="label-size label-text">Status</label>
 					<div>
 						<form:input path="status" class="text-box"
 						placeholder="status"
@@ -63,7 +62,7 @@ body {
 				</div>
 				<form:errors path="status" class="text-danger" />
 				<div>
-					<label for="staffId" class="label-size">Staff Id</label>
+					<label for="staffId" class="label-size label-text">Staff Id</label>
 					<div>
 						<form:input path="staffId" class="text-box"
 						title="StaffId can't be empty and should contains only numbers "/>

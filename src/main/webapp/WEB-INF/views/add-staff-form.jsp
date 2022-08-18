@@ -23,8 +23,8 @@ body {
 </head>
 <body>
 	<div id="form">
-		<button onclick="document.location='/home/staffuse'"
-			style="float: right;">Home</button>
+		<button onclick="document.location='/staffdetail/stafflogin'"
+			style="float: left;">Go Back</button>
 		<h1>WELCOME STAFFS</h1>
 		<form:form action="addstaff" method="post"
 			modelAttribute="addstaffs">
@@ -96,6 +96,7 @@ body {
 				<form:button class="button">Add Staff</form:button>
 			</div>
 		</form:form>
+		${result}
 	</div>
 
 </body>
