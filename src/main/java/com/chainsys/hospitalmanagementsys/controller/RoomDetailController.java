@@ -23,6 +23,7 @@ import com.chainsys.hospitalmanagementsys.service.RoomDetailService;
 public class RoomDetailController {
 	@Autowired
 	RoomDetailService roomdetailservice;
+	private static final String LIST="redirect:/room/list";
 	@GetMapping("/list")
 	public String getAllRoomDetail(Model model) {
 		List<RoomDetail> roomdetail =roomdetailservice.getAllRoomDetails();
@@ -47,12 +48,12 @@ public class RoomDetailController {
 				return "add-room-form";
 		}
 		roomdetailservice.save(roomdetail);
-		return "redirect:/room/list";
+		return LIST;
 	}
 	@GetMapping("/deleteroomform")
 	public String deleteRoom(@Valid@RequestParam("roomId") int id) {
 		roomdetailservice.deleteById(id);
-		return "redirect:/room/list";
+		return LIST;
 	}
 	@GetMapping("/updateroomform")
 	public String showUpdateRoomForm(@Valid@RequestParam("roomId") int id, Model model) {
@@ -67,7 +68,7 @@ public class RoomDetailController {
 			return "update-room-form";
 	}
 		roomdetailservice.save(roomdetail);
-		return "redirect:/room/list";
+		return LIST;
 	}
 
 }

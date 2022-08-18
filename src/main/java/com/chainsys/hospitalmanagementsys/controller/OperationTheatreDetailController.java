@@ -21,7 +21,7 @@ import com.chainsys.hospitalmanagementsys.service.OperationTheatreDetailService;
 public class OperationTheatreDetailController {
 	@Autowired
 	OperationTheatreDetailService operationtheatreservice;
-
+	private static final String LIST="redirect:/operationTheatre/list";
 	@GetMapping("/list")
 
 	public String getAllOperationTheatreDetails(Model model) {
@@ -50,13 +50,13 @@ public class OperationTheatreDetailController {
 			return "add-otd-form";
 		}
 		operationtheatreservice.save(operationtheatre);
-		return "redirect:/operationTheatre/list";
+		return LIST;
 	}
 
 	@GetMapping("/deleteoperationtheatre")
 	public String deleteOperationTheatre(@Valid@RequestParam("theatreId") int id) {
 		operationtheatreservice.deleteById(id);
-		return "redirect:/operationTheatre/list";
+		return LIST;
 	}
 
 	@GetMapping("/updateoperationtheatreform")
@@ -72,6 +72,6 @@ public class OperationTheatreDetailController {
 			return "update-otd-form";
 		}
 		operationtheatreservice.save(operationtheatre);
-		return "redirect:/operationTheatre/list";
+		return LIST;
 	}
 }

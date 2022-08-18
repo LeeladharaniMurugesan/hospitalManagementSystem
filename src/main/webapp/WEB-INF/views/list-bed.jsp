@@ -19,6 +19,10 @@ h1 {
 div {
 	text-align: center;
 }
+body {
+	background-image:
+		url(https://t4.ftcdn.net/jpg/03/31/84/81/240_F_331848192_E6Ha8nggPUlySLwau3M7YimyqQ8FkzWo.jpg);
+}
 </style>
 </head>
 <body>

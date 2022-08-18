@@ -27,6 +27,7 @@ public class AmbulanceDetailController {
 	AmbulanceDetailService ambService;
 	@Autowired
 	StaffDetailService staffdetailservice;
+    private static final String LIST="redirect:/ambulance/list";
 
 	@GetMapping("/list")
 
@@ -56,13 +57,13 @@ public class AmbulanceDetailController {
 			return "add-ambulance-form";
 		}
 		ambService.save(ambulancedetail);
-		return "redirect:/ambulance/list";
+		return LIST;
 	}
 
 	@GetMapping("/deleteambulance")
 	public String deleteAmbulance(@Valid@RequestParam("registerId") String id) {
 		ambService.deleteById(id);
-		return "redirect:/ambulance/list";
+		return LIST;
 	}
 
 	@GetMapping("/updateambulanceform")
@@ -78,7 +79,7 @@ public class AmbulanceDetailController {
 			return "update-ambulance-form";
 		}
 		ambService.save(ambulancedetail);
-		return "redirect:/ambulance/list";
+		return LIST;
 	}
 	@GetMapping("/getambulancedetail")
 	public String getAmbulanceDetail(@RequestParam("id") int id,Model model) {

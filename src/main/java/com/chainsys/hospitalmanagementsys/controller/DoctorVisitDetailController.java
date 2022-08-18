@@ -25,6 +25,7 @@ public class DoctorVisitDetailController {
 	DoctorVisitDetailService doctorvisitservice;
 	@Autowired
 	StaffDetailService staffdetailservice;
+	private static final String LIST="redirect:/doctorvisit/list";
 	@GetMapping("/list")
 
 	public String getAllDoctorVisitDetails(Model model) {
@@ -53,13 +54,13 @@ public class DoctorVisitDetailController {
 			return "add-doctorvisit-form";
 		}
 		doctorvisitservice.save(doctorvisit);
-		return "redirect:/doctorvisit/list";
+		return LIST;
 	}
 
 	@GetMapping("/deletedocvisit")
 	public String deleteDoctorVisit(@Valid@RequestParam("sNo") int id) {
 		doctorvisitservice.deleteById(id);
-		return "redirect:/doctorvisit/list";
+		return LIST;
 	}
 
 	@GetMapping("/updatedocvisitform")
@@ -75,7 +76,7 @@ public class DoctorVisitDetailController {
 			return "update-doctorvisit-form";
 		}
 		doctorvisitservice.save(doctorvisit);
-		return "redirect:/doctorvisit/list";
+		return LIST;
 	}
 	@GetMapping("/getstaffdocvisit")
 	public String getDoctorVisits(@RequestParam("id") int id,Model model) {

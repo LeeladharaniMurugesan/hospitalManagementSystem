@@ -26,6 +26,7 @@ public class BedDetailController {
 	BedDetailService bedService;
 	@Autowired
 	RoomDetailService roomdetailservice;
+	private static final String LIST="redirect:/bed/list";
 	@GetMapping("/list")
 
 	public String getAllBedDetails(Model model) {
@@ -54,13 +55,13 @@ public class BedDetailController {
 			return "add-bed-form";
 		}
 		bedService.save(beddetail);
-		return "redirect:/bed/list";
+		return LIST;
 	}
 
 	@GetMapping("/deletebed")
 	public String deleteBed(@Valid@RequestParam("bedId") int id) {
 		bedService.deleteById(id);
-		return "redirect:/bed/list";
+		return LIST;
 	}
 
 	@GetMapping("/updatebedform")
@@ -77,7 +78,7 @@ public class BedDetailController {
 			return "update-bed-form";
 		}
 		bedService.save(beddetail);
-		return "redirect:/bed/list";
+		return LIST;
 	}
 	@GetMapping("/getroombed")
 	public String getRoomBed(@RequestParam("id") int id,Model model) {

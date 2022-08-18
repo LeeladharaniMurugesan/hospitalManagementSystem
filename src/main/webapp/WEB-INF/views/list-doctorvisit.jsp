@@ -7,13 +7,15 @@
 <meta charset="ISO-8859-1">
 <title>DoctorVisit List</title>
 <style><%@include file="/WEB-INF/css/style.css"%>
-h1 {text-align: center;}
-div{text-align: center;}
 .table-size{
 border:2px ;
 width:100%;
 cellpadding:2px;
  }
+ body {
+	background-image:
+		url(https://t4.ftcdn.net/jpg/03/31/84/81/240_F_331848192_E6Ha8nggPUlySLwau3M7YimyqQ8FkzWo.jpg);
+}
 </style>
 </head>
 <body>

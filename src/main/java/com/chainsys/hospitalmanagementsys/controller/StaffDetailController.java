@@ -22,13 +22,13 @@ import com.chainsys.hospitalmanagementsys.service.StaffDetailService;
 public class StaffDetailController {
 	@Autowired
 	StaffDetailService staffdetailservice;
-
+	private static final String LIST="redirect:/staffdetail/list";
 	@GetMapping("/list")
 
 	public String getStaffDetails(Model model) {
 		List<StaffDetail> staffservice = staffdetailservice.getStaffDetails();
 		model.addAttribute("allstaff", staffservice);
-		return "list-staffdetail";
+		return LIST;
 	}
 
 	@GetMapping("/getstaff")
@@ -52,14 +52,14 @@ public class StaffDetailController {
 		return "add-staff-form";
 	}
 	staffdetailservice.save(staffservice);
-	return "redirect:/staffdetail/list";
+	return LIST;
 		
 	}
 
 	@GetMapping("/deletestaff")
 	public String deleteStaff(@Valid@RequestParam("staffId") int id) {
 		staffdetailservice.deleteById(id);
-		return "redirect:/staffdetail/list";
+		return LIST;
 	}
 
 	@GetMapping("/updatestaffform")
@@ -75,7 +75,7 @@ public class StaffDetailController {
 		return "update-staff-form";
 	}
 		staffdetailservice.save(staffservice);
-		return "redirect:/staffdetail/list";
+		return LIST;
 	}
 	@GetMapping("/stafflogin")
     public String adminaccessform(Model model) {

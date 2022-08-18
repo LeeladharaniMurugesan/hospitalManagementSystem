@@ -19,6 +19,10 @@ border:2px ;
 width:100%;
 cellpadding:2px;
  }
+ body {
+	background-image:
+		url(https://img.freepik.com/free-vector/clean-medical-patterned-background-vector_53876-140867.jpg?w=826&t=st=1660760346~exp=1660760946~hmac=94b2f8a92cea8e0c6b1bcc857e0bcb539b3a9dba8ad36e03082ab462c68d2837);
+}
 </style>
 </head>
 <body>

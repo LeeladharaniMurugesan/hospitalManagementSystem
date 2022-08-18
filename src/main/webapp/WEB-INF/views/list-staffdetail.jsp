@@ -7,13 +7,15 @@
 <meta charset="ISO-8859-1">
 <title>Staff List</title>
 <style><%@include file="/WEB-INF/css/style.css"%>
-h1 {text-align: center;}
-div{text-align: center;}
 .table-size{
 border:2px ;
 width:100%;
 cellpadding:2px;
  }
+ body {
+	background-image:
+		url(https://thumbs.dreamstime.com/b/medical-health-care-calendar-reminder-schedule-appointment-concept-doctor-s-stethoscope-white-clean-calendar-155215414.jpg);
+}
 </style>
 </head>
 <body>

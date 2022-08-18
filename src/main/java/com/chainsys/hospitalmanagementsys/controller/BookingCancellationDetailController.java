@@ -26,6 +26,7 @@ public class BookingCancellationDetailController {
 	BookingCancellationDetailService bookCancelService;
 	@Autowired
 	StaffDetailService staffdetailservice;
+	private static final String LIST="redirect:/bcdetail/list";
 	@GetMapping("/list")
 
 	public String getAllBookingCancellationDetails(Model model) {
@@ -54,13 +55,13 @@ public class BookingCancellationDetailController {
 			return "add-bc-form";
 		}
 		bookCancelService.save(bookcancel);
-		return "redirect:/bcdetail/list";
+		return LIST;
 	}
 
 	@GetMapping("/deletebc")
 	public String deleteBookCancellation(@Valid@RequestParam("bcId") int id) {
 		bookCancelService.deleteById(id);
-		return "redirect:/bcdetail/list";
+		return LIST;
 	}
 
 	@GetMapping("/updatebcform")
@@ -76,7 +77,7 @@ public class BookingCancellationDetailController {
 			return "update-bc-form";
 		}
 		bookCancelService.save(bookcancel);
-		return "redirect:/bcdetail/list";
+		return LIST;
 	}
 	@GetMapping("/getbookingcancellationdetail")
 	public String getBookingCancellationDetail(@RequestParam("id") int id,Model model) {

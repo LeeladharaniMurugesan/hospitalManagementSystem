@@ -14,6 +14,10 @@ border:2px;
 width:100%;
 cellpadding:2px;
 }
+ body {
+	background-image:
+		url(https://images.unsplash.com/photo-1471864190281-a93a3070b6de?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTV8fG1lZGljYWwlMjBiYWNrZ3JvdW5kfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60);
+}
 </style>
 </head>
 <body>

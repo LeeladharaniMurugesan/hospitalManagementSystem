@@ -19,6 +19,10 @@ border:2px ;
 width:100%;
 cellpadding:2px;
  }
+ body {
+	background-image:
+		url(https://media.istockphoto.com/photos/blurred-lights-blue-background-picture-id1336653065?b=1&k=20&m=1336653065&s=170667a&w=0&h=eba7nQsZr8PHYhj9qq8dLETGJu4oUfaP44jw-zgJHkA=);
+}
 </style>
 </head>
 <body>
