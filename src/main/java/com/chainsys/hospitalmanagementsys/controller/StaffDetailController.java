@@ -23,7 +23,6 @@ public class StaffDetailController {
 	@Autowired
 	StaffDetailService staffdetailservice;
 	private static final String LIST="redirect:/staffdetail/list";
-	private static final String STAFFLIST="list-staffdetail";
 	@GetMapping("/list")
 
 	public String getStaffDetails(Model model) {
@@ -100,36 +99,36 @@ public class StaffDetailController {
     public String getDoctorDesignation(Model model) {
     	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Doctor");
     	model.addAttribute("allstaff",taskDesignation);
-    	return STAFFLIST;
+    	return LIST;
  }
     @GetMapping("/nurselist")
     public String getNurseDesignation(Model model) {
     	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Nurse");
     	model.addAttribute("allstaff",taskDesignation);
-    	return STAFFLIST;
+    	return LIST;
 }
     @GetMapping("/chiefdoctorlist")
     public String getChiefDoctorDesignation(Model model) {
     	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("ChiefDoctor");
     	model.addAttribute("allstaff",taskDesignation);
-    	return STAFFLIST;
+    	return LIST;
 }
     @GetMapping("/ambulancedriverlist")
     public String getAmbulanceDriverDesignation(Model model) {
     	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("AmbulanceDriver");
     	model.addAttribute("allstaff",taskDesignation);
-    	return STAFFLIST;
+    	return LIST;
 }
     @GetMapping("/cleanerlist")
     public String getCleanerDesignation(Model model) {
     	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Cleaner");
     	model.addAttribute("allstaff",taskDesignation);
-    	return STAFFLIST;
+    	return LIST;
 }
     @GetMapping("/wardboylist")
     public String getWardBoyDesignation(Model model) {
     	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("WardBoy");
     	model.addAttribute("allstaff",taskDesignation);
-    	return STAFFLIST;
+    	return LIST;
 }
 }
