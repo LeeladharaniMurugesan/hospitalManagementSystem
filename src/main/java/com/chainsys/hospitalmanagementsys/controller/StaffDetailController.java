@@ -22,13 +22,12 @@ import com.chainsys.hospitalmanagementsys.service.StaffDetailService;
 public class StaffDetailController {
 	@Autowired
 	StaffDetailService staffdetailservice;
-	//private static final String LIST="redirect:/staffdetail/list";
+	private static final String LIST="list-staffdetail";
 	@GetMapping("/list")
-
 	public String getStaffDetails(Model model) {
 		List<StaffDetail> staffservice = staffdetailservice.getStaffDetails();
 		model.addAttribute("allstaff", staffservice);
-		return "redirect:/staffdetail/list";
+		return LIST;
 	}
 
 	@GetMapping("/getstaff")
@@ -52,14 +51,14 @@ public class StaffDetailController {
 		return "add-staff-form";
 	}
 	staffdetailservice.save(staffservice);
-	return LIST;
+	return "redirect:/staffdetail/list";
 		
 	}
 
 	@GetMapping("/deletestaff")
 	public String deleteStaff(@Valid@RequestParam("staffId") int id) {
 		staffdetailservice.deleteById(id);
-		return LIST;
+		return "redirect:/staffdetail/list";
 	}
 
 	@GetMapping("/updatestaffform")
@@ -75,7 +74,7 @@ public class StaffDetailController {
 		return "update-staff-form";
 	}
 		staffdetailservice.save(staffservice);
-		return LIST;
+		return "redirect:/staffdetail/list";
 	}
 	@GetMapping("/stafflogin")
     public String adminaccessform(Model model) {
@@ -99,36 +98,36 @@ public class StaffDetailController {
     public String getDoctorDesignation(Model model) {
     	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Doctor");
     	model.addAttribute("allstaff",taskDesignation);
-    	return "redirect:/staffdetail/list";
+    	return LIST;
  }
     @GetMapping("/nurselist")
     public String getNurseDesignation(Model model) {
     	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Nurse");
     	model.addAttribute("allstaff",taskDesignation);
-    	return "redirect:/staffdetail/list";
+    	return LIST;
 }
     @GetMapping("/chiefdoctorlist")
     public String getChiefDoctorDesignation(Model model) {
     	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("ChiefDoctor");
     	model.addAttribute("allstaff",taskDesignation);
-    	return "redirect:/staffdetail/list";
+    	return LIST;
 }
     @GetMapping("/ambulancedriverlist")
     public String getAmbulanceDriverDesignation(Model model) {
     	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("AmbulanceDriver");
     	model.addAttribute("allstaff",taskDesignation);
-    	return "redirect:/staffdetail/list";
+    	return LIST;
 }
     @GetMapping("/cleanerlist")
     public String getCleanerDesignation(Model model) {
     	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Cleaner");
     	model.addAttribute("allstaff",taskDesignation);
-    	return "redirect:/staffdetail/list";
+    	return LIST;
 }
     @GetMapping("/wardboylist")
     public String getWardBoyDesignation(Model model) {
     	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("WardBoy");
     	model.addAttribute("allstaff",taskDesignation);
-    	return "redirect:/staffdetail/list";
+    	return LIST;
 }
 }

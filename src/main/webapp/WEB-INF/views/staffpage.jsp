@@ -177,7 +177,7 @@ body {
         	<a href="/staffdetail/doctorlist">Doctor</a>
         	<a href="/staffdetail/nurselist">Nurse</a>
         	<a href="/staffdetail/chiefdoctorlist">ChiefDoctor</a>
-        	<a href="/staffdetail/ambulancelist">Ambulance</a>
+        	<a href="/staffdetail/ambulancedriverlist">Ambulance</a>
         	<a href="/staffdetail/cleanerlist">Cleaner</a>
         	<a href="/staffdetail/wardboylist">WardBoy</a>
         	</div>
