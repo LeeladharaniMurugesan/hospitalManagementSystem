@@ -5,8 +5,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<style type="text/css">
 <style><%@include file ="/WEB-INF/css/style4.css"%>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+
+body {
+    background-image: url(https://cdn.pixabay.com/photo/2018/08/03/19/11/hospital-3582607_960_720.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
 </style>
 <meta charset="ISO-8859-1">
 <title>Add All Tables</title>
@@ -14,7 +22,7 @@
 <body>
     <nav>
     <button onclick="document.location='/staffdetail/stafflogin'" style="float: right;">Logout</button>
-       
+	<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
         <div class="menu">
         <ul>
         	<li class="dropdown"><a href="javascript:void(0)"

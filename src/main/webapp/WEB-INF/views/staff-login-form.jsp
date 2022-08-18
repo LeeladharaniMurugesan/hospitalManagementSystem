@@ -28,7 +28,7 @@ var emailIdCheck = function() {
 var passwordCheck = function() {
      var passwordRegex = new RegExp("^[A-Za-z0-9._%+-]+$");
      if(!document.myForm.password.value.match(passwordRegex)){
-            if(alert("Password must be contain 6 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter")){ 
+            if(alert("Password must be contain 8 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter")){ 
                  document.myForm.password.focus();
             }
             else
@@ -42,7 +42,7 @@ var passwordCheck = function() {
 </script>
 </head>
 <body>
-		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+		<button style="font-size: 20px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 	<div id="root" style="width: auto;">
 		<div id="form">
 			<form:form name="myForm" action="staffpage" method="post" modelAttribute="staff" >

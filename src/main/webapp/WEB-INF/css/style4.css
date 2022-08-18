@@ -1,6 +1,4 @@
 @charset "ISO-8859-1";
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
 * {
     margin: 0;
     padding: 0;
@@ -53,8 +51,8 @@ nav .menu {
 .menu ul li a {
     text-decoration: none;
     color: white;
-    font-size: 21px;
-    font-weight: 500;
+    font-size: 19px;
+    font-weight: 600;
     padding: 8px 15px;
     border-radius: 5px;
     transition: all 0.3s ease;
@@ -76,16 +74,15 @@ nav .menu {
 }
 
 .center .title {
-    color: #1b1811;
-    font-size: 55px;
+    color: yellow;
+    font-size: 50px;
     font-weight: 600;
-    margin-top: 100px;
 }
 
 .center .sub_title {
-    color: #778ba5;
-    font-size: 45px;
-    font-weight: 400;
+    color: yellow;
+    font-size: 48px;
+    font-weight: 600;
 }
 
 .center .btns {
@@ -144,21 +141,4 @@ nav .menu {
 
 .dropdown:hover .dropdown-content {
     display: block;
-}
-
-body {
-    background-image: url(https://cdn.pixabay.com/photo/2018/08/03/19/11/hospital-3582607_960_720.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-}
-.title{
-  color: yellow;
-  font-size: 55px;
-  font-weight: 600;
-}
-.sub_title{
-  color: yellow;
-  font-size: 52px;
-  font-weight: 600;
 }
