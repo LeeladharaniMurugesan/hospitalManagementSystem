@@ -5,6 +5,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Hospital Management System</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style type="text/css">
 <style><%@include file ="/WEB-INF/css/style3.css"%>
 </style>
@@ -13,9 +14,9 @@
 	<nav>
 		       
 		<div class="menu">
-			           
+			<span class="fa fa-plus-square" style="font-size:48px;color:red"></span>
 			<span class="logo">
-				 MMLK MultiSpeciality Hospital            
+				 MMLK MULTISPECIALITY HOSPITAL            
 			 </span>
 			<div>     
 			<ul>

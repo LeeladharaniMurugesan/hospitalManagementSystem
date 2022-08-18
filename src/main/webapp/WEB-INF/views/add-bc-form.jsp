@@ -14,7 +14,7 @@ body {
 </style>
 </head>
 <body>
-		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+		<button style="font-size: 20px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 	<h1>ADD BOOKING</h1>
 	<div id="root">
 		<div id="form">
@@ -23,7 +23,7 @@ body {
 					<label for="bookingDate" class="label-size">BookingDate </label>
 					<div>
 						<form:input  type="Date" path="bookingDate" class="text-box" placeholder="15-08-2022"
-						title="BookingDate can't be empty"/>
+						title="BookingDate can't be empty" required="true"/>
 					</div>
 				</div>
 				<form:errors path="bookingDate" class="text-danger" />
@@ -31,7 +31,7 @@ body {
 					<label for="fromDate" class="label-size">From Date</label>
 					<div>
 						<form:input  type="Date" path="fromDate" class="text-box" placeholder="15-08-2022"
-						title="FromDate can't be empty"/>
+						title="FromDate can't be empty" required="true"/>
 					</div>
 				</div>
 				<form:errors path="fromDate" class="text-danger" />
@@ -39,7 +39,7 @@ body {
 					<label for="toDate" class="label-size">To Date</label>
 					<div>
 						<form:input  type="Date" path="toDate" class="text-box" placeholder="15-08-2022"
-						title="ToDate can't be empty"/>
+						title="ToDate can't be empty" required="true"/>
 					</div>
 				</div>
 				<form:errors path="toDate" class="text-danger" />
@@ -57,21 +57,27 @@ body {
 				<div>
 					<label for="resourceId" class="label-size">ResourceId</label>
 					<div>
-						<form:input path="resourceId" class="text-box" placeholder="101" />
+						<form:input path="resourceId" class="text-box" placeholder="101"
+						title="ResourceId can't be empty and should contains only integer"
+						pattern="^[0-9]+$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="resourceId" class="text-danger" />
 				<div>
 					<label for="staffId" class="label-size">Staff Id</label>
 					<div>
-						<form:input path="staffId" class="text-box" placeholder="111"/>
+						<form:input path="staffId" class="text-box" placeholder="111"
+						title="StaffId can't be empty and should contains only integer"
+						pattern="^[0-9]+$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="staffId" class="text-danger" />
 				<div>
 					<label for="status" class="label-size">Status</label>
 					<div>
-						<form:input path="status" class="text-box" placeholder="Booked"/>
+						<form:input path="status" class="text-box" placeholder="Booked"
+						title="Status can't be empty and should contains only alphabets"
+						pattern="^[a-zA-Z]+$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="status" class="text-danger" />

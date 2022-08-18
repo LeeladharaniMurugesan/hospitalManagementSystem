@@ -7,38 +7,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Staff Login Form</title>
-<style>
 <style><%@include file ="/WEB-INF/css/style2.css"%>
 </style>
 <script>
-var emailIdCheck = function() {
-    if(document.myForm.emailId.value == ""){
-        
-        if(alert("Email Id cannot be blank")){
-            document.myForm.emailId.focus();
-        }
-        else
-            document.activeElement.blur();
-            
-    }
-    else{
-        return false;
-    } 
-}
-var passwordCheck = function() {
-     var passwordRegex = new RegExp("^[A-Za-z0-9._%+-]+$");
-     if(!document.myForm.password.value.match(passwordRegex)){
-            if(alert("Password must be contain 8 to 20 characters which contain at least one numeric digit, one uppercase and one lowercase letter")){ 
-                 document.myForm.password.focus();
-            }
-            else
-                document.activeElement.blur();
-        }
-   else{
-       return false;
-   } 
-  
-}
+<%@include file ="/WEB-INF/script/login.js"%>
 </script>
 </head>
 <body>

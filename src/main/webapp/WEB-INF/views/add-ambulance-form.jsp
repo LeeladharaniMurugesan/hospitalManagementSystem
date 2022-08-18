@@ -6,16 +6,26 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Ambulance</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <style><%@include file ="/WEB-INF/css/style.css"%>
 body {
 	background-image:
 		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 		url(https://img.freepik.com/free-vector/emergency-ambulance-with-coronavirus-concept_23-2148534628.jpg?w=740&t=st=1660554389~exp=1660554989~hmac=a365ae79d089f5d9e439a2246bf5c307cc7a7a7c2197dda7b24f160e35b926b8)
 }
+.label-text {
+	font-size: 26px;
+	color: white;
+}
 </style>
 </head>
 <body>
-	<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+	<button style="    font-size: 12px;
+    width: 56px;
+    height: 22px;
+    background-color: #f44336;
+    color: black;
+    float: left;" onclick="history.back()"><span class="glyphicon glyphicon-home"></span></button>
 	<h1 class="label-text">ADD AMBULANCES</h1>
 	<div id="root">
 		<div id="form">
@@ -24,42 +34,43 @@ body {
 					<label for="registerId" class="label-size label-text">Register Id</label>
 					<div>
 						<form:input path="registerId" class="text-box"
-						title="RegisterId can't be empty"
+						title="RegisterId can't be empty" placeholder="TN 12 BS 1344"
 						pattern="^[A-Z]{2}\s[0-9]{2}\s[A-Z]{1,2}\s[0-9]{4}$"
 						 required="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="purchaseDate" class="label-size">Purchase Date </label>
+					<label for="purchaseDate" class="label-size label-text">Purchase Date </label>
 					<div>
 						<form:input type="Date" path="purchaseDate" class="text-box" />
 					</div>
 				</div>
 				<div>
-					<label for="ambulanceModel"class="label-size">Ambulance Model</label>
+					<label for="ambulanceModel"class="label-size label-text">Ambulance Model</label>
 					<div>
 						<form:input path="ambulanceModel" class="text-box"
-						placeholder="ambulaceModel"
+						placeholder="AmbulaceModel"
 							title="AmbulanceModel can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
+							pattern="^[A-Za-z](\s[a-zA-Z]+)?{3,20}$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="ambulanceModel" class="text-danger" />
 				<div>
-					<label for="status" class="label-size">Status</label>
+					<label for="status" class="label-size label-text">Status</label>
 					<div>
 						<form:input path="status" class="text-box"
-						placeholder="status"
+						placeholder="Status"
 							title="status can't be empty or must contain only alphabets"
 							pattern="^[a-zA-Z]+$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="status" class="text-danger" />
 				<div>
-					<label for="staffId" class="label-size">Staff Id</label>
+					<label for="staffId" class="label-size label-text">Staff Id</label>
 					<div>
-						<form:input path="staffId" class="text-box"
-						title="StaffId can't be empty and should contains only integer"/>
+						<form:input path="staffId" class="text-box" placeholder="101"
+						title="StaffId can't be empty and should contains only integer"
+						pattern="^[0-9]+$" required="true"/>
 					</div>
 				</div>
 				<div>

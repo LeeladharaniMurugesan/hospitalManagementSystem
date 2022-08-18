@@ -24,7 +24,8 @@ body {
 					<label for="staffId" class="label-size">StaffId </label>
 					<div>
 						<form:input path="staffId" class="text-box" placeholder="101"
-						title="StaffId can't be empty" name="staffId" required="true"/>
+						title="StaffId can't be empty" name="staffId" 
+						pattern="^[0-9]+$" required="true"/>
 					</div>
 				</div>
 				<div>
@@ -33,7 +34,8 @@ body {
 						<form:input path="speciality" class="text-box"
 						placeholder="speciality"
 						pattern="^[A-Za-z]\\w{3,20}$" required="true"
-							title="Speciality can't be empty or must contain only alphabets"/>
+							title="Speciality can't be empty or must contain only alphabets"
+							required="true"/>
 					</div>
 				</div>
 				<form:errors path="speciality" class="text-danger" />

@@ -48,7 +48,9 @@ body {
 				<div>
 					<label for="roomId" class="label-size">Room Id</label>
 					<div>
-						<form:input path="roomId" class="text-box" />
+						<form:input path="roomId" class="text-box"
+						title="RoomId cannot be empty and should contains only number"
+						pattern="^[0-9]+$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="roomId" class="text-danger" />

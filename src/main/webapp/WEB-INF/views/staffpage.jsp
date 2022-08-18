@@ -18,11 +18,11 @@ body {
 </style>
 <meta charset="ISO-8859-1">
 <title>Add All Tables</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
     <nav>
-    <button onclick="document.location='/staffdetail/stafflogin'" style="float: right;">Logout</button>
-	<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+    <button onclick="document.location='/staffdetail/stafflogin'" style="float: right;height: 31px; width: 81px;color: blue;">Logout</button>
         <div class="menu">
         <ul>
         	<li class="dropdown"><a href="javascript:void(0)"
