@@ -16,8 +16,7 @@ body {
 </style>
 </head>
 <body>
-	<button onclick="document.location='/home/staffuse'"
-		style="float: right;">Home</button>
+		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 	<h1>UPDATE ROOM</h1>
 	<div id="form">
 		<form:form action="updateroom" method="post"

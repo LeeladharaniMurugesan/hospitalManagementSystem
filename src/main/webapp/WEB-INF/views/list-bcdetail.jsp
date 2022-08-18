@@ -24,8 +24,7 @@ background-image:url(https://images.unsplash.com/photo-1513151233558-d860c539817
 </style>
 </head>
 <body>
-	<button onclick="document.location='/home/staffuse'"
-		style="float: right;">Home</button>
+		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 	<h1>BOOKING CANCELLATION LIST</h1>
 	<div id="table root">
 		<table class="table-size">

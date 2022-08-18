@@ -91,7 +91,6 @@ public class StaffDetailController {
         	
             return "redirect:/home/staffuse";
         } else {
-//        	model.addAttribute("result","Invalid EmailId and Password!!!");
             return "staff-login-form";
         }
     }

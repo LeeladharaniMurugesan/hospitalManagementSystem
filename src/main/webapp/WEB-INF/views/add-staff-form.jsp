@@ -23,8 +23,7 @@ body {
 </head>
 <body>
 	<div id="form">
-		<button onclick="document.location='/staffdetail/stafflogin'"
-			style="float: left;">Go Back</button>
+			<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 		<h1>WELCOME STAFFS</h1>
 		<form:form action="addstaff" method="post"
 			modelAttribute="addstaffs">

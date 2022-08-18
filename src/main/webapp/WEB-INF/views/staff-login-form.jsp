@@ -42,7 +42,7 @@ var passwordCheck = function() {
 </script>
 </head>
 <body>
-	<button onclick="document.location='/home/index'" style="float: left;">Back</button>
+		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 	<div id="root" style="width: auto;">
 		<div id="form">
 			<form:form name="myForm" action="staffpage" method="post" modelAttribute="staff" >
