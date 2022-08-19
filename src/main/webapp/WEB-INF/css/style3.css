@@ -16,15 +16,14 @@ nav {
 	background: black;
 	width: 100%;
 	padding: 0px 0;
-	z-index: 12;
-	height:72px;
+	z-index: 10;
+	height:60px;
 }
 
 nav .menu {
 	max-width: 1250px;
 	margin: auto;
 	display: flex;
-	align-items: center;
 	justify-content: space-between;
 	padding: 0 20px;
 }

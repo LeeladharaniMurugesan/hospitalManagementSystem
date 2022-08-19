@@ -7,14 +7,6 @@
 <meta charset="ISO-8859-1">
 <title>Find Room</title>
 <style><%@include file ="/WEB-INF/css/style.css"%>
-h1 {
-	text-align: center;
-}
-
-div {
-	text-align: center;
-}
-
 body {
 	background-image:
 		url(https://images.unsplash.com/photo-1512678080530-7760d81faba6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=874&q=80);
@@ -22,7 +14,7 @@ body {
 </style>
 </head>
 <body>
-		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+	<button onclick="document.location='/room/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1>FIND ROOM DETAILS</h1>
 	<div id="root">
 		<div id="form">

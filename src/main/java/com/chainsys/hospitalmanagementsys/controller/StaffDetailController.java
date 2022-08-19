@@ -57,7 +57,7 @@ public class StaffDetailController {
 	}
 
 	@GetMapping("/deletestaff")
-	public String deleteStaff(@Valid@RequestParam("staffId") int id) {
+	public String deleteStaff(@Valid @RequestParam("staffId") int id) {
 		staffdetailservice.deleteById(id);
 		return "redirect:/staffdetail/list";
 	}

@@ -6,14 +6,8 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Room List</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style><%@include file ="/WEB-INF/css/style.css"%>
-h1 {
-	text-align: center;
-}
-
-div {
-	text-align: center;
-}
 .table-size{
 border:2px ;
 width:100%;
@@ -27,7 +21,10 @@ cellpadding:2px;
 </head>
 <body>
 	<div>
-			<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+	<button style="    font-size: 12px;
+    background-color: #f44336;
+    color: black;
+    float: left;" onclick="document.location='/home/staffuse'"><span class="fa fa-home" style="font-size:38px;"></span></button>
 		<h1>ROOM LIST</h1>
 
 		<div id="table root">
@@ -39,13 +36,12 @@ cellpadding:2px;
 				</colgroup>
 				<thead>
 					<tr>
-						<th>Room Id</th>
-						<th>Room Type</th>
-						<th>Room Location</th>
-						<th>NumberOf Beds</th>
-						<th>Room Status</th>
-						<th>Edit</th>
-						<th>View</th>
+						<th>ROOM ID</th>
+						<th>ROOM TYPE</th>
+						<th>ROOM LOCATION</th>
+						<th>NUMBER OF BEDS</th>
+						<th>ROOM STATUS</th>
+						<th>EDIT AND VIEW</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -56,8 +52,7 @@ cellpadding:2px;
 							<td>${room.roomLocation}</td>
 							<td>${room.numOfBeds}</td>
 							<td>${room.roomStatus}</td>
-							<td><a href="updateroomform?roomId=${room.roomId}">Edit</a></td>
-							<td><a href="getroom?id=${room.roomId}">View</a></td>
+							<td><a href="updateroomform?roomId=${room.roomId}">Edit</a> <a href="getroom?id=${room.roomId}">View</a></td>
 						</tr>
 					</c:forEach>
 				</tbody>

@@ -6,11 +6,10 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Add Ambulance</title>
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style><%@include file ="/WEB-INF/css/style.css"%>
 body {
 	background-image:
-		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 		url(https://img.freepik.com/free-vector/emergency-ambulance-with-coronavirus-concept_23-2148534628.jpg?w=740&t=st=1660554389~exp=1660554989~hmac=a365ae79d089f5d9e439a2246bf5c307cc7a7a7c2197dda7b24f160e35b926b8)
 }
 .label-text {
@@ -20,12 +19,7 @@ body {
 </style>
 </head>
 <body>
-	<button style="    font-size: 12px;
-    width: 56px;
-    height: 22px;
-    background-color: #f44336;
-    color: black;
-    float: left;" onclick="history.back()"><span class="glyphicon glyphicon-home"></span></button>
+		<button onclick="document.location='/ambulance/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1 class="label-text">ADD AMBULANCES</h1>
 	<div id="root">
 		<div id="form">
@@ -51,7 +45,7 @@ body {
 						<form:input path="ambulanceModel" class="text-box"
 						placeholder="AmbulaceModel"
 							title="AmbulanceModel can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z](\s[a-zA-Z]+)?{3,20}$" required="true"/>
+							pattern="^[A-Za-z\s]*$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="ambulanceModel" class="text-danger" />
@@ -61,7 +55,7 @@ body {
 						<form:input path="status" class="text-box"
 						placeholder="Status"
 							title="status can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required="true"/>
+							pattern="^[A-Za-z\s]*$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="status" class="text-danger" />

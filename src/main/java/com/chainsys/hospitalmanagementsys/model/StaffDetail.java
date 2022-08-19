@@ -13,10 +13,7 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.Digits;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.Pattern;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.NotBlank;
 
 @Entity
 @Table(name = "STAFF_DETAILS")
@@ -25,28 +22,27 @@ public class StaffDetail {
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "staff_id_ref")
 	@SequenceGenerator(name = "staff_id_ref", sequenceName = "staff_id_ref", allocationSize = 1)
 	@Column(name = "staff_id")
+	@NotBlank(message = "*StaffId is required")
 	private int staffId;
 	@Column(name = "staff_name")
-	@Size(max = 20, min = 3, message = "*StaffName length should be 3 to 20")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid name ")
+	@NotBlank(message = "*StaffName is required")
 	private String staffName;
 	@Column(name = "dob")
+	@NotBlank(message = "*Dob is required")
 	private Date dob;
 	@Column(name = "gender")
+	@NotBlank(message = "*Gender is required")
 	private String gender;
 	@Column(name = "phone_no")
-	@Digits(message = "*Invalid Phone Number", integer = 10, fraction = 0)
 	private long phoneNo;
 	@Column(name = "email_id ")
-	@Email(message = "*Invalid Email", regexp = "[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,3}")
+	@NotBlank(message = "*EmailId is required")
 	private String emailId;
 	@Column(name = "password")
-	@Size(max = 20, min = 8, message = "*Minimum eight characters ")
-	@Pattern(regexp="^[A-Za-z0-9._%+-]+$",message="*Enter Valid Password")
+	@NotBlank(message = "*Password is required")
 	private String password;
 	@Column(name = "designation")
-	@Size(max = 20, min = 3, message = "*Designation length should be 3 to 20")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid designation ")
+	@NotBlank(message = "Designation is required")
 	private String designation;
 	@OneToOne(mappedBy = "staffdetail", fetch = FetchType.LAZY)
 	private DoctorDetail doctor;

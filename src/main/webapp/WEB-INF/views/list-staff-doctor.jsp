@@ -21,7 +21,6 @@ body {
 <body>
 		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 	<h1>Staff Details</h1>
-	<div id="root">
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getstaff">
 				<div>
@@ -68,7 +67,6 @@ body {
 					</div>
 			</form:form>
 		</div>
-	</div>
 	<h1>Doctor Details</h1>
 	<div id="root">
 		<div id="form">

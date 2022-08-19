@@ -22,7 +22,7 @@ public class DoctorDetail {
 	private int staffId;
 	@Column(name="speciality")
 	@Size(max = 20, min = 3, message = "*Speciality  should be 3 to 20")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid Speciality ")
+	@Pattern(regexp = "^[A-Za-z\s]*$", message = "*Enter valid Speciality ")
 	private String speciality ;
 	@Column(name="role_type")
 	private String roleType;

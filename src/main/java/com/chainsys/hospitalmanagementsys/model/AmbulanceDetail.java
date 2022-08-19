@@ -25,11 +25,11 @@ public class AmbulanceDetail {
 	private Date purchaseDate;
 	@Column(name = "ambulance_model")
 	@Size(max = 20, min = 3, message = "*Ambulance Model should be 3 to 20")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid ambulance model ")
+	@Pattern(regexp = "^[A-Za-z\s]*$", message = "*Enter valid ambulance model ")
 	private String ambulanceModel;
 	@Column(name = "status")
 	@Size(max = 20, min = 3, message = "*status  should be 3 to 20")
-	@Pattern(regexp = "^[A-Za-z]\\w{3,20}$", message = "*Enter valid status ")
+	@Pattern(regexp = "^[A-Za-z\s]*$", message = "*Enter valid status ")
 	private String status;
 	@Column(name = "staff_id")
 	private int staffId;

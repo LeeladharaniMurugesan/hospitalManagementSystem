@@ -7,8 +7,6 @@
 <head>
 <style><%@include file ="/WEB-INF/css/style4.css"%>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
-
-
 body {
     background-image: url(https://cdn.pixabay.com/photo/2018/08/03/19/11/hospital-3582607_960_720.jpg);
     background-repeat: no-repeat;
@@ -22,10 +20,13 @@ body {
 </head>
 <body>
     <nav>
-    <button onclick="document.location='/staffdetail/stafflogin'" style="float: right;height: 31px; width: 81px;color: blue;">Logout</button>
         <div class="menu">
         <ul>
-        	<li class="dropdown"><a href="javascript:void(0)"
+        	<li> <button style="    font-size: 12px;
+    background-color: #f44336;
+    color: black;
+    float: left;" onclick="history.back()"><span class="fa fa-home" style="font-size:38px;"></span></button></li>
+        	<li class="dropdown list-margin"><a href="javascript:void(0)"
         	class="dropbtn">STAFFS</a>
         	<div class="dropdown-content">
         	<a href="/staffdetail/list">Staff</a>
@@ -36,14 +37,15 @@ body {
         	<a href="/staffdetail/cleanerlist">Cleaner</a>
         	<a href="/staffdetail/wardboylist">WardBoy</a>
         	</div>
-        	
-                <li><a href="/room/list">ROOMS</a></li>
-                <li><a href="/operationTheatre/list">OPERATIONTHEATRES</a></li>
-                <li><a href="/doctor/list">DOCTORS</a></li>
-                <li><a href="/doctorvisit/list">VISITINGDOCTORS</a></li>
-                <li><a href="/bed/list">BEDS</a></li>
-                <li><a href="/ambulance/list">AMBULANCES</a></li>
-                <li><a href="/bcdetail/list">BOOKINGS</a></li>
+        	</li>
+                <li class="list-margin"><a href="/room/list">ROOMS</a></li>
+                <li class="list-margin"><a href="/operationTheatre/list">OPERATIONTHEATRES</a></li>
+                <li class="list-margin"><a href="/doctor/list">DOCTORS</a></li>
+                <li class="list-margin"><a href="/doctorvisit/list">VISITINGDOCTORS</a></li>
+                <li class="list-margin"><a href="/bed/list">BEDS</a></li>
+                <li class="list-margin"><a href="/ambulance/list">AMBULANCES</a></li>
+                <li class="list-margin"><a href="/bcdetail/list">BOOKINGS</a></li>
+                <li> <button onclick="document.location='/staffdetail/stafflogin'" style="float: right;height: 31px; width: 81px;color: blue;">Logout</button></li>
              </ul>
              </div>
           

@@ -23,7 +23,7 @@ body {
 </style>
 </head>
 <body>
-		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+<button onclick="document.location='/operationTheatre/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1>VIEW OPERATION THEATRE</h1>
 	<div id="root">
 		<div id="form">

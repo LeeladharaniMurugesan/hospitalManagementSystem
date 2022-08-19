@@ -18,6 +18,7 @@ import javax.validation.constraints.Past;
 
 import org.hibernate.validator.constraints.Range;
 
+
 @Entity
 @Table(name = "DOCTOR_VISITDETAILS")
 public class DoctorVisitDetail {
@@ -29,7 +30,6 @@ public class DoctorVisitDetail {
 	@Column(name = "staff_id")
 	@NotNull
 	private int staffId;
-	@NotNull(message = "Date should not be null")
 	@Column(name = "visited_date")
 	@Past
 	private Date visitedDate;

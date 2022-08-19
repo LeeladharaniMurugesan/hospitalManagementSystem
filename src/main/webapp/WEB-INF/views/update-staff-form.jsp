@@ -15,17 +15,24 @@ body {
 </style>
 </head>
 <body>
-		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+		<button onclick="document.location='/staffdetail/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1>WELCOME STAFFS</h1>
 		<div id="form">
 			<form:form action="updatestaff" method="post" modelAttribute="updatestaffs">
+				<div>
+					<label for="staffId" class="label-size">StaffId </label>
+					<div>
+						<form:input path="staffId" class="text-box" placeholder="101"
+						title="StaffId can't be empty" required="true"/>
+					</div>
+				</div>
 				<div>
 				<label for="staffName" class="label-size">Staff Name</label>
 				<div>
 					<form:input path="staffName" class="text-box"
 						placeholder="staffName"
 						title="StaffName can't be empty or must contain only alphabets"
-						pattern="^[a-zA-Z]+$" required="true"/>
+						pattern="^[A-Za-z\s]*$" required="true"/>
 				</div>
 			</div>
 			<form:errors path="staffName" class="text-danger" />
@@ -33,7 +40,7 @@ body {
 				<label for="dob" class="label-size">DateOfBirth</label>
 				<div>
 					<form:input type="Date" path="dob" class="text-box"
-						placeholder="10-08-2022" name="dob" onblur="dateCheck();" />
+						placeholder="10-08-2022" required="true" />
 				</div>
 			</div>
 			<div>
@@ -79,7 +86,7 @@ body {
 					<form:input path="designation" class="text-box"
 						placeholder="designation"
 						title="Designation can't be empty or must contain only alphabets"
-						pattern="^[A-Za-z]\\w{3,20}$" required="true" />
+						pattern="^[A-Za-z\s]*$" required="true" />
 				</div>
 			</div>
 			<form:errors path="designation" class="text-danger" />

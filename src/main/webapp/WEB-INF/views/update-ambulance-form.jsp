@@ -20,7 +20,7 @@ body {
 </style>
 </head>
 <body>
-	<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+	<button onclick="document.location='/ambulance/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1>UPDATE AMBULANCES</h1>
 	<div id="root">
 		<div id="form">
@@ -47,7 +47,7 @@ body {
 						<form:input path="ambulanceModel" class="text-box"
 						placeholder="ambulaceModel"
 							title="AmbulanceModel can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
+							pattern="^[A-Za-z\s]*$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="ambulanceModel" class="text-danger" />
@@ -57,7 +57,7 @@ body {
 						<form:input path="status" class="text-box"
 						placeholder="status"
 							title="status can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required="true"/>
+							pattern="^[A-Za-z\s]*$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="status" class="text-danger" />

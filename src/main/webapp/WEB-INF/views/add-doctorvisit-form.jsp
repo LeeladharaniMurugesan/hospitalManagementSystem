@@ -15,7 +15,7 @@ body {
 </style>
 </head>
 <body>
-		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+		<button onclick="document.location='/doctorvisit/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1>WELCOME DOCTORS</h1>
 		<div id="form">
 			<form:form action="adddocvisitdetail" method="post" modelAttribute="adddocvisit">
@@ -28,12 +28,12 @@ body {
 					</div>
 				</div>
 				<div>
-					<label for="visitedDate" class="label-size">Visited Date</label>
+					<label for="visitedDate" class="label-size">VisitedDate </label>
 					<div>
-						<form:input type="Date" path="visitedDate" class="text-box"/>
+						<form:input  type="Date" path="visitedDate" class="text-box" placeholder="15-08-2022"
+						title="VisitedDate can't be empty" required="true"/>
 					</div>
 				</div>
-				<form:errors path="visitedDate" class="text-danger" />
 				<div>
 					<label for="fromTime" class="label-size">From Time</label>
 					<div>

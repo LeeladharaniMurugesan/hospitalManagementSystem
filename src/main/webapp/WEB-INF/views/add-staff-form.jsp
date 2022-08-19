@@ -7,14 +7,6 @@
 <meta charset="ISO-8859-1">
 <title>Add Staff</title>
 <style><%@include file ="/WEB-INF/css/style.css"%>
-h1 {
-	text-align: center;
-}
-
-div {
-	text-align: center;
-}
-
 body {
 	background-image:
 		url(https://st2.depositphotos.com/2065849/9678/i/950/depositphotos_96789564-stock-photo-medical-drip-in-hospital-corridor.jpg);
@@ -23,7 +15,7 @@ body {
 </head>
 <body>
 	<div id="form">
-			<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+			<button onclick="document.location='/staffdetail/list'" style="float: left; font-size: 15px;">Go Back</button>
 		<h1>WELCOME STAFFS</h1>
 		<form:form action="addstaff" method="post"
 			modelAttribute="addstaffs">
@@ -33,7 +25,7 @@ body {
 					<form:input path="staffName" class="text-box"
 						placeholder="staffName"
 						title="StaffName can't be empty or must contain only alphabets"
-						pattern="^[a-zA-Z]+$" required="true" />
+						pattern="^[A-Za-z\s]*$" required="true" />
 				</div>
 			</div>
 			<form:errors path="staffName" class="text-danger" />
@@ -47,7 +39,7 @@ body {
 			<div>
 				<label for="gender" class="label-size">Gender</label>
 				<div>
-					<form:select path="gender" class="text-box" placeholder="Gender">
+					<form:select path="gender" class="text-box" placeholder="Male">
 						<form:option value="Male">Male</form:option>
 						<form:option value="Female">Female</form:option>
 					</form:select>
@@ -58,7 +50,7 @@ body {
 				<label for="phoneNo" class="label-size">PhoneNo</label>
 				<div>
 					<form:input path="phoneNo" class="text-box"
-						placeholder="Phone Number" pattern="[1-9]{1}[0-9]{9}"
+						placeholder="98765 54321" pattern="[1-9]{1}[0-9]{9}"
 						title="Phone number should have atleast 10 digits" required="true"/>
 				</div>
 			</div>
@@ -66,7 +58,7 @@ body {
 			<div>
 				<label for="emailId" class="label-size">EmailId</label>
 				<div>
-					<form:input path="emailId" class="text-box" placeholder="EmailId"
+					<form:input path="emailId" class="text-box" placeholder="example@gmail.com"
 						pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$"
 						title="Enter valid email ex: example@gmail.com" required="true"/>
 				</div>
@@ -85,9 +77,9 @@ body {
 				<label for="designation" class="label-size">Designation</label>
 				<div>
 					<form:input path="designation" class="text-box"
-						placeholder="designation"
+						placeholder="Designation"
 						title="Designation can't be empty or must contain only alphabets"
-						pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
+						pattern="^[A-Za-z\s]*$" required="true"/>
 				</div>
 			</div>
 			<form:errors path="designation" class="text-danger" />

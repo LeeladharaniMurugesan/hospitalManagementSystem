@@ -15,7 +15,7 @@ body {
 </style>
 </head>
 <body>
-	<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+	<button onclick="document.location='/room/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1>ADD ROOM</h1>
 		<div id="form">
 			<form:form name="form" action="addroom" method="post" modelAttribute="addrooms">
@@ -23,9 +23,9 @@ body {
 					<label for="roomType" class="label-size">Room Type</label>
 					<div>
 						<form:input path="roomType" class="text-box"
-							placeholder="roomType" name="roomType"
+							placeholder="roomType" name="RoomType"
 							title="RoomType can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required="true" onblur="roomTypeCheck();" />
+							pattern="^[A-Za-z\s]*$" required="true" onblur="roomTypeCheck();" />
 					</div>
 				</div>
 				<form:errors path="roomType" class="text-danger" />
@@ -33,9 +33,9 @@ body {
 					<label for="roomLocation" class="label-size">Room Location</label>
 					<div>
 						<form:input path="roomLocation" class="text-box"
-							placeholder="roomLocation" name="roomLocation"
+							placeholder="roomLocation" name="RoomLocation"
 							title="RoomLocation can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required="true" onblur="roomLocationCheck();"/>
+							pattern="^[A-Za-z\s]*$" required="true" onblur="roomLocationCheck();"/>
 					</div>
 				</div>
 				<form:errors path="roomLocation" class="text-danger" />
@@ -53,9 +53,9 @@ body {
 					<label for="roomStatus" class="label-size">Room Status</label>
 					<div>
 						<form:input path="roomStatus" class="text-box"
-							placeholder="roomtatus" name="roomStatus"
+							placeholder="roomtatus" name="RoomStatus"
 							title="RoomStatus can't be empty or must contain only alphabets"
-							pattern="^[a-zA-Z]+$" required="true" onblur="roomStatusCheck();" />
+							pattern="^[A-Za-z\s]*$" required="true" onblur="roomStatusCheck();" />
 					</div>
 				</div>
 				<form:errors path="roomStatus" class="text-danger" />

@@ -35,8 +35,13 @@ nav .menu {
     font-weight: 600;
 }
 
+.list-margin{
+	margin-top: 9px;
+}
+
 .menu ul {
     display: inline-flex;
+    margin-left: -68px;
 }
 
 .menu ul li {

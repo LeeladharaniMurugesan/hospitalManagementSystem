@@ -15,7 +15,7 @@ body {
 </style>
 </head>
 <body>
-		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+		<button onclick="document.location='/doctor/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1>ADD DOCTORS</h1>
 	<div id="root">
 		<div id="form">
@@ -33,9 +33,8 @@ body {
 					<div>
 						<form:input path="speciality" class="text-box"
 						placeholder="speciality"
-						pattern="^[A-Za-z]\\w{3,20}$" required="true"
-							title="Speciality can't be empty or must contain only alphabets"
-							required="true"/>
+						pattern="^[A-Za-z\s]*$"
+						title="Speciality can't be empty or must contain only alphabets" required="true"/>
 					</div>
 				</div>
 				<form:errors path="speciality" class="text-danger" />
@@ -45,7 +44,7 @@ body {
 						<form:input path="roleType" class="text-box"
 						placeholder="roleType"
 							title="RoleType can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
+							pattern="^[A-Za-z\s]*$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="roleType" class="text-danger" />

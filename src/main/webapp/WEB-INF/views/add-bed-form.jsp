@@ -14,7 +14,7 @@ body {
 </style>
 </head>
 <body>
-		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+		<button onclick="document.location='/bed/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1>ADD BEDS</h1>
 		<div id="form">
 			<form:form action="addbed" method="post" modelAttribute="addbeds">
@@ -23,7 +23,7 @@ body {
 					<div>
 						<form:input path="bedType" class="text-box" placeholder="Standard"
 							title="BedType can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true" />
+							pattern="^[A-Za-z\s]*$" required="true" />
 					</div>
 				</div>
 				<form:errors path="bedType" class="text-danger" />
@@ -32,7 +32,7 @@ body {
 					<div>
 						<form:input path="bedStatus" class="text-box" placeholder="Booked"
 							title="BedStatus can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true" /> 
+							pattern="^[A-Za-z\s]*$" required="true" /> 
 					</div>
 				</div>
 				<form:errors path="bedStatus" class="text-danger" />
@@ -41,7 +41,7 @@ body {
 					<div>
 						<form:input path="bedSize" class="text-box" placeholder="Size"
 							title="BedSize can't be empty"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
+							pattern="^[A-Za-z\s]*$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="bedSize" class="text-danger" />

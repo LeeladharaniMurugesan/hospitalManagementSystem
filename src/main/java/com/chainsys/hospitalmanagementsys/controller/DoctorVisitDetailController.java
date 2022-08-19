@@ -25,6 +25,7 @@ public class DoctorVisitDetailController {
 	DoctorVisitDetailService doctorvisitservice;
 	@Autowired
 	StaffDetailService staffdetailservice;
+	
 	private static final String LIST="redirect:/doctorvisit/list";
 	@GetMapping("/list")
 
@@ -49,7 +50,7 @@ public class DoctorVisitDetailController {
 	}
 
 	@PostMapping("/adddocvisitdetail")
-	public String addNewDoctorVisit( @ModelAttribute("adddocvisit") DoctorVisitDetail doctorvisit,Errors errors) {
+	public String addNewDoctorVisit(@Valid@ModelAttribute("adddocvisit") DoctorVisitDetail doctorvisit,Errors errors) {
 		if(errors.hasErrors()) {
 			return "add-doctorvisit-form";
 		}

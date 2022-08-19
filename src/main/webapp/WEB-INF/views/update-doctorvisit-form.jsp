@@ -14,11 +14,19 @@ body {
 </style>
 </head>
 <body>
-		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+		<button onclick="document.location='/doctorvisit/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1> UPDATE DOCTORVISIT </h1>
 	<div id="root">
 		<div id="form">
 			<form:form action="updatedoctorvisit" method="post" modelAttribute="updatedocvisit">
+				<div>
+					<label for="staffId" class="label-size">StaffId </label>
+					<div>
+						<form:input path="staffId" class="text-box" placeholder="101"
+						title="StaffId can't be empty"
+						pattern="^[0-9]+$" required="true"/>
+					</div>
+				</div>
 				<div>
 					<label for="visitedDate" class="label-size">Visited Date</label>
 					<div>

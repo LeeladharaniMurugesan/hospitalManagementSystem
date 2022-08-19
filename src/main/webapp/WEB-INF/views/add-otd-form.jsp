@@ -19,7 +19,7 @@ body {
 </style>
 </head>
 <body>
-		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+<button onclick="document.location='/operationTheatre/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1 class="label-text">ADD OPERATION THEATRE</h1>
 		<div id="form">
 			<form:form name="form" action="addoperationtheatre" method="post"
@@ -30,7 +30,7 @@ body {
 						<form:input path="theatreType" class="text-box"
 							placeholder="theatreType"
 							title="TheatreType can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
+							pattern="^[A-Za-z\s]*$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="theatreType" class="text-danger" />
@@ -40,7 +40,7 @@ body {
 						<form:input path="theatreLocation" class="text-box"
 							placeholder="theatreLocation"
 							title="TheatreLocation can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true" />
+							pattern="^[A-Za-z\s]*$" required="true" />
 					</div>
 				</div>
 				<form:errors path="theatreLocation" class="text-danger" />
@@ -50,7 +50,7 @@ body {
 						<form:input path="theatreStatus" class="text-box"
 							placeholder="theatreStatus"
 							title="TheatreStatus can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true" />
+							pattern="^[A-Za-z\s]*$" required="true" />
 					</div>
 				</div>
 				<form:errors path="theatreStatus" class="text-danger" />

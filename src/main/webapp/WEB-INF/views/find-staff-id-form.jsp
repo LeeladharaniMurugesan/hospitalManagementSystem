@@ -7,8 +7,6 @@
 <meta charset="ISO-8859-1">
 <title>Find Staff</title>
 <style><%@include file="/WEB-INF/css/style.css"%>
-h1 {text-align: center;}
-div{text-align: center;}
 body {
 	background-image:
 		url(https://previews.123rf.com/images/giggsy25/giggsy251711/giggsy25171100134/89624948-smart-doctor-with-a-stethoscope-on-blurred-hospital-background-and-medical-icon-in-hexagonal-shaped-.jpg);
@@ -16,7 +14,7 @@ body {
 </style>
 </head>
 <body>
-		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+		<button onclick="document.location='/staffdetail/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1>WELCOME STAFFS</h1>
 	<div id="root">
 		<div id="form">

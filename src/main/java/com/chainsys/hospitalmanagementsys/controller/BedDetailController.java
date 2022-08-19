@@ -50,7 +50,7 @@ public class BedDetailController {
 	}
 
 	@PostMapping("/addbed")
-	public String addNewBed(@Valid @ModelAttribute("addbeds") BedDetail beddetail,Errors errors) {
+	public String addNewBed(@Valid@ModelAttribute("addbeds") BedDetail beddetail,Errors errors) {
 		if(errors.hasErrors()) {
 			return "add-bed-form";
 		}

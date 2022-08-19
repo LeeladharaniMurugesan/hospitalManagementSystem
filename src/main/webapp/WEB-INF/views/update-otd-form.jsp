@@ -19,17 +19,23 @@ body {
 </style>
 </head>
 <body>
-		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+<button onclick="document.location='/operationTheatre/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1 class="label-text">UPDATE OPERATION THEATRE</h1>
 		<div id="form">
 			<form:form action="updateopeartiontheatre" method="post" modelAttribute="updateoperationtheatres">
+				<div>
+					<label for="theatreId" class="label-size label-text">TheatreId</label>
+					<div>
+						<form:input path="theatreId" class="text-box" required="true"/>
+					</div>
+				</div>
 					<div>
 					<label for="theatreType" class="label-size label-text">TheatreType</label>
 					<div>
 						<form:input path="theatreType" class="text-box"
-							placeholder="theatreType"
+							placeholder="TheatreType"
 							title="TheatreType can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
+							pattern="^[A-Za-z\s]*$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="theatreType" class="text-danger" />
@@ -37,9 +43,9 @@ body {
 					<label for="theatreLocation" class="label-size label-text">TheatreLocation</label>
 					<div>
 						<form:input path="theatreLocation" class="text-box"
-							placeholder="theatreLocation"
+							placeholder="TheatreLocation"
 							title="TheatreLocation can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
+							pattern="^[A-Za-z\s]*$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="theatreLocation" class="text-danger" />
@@ -47,9 +53,9 @@ body {
 					<label for="theatreStatus" class="label-size label-text">TheatreStatus</label>
 					<div>
 						<form:input path="theatreStatus" class="text-box"
-							placeholder="theatreStatus"
+							placeholder="TheatreStatus"
 							title="TheatreStatus can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z]\\w{3,20}$" required="true"/>
+							pattern="^[A-Za-z\s]*$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="theatreStatus" class="text-danger" />

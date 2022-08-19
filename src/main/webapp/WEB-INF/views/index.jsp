@@ -14,23 +14,23 @@
 	<nav>
 		       
 		<div class="menu">
-			<span class="fa fa-plus-square" style="font-size:48px;color:red"></span>
+			<span class="fa fa-plus-square" style="font-size:48px;color:red;margin-top: -12px;"></span>
 			<span class="logo">
 				 MMLK MULTISPECIALITY HOSPITAL            
 			 </span>
 			<div>     
-			<ul>
+			<ul style="margin-top: 1px;">
 				<li class="dropdown"><a href="javascript:void(0)"
 				class="dropbtn">HOME</a>
 				<div class="dropdown-content">
-				<a href="#">Staff Details</a>
-				<a href="#">Room Details</a>
-				<a href="#">OperationTheatre Details</a>
-				<a href="#">Doctor Details</a>
-				<a href="#">VisitingDoctor Details</a>
+				<a href="#">Staffs</a>
+				<a href="#">Rooms</a>
+				<a href="#">OperationTheatres</a>
+				<a href="#">Doctors</a>
+				<a href="#">VisitingDoctors</a>
 				<a href="#">Bed Details</a>
 				<a href="#">Ambulance Details</a>
-				<a href="#">Booking Details</a></div></li>
+				<a href="#">Bookings</a></div></li>
 				<li><a href="/staffdetail/stafflogin"> STAFF LOGIN</a></li>
 				<li class="dropdown"><a href="javascript:void(0)"
 					class="dropbtn">CONTACT</a>

@@ -8,13 +8,6 @@
 <meta charset="ISO-8859-1">
 <title>Room Bed Detail</title>
 <style><%@include file ="/WEB-INF/css/style1.css"%>
-h1 {
-	text-align: center;
-}
-
-div {
-	text-align: center;
-}
 .table-size{
 border:2px ;
 width:100%;

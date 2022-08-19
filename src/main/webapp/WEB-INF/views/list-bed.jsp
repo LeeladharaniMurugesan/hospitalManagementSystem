@@ -6,6 +6,7 @@
 <head>
 <meta charset="ISO-8859-1">
 <title>Bed List</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style><%@include file ="/WEB-INF/css/style.css"%>
 .table-size{
 border:2px ;
@@ -26,8 +27,11 @@ body {
 </style>
 </head>
 <body>
+	<button style="    font-size: 12px;
+    background-color: #f44336;
+    color: black;
+    float: left;" onclick="document.location='/home/staffuse'"><span class="fa fa-home" style="font-size:38px;"></span></button>
 	<h1>BEDS LIST</h1>
-		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
 	<div id="table root">
 		<table class="table-size">
 		<caption></caption>
@@ -56,8 +60,8 @@ body {
 						<td>${bed.bedSize}</td>
 						<td>${bed.roomId}</td>
 					<td><a
-               	href="updatebedform?bedId=${bed.bedId}">Edit</a></td>
-                        <td><a
+               	href="updatebedform?bedId=${bed.bedId}">Edit</a>
+                        <a
                             href="getbeds?id=${bed.bedId}">View</a></td>
                           <td><a
                             href="getroombed?id=${bed.roomId}">BedDetails</a></td>
