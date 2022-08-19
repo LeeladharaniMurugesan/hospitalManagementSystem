@@ -11,7 +11,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.Past;
-import javax.validation.constraints.Pattern;
 import javax.validation.constraints.Size;
 
 @Entity
@@ -25,11 +24,9 @@ public class AmbulanceDetail {
 	private Date purchaseDate;
 	@Column(name = "ambulance_model")
 	@Size(max = 20, min = 3, message = "*Ambulance Model should be 3 to 20")
-	@Pattern(regexp = "^[A-Za-z\s]*$", message = "*Enter valid ambulance model ")
 	private String ambulanceModel;
 	@Column(name = "status")
 	@Size(max = 20, min = 3, message = "*status  should be 3 to 20")
-	@Pattern(regexp = "^[A-Za-z\s]*$", message = "*Enter valid status ")
 	private String status;
 	@Column(name = "staff_id")
 	private int staffId;
