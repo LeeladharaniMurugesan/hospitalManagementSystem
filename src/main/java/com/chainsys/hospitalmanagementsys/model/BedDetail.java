@@ -22,15 +22,12 @@ public class BedDetail {
 	private int bedId ;
 	@Column(name="bed_type")
 	@Size(max = 20, min = 3, message = "*Bedstatus  should be 3 to 20")
-	@Pattern(regexp = "^[A-Za-z\s]*$", message = "*Enter valid BedType ")
 	private String bedType ;
 	@Column(name="bed_status")
 	@Size(max = 20, min = 3, message = "*Bedstatus  should be 3 to 20")
-	@Pattern(regexp = "^[A-Za-z\s]*$", message = "*Enter valid Bedstatus ")
 	private String bedStatus ;
 	@Column(name="bed_size")
 	@Size(max = 20, min = 3, message = "*Bedsize should be 3 to 20")
-	@Pattern(regexp = "^[A-Za-z\s]*$", message = "*Enter valid BedType ")
 	private String bedSize ;
 	@Column(name="room_id")
 	private int roomId;
