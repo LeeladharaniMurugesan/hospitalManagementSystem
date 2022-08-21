@@ -10,8 +10,7 @@
 <meta charset="ISO-8859-1">
 <title>Find Doctor</title>
 <style><%@include file="/WEB-INF/css/style1.css"%>
-h1 {text-align: center;}
-div{text-align: center;}
+h2{text-align:center}
 body {
 	background-image:
 		url(https://previews.123rf.com/images/giggsy25/giggsy251711/giggsy25171100134/89624948-smart-doctor-with-a-stethoscope-on-blurred-hospital-background-and-medical-icon-in-hexagonal-shaped-.jpg);
@@ -19,7 +18,7 @@ body {
 </style>
 </head>
 <body>
-		<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+<button class="button-85" role="button" onclick="document.location='/doctor/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1>Staff Details</h1>
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getstaff">
@@ -67,7 +66,7 @@ body {
 					</div>
 			</form:form>
 		</div>
-	<h1>Doctor Details</h1>
+	<h2>Doctor Details</h2>
 	<div id="root">
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="doclist">

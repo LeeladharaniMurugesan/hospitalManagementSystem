@@ -38,17 +38,16 @@ background-image:url(https://images.unsplash.com/photo-1513151233558-d860c539817
 			</colgroup>
 			<thead>
 				<tr>
-					<th>BcId</th>
-					<th>booking_date</th>
-					<th>FromDate</th>
-					<th>ToDate</th>
-					<th>ResourceType</th>
-					<th>Resource Id</th>
-					<th>StaffId</th>
-					<th>Status</th>
-					<th>Edit</th>
-					<th>View</th>
-					<th>BookingDetails</th>
+					<th>BOOKING ID</th>
+					<th>BOOKING DATE</th>
+					<th>FROM DATE</th>
+					<th>TO DATE</th>
+					<th>RESOURCE TYPE</th>
+					<th>RRSOURCE ID</th>
+					<th>STAFF ID</th>
+					<th>STATUS</th>
+					<th>EDIT AND VIEW</th>
+					<th>BOOKING DETAILS</th>
 				</tr>
 			</thead>
 			<tbody>

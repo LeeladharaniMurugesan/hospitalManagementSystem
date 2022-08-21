@@ -13,7 +13,8 @@ import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Table;
-import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Past;
 
 @Entity
 @Table(name = "STAFF_DETAILS")
@@ -22,27 +23,27 @@ public class StaffDetail {
 	@GeneratedValue(strategy = GenerationType.AUTO, generator = "staff_id_ref")
 	@SequenceGenerator(name = "staff_id_ref", sequenceName = "staff_id_ref", allocationSize = 1)
 	@Column(name = "staff_id")
-	@NotBlank(message = "*StaffId is required")
+	@NotNull(message = "*StaffId is required")
 	private int staffId;
 	@Column(name = "staff_name")
-	@NotBlank(message = "*StaffName is required")
+	@NotNull(message = "*StaffName is required")
 	private String staffName;
 	@Column(name = "dob")
-	@NotBlank(message = "*Dob is required")
+	@Past
 	private Date dob;
 	@Column(name = "gender")
-	@NotBlank(message = "*Gender is required")
+	@NotNull(message = "*Gender is required")
 	private String gender;
 	@Column(name = "phone_no")
 	private long phoneNo;
 	@Column(name = "email_id ")
-	@NotBlank(message = "*EmailId is required")
+	@NotNull(message = "*EmailId is required")
 	private String emailId;
 	@Column(name = "password")
-	@NotBlank(message = "*Password is required")
+	@NotNull(message = "*Password is required")
 	private String password;
 	@Column(name = "designation")
-	@NotBlank(message = "Designation is required")
+	@NotNull(message = "Designation is required")
 	private String designation;
 	@OneToOne(mappedBy = "staffdetail", fetch = FetchType.LAZY)
 	private DoctorDetail doctor;

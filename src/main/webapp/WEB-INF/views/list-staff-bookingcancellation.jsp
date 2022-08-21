@@ -22,8 +22,7 @@ body {
 </style>
 </head>
 <body>
-	<button onclick="document.location='/home/staffuse'"
-		style="float: right;">Home</button>
+	<button class="button-85" role="button" onclick="document.location='/bcdetail/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1>STAFFS LIST</h1>
 	<div id="root">
 		<div id="form">

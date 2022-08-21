@@ -19,13 +19,13 @@ body {
 </style>
 </head>
 <body>
-		<button onclick="document.location='/ambulance/list'" style="float: left; font-size: 15px;">Go Back</button>
+		<button class="button-85" role="button" onclick="document.location='/ambulance/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1 class="label-text">ADD AMBULANCES</h1>
 	<div id="root">
 		<div id="form">
 			<form:form action="addambulances" method="post" modelAttribute="addambulance">
 				<div>
-					<label for="registerId" class="label-size label-text">Register Id</label>
+					<label for="registerId" class="label-size">Register Id</label>
 					<div>
 						<form:input path="registerId" class="text-box"
 						title="RegisterId can't be empty" placeholder="TN 12 BS 1344"
@@ -34,13 +34,13 @@ body {
 					</div>
 				</div>
 				<div>
-					<label for="purchaseDate" class="label-size label-text">Purchase Date </label>
+					<label for="purchaseDate" class="label-size">Purchase Date </label>
 					<div>
 						<form:input type="Date" path="purchaseDate" class="text-box" />
 					</div>
 				</div>
 				<div>
-					<label for="ambulanceModel"class="label-size label-text">Ambulance Model</label>
+					<label for="ambulanceModel"class="label-size">Ambulance Model</label>
 					<div>
 						<form:input path="ambulanceModel" class="text-box"
 						placeholder="AmbulaceModel"
@@ -50,7 +50,7 @@ body {
 				</div>
 				<form:errors path="ambulanceModel" class="text-danger" />
 				<div>
-					<label for="status" class="label-size label-text">Status</label>
+					<label for="status" class="label-size">Status</label>
 					<div>
 						<form:input path="status" class="text-box"
 						placeholder="Status"
@@ -60,7 +60,7 @@ body {
 				</div>
 				<form:errors path="status" class="text-danger" />
 				<div>
-					<label for="staffId" class="label-size label-text">Staff Id</label>
+					<label for="staffId" class="label-size">Staff Id</label>
 					<div>
 						<form:input path="staffId" class="text-box" placeholder="101"
 						title="StaffId can't be empty and should contains only integer"

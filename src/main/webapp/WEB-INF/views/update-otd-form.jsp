@@ -14,13 +14,13 @@ body {
 }
 .label-text {
 	font-size: 26px;
-	color: wheat;
+	color: white;
 }
 </style>
 </head>
 <body>
-<button onclick="document.location='/operationTheatre/list'" style="float: left; font-size: 15px;">Go Back</button>
-	<h1 class="label-text">UPDATE OPERATION THEATRE</h1>
+<button class="button-85" role="button" onclick="document.location='/operationTheatre/list'" style="float: left; font-size: 15px;">Go Back</button>
+	<h1>UPDATE OPERATION THEATRE</h1>
 		<div id="form">
 			<form:form action="updateopeartiontheatre" method="post" modelAttribute="updateoperationtheatres">
 				<div>

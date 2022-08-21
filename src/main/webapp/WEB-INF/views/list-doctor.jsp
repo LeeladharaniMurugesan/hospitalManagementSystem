@@ -36,13 +36,12 @@ body {
             </colgroup>
 			<thead>
 				<tr>
-					<th>Staff Id</th>
-					<th>Speciality</th>
-					<th>Role Type</th>
-					<th>NormalFees</th>
-					<th>Edit</th>
-					<th>View</th>
-					<th>DoctorDetails</th>
+					<th>STAFF ID</th>
+					<th>SPECIALITY</th>
+					<th>ROLE TYPE</th>
+					<th>NORMAL FEES</th>
+					<th>EDIT AND VIEW</th>
+					<th>DOCTOR DETAILS</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -53,8 +52,8 @@ body {
 						<td>${doc.roleType}</td>
 						<td>${doc.normalFees}</td>
 						<td><a
-               	href="updatedoctorform?staffId=${doc.staffId}">Edit</a></td>
-                        <td><a
+               	href="updatedoctorform?staffId=${doc.staffId}">Edit</a>
+                     <a
                             href="getdoctor?id=${doc.staffId}">View</a></td>
                         <td><a href="getstaffdoctor?id=${doc.staffId}">DoctorList</a></td>
                     </tr>

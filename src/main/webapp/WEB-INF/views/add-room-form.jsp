@@ -15,7 +15,7 @@ body {
 </style>
 </head>
 <body>
-	<button onclick="document.location='/room/list'" style="float: left; font-size: 15px;">Go Back</button>
+	<button class="button-85" role="button" onclick="document.location='/room/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1>ADD ROOM</h1>
 		<div id="form">
 			<form:form name="form" action="addroom" method="post" modelAttribute="addrooms">
@@ -23,9 +23,9 @@ body {
 					<label for="roomType" class="label-size">Room Type</label>
 					<div>
 						<form:input path="roomType" class="text-box"
-							placeholder="roomType" name="RoomType"
+							placeholder="RoomType"
 							title="RoomType can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true" onblur="roomTypeCheck();" />
+							pattern="^[A-Za-z\s]*$" required="true" />
 					</div>
 				</div>
 				<form:errors path="roomType" class="text-danger" />
@@ -33,9 +33,9 @@ body {
 					<label for="roomLocation" class="label-size">Room Location</label>
 					<div>
 						<form:input path="roomLocation" class="text-box"
-							placeholder="roomLocation" name="RoomLocation"
+							placeholder="RoomLocation"
 							title="RoomLocation can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true" onblur="roomLocationCheck();"/>
+							pattern="^[A-Za-z\s]*$" required="true"/>
 					</div>
 				</div>
 				<form:errors path="roomLocation" class="text-danger" />
@@ -53,7 +53,7 @@ body {
 					<label for="roomStatus" class="label-size">Room Status</label>
 					<div>
 						<form:input path="roomStatus" class="text-box"
-							placeholder="roomtatus" name="RoomStatus"
+							placeholder="RoomStatus"
 							title="RoomStatus can't be empty or must contain only alphabets"
 							pattern="^[A-Za-z\s]*$" required="true" onblur="roomStatusCheck();" />
 					</div>

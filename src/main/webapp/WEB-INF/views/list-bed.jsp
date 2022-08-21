@@ -41,14 +41,13 @@ body {
             </colgroup>
 			<thead>
 				<tr>
-					<th>BedId</th>
-					<th>BedType</th>
-					<th>BedStatus</th>
-					<th>BedSize</th>
-					<th>RoomId</th>
-					<th>Edit</th>
-					<th>View</th>
-					<th>BedDetails</th>
+					<th>BED ID</th>
+					<th>BED TYPE</th>
+					<th>BED STATUS</th>
+					<th>BED SIZE</th>
+					<th>ROOM ID</th>
+					<th>EDIT AND VIEW</th>
+					<th>BED DETAILS</th>
 				</tr>
 			</thead>
 			<tbody>

@@ -16,7 +16,7 @@ body {
 </style>
 </head>
 <body>
-	<button onclick="document.location='/doctor/list'" style="float: left; font-size: 15px;">Go Back</button>
+	<button class="button-85" role="button" onclick="document.location='/doctor/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1>FIND DOCTORS</h1>
 	<div id="root">
 		<div id="form">

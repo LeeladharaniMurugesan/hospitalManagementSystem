@@ -34,15 +34,14 @@ cellpadding:2px;
             </colgroup>
 			<thead>
 				<tr>
-					<th>SNo</th>
-					<th>StaffId</th>
-					<th>VisitedDate</th>
-					<th>FromTime</th>
-					<th>ToTime</th>
-					<th>DailyFees</th>
-					<th>Update</th>
-					<th>View</th>
-					<th>DoctorVisitDetails</th>
+					<th>SNO</th>
+					<th>STAFF ID</th>
+					<th>VISITED DATE</th>
+					<th>FROM TIME</th>
+					<th>TO TIME</th>
+					<th>DAILY FEES</th>
+					<th>EDIT AND VIEW</th>
+					<th>DOCTOR VISIT DETAILS</th>
 				</tr>
 			</thead>
 			<tbody>

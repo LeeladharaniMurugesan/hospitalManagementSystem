@@ -14,7 +14,7 @@ body {
 </style>
 </head>
 <body>
-			<button onclick="document.location='/bed/list'" style="float: left; font-size: 15px;">Go Back</button>
+	<button  class="button-85" role="button" onclick="document.location='/bed/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1>UPDATE BEDS</h1>
 		<div id="form">
 			<form:form  action="updatebeds" method="post" modelAttribute="updatebed">

@@ -42,12 +42,11 @@ cellpadding:2px;
             </colgroup>
 			<thead>
 				<tr>
-					<th>TheatreId</th>
-					<th>TheatreType</th>
-					<th>TheatreLocation</th>
-					<th>TheatreStatus</th>
-					<th>Edit</th>
-					<th>View</th>
+					<th>THEATRE ID</th>
+					<th>THEATRE TYPE</th>
+					<th>THEATRE LOCATION</th>
+					<th>THATRE STATUS</th>
+					<th>EDIT AND VIEW</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -57,8 +56,8 @@ cellpadding:2px;
 						<td>${opd.theatreType}</td>
 						<td>${opd.theatreLocation}</td>
 						<td>${opd.theatreStatus}</td>
-						<td><a href="updateoperationtheatreform?theatreId=${opd.theatreId}">Edit</a>                            <td><a
-                            href="getoperationtheatre?id=${opd.theatreId}">View</a></td>
+						<td><a href="updateoperationtheatreform?theatreId=${opd.theatreId}">Edit</a>
+						<a href="getoperationtheatre?id=${opd.theatreId}">View</a></td>
 				</c:forEach>
 			</tbody>
 		</table>

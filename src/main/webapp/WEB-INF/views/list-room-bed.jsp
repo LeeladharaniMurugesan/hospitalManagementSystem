@@ -8,6 +8,8 @@
 <meta charset="ISO-8859-1">
 <title>Room Bed Detail</title>
 <style><%@include file ="/WEB-INF/css/style1.css"%>
+h1{text-align:center;}
+div{text-align:center}
 .table-size{
 border:2px ;
 width:100%;
@@ -20,7 +22,7 @@ body {
 </style>
 </head>
 <body>
-	<button style="font-size: 12px; background-color: #e7e7e7; color: black; float:left;" onclick="history.back()">Go Back</button>
+<button class="button-85" role="button" onclick="document.location='/room/list'" style="float: left; font-size: 15px;">Go Back</button>
 <h1>ROOM DETAILS</h1>
 <div id="root">
 		<div id="form">

@@ -20,34 +20,38 @@ body {
 		linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
 		url(https://c1.wallpaperflare.com/preview/198/427/746/blood-pressure-pressure-gauge-medical-the-test.jpg);
 }
+.label-text {
+	font-size: 26px;
+	color: white;
+}
 </style>
 </head>
 <body>
-<button onclick="document.location='/operationTheatre/list'" style="float: left; font-size: 15px;">Go Back</button>
-	<h1>VIEW OPERATION THEATRE</h1>
+<button class="button-85" role="button" onclick="document.location='/operationTheatre/list'" style="float: left; font-size: 15px;">Go Back</button>
+	<h1 class="label-text">VIEW OPERATION THEATRE</h1>
 	<div id="root">
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getoperationtheatres">
 				<div>
-					<label for="theatreId" class="label-size">TheatreId</label>
+					<label for="theatreId" class="label-size label-text">TheatreId</label>
 					<div>
 						<form:input path="theatreId" class="text-box" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="theareType" class="label-size">TheatreType</label>
+					<label for="theareType" class="label-size label-text">TheatreType</label>
 					<div>
 						<form:input path="theatreType" class="text-box" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="theatreLocation" class="label-size">TheatreLocation</label>
+					<label for="theatreLocation" class="label-size label-text">TheatreLocation</label>
 					<div>
 						<form:input path="theatreLocation" class="text-box" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="theatreStatus" class="label-size">TheatreStatus</label>
+					<label for="theatreStatus" class="label-size label-text">TheatreStatus</label>
 					<div>
 						<form:input path="theatreStatus" class="text-box" readonly="true"/>
 					</div>

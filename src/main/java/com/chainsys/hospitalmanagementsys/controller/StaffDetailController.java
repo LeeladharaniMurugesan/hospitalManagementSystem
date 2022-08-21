@@ -91,6 +91,7 @@ public class StaffDetailController {
         	
             return "redirect:/home/staffuse";
         } else {
+        	model.addAttribute("result","Invalid Email Id andPasword");
             return "staff-login-form";
         }
     }
@@ -108,13 +109,13 @@ public class StaffDetailController {
 }
     @GetMapping("/chiefdoctorlist")
     public String getChiefDoctorDesignation(Model model) {
-    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("ChiefDoctor");
+    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Chief Doctor");
     	model.addAttribute("allstaff",taskDesignation);
     	return LIST;
 }
     @GetMapping("/ambulancedriverlist")
     public String getAmbulanceDriverDesignation(Model model) {
-    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("AmbulanceDriver");
+    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Ambulance Driver");
     	model.addAttribute("allstaff",taskDesignation);
     	return LIST;
 }
@@ -126,7 +127,7 @@ public class StaffDetailController {
 }
     @GetMapping("/wardboylist")
     public String getWardBoyDesignation(Model model) {
-    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("WardBoy");
+    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Ward Boy");
     	model.addAttribute("allstaff",taskDesignation);
     	return LIST;
 }

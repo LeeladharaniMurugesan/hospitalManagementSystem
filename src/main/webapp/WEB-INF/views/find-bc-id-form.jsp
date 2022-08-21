@@ -23,7 +23,7 @@ body {
 </style>
 </head>
 <body>
-	<button onclick="document.location='/bcdetail/list'" style="float: left; font-size: 15px;">Go Back</button>
+	<button class="button-85" role="button" onclick="document.location='/bcdetail/list'" style="float: left; font-size: 15px;">Go Back</button>
 	<h1>FIND BOOKING DETAILS</h1>
 	<div id="root">
 		<div id="form">

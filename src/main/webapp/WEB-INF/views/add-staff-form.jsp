@@ -12,12 +12,17 @@ body {
 		url(https://st2.depositphotos.com/2065849/9678/i/950/depositphotos_96789564-stock-photo-medical-drip-in-hospital-corridor.jpg);
 }
 </style>
+<script>
+<%@include file="/WEB-INF/script/login.js"%>
+</script>
 </head>
 <body>
 	<div id="form">
-			<button onclick="document.location='/staffdetail/list'" style="float: left; font-size: 15px;">Go Back</button>
+		<button class="button-85" role="button" onclick="document.location='/staffdetail/list'" style="float: left; font-size: 15px;">Go Back</button>
+		<button onclick="document.location='/staffdetail/stafflogin'"
+		style="float: right;height: 31px; width: 81px;color: blue;">Login</button>
 		<h1>WELCOME STAFFS</h1>
-		<form:form action="addstaff" method="post"
+		<form:form  name="myForm" action="addstaff" method="post"
 			modelAttribute="addstaffs">
 			<div>
 				<label for="staffName" class="label-size">Staff Name</label>
@@ -59,8 +64,8 @@ body {
 				<label for="emailId" class="label-size">EmailId</label>
 				<div>
 					<form:input path="emailId" class="text-box" placeholder="example@gmail.com"
-						pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$"
-						title="Enter valid email ex: example@gmail.com" required="true"/>
+						pattern="^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}$" name="emailId"
+						title="Enter valid email ex: example@gmail.com" required="true" onblur="emailIdCheck();"/>
 				</div>
 			</div>
 			<form:errors path="emailId" class="text-danger" />
@@ -68,8 +73,8 @@ body {
 				<label for="password" class="label-size">Password</label>
 				<div>
 					<form:input type="password" path="password" class="text-box"
-						placeholder="Password" pattern="^[A-Za-z0-9._%+-]+$"
-						title="Enter valid Password" required="true" />
+						placeholder="Password" pattern="^[A-Za-z0-9._%+-]+$" name="password"
+						title="Enter valid Password" required="true" onblur="passwordCheck();"/>
 				</div>
 			</div>
 			<form:errors path="password" class="text-danger" />
@@ -87,7 +92,7 @@ body {
 				<form:button class="button">Add Staff</form:button>
 			</div>
 		</form:form>
-		${result}
+		<div style="margin-top: 9px;"><span style="color:Green;font-size:25px;">${result}</span></div>
 	</div>
 
 </body>

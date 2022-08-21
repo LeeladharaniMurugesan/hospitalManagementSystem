@@ -15,12 +15,12 @@
 		       
 		<div class="menu">
 			<span class="fa fa-plus-square" style="font-size:48px;color:red;margin-top: -12px;"></span>
-			<span class="logo">
+			<span class="logo glow">
 				 MMLK MULTISPECIALITY HOSPITAL            
 			 </span>
-			<div>     
+			<div style="margin-top: -26px;">     
 			<ul style="margin-top: 1px;">
-				<li class="dropdown"><a href="javascript:void(0)"
+				<li class="dropdown glow"><a href="javascript:void(0)"
 				class="dropbtn">HOME</a>
 				<div class="dropdown-content">
 				<a href="#">Staffs</a>
@@ -31,8 +31,8 @@
 				<a href="#">Bed Details</a>
 				<a href="#">Ambulance Details</a>
 				<a href="#">Bookings</a></div></li>
-				<li><a href="/staffdetail/stafflogin"> STAFF LOGIN</a></li>
-				<li class="dropdown"><a href="javascript:void(0)"
+				<li class="glow"><a href="/staffdetail/stafflogin"> STAFF LOGIN</a></li>
+				<li class="dropdown glow"><a href="javascript:void(0)"
 					class="dropbtn">CONTACT</a>
 					<div class="dropdown-content">
 						<a href="#">Email us on mmlkhospital@gmail.com</a> <a href="#">Call

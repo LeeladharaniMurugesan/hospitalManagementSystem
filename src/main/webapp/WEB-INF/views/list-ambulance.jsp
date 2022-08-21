@@ -36,14 +36,13 @@ cellpadding:2px;
             </colgroup>
 			<thead>
 				<tr>
-					<th>RegisterId</th>
-					<th>PurchaseDate</th>
-					<th>AmbulanceModel</th>
-					<th>Status</th>
-					<th>StaffId</th>
-					<th>Edit</th>
-					<th>View</th>
-					<th>AmbulanceDetail</th>
+					<th>REGISTER ID</th>
+					<th>PURCHASE DATE</th>
+					<th>AMBULANCE MODEL</th>
+					<th>STATUS</th>
+					<th>STAFF ID</th>
+					<th>EDIT AND VIEW</th>
+					<th>AMBULANCE DETAILS</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -56,8 +55,8 @@ cellpadding:2px;
 						<td>${amb.staffId}</td>
 						
 							<td><a
-               	href="updateambulanceform?registerId=${amb.registerId}">Edit</a></td>
-                        <td><a
+               	href="updateambulanceform?registerId=${amb.registerId}">Edit</a>
+               	<a
                             href="getambulance?id=${amb.registerId}">View</a></td>
                              <td><a
                            href="getambulancedetail?id=${amb.staffId}">AmbulanceDetail</a></td>
