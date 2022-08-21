@@ -1,17 +1,17 @@
-##Title : HOSPITAL MANAGEMENT SYSTEM
+#Title : HOSPITAL MANAGEMENT SYSTEM
 
-##Description
+#Description
 
 Hospital Management system :
 
 Hospital Management System is a project about the way of maintaining the hospital records.The Admin can maintain their hospital records and can view the details of hospital record during the emergency situation.
 
-##General Information
+#General Information
 
 1. This project is used to maintain the staff,room,operationTheatre,Doctor,Visiting Doctor,Beds, Ambulance,BookingDetails records.
 2. In this site,where we can add,update,view the data's of above mentioned records.
 
-##Project Flow
+#Project Flow
 			
 		LOGIN ---> ADMIN ---> -ADD/UPDATE/VIEW STAFF
 					  -ADD/UPDATE/VIEW ROOM
@@ -23,7 +23,7 @@ Hospital Management System is a project about the way of maintaining the hospita
 					  -ADD/UPDATE/VIEW BOOKING DETAILS
 		LOGOUT
 
-##Features
+#Features
 
 1. DataBase Connectivity.
 2. DB Relational Data Handling.
