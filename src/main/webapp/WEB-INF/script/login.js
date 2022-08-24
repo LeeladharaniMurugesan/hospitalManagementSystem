@@ -2,7 +2,7 @@
  * 
  */
  let emailIdCheck = function() {
-	let nameRegex = new RegExp("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$");
+	let nameRegex = `("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$")`;
 	if (!document.myForm.emailId.value.match(nameRegex)) {
 		if (alert("Email not in the correct format")) {
 			document.MyForm.emailId.focus();

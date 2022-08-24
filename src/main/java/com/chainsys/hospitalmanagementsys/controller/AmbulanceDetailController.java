@@ -60,7 +60,6 @@ public class AmbulanceDetailController {
 			return "add-ambulance-form";
 		}
 		ambulancedetail.setAmbulanceTime();
-		System.out.println(ambulancedetail+"Done");
 		ambService.save(ambulancedetail);
 		return LIST;
 	}

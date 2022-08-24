@@ -99,6 +99,6 @@ public class StaffDetailController {
     public String getAllDesignation(Model model) {
     	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Doctor");
     	model.addAttribute("allstaff",taskDesignation);
-    	return "list-staffdetail";
+    	return LIST;
  }
 }

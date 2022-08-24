@@ -9,7 +9,6 @@ import org.springframework.stereotype.Service;
 import com.chainsys.hospitalmanagementsys.dto.RoomBedDTO;
 import com.chainsys.hospitalmanagementsys.model.BedDetail;
 import com.chainsys.hospitalmanagementsys.model.RoomDetail;
-import com.chainsys.hospitalmanagementsys.model.StaffDetail;
 import com.chainsys.hospitalmanagementsys.repository.BedDetailRepository;
 import com.chainsys.hospitalmanagementsys.repository.RoomDetailRepository;
 

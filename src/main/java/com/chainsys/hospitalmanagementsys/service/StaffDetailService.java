@@ -14,7 +14,6 @@ import com.chainsys.hospitalmanagementsys.model.AmbulanceDetail;
 import com.chainsys.hospitalmanagementsys.model.BookingCancellationDetail;
 import com.chainsys.hospitalmanagementsys.model.DoctorDetail;
 import com.chainsys.hospitalmanagementsys.model.DoctorVisitDetail;
-import com.chainsys.hospitalmanagementsys.model.RoomDetail;
 import com.chainsys.hospitalmanagementsys.model.StaffDetail;
 import com.chainsys.hospitalmanagementsys.repository.AmbulanceDetailRepository;
 import com.chainsys.hospitalmanagementsys.repository.BookingCancellationDetailRepository;
