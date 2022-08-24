@@ -23,11 +23,11 @@ public class AmbulanceDetailService {
 		return ambulanceDetailRepository.save(ambulancedetail);
 	}
 
-	public Optional<AmbulanceDetail> findById(String id) {
+	public Optional<AmbulanceDetail> findById(int id) {
 		return ambulanceDetailRepository.findById(id);
 	}
 
-	public void deleteById(String id) {
+	public void deleteById(int id) {
 		ambulanceDetailRepository.deleteById(id);
 	}
 }

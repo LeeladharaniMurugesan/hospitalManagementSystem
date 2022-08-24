@@ -30,9 +30,9 @@ body {
 			<form:form action="" method="post"
 				modelAttribute="getbookcanceldetail">
 				<div>
-					<label for="bcId" class="label-size">BookingId</label>
+					<label for="bcId" class="label-size"></label>
 					<div>
-						<form:input path="bcId" class="text-box" readonly="true" />
+						<form:input type="hidden" path="bcId" class="text-box" readonly="true" />
 					</div>
 				</div>
 				<div>
@@ -59,15 +59,15 @@ body {
 					<form:input path="resourceType" class="text-box" readonly="true" />
 				</div>
 				<div>
-					<label for="resourceId" class="label-size">ResourceId</label>
+					<label for="resourceId" class="label-size"></label>
 					<div>
-						<form:input path="resourceId" class="text-box" readonly="true" />
+						<form:input type="hidden" path="resourceId" class="text-box" readonly="true" />
 					</div>
 				</div>
 				<div>
-					<label for="staffId" class="label-size">Staff Id</label>
+					<label for="staffId" class="label-size"></label>
 					<div>
-						<form:input path="staffId" class="text-box" readonly="true" />
+						<form:input type="hidden" path="staffId" class="text-box" readonly="true" />
 					</div>
 				</div>
 				<div>

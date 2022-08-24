@@ -21,9 +21,9 @@ body {
 			<form:form action="updatebcdetail" method="post"
 				modelAttribute="updatebookcancel">
 				<div>
-					<label for="bcId" class="label-size">BookingId</label>
+					<label for="bcId" class="label-size"></label>
 					<div>
-						<form:input path="bcId" class="text-box"/>
+						<form:input type="hidden" path="bcId" class="text-box"/>
 					</div>
 				</div>
 				<div>
@@ -55,30 +55,33 @@ body {
 					<div>
 						<form:select path="resourceType" class="text-box">
 							<form:option value="Theatre">Theatre</form:option>
-							<form:option value="Ambulance">Ambulance</form:option>
 							<form:option value="Bed">Bed</form:option>
 						</form:select>
 					</div>
 				</div>
 				<form:errors path="resourceType" class="text-danger" />
 				<div>
-					<label for="resourceId" class="label-size">ResourceId</label>
+					<label for="resourceId" class="label-size"></label>
 					<div>
-						<form:input path="resourceId" class="text-box" placeholder="101" />
+						<form:input type="hidden" path="resourceId" class="text-box" placeholder="101" />
 					</div>
 				</div>
 				<form:errors path="resourceId" class="text-danger" />
 				<div>
-					<label for="staffId" class="label-size">Staff Id</label>
+					<label for="staffId" class="label-size"></label>
 					<div>
-						<form:input path="staffId" class="text-box" placeholder="111" />
+						<form:input type="hidden" path="staffId" class="text-box" placeholder="111" />
 					</div>
 				</div>
 				<form:errors path="staffId" class="text-danger" />
 				<div>
 					<label for="status" class="label-size">Status</label>
 					<div>
-						<form:input path="status" class="text-box" placeholder="Booked" />
+						<form:select path="status" class="text-box">
+                            <form:option value="Booked">Booked</form:option>
+                            <form:option value="Cancelled">Cancelled</form:option>
+                            <form:option value="Available">Available</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="status" class="text-danger" />

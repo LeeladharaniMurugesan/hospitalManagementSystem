@@ -34,8 +34,6 @@ cellpadding:2px;
             </colgroup>
 			<thead>
 				<tr>
-					<th>SNO</th>
-					<th>STAFF ID</th>
 					<th>VISITED DATE</th>
 					<th>FROM TIME</th>
 					<th>TO TIME</th>
@@ -47,8 +45,6 @@ cellpadding:2px;
 			<tbody>
 				<c:forEach var="docv" items="${alldocvisit}">
 					<tr>
-						<td>${docv.sNo}</td>
-						<td>${docv.staffId}</td>
 						<td>${docv.visitedDate}</td>
 						<td>${docv.fromTime}</td>
 						<td>${docv.toTime}</td>

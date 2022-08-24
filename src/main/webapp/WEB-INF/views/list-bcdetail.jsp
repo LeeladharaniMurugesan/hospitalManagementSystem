@@ -38,13 +38,11 @@ background-image:url(https://images.unsplash.com/photo-1513151233558-d860c539817
 			</colgroup>
 			<thead>
 				<tr>
-					<th>BOOKING ID</th>
 					<th>BOOKING DATE</th>
 					<th>FROM DATE</th>
 					<th>TO DATE</th>
+					<th>BOOKED TIME</th>
 					<th>RESOURCE TYPE</th>
-					<th>RRSOURCE ID</th>
-					<th>STAFF ID</th>
 					<th>STATUS</th>
 					<th>EDIT AND VIEW</th>
 					<th>BOOKING DETAILS</th>
@@ -53,13 +51,11 @@ background-image:url(https://images.unsplash.com/photo-1513151233558-d860c539817
 			<tbody>
 				<c:forEach var="bc" items="${allbookcancel}">
 					<tr>
-						<td>${bc.bcId}</td>
 						<td>${bc.bookingDate}</td>
 						<td>${bc.fromDate}</td>
 						<td>${bc.toDate}</td>
+						<td>${bc.bookedTime}</td>
 						<td>${bc.resourceType}</td>
-						<td>${bc.resourceId}</td>
-						<td>${bc.staffId}</td>
 						<td>${bc.status}</td>
 					<td><a
                	href="updatebcform?bcId=${bc.bcId}">Edit</a>

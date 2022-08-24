@@ -1,5 +1,7 @@
 package com.chainsys.hospitalmanagementsys.model;
 
+import java.util.Calendar;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -22,6 +24,9 @@ public class BedDetail {
 	@Column(name="bed_type")
 	@Size(max = 20, min = 3, message = "*Bedstatus  should be 3 to 20")
 	private String bedType ;
+	
+	@Column(name="BED_BOOKEDTIME")
+	private String bedBookedTime;
 	@Column(name="bed_status")
 	@Size(max = 20, min = 3, message = "*Bedstatus  should be 3 to 20")
 	private String bedStatus ;
@@ -51,6 +56,16 @@ public class BedDetail {
 	}
 	public void setBedType(String bedType) {
 		this.bedType = bedType;
+	}
+	public String getBedBookedTime() {
+		return bedBookedTime;
+	}
+	public void setBedBookedTime() {
+			 Calendar vCalendar = Calendar.getInstance();
+		        String bedBookedTime = vCalendar.get(Calendar.DATE) + " / " + (vCalendar.get(Calendar.MONTH) + 1) + " / "
+		                + vCalendar.get(Calendar.YEAR) + " : " + vCalendar.get(Calendar.HOUR) + " : "
+		                + vCalendar.get(Calendar.MINUTE);
+		        this.bedBookedTime = bedBookedTime;
 	}
 	public String getBedStatus() {
 		return bedStatus;

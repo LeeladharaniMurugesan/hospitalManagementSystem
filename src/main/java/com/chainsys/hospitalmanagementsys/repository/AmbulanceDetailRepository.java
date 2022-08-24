@@ -7,12 +7,12 @@ import org.springframework.data.repository.CrudRepository;
 
 import com.chainsys.hospitalmanagementsys.model.AmbulanceDetail;
 
-public interface AmbulanceDetailRepository extends CrudRepository<AmbulanceDetail, String> {
-	Optional<AmbulanceDetail> findById(String id);
+public interface AmbulanceDetailRepository extends CrudRepository<AmbulanceDetail, Integer> {
+	Optional<AmbulanceDetail> findById(int id);
 
 	AmbulanceDetail save(AmbulanceDetail ambulancedetail);
 
-	void deleteById(String id);
+	void deleteById(int id);
 
 	List<AmbulanceDetail> findAll();
 	

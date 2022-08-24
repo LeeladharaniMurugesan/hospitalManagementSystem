@@ -22,10 +22,14 @@ body {
 				<div>
 					<label for="staffId" class="label-size">StaffId </label>
 					<div>
-						<form:input path="staffId" class="text-box" placeholder="101"
-						title="StaffId can't be empty"
-						pattern="^[0-9]+$" required="true"/>
-					</div>
+				<form:select path="staffId" placeholder="Staff Id" class="text-box">
+
+                            <c:forEach var="allStaffDoctor" items="${allstaff}">
+                                <form:option value="${allStaffDoctor.staffId}"
+							label="${allStaffDoctor.staffId}" />
+                            </c:forEach>
+                        </form:select>	
+				</div>
 				</div>
 				<div>
 					<label for="visitedDate" class="label-size">VisitedDate </label>

@@ -27,30 +27,35 @@ body {
 				<div>
 					<label for="theatreType" class="label-size label-text">TheatreType</label>
 					<div>
-						<form:input path="theatreType" class="text-box"
-							placeholder="TheatreType"
-							title="TheatreType can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true"/>
+						<form:select path="theatreType" class="text-box">
+                            <form:option value="General Surgery">General Surgery</form:option>
+                            <form:option value="Orthopedics">Orthopedics</form:option>
+                            <form:option value="Head And Neck">Head And Neck</form:option>
+                            <form:option value="Endoscopy">Endoscopy</form:option>
+                            <form:option value="Emergency">Emergency</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="theatreType" class="text-danger" />
 				<div>
 					<label for="theatreLocation" class="label-size label-text">TheatreLocation</label>
 					<div>
-						<form:input path="theatreLocation" class="text-box"
-							placeholder="TheatreLocation"
-							title="TheatreLocation can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true" />
+						<form:select path="theatreLocation" class="text-box">
+                            <form:option value="First Floor">First Floor</form:option>
+                            <form:option value="Second Floor">Second Floor</form:option>
+                            <form:option value="Third Floor">Third Floor</form:option>
+                            <form:option value="Ground Floor">Ground Floor</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="theatreLocation" class="text-danger" />
 				<div>
 					<label for="theatreStatus" class="label-size label-text">TheatreStatus</label>
 					<div>
-						<form:input path="theatreStatus" class="text-box"
-							placeholder="TheatreStatus"
-							title="TheatreStatus can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true" />
+						<form:select path="theatreStatus" class="text-box">
+                            <form:option value="Booked">Booked</form:option>
+                            <form:option value="Available">Available</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="theatreStatus" class="text-danger" />

@@ -15,7 +15,6 @@ import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="ROOM_DETAILS")
@@ -28,16 +27,14 @@ public class RoomDetail {
 	@Column(name="room_type")
 	private String roomType ;
 	@Column(name="room_location")
-	@Size(max = 20, min = 3, message = "*RoomLocation length should be 3 to 20")
 	@NotBlank(message = "*RoomLocation is required")
 	private String roomLocation ;
 	@Column(name="numof_beds")
-	@Min(value = 1, message = "Enter a Valid number of beds")
-	@Max(value = 100, message = "Enter a Valid number of beds")
+	@Min(value = 200, message = "Enter a Valid number of beds")
+	@Max(value = 300, message = "Enter a Valid number of beds")
 	@NotNull(message = "Number of beds must be required")
 	private int numOfBeds;
 	@Column(name="room_status")
-	@Size(max = 20, min = 3, message = "*RoomStatus length should be 3 to 20")
 	@NotNull(message = "RoomStatus must be required")
 	private String roomStatus;
 	@OneToMany(mappedBy="roomdetails",fetch=FetchType.LAZY)

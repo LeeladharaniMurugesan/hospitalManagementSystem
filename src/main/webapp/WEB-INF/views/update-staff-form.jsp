@@ -22,9 +22,9 @@ body {
 		<div id="form">
 			<form:form name="myForm" action="updatestaff" method="post" modelAttribute="updatestaffs">
 				<div>
-					<label for="staffId" class="label-size">StaffId </label>
+					<label for="staffId" class="label-size"></label>
 					<div>
-						<form:input path="staffId" class="text-box" placeholder="101"
+						<form:input  type="hidden" path="staffId" class="text-box" placeholder="101"
 						title="StaffId can't be empty" required="true"/>
 					</div>
 				</div>
@@ -85,10 +85,13 @@ body {
 			<div>
 				<label for="designation" class="label-size">Designation</label>
 				<div>
-					<form:input path="designation" class="text-box"
-						placeholder="designation"
-						title="Designation can't be empty or must contain only alphabets"
-						pattern="^[A-Za-z\s]*$" required="true" />
+						<form:select path="designation" class="text-box">
+                            <form:option value="Doctor">Doctor</form:option>
+                            <form:option value="Chief Doctor">Chief Doctor</form:option>
+                            <form:option value="Nurse">Nurse</form:option>
+                            <form:option value="Cleaner">Cleaner</form:option>
+                            <form:option value="Ward Boy">Ward Boy</form:option>
+                        </form:select>
 				</div>
 			</div>
 			<form:errors path="designation" class="text-danger" />

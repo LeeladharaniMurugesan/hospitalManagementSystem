@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,12 +26,17 @@ body {
 		<div id="form">
 			<form:form action="addambulances" method="post" modelAttribute="addambulance">
 				<div>
-					<label for="registerId" class="label-size">Register Id</label>
+					<label for="registerNo" class="label-size">Register No</label>
 					<div>
-						<form:input path="registerId" class="text-box"
-						title="RegisterId can't be empty" placeholder="TN 12 BS 1344"
-						pattern="^[A-Z]{2}\s[0-9]{2}\s[A-Z]{1,2}\s[0-9]{4}$"
-						 required="true"/>
+						<form:select path="registerNo" class="text-box">
+                            <form:option value="GJ 18 G 5123">GJ 18 G 5123</form:option>
+                            <form:option value="TN 60 AG 3333">TN 60 AG 3333</form:option>
+                            <form:option value="GJ 18 V 8844">GJ 18 V 8844</form:option>
+                            <form:option value="BR 01 PC 2433">BR 01 PC 2433</form:option>
+                            <form:option value="GJ 18 GJ 6521">GJ 18 GJ 6521</form:option>
+                            <form:option value="BR 19 PC 6231">BR 19 PC 6231</form:option>
+                            <form:option value="TN 60 AG 3231">TN 60 AG 3231</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<div>
@@ -42,29 +48,48 @@ body {
 				<div>
 					<label for="ambulanceModel"class="label-size">Ambulance Model</label>
 					<div>
-						<form:input path="ambulanceModel" class="text-box"
-						placeholder="AmbulaceModel"
-							title="AmbulanceModel can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true"/>
+						<form:select path="ambulanceModel" class="text-box">
+                            <form:option value="Mahindra Supro">Mahindra Supro</form:option>
+                            <form:option value="Force Trax">Force Trax</form:option>
+                            <form:option value="Mobile ICU">Mobile ICU</form:option>
+                            <form:option value="Force Traveller">Force Traveller</form:option>
+                            <form:option value="Tata Winger">Tata Winger</form:option>
+                            <form:option value="Eicher Skyline">Eicher Skyline</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="ambulanceModel" class="text-danger" />
 				<div>
 					<label for="status" class="label-size">Status</label>
 					<div>
-						<form:input path="status" class="text-box"
-						placeholder="Status"
-							title="status can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true"/>
+						<form:select path="status" class="text-box">
+                            <form:option value="On Duty">On Duty</form:option>
+                            <form:option value="Repair">Repair</form:option>
+                            <form:option value="Not In Use">Not In Use</form:option>
+                        </form:select>
+					</div>
+				</div>
+				<form:errors path="ambulanceStatus" class="text-danger" />
+				<div>
+					<label for="ambulanceStatus" class="label-size">Ambulance Status</label>
+					<div>
+						<form:select path="ambulanceStatus" class="text-box">
+                            <form:option value="Booked">Booked</form:option>
+                            <form:option value="Available">Available</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="status" class="text-danger" />
 				<div>
 					<label for="staffId" class="label-size">Staff Id</label>
 					<div>
-						<form:input path="staffId" class="text-box" placeholder="101"
-						title="StaffId can't be empty and should contains only integer"
-						pattern="^[0-9]+$" required="true"/>
+						<form:select path="staffId" placeholder="Staff Id" class="text-box">
+
+                            <c:forEach var="alldriver" items="${allstaff}">
+                                <form:option value="${alldriver.staffId}"
+							label="${alldriver.staffId}" />
+                            </c:forEach>
+                        </form:select>	
 					</div>
 				</div>
 				<div>

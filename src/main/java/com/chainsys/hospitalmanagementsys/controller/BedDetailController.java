@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.hospitalmanagementsys.dto.RoomBedDTO;
 import com.chainsys.hospitalmanagementsys.model.BedDetail;
+import com.chainsys.hospitalmanagementsys.model.RoomDetail;
+import com.chainsys.hospitalmanagementsys.model.StaffDetail;
 import com.chainsys.hospitalmanagementsys.service.BedDetailService;
 import com.chainsys.hospitalmanagementsys.service.RoomDetailService;
 
@@ -36,7 +38,7 @@ public class BedDetailController {
 	}
 
 	@GetMapping("/getbeds")
-	public String getBed(@Valid@RequestParam("id") int id, Model model) {
+	public String getBed(@Valid @RequestParam("id") int id, Model model) {
 		BedDetail beddetail = bedService.findById(id);
 		model.addAttribute("getbed",beddetail);
 		return "find-bed-id-form";
@@ -44,6 +46,8 @@ public class BedDetailController {
 
 	@GetMapping("/addbedform")
 	public String showAddBedForm(Model model) {
+		List<RoomDetail> alldocvisit =roomdetailservice.allRoomDetails();
+		model.addAttribute("getstaffroom", alldocvisit);
 		BedDetail beddetail = new BedDetail();
 		model.addAttribute("addbeds", beddetail);
 		return "add-bed-form";
@@ -54,6 +58,7 @@ public class BedDetailController {
 		if(errors.hasErrors()) {
 			return "add-bed-form";
 		}
+		beddetail.setBedBookedTime();
 		bedService.save(beddetail);
 		return LIST;
 	}

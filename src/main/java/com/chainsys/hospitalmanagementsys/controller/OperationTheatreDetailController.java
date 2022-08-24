@@ -49,6 +49,7 @@ public class OperationTheatreDetailController {
 		if(errors.hasErrors()) {
 			return "add-otd-form";
 		}
+		operationtheatre.setTheatreBookedTime();
 		operationtheatreservice.save(operationtheatre);
 		return LIST;
 	}
@@ -71,6 +72,7 @@ public class OperationTheatreDetailController {
 		if(errors.hasErrors()) {
 			return "update-otd-form";
 		}
+		operationtheatre.setTheatreBookedTime();
 		operationtheatreservice.save(operationtheatre);
 		return LIST;
 	}

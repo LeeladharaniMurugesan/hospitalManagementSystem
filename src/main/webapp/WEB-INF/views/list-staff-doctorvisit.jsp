@@ -32,9 +32,9 @@ body {
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getstaffdoc">
 				<div>
-					<label for="staffId" class="label-size">Staff Id</label>
+					<label for="staffId" class="label-size"></label>
 					<div>
-						<form:input path="staffId" class="text-box" readonly="true" />
+						<form:input type="hidden" path="staffId" class="text-box" readonly="true" />
 					</div>
 				</div>
 				<div>
@@ -86,8 +86,6 @@ body {
 			</colgroup>
 			<thead>
 				<tr>
-					<th>SNo</th>
-					<th>StaffId</th>
 					<th>VisitedDate</th>
 					<th>FromTime</th>
 					<th>ToTime</th>
@@ -97,8 +95,6 @@ body {
 			<tbody>
 				<c:forEach var="docv" items="${doctorlist}">
 					<tr>
-						<td>${docv.sNo}</td>
-						<td>${docv.staffId}</td>
 						<td>${docv.visitedDate}</td>
 						<td>${docv.fromTime}</td>
 						<td>${docv.toTime}</td>

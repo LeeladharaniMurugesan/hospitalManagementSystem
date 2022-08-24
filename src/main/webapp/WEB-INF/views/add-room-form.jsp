@@ -22,20 +22,26 @@ body {
 				<div>
 					<label for="roomType" class="label-size">Room Type</label>
 					<div>
-						<form:input path="roomType" class="text-box"
-							placeholder="RoomType"
-							title="RoomType can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true" />
+						<form:select path="roomType" class="text-box">
+                            <form:option value="General Ward">General Ward</form:option>
+                            <form:option value="Semi Special">Semi Special</form:option>
+                            <form:option value="VIP Ward">VIP Ward</form:option>
+                            <form:option value="ICCU">ICCU</form:option>
+                            <form:option value="Causality">Causality</form:option>
+                            <form:option value="ICU">ICU</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="roomType" class="text-danger" />
 				<div>
 					<label for="roomLocation" class="label-size">Room Location</label>
 					<div>
-						<form:input path="roomLocation" class="text-box"
-							placeholder="RoomLocation"
-							title="RoomLocation can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true"/>
+						<form:select path="roomLocation" class="text-box">
+                            <form:option value="First Floor">First Floor</form:option>
+                            <form:option value="Second Floor">Second Floor</form:option>
+                            <form:option value="Third Floor">Third Floor</form:option>
+                            <form:option value="Ground Floor">Ground Floor</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="roomLocation" class="text-danger" />
@@ -45,17 +51,18 @@ body {
 						<form:input path="numOfBeds" class="text-box"
 							placeholder="NumOfBeds"
 							title="Number of Beds should contains only numbers"
-							 pattern="^[0-9]+$" required="true"/>
+							 pattern="^[0-9]+$" required="true" />
 					</div>
 				</div>
 				<form:errors path="numOfBeds" class="text-danger" />
 				<div>
 					<label for="roomStatus" class="label-size">Room Status</label>
 					<div>
-						<form:input path="roomStatus" class="text-box"
-							placeholder="RoomStatus"
-							title="RoomStatus can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true" onblur="roomStatusCheck();" />
+						<form:select path="roomStatus" class="text-box">
+                            <form:option value="Active">Active</form:option>
+                            <form:option value="In Active">In Active</form:option>
+
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="roomStatus" class="text-danger" />

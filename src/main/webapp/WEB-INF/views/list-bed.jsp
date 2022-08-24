@@ -41,11 +41,10 @@ body {
             </colgroup>
 			<thead>
 				<tr>
-					<th>BED ID</th>
 					<th>BED TYPE</th>
+					<th>BED BOOKEDTIME</th>
 					<th>BED STATUS</th>
 					<th>BED SIZE</th>
-					<th>ROOM ID</th>
 					<th>EDIT AND VIEW</th>
 					<th>BED DETAILS</th>
 				</tr>
@@ -53,11 +52,10 @@ body {
 			<tbody>
 				<c:forEach var="bed" items="${allbed}">
 					<tr>
-						<td>${bed.bedId}</td>
 						<td>${bed.bedType}</td>
+						<td>${bed.bedBookedTime}</td>
 						<td>${bed.bedStatus}</td>
 						<td>${bed.bedSize}</td>
-						<td>${bed.roomId}</td>
 					<td><a
                	href="updatebedform?bedId=${bed.bedId}">Edit</a>
                         <a

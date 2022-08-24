@@ -20,29 +20,34 @@ body {
 		<div id="form">
 			<form:form  name="form" action="updatedoctor" method="post" modelAttribute="updatedoc">
 				<div>
-					<label for="staffId" class="label-size">StaffId </label>
+					<label for="staffId" class="label-size"></label>
 					<div>
-						<form:input path="staffId" class="text-box" placeholder="101"
+						<form:input type="hidden" path="staffId" class="text-box" placeholder="101"
 						title="StaffId can't be empty" name="staffId" required="true"/>
 					</div>
 				</div>
 				<div>
 					<label for="speciality" class="label-size">Speciality </label>
 					<div>
-						<form:input path="speciality" class="text-box"
-						placeholder="speciality"
-							title="Speciality can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true"/>
+						<form:select path="speciality" class="text-box">
+                            <form:option value="Cardiologist">Cardiologist</form:option>
+                            <form:option value="Pediatrics">Pediatrics</form:option>
+                            <form:option value="Internists">Internists</form:option>
+                            <form:option value="Dermatologists">Dermatologists</form:option>
+                            <form:option value="Causality">Causality</form:option>
+                            <form:option value="Neurologist">Neurologist</form:option>
+                            <form:option value="Pharmacist">Pharmacist</form:option>
+                            <form:option value="Dietician">Dietician</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="speciality" class="text-danger" />
 				<div>
 					<label for="roleType" class="label-size">Role Type</label>
 					<div>
-						<form:input path="roleType" class="text-box"
-						placeholder="roleType"
-							title="RoleType can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true" />
+						<form:select path="speciality" class="text-box">
+                            <form:option value="Permanent">Permanent</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="roleType" class="text-danger" />

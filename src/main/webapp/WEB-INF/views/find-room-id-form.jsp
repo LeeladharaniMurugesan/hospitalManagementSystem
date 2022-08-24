@@ -20,9 +20,9 @@ body {
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getrooms">
 				<div>
-					<label for="roomId" class="label-size">Room Id</label>
+					<label for="roomId" class="label-size"></label>
 					<div>
-						<form:input path="roomId" class="text-box" readonly="true"/>
+						<form:input type="hidden" path="roomId" class="text-box" readonly="true"/>
 					</div>
 				</div>
 				<div>

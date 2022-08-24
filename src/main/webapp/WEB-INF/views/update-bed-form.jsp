@@ -19,9 +19,9 @@ body {
 		<div id="form">
 			<form:form  action="updatebeds" method="post" modelAttribute="updatebed">
 			<div>
-					<label for="bedId" class="label-size">Bed Type </label>
+					<label for="bedId" class="label-size"></label>
 					<div>
-						<form:input path="bedId" class="text-box" placeholder="Standard"
+						<form:input type="hidden" path="bedId" class="text-box" placeholder="Standard"
 								title="BedId can't be empty or must contain only numbers"
 								 required="true"/>
 					</div>
@@ -29,27 +29,35 @@ body {
 				<div>
 					<label for="bedType" class="label-size">Bed Type </label>
 					<div>
-						<form:input path="bedType" class="text-box" placeholder="Standard"
-							title="BedType can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true"/>
+						<form:select path="bedType" class="text-box">
+                            <form:option value="Normal">Normal</form:option>
+                            <form:option value="VIP Bed">VIP Bed</form:option>
+                            <form:option value="Standard">Standard</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="bedType" class="text-danger" />
 				<div>
 					<label for="bedStatus" class="label-size">Bed Status</label>
 					<div>
-						<form:input path="bedStatus" class="text-box" placeholder="Booked"
-							title="BedStatus can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true"/> 
+						<form:select path="bedStatus" class="text-box">
+                            <form:option value="Booked">Booked</form:option>
+                            <form:option value="Available">Available</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="bedStatus" class="text-danger" />
 				<div>
 					<label for="bedSize" class="label-size">Bed Size</label>
+					<label for="bedSize" class="label-size">Bed Size</label>
 					<div>
-						<form:input path="bedSize" class="text-box" placeholder="Size"
-							title="BedSize can't be empty"
-							pattern="^[A-Za-z\s]*$" required="true"/>
+						<form:select path="bedSize" class="text-box">
+                            <form:option value="Twin">Twin</form:option>
+                            <form:option value="Twin Xl">Twin XL</form:option>
+                            <form:option value="Twin XXl">Twin XXL</form:option>
+                            <form:option value="Split King">Split King</form:option>
+                            <form:option value="Split Queen">Split Queen</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="bedSize" class="text-danger" />

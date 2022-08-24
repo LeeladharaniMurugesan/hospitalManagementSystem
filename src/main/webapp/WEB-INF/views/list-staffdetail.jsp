@@ -18,6 +18,17 @@ cellpadding:2px;
 		url(https://thumbs.dreamstime.com/b/medical-health-care-calendar-reminder-schedule-appointment-concept-doctor-s-stethoscope-white-clean-calendar-155215414.jpg);
 }
 </style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+  });
+});
+</script>
 </head>
 <body>
 	<button style="    font-size: 12px;
@@ -25,6 +36,7 @@ cellpadding:2px;
     color: black;
     float: left;" onclick="document.location='/home/staffuse'"><span class="fa fa-home" style="font-size:38px;"></span></button>
     <h1>STAFFS LIST</h1>
+    <input id="myInput" type="text" placeholder="Search.." class="text-box">
 	<div id="table root">
 		<table class="table-size">
 		<caption></caption>
@@ -34,7 +46,6 @@ cellpadding:2px;
 			</colgroup>
 			<thead>
 				<tr>
-					<th>STAFF ID</th>
 					<th>STAFF NAME</th>
 					<th>DATE OF BIRTH</th>
 					<th>GENDER</th>
@@ -44,10 +55,10 @@ cellpadding:2px;
 					<th>EDIT AND VIEW</th>
 				</tr>
 			</thead>
-			<tbody>
+			
+			<tbody id="myTable">
 				<c:forEach var="staff" items="${allstaff}">
 					<tr>
-						<td>${staff.staffId}</td>
 						<td>${staff.staffName}</td>
 						<td>${staff.dob}</td>
 						<td>${staff.gender}</td>

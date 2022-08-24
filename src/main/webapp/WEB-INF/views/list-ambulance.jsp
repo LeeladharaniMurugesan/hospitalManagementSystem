@@ -36,11 +36,12 @@ cellpadding:2px;
             </colgroup>
 			<thead>
 				<tr>
-					<th>REGISTER ID</th>
+					<th>REGISTER NO</th>
 					<th>PURCHASE DATE</th>
 					<th>AMBULANCE MODEL</th>
+					<th>AMBULANCE TIME</th>
 					<th>STATUS</th>
-					<th>STAFF ID</th>
+					<th>AMBULANCE STATUS</th>
 					<th>EDIT AND VIEW</th>
 					<th>AMBULANCE DETAILS</th>
 				</tr>
@@ -48,16 +49,17 @@ cellpadding:2px;
 			<tbody>
 				<c:forEach var="amb" items="${allambulance}">
 					<tr>
-						<td>${amb.registerId}</td>
+						<td>${amb.registerNo}</td>
 						<td>${amb.purchaseDate}</td>
 						<td>${amb.ambulanceModel}</td>
+						<td>${amb.ambulanceTime}</td>
 						<td>${amb.status}</td>
-						<td>${amb.staffId}</td>
+						<td>${amb.ambulanceStatus}</td>
 						
 							<td><a
-               	href="updateambulanceform?registerId=${amb.registerId}">Edit</a>
+               	href="updateambulanceform?ambulanceId=${amb.ambulanceId}">Edit</a>
                	<a
-                            href="getambulance?id=${amb.registerId}">View</a></td>
+                            href="getambulance?id=${amb.ambulanceId}">View</a></td>
                              <td><a
                            href="getambulancedetail?id=${amb.staffId}">AmbulanceDetail</a></td>
                     </tr>

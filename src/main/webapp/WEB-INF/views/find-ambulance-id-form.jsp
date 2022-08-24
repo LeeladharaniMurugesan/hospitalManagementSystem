@@ -27,15 +27,27 @@ body {
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getambulance">
 					<div>
-					<label for="registerId" class="label-size label-text">RegisterId</label>
+					<label for="ambulanceId" class="label-size label-text"></label>
 					<div>
-						<form:input path="registerId" class="text-box" readonly="true"/>
+						<form:input type="hidden" path="ambulanceId" class="text-box" readonly="true"/>
+					</div>
+				</div>
+					<div>
+					<label for="registerNo" class="label-size label-text"></label>
+					<div>
+						<form:input type="hidden" path="registerNo" class="text-box" readonly="true"/>
 					</div>
 				</div>
 				<div>
 					<label for="purchaseDate" class="label-size label-text">PurchaseDate </label>
 					<div>
 						<form:input path="purchaseDate" class="text-box" readonly="true"/>
+					</div>
+				</div>
+				<div>
+					<label for="ambulanceTime" class="label-size label-text">AmbulanceTime </label>
+					<div>
+						<form:input path="ambulanceTime" class="text-box" readonly="true"/>
 					</div>
 				</div>
 				<div>
@@ -51,9 +63,15 @@ body {
 					</div>
 				</div>
 				<div>
-					<label for="staffId" class="label-size label-text">Staff id</label>
+					<label for="ambulanceStatus" class="label-size label-text">Ambulance Status</label>
 					<div>
-						<form:input path="staffId" class="text-box" readonly="true"/>
+						<form:input path="ambulanceStatus" class="text-box" readonly="true"/>
+					</div>
+				</div>
+				<div>
+					<label for="staffId" class="label-size label-text"></label>
+					<div>
+						<form:input type="hidden" path="staffId" class="text-box" readonly="true"/>
 					</div>
 				</div>
 			</form:form>

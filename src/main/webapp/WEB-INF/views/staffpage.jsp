@@ -26,18 +26,7 @@ body {
     background-color: #f44336;
     color: black;
     float: left;"><span class="fa fa-home" style="font-size:38px;"></span></button></li>
-        	<li class="dropdown list-margin glow"><a href="javascript:void(0)"
-        	class="dropbtn">STAFFS</a>
-        	<div class="dropdown-content">
-        	<a href="/staffdetail/list">Staff</a>
-        	<a href="/staffdetail/doctorlist">Doctor</a>
-        	<a href="/staffdetail/nurselist">Nurse</a>
-        	<a href="/staffdetail/chiefdoctorlist">Chief Doctor</a>
-        	<a href="/staffdetail/ambulancedriverlist">Ambulance Driver</a>
-        	<a href="/staffdetail/cleanerlist">Cleaner</a>
-        	<a href="/staffdetail/wardboylist">Ward Boy</a>
-        	</div>
-        	</li>
+       			 <li class=" list-margin glow"><a href="/staffdetail/list">STAFFDETAILS</a></li>
                 <li class=" list-margin glow"><a href="/room/list">ROOMS</a></li>
                 <li class=" list-margin glow"><a href="/operationTheatre/list">OPERATIONTHEATRES</a></li>
                 <li class="list-margin glow "><a href="/doctor/list">DOCTORS</a></li>
@@ -45,7 +34,7 @@ body {
                 <li class="list-margin glow"><a href="/bed/list">BEDS</a></li>
                 <li class="list-margin glow"><a href="/ambulance/list">AMBULANCES</a></li>
                 <li class="list-margin glow"><a href="/bcdetail/list">BOOKINGS</a></li>
-                <li> <button onclick="document.location='/home/index'" style="float: right;height: 31px; width: 81px;color: blue;">Logout</button></li>
+                <li> <button onclick="document.location='/home/index'" style="float: right;height: 31px; width: 50px;color: blue;">Logout</button></li>
              </ul>
              </div>
           

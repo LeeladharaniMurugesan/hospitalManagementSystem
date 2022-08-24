@@ -28,9 +28,9 @@ body {
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getbookingcancellation">
 				<div>
-						<label for="staffId" class="label-size">Staff Id</label>
+						<label for="staffId" class="label-size"></label>
 						<div>
-							<form:input path="staffId"  class="text-box" readonly="true"/>
+							<form:input type="hidden" path="staffId"  class="text-box" readonly="true"/>
 						</div>
 					</div>
 					<div>
@@ -82,26 +82,22 @@ body {
 			</colgroup>
 			<thead>
 				<tr>
-					<th>BcId</th>
 					<th>booking_date</th>
 					<th>FromDate</th>
 					<th>ToDate</th>
+					<th>BookedTime</th>
 					<th>ResourceType</th>
-					<th>Resource Id</th>
-					<th>StaffId</th>
 					<th>Status</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="bc" items="${bookcancellist}">
 					<tr>
-						<td>${bc.bcId}</td>
 						<td>${bc.bookingDate}</td>
 						<td>${bc.fromDate}</td>
 						<td>${bc.toDate}</td>
+						<td>${bc.bookedTime}</td>
 						<td>${bc.resourceType}</td>
-						<td>${bc.resourceId}</td>
-						<td>${bc.staffId}</td>
 						<td>${bc.status}</td>
 					</tr>
 				</c:forEach>

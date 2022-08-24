@@ -36,7 +36,6 @@ body {
             </colgroup>
 			<thead>
 				<tr>
-					<th>STAFF ID</th>
 					<th>SPECIALITY</th>
 					<th>ROLE TYPE</th>
 					<th>NORMAL FEES</th>
@@ -47,7 +46,6 @@ body {
 			<tbody>
 				<c:forEach var="doc" items="${alldoctor}">
 					<tr>
-						<td>${doc.staffId}</td>
 						<td>${doc.speciality}</td>
 						<td>${doc.roleType}</td>
 						<td>${doc.normalFees}</td>

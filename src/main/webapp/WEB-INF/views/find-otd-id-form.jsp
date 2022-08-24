@@ -33,9 +33,9 @@ body {
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getoperationtheatres">
 				<div>
-					<label for="theatreId" class="label-size label-text">TheatreId</label>
+					<label for="theatreId" class="label-size label-text"></label>
 					<div>
-						<form:input path="theatreId" class="text-box" readonly="true"/>
+						<form:input type="hidden" path="theatreId" class="text-box" readonly="true"/>
 					</div>
 				</div>
 				<div>

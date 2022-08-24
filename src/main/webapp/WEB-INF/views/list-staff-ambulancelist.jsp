@@ -29,9 +29,9 @@ cellpadding:2px;
 		<div id="form">
 			<form:form action=" " method="post" modelAttribute="getambulance">
 				<div>
-						<label for="staffId" class="label-size">Staff Id</label>
+						<label for="staffId" class="label-size"></label>
 						<div>
-							<form:input path="staffId"  class="text-box" readonly="true"/>
+							<form:input type="hidden" path="staffId"  class="text-box" readonly="true"/>
 						</div>
 					</div>
 					<div>
@@ -83,21 +83,23 @@ cellpadding:2px;
             </colgroup>
 			<thead>
 				<tr>
-					<th>registerId</th>
-					<th>purchaseDate</th>
-					<th>ambulanceModel</th>
-					<th>status</th>
-					<th>staffId</th>
+					<th>REGISTER NO</th>
+					<th>PURCHASE DATE</th>
+					<th>AMBULANCE MODEL</th>
+					<th>AMBULANCE TIME</th>
+					<th>STATUS</th>
+					<th>AMBULANCE STATUS</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="amb" items="${ambulancelist}">
 					<tr>
-						<td>${amb.registerId}</td>
+						<td>${amb.registerNo}</td>
 						<td>${amb.purchaseDate}</td>
 						<td>${amb.ambulanceModel}</td>
+						<td>${amb.ambulanceTime}</td>
 						<td>${amb.status}</td>
-						<td>${amb.staffId}</td>
+						<td>${amb.ambulanceStatus}</td>
 					</tr>
 				</c:forEach>
 			</tbody>

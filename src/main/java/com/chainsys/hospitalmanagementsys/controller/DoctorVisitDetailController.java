@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.hospitalmanagementsys.dto.StaffDoctorVisitDTO;
 import com.chainsys.hospitalmanagementsys.model.DoctorVisitDetail;
+import com.chainsys.hospitalmanagementsys.model.StaffDetail;
 import com.chainsys.hospitalmanagementsys.service.DoctorVisitDetailService;
 import com.chainsys.hospitalmanagementsys.service.StaffDetailService;
 
@@ -44,6 +45,8 @@ public class DoctorVisitDetailController {
 
 	@GetMapping("/adddocvisitform")
 	public String showAddDoctorVisitForm(Model model) {
+		 List<StaffDetail> staffStatus = staffdetailservice.staffDetailGetByDesignation("Doctor");
+	     model.addAttribute("allstaff",staffStatus);
 		DoctorVisitDetail doctorvisit = new DoctorVisitDetail();
 		model.addAttribute("adddocvisit", doctorvisit);
 		return "add-doctorvisit-form";

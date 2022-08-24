@@ -20,7 +20,7 @@ body {
 	<div id="form">
 		<button class="button-85" role="button" onclick="document.location='/staffdetail/list'" style="float: left; font-size: 15px;">Go Back</button>
 		<button onclick="document.location='/staffdetail/stafflogin'"
-		style="float: right;height: 31px; width: 81px;color: blue;">Login</button>
+		style="float: right;height: 31px; width: 81px;color: blue;">Logout</button>
 		<h1>WELCOME STAFFS</h1>
 		<form:form  name="myForm" action="addstaff" method="post"
 			modelAttribute="addstaffs">
@@ -81,11 +81,14 @@ body {
 			<div>
 				<label for="designation" class="label-size">Designation</label>
 				<div>
-					<form:input path="designation" class="text-box"
-						placeholder="Designation"
-						title="Designation can't be empty or must contain only alphabets"
-						pattern="^[A-Za-z\s]*$" required="true"/>
-				</div>
+						<form:select path="designation" class="text-box">
+                            <form:option value="Doctor">Doctor</form:option>
+                            <form:option value="Chief Doctor">Chief Doctor</form:option>
+                            <form:option value="Nurse">Nurse</form:option>
+                            <form:option value="Cleaner">Cleaner</form:option>
+                            <form:option value="Ward Boy">Ward Boy</form:option>
+                        </form:select>
+					</div>
 			</div>
 			<form:errors path="designation" class="text-danger" />
 			<div>

@@ -22,15 +22,15 @@ body {
 		<div id="form">
 			<form:form action="" method="post" modelAttribute="getdoctorvisit">
 			<div>
-					<label for="sNo" class="label-size">SNo</label>
+					<label for="sNo" class="label-size"></label>
 					<div>
-						<form:input path="sNo" class="text-box" readonly="true"/>
+						<form:input type="hidden" path="sNo" class="text-box" readonly="true"/>
 					</div>
 				</div>
 				<div>
-					<label for="staffId" class="label-size">Staff Id</label>
+					<label for="staffId" class="label-size"></label>
 					<div>
-						<form:input path="staffId" class="text-box" readonly="true"/>
+						<form:input type="hidden" path="staffId" class="text-box" readonly="true"/>
 					</div>
 				</div>
 				<div>

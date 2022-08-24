@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -21,30 +21,37 @@ body {
 		<div id="form">
 			<form:form action="adddoctor" method="post" modelAttribute="adddoc">
 				<div>
-					<label for="staffId" class="label-size">StaffId </label>
-					<div>
-						<form:input path="staffId" class="text-box" placeholder="101"
-						title="StaffId can't be empty" 
-						pattern="^[0-9]+$" required="true"/>
-					</div>
+					<label for="staffId" class="label-size">Staff Id</label>
+					<form:select path="staffId" placeholder="Staff Id" class="text-box">
+
+                            <c:forEach var="allDoctor" items="${allstaff}">
+                                <form:option value="${allDoctor.staffId}"
+							label="${allDoctor.staffId}" />
+                            </c:forEach>
+                        </form:select>	
 				</div>
 				<div>
 					<label for="speciality" class="label-size">Speciality </label>
 					<div>
-						<form:input path="speciality" class="text-box"
-						placeholder="Speciality"
-						pattern="^[A-Za-z\s]*$"
-						title="Speciality can't be empty or must contain only alphabets" required="true"/>
+						<form:select path="speciality" class="text-box">
+                            <form:option value="Cardiologist">Cardiologist</form:option>
+                            <form:option value="Pediatrics">Pediatrics</form:option>
+                            <form:option value="Internists">Internists</form:option>
+                            <form:option value="Dermatologists">Dermatologists</form:option>
+                            <form:option value="Causality">Causality</form:option>
+                            <form:option value="Neurologist">Neurologist</form:option>
+                            <form:option value="Pharmacist">Pharmacist</form:option>
+                            <form:option value="Dietician">Dietician</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="speciality" class="text-danger" />
 				<div>
 					<label for="roleType" class="label-size">Role Type</label>
 					<div>
-						<form:input path="roleType" class="text-box"
-						placeholder="RoleType"
-							title="RoleType can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true"/>
+						<form:select path="speciality" class="text-box">
+                            <form:option value="Permanent">Permanent</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="roleType" class="text-danger" />

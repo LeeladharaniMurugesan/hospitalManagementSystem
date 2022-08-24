@@ -1,5 +1,7 @@
 package com.chainsys.hospitalmanagementsys.model;
 
+import java.util.Calendar;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,6 +25,10 @@ public class OperationTheatreDetail {
 	@Column(name="theatre_location")
 	@Size(max = 20, min = 3, message = "*TheatreLocation length should be 3 to 20")
 	private String theatreLocation;
+	
+	@Column(name="THEATRE_BOOKEDTIME")
+	private String theatreBookedTime; 
+	
 	@Column(name="theatre_status")
 	@Size(max = 20, min = 3, message = "*TheatreStatus length should be 3 to 20")
 	private String theatreStatus;
@@ -43,6 +49,17 @@ public class OperationTheatreDetail {
 	}
 	public void setTheatreLocation(String theatreLocation) {
 		this.theatreLocation = theatreLocation;
+	}
+	
+	public void setTheatreBookedTime() {
+		 Calendar vCalendar = Calendar.getInstance();
+	        String theatreBookedTime = vCalendar.get(Calendar.DATE) + " / " + (vCalendar.get(Calendar.MONTH) + 1) + " / "
+	                + vCalendar.get(Calendar.YEAR) + " : " + vCalendar.get(Calendar.HOUR) + " : "
+	                + vCalendar.get(Calendar.MINUTE);
+	        this.theatreBookedTime = theatreBookedTime;
+	 }
+	public String getTheatreBookedTime() {
+		return theatreBookedTime;
 	}
 	public String getTheatreStatus() {
 		return theatreStatus;

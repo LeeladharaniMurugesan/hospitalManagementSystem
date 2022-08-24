@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.hospitalmanagementsys.dto.StaffAmbulanceDTO;
 import com.chainsys.hospitalmanagementsys.model.AmbulanceDetail;
+import com.chainsys.hospitalmanagementsys.model.StaffDetail;
 import com.chainsys.hospitalmanagementsys.service.AmbulanceDetailService;
 import com.chainsys.hospitalmanagementsys.service.StaffDetailService;
 
@@ -38,7 +39,7 @@ public class AmbulanceDetailController {
 	}
 
 	@GetMapping("/getambulance")
-	public String getAmbulance(@RequestParam("id") String id, Model model) {
+	public String getAmbulance(@RequestParam("id") int id, Model model) {
 		Optional<AmbulanceDetail> ambulancedetail = ambService.findById(id);
 		model.addAttribute("getambulance", ambulancedetail);
 		return "find-ambulance-id-form";
@@ -46,6 +47,8 @@ public class AmbulanceDetailController {
 
 	@GetMapping("/addambulanceform")
 	public String showAddAmbulanceForm(Model model) {
+		List<StaffDetail> staffStatus = staffdetailservice.staffDetailGetByDesignation("Ambulance Driver");
+        model.addAttribute("allstaff",staffStatus);
 		AmbulanceDetail ambulancedetail = new AmbulanceDetail();
 		model.addAttribute("addambulance", ambulancedetail);
 		return "add-ambulance-form";
@@ -56,28 +59,31 @@ public class AmbulanceDetailController {
 		if(errors.hasErrors()) {
 			return "add-ambulance-form";
 		}
+		ambulancedetail.setAmbulanceTime();
+		System.out.println(ambulancedetail+"Done");
 		ambService.save(ambulancedetail);
 		return LIST;
 	}
 
 	@GetMapping("/deleteambulance")
-	public String deleteAmbulance(@Valid@RequestParam("registerId") String id) {
+	public String deleteAmbulance(@Valid @RequestParam("registerId") int id) {
 		ambService.deleteById(id);
 		return LIST;
 	}
 
 	@GetMapping("/updateambulanceform")
-	public String showUpdateForm(@Valid@RequestParam("registerId") String id, Model model) {
+	public String showUpdateForm( @RequestParam("ambulanceId") int id, Model model) {
 		Optional<AmbulanceDetail> ambulancedetail = ambService.findById(id);
 		model.addAttribute("updateamb", ambulancedetail);
 		return "update-ambulance-form";
 	}
 
 	@PostMapping("updateambulance")
-	public String updateAmbulance(@Valid @ModelAttribute("updateamb") AmbulanceDetail ambulancedetail,Errors errors) {
+	public String updateAmbulance( @ModelAttribute("updateamb") AmbulanceDetail ambulancedetail,Errors errors) {
 		if(errors.hasErrors()) {
 			return "update-ambulance-form";
 		}
+		ambulancedetail.setAmbulanceTime();
 		ambService.save(ambulancedetail);
 		return LIST;
 	}

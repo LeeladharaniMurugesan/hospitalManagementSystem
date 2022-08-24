@@ -20,9 +20,9 @@ body {
 		<div id="form">
 			<form:form action="updatedoctorvisit" method="post" modelAttribute="updatedocvisit">
 				<div>
-					<label for="sNo" class="label-size">StaffId </label>
+					<label for="sNo" class="label-size"></label>
 					<div>
-						<form:input path="sNo" class="text-box" placeholder="1"
+						<form:input type="hidden" path="sNo" class="text-box" placeholder="1"
 						title="SNo can't be empty"
 						pattern="^[0-9]+$" required="true"/>
 					</div>
@@ -30,9 +30,9 @@ body {
 				
 				
 				<div>
-					<label for="staffId" class="label-size">StaffId </label>
+					<label for="staffId" class="label-size"></label>
 					<div>
-						<form:input path="staffId" class="text-box" placeholder="101"
+						<form:input type="hidden" path="staffId" class="text-box" placeholder="101"
 						title="StaffId can't be empty"
 						pattern="^[0-9]+$" required="true"/>
 					</div>

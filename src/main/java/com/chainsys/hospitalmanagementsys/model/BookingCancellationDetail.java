@@ -2,6 +2,7 @@ package com.chainsys.hospitalmanagementsys.model;
 
 
 import java.sql.Date;
+import java.util.Calendar;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -33,6 +34,8 @@ public class BookingCancellationDetail {
 	private Date fromDate;
 	@Column(name="todate")
 	private Date toDate;
+	@Column(name="booked_time")
+	private String bookedTime;
 	@Column(name="resource_type")
 	private String resourceType;
 	@Column(name="resource_id")
@@ -77,6 +80,16 @@ public class BookingCancellationDetail {
 	}
 	public void setToDate(Date toDate) {
 		this.toDate = toDate;
+	}
+	public String getBookedTime() {
+		return bookedTime;
+	}
+	public void setBookedTime() {
+		 Calendar vCalendar = Calendar.getInstance();
+	        String bookedTime = vCalendar.get(Calendar.DATE) + " / " + (vCalendar.get(Calendar.MONTH) + 1) + " / "
+	                + vCalendar.get(Calendar.YEAR) + " : " + vCalendar.get(Calendar.HOUR) + " : "
+	                + vCalendar.get(Calendar.MINUTE);
+	        this.bookedTime = bookedTime;
 	}
 	public String getResourceType() {
 		return resourceType;

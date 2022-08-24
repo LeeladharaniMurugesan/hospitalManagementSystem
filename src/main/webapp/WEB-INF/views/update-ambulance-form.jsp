@@ -27,12 +27,24 @@ body {
 			<form:form action="updateambulance" method="post"
 				modelAttribute="updateamb">
 				<div>
-					<label for="registerId" class="label-size label-text">Register Id</label>
+					<label for="ambulanceId" class="label-size label-text"></label>
 					<div>
-						<form:input path="registerId" class="text-box"
-						title="RegisterId can't be empty"
-						pattern="^[A-Z]{2}\s[0-9]{2}\s[A-Z]{1,2}\s[0-9]{4}$"
-						 required="true"/>
+						<form:input type="hidden" path="ambulanceId" class="text-box"/>
+					</div>
+				</div>
+				<form:errors path="ambulanceId" class="text-danger" />
+				<div>
+					<label for="registerNo" class="label-size label-text">Register No</label>
+					<div>
+						<form:select path="registerNo" class="text-box">
+                            <form:option value="GJ 18 G 5123">GJ 18 G 5123</form:option>
+                            <form:option value="TN 60 AG 3333">TN 60 AG 3333</form:option>
+                            <form:option value="GJ 18 V 8844">GJ 18 V 8844</form:option>
+                            <form:option value="BR 01 PC 2433">BR 01 PC 2433</form:option>
+                            <form:option value="GJ 18 GJ 6521">GJ 18 GJ 6521</form:option>
+                            <form:option value="BR 19 PC 6231">BR 19 PC 6231</form:option>
+                            <form:option value="TN 60 AG 3231">TN 60 AG 3231</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<div>
@@ -42,32 +54,47 @@ body {
 					</div>
 				</div>
 				<div>
-					<label for="ambulanceModel"class="label-size label-text"">Ambulance Model</label>
+					<label for="ambulanceModel"class="label-size label-text">Ambulance Model</label>
 					<div>
-						<form:input path="ambulanceModel" class="text-box"
-						placeholder="ambulaceModel"
-							title="AmbulanceModel can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true"/>
+						<form:select path="ambulanceModel" class="text-box">
+                            <form:option value="Mahindra Supro">Mahindra Supro</form:option>
+                            <form:option value="Force Trax">Force Trax</form:option>
+                            <form:option value="Mobile ICU">Mobile ICU</form:option>
+                            <form:option value="Force Traveller">Force Traveller</form:option>
+                            <form:option value="Tata Winger">Tata Winger</form:option>
+                            <form:option value="Eicher Skyline">Eicher Skyline</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="ambulanceModel" class="text-danger" />
 				<div>
 					<label for="status" class="label-size label-text">Status</label>
 					<div>
-						<form:input path="status" class="text-box"
-						placeholder="status"
-							title="status can't be empty or must contain only alphabets"
-							pattern="^[A-Za-z\s]*$" required="true"/>
+						<form:select path="status" class="text-box">
+                            <form:option value="On Duty">On Duty</form:option>
+                            <form:option value="Repair">Repair</form:option>
+                            <form:option value="Not In Use">Not In Use</form:option>
+                        </form:select>
+					</div>
+				</div>
+				<form:errors path="ambulanceStatus" class="text-danger" />
+				<div>
+					<label for="ambulanceStatus" class="label-size label-text">Ambulance Status</label>
+					<div>
+						<form:select path="ambulanceStatus" class="text-box">
+                            <form:option value="Booked">Booked</form:option>
+                            <form:option value="Available">Available</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="status" class="text-danger" />
 				<div>
 					<label for="staffId" class="label-size label-text">Staff Id</label>
 					<div>
-						<form:input path="staffId" class="text-box"
-						title="StaffId can't be empty and should contains only numbers "/>
+						<form:input path="staffId" class="text-box"/>
 					</div>
 				</div>
+				<form:errors path="staffId" class="text-danger" />
 				<div>
 					<form:button class="button">Update ambulance</form:button>
 				</div>

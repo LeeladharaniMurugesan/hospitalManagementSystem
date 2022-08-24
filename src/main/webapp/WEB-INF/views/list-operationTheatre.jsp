@@ -42,19 +42,19 @@ cellpadding:2px;
             </colgroup>
 			<thead>
 				<tr>
-					<th>THEATRE ID</th>
 					<th>THEATRE TYPE</th>
 					<th>THEATRE LOCATION</th>
-					<th>THATRE STATUS</th>
+					<th>THEATRE BOOKEDTIME</th>
+					<th>THEATRE STATUS</th>
 					<th>EDIT AND VIEW</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="opd" items="${alloperationtheatre}">
 					<tr>
-						<td>${opd.theatreId}</td>
 						<td>${opd.theatreType}</td>
 						<td>${opd.theatreLocation}</td>
+						<td>${opd.theatreBookedTime}</td>
 						<td>${opd.theatreStatus}</td>
 						<td><a href="updateoperationtheatreform?theatreId=${opd.theatreId}">Edit</a>
 						<a href="getoperationtheatre?id=${opd.theatreId}">View</a></td>

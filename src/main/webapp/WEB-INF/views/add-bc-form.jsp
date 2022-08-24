@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -48,7 +49,6 @@ body {
 					<div>
 						<form:select path="resourceType" class="text-box">
                             <form:option value="Theatre">Theatre</form:option>
-                            <form:option value="Ambulance">Ambulance</form:option>
                             <form:option value="Bed">Bed</form:option>
                         </form:select>
 					</div>
@@ -59,25 +59,30 @@ body {
 					<div>
 						<form:input path="resourceId" class="text-box" placeholder="101"
 						title="ResourceId can't be empty and should contains only integer"
-						pattern="^[0-9]+$" required="true"/>
+						 required="true"/>
 					</div>
 				</div>
 				<form:errors path="resourceId" class="text-danger" />
 				<div>
 					<label for="staffId" class="label-size">Staff Id</label>
 					<div>
-						<form:input path="staffId" class="text-box" placeholder="111"
-						title="StaffId can't be empty and should contains only integer"
-						pattern="^[0-9]+$" required="true"/>
+						<form:select type="hidden" path="staffId" placeholder="Staff Id" class="text-box">
+				<c:forEach var="allStaff" items="${getallstaff}">
+                                <form:option value="${allStaff.staffId}"
+							label="${allStaff.staffId}" />
+                 </c:forEach>
+                        </form:select>	
 					</div>
 				</div>
 				<form:errors path="staffId" class="text-danger" />
 				<div>
 					<label for="status" class="label-size">Status</label>
 					<div>
-						<form:input path="status" class="text-box" placeholder="Booked"
-						title="Status can't be empty and should contains only alphabets"
-						pattern="^[a-zA-Z]+$" required="true"/>
+						<form:select path="status" class="text-box">
+                            <form:option value="Booked">Booked</form:option>
+                            <form:option value="Cancelled">Cancelled</form:option>
+                            <form:option value="Available">Available</form:option>
+                        </form:select>
 					</div>
 				</div>
 				<form:errors path="status" class="text-danger" />

@@ -96,39 +96,9 @@ public class StaffDetailController {
         }
     }
     @GetMapping("/doctorlist")
-    public String getDoctorDesignation(Model model) {
+    public String getAllDesignation(Model model) {
     	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Doctor");
     	model.addAttribute("allstaff",taskDesignation);
-    	return LIST;
+    	return "list-staffdetail";
  }
-    @GetMapping("/nurselist")
-    public String getNurseDesignation(Model model) {
-    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Nurse");
-    	model.addAttribute("allstaff",taskDesignation);
-    	return LIST;
-}
-    @GetMapping("/chiefdoctorlist")
-    public String getChiefDoctorDesignation(Model model) {
-    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Chief Doctor");
-    	model.addAttribute("allstaff",taskDesignation);
-    	return LIST;
-}
-    @GetMapping("/ambulancedriverlist")
-    public String getAmbulanceDriverDesignation(Model model) {
-    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Ambulance Driver");
-    	model.addAttribute("allstaff",taskDesignation);
-    	return LIST;
-}
-    @GetMapping("/cleanerlist")
-    public String getCleanerDesignation(Model model) {
-    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Cleaner");
-    	model.addAttribute("allstaff",taskDesignation);
-    	return LIST;
-}
-    @GetMapping("/wardboylist")
-    public String getWardBoyDesignation(Model model) {
-    	List<StaffDetail> taskDesignation = staffdetailservice.staffDetailGetByDesignation("Ward Boy");
-    	model.addAttribute("allstaff",taskDesignation);
-    	return LIST;
-}
 }

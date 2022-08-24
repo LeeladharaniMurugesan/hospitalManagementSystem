@@ -16,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import com.chainsys.hospitalmanagementsys.dto.StaffBookingCancellationDTO;
 import com.chainsys.hospitalmanagementsys.model.BookingCancellationDetail;
+import com.chainsys.hospitalmanagementsys.model.StaffDetail;
 import com.chainsys.hospitalmanagementsys.service.BookingCancellationDetailService;
 import com.chainsys.hospitalmanagementsys.service.StaffDetailService;
 
@@ -44,6 +45,8 @@ public class BookingCancellationDetailController {
 
 	@GetMapping("/addbcform")
 	public String showAddBookCancellationForm(Model model) {
+		List<StaffDetail> alldocvisit =staffdetailservice.allStaffDetails();
+		model.addAttribute("getallstaff", alldocvisit);
 		BookingCancellationDetail bookcancel = new BookingCancellationDetail();
 		model.addAttribute("addbookcancel",bookcancel);
 		return "add-bc-form";
@@ -54,6 +57,7 @@ public class BookingCancellationDetailController {
 		if(errors.hasErrors()) {
 			return "add-bc-form";
 		}
+		bookcancel.setBookedTime();
 		bookCancelService.save(bookcancel);
 		return LIST;
 	}
@@ -76,6 +80,7 @@ public class BookingCancellationDetailController {
 		if(errors.hasErrors()) {
 			return "update-bc-form";
 		}
+		bookcancel.setBookedTime();
 		bookCancelService.save(bookcancel);
 		return LIST;
 	}
