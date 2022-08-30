@@ -47,14 +47,17 @@ public class StaffDetailController {
 	@PostMapping("/addstaff")
 	public String addNewStaff(@Valid @ModelAttribute("addstaffs") StaffDetail staffservice,Errors errors,Model model)
 	{
-	if(errors.hasErrors()) {
-		return "add-staff-form";
-	}
-	staffdetailservice.save(staffservice);
-	model.addAttribute("result","Added successfully");
-	return "add-staff-form";
-		
-	}
+		try {
+				staffdetailservice.save(staffservice);
+				model.addAttribute("result","Added successfully");
+				return "add-staff-form";
+			}catch(Exception er) {
+				model.addAttribute("Error","Already Exists");
+				return "add-staff-form";
+			}
+			
+		}
+	
 
 	@GetMapping("/deletestaff")
 	public String deleteStaff(@Valid @RequestParam("staffId") int id) {

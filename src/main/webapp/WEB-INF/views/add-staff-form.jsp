@@ -96,6 +96,7 @@ body {
 			</div>
 		</form:form>
 		<div style="margin-top: 9px;"><span style="color:Green;font-size:25px;">${result}</span></div>
+		<div style="margin-top: 9px;"><span style="color:Green;font-size:25px;">${Error}</span></div>
 	</div>
 
 </body>

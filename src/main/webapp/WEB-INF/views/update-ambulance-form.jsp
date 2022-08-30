@@ -84,6 +84,7 @@ body {
 						<form:select path="ambulanceStatus" class="text-box">
                             <form:option value="Booked">Booked</form:option>
                             <form:option value="Available">Available</form:option>
+                             <form:option value="Not Available">Not Available</form:option>
                         </form:select>
 					</div>
 				</div>

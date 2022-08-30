@@ -8,11 +8,11 @@
 <style><%@include file ="/WEB-INF/css/style4.css"%>
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
 body {
-    background-image: url(https://cdn.pixabay.com/photo/2018/08/03/19/11/hospital-3582607_960_720.jpg);
+    background-image: url(https://cdn.pixabay.com/photo/2018/08/03/19/11/hospital-3582607_960_720.jpg );
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
-}
+} 
 </style>
 <meta charset="ISO-8859-1">
 <title>Add All Tables</title>
@@ -34,7 +34,7 @@ body {
                 <li class="list-margin glow"><a href="/bed/list">BEDS</a></li>
                 <li class="list-margin glow"><a href="/ambulance/list">AMBULANCES</a></li>
                 <li class="list-margin glow"><a href="/bcdetail/list">BOOKINGS</a></li>
-                <li> <button onclick="document.location='/home/index'" style="float: right;height: 31px; width: 50px;color: blue;">Logout</button></li>
+                <li> <button onclick="document.location='/home/index'" style="float: right;height: 31px; width: 65px;color: blue;">Logout</button></li>
              </ul>
              </div>
           

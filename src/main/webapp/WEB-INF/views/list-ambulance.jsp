@@ -54,7 +54,7 @@ cellpadding:2px;
 						<td>${amb.ambulanceModel}</td>
 						<td>${amb.ambulanceTime}</td>
 						<td>${amb.status}</td>
-						<td>${amb.ambulanceStatus}</td>
+						<td class="red">${amb.ambulanceStatus}</td>
 						
 							<td><a
                	href="updateambulanceform?ambulanceId=${amb.ambulanceId}">Edit</a>
@@ -71,5 +71,21 @@ cellpadding:2px;
         <a href="addambulanceform"><button class="button">Add Ambulance</button></a>
     </div>
 	</div>
+	<script>
+    function f_color(){
+        for (let i=0; i < document.getElementsByClassName('red').length; i++ ) {
+        if (document.getElementsByClassName('red')[i].innerHTML == 'Booked') {
+        document.getElementsByClassName('red')[i].style.backgroundColor = "red";
+        }
+    else if (document.getElementsByClassName('red')[i].innerHTML == 'Available') {
+        document.getElementsByClassName('red')[i].style.backgroundColor = "green";
+        }
+    else if (document.getElementsByClassName('red')[i].innerHTML == 'Not Available') {
+        document.getElementsByClassName('red')[i].style.backgroundColor = "Yellow";
+        }
+    }
+}
+        f_color();    
+    </script>
 </body>
 </html>
